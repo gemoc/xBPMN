@@ -1,0 +1,4 @@
+[submodule "BPMN-Designer"]
+	path = BPMN-Designer
+	url = https://github.com/ObeoNetwork/BPMN-Designer.git
+	branch = master
