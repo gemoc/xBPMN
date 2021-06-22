@@ -9,4 +9,4 @@ Executable version of BPMN language implemented using GEMOC technologies
 
 ## Build
 
-![maven workflow](https://github.com/gemoc/xbpmn/actions/workflows/tycho.yml/badge.svg)
+[![maven workflow](https://github.com/gemoc/xbpmn/actions/workflows/tycho.yml/badge.svg)](https://github.com/gemoc/xbpmn/actions/workflows/tycho.yml "Tycho build")
