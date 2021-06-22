@@ -1,0 +1,9 @@
+package org.gemoc.bpmn2.bpmn
+
+
+// import the dsl and consider it as a melange language 
+// import-dsl org.eclipse.gemoc.example.melangek3fsm.fsm.FSM
+external language BPMN {
+	syntax "platform:/resource/org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore"
+
+}

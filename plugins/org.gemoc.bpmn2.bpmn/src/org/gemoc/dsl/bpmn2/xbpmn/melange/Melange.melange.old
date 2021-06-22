@@ -1,0 +1,12 @@
+package org.gemoc.dsl.bpmn2.xbpmn.melange
+
+import-dsl org.gemoc.dsl.bpmn2.xbpmn.melange.BPMN
+
+language XBPMN inherits org.gemoc.dsl.bpmn2.xbpmn.melange.BPMN {
+	// generates an extended ecore in a language runtime project (org.gemoc.dsl.bpmn2.xbpmn.melange.xBPMN)
+	// that copies everything needed for the  execution (abstract syntax and aspects), 
+	// The animator is based on this ecore. The animator can be defined as an extension of the BPMN editor.
+	// model instance of XBPMN are executed as it, model instance of BPMN will be "cast" to XBPMN before execution
+//	with qualified.class.name
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XBPMN -->
+    <package uri="http://org.gemoc.bpmn2.xbpmn.xbpmn/bpmn2/" class="org.gemoc.bpmn2.xbpmn.xbpmn.bpmn2.Bpmn2Package" genModel="model/XBPMN.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XBPMN -->
+    <package uri="http://org.gemoc.bpmn2.xbpmn.xbpmn/di/" class="org.gemoc.bpmn2.xbpmn.xbpmn.di.DiPackage" genModel="model/XBPMN.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XBPMN -->
+    <package uri="http://org.gemoc.bpmn2.xbpmn.xbpmn/bpmdi/" class="org.gemoc.bpmn2.xbpmn.xbpmn.bpmdi.BpmdiPackage" genModel="model/XBPMN.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XBPMN -->
+    <package uri="http://org.gemoc.bpmn2.xbpmn.xbpmn/dc/" class="org.gemoc.bpmn2.xbpmn.xbpmn.dc.DcPackage" genModel="model/XBPMN.genmodel" />
+  </extension>
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.xdsml">
+    <XDSML_Definition name="org.gemoc.bpmn2.xbpmn.XBPMN" xdsmlFilePath="/org.gemoc.bpmn2.xbpmn.xbpmn/XBPMN.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  </extension>
+</plugin>

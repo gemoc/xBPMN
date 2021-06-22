@@ -1,0 +1,10 @@
+package org.gemoc.bpmn2.xbpmn
+	
+language XBPMN inherits org.gemoc.bpmn2.bpmn.BPMN {
+	
+//	with org.eclipse.gemoc.example.melangek3fsm.fsm.k3dsa.StateAspect
+//	with org.eclipse.gemoc.example.melangek3fsm.fsm.k3dsa.StateMachineAspect
+//	with org.eclipse.gemoc.example.melangek3fsm.fsm.k3dsa.TransitionAspect
+
+
+}

@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xBPMN RTD
+Bundle-SymbolicName: org.gemoc.bpmn2.xbpmn.rtd;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.gemoc.bpmn2.xbpmn.rtd
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.gemoc.bpmn2.bpmn;bundle-version="1.0.0",
+ org.gemoc.bpmn2.xbpmn.xbpmn,
+ org.obeonetwork.dsl.bpmn2;bundle-version="4.1.1"
+Export-Package: org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmn2.util,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.di.util,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.di,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmdi.util,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmn2,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmdi,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.dc,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.dc.impl,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.dc.util,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmdi.impl,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.di.impl,
+ org.gemoc.bpmn2.xbpmn.xbpmnmt.bpmn2.impl,
+ org.gemoc.bpmn2.xbpmn
+
