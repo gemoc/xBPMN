@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>BPMN2</groupId>
+  <artifactId>org.gemoc.xbpmn</artifactId>
+  <version>4.1.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <modules>
+
+  <module>org.obeonetwork.dsl.bpmn2</module>
+  <module>org.obeonetwork.dsl.bpmn2.edit</module>
+  <module>org.obeonetwork.dsl.bpmn2.editor</module>
+  <module>org.obeonetwork.dsl.bpmn2.design</module>
+  <module>org.obeonetwork.dsl.bpmn2.design.doc</module>
+  <!--   <module>org.obeonetwork.dsl.bpmn2.samples</module>
+  <module>../../samples/org.obeonetwork.dsl.bpmn2.samples.pack.core</module>
+  <module>../org.obeonetwork.dsl.bpmn2.feature</module>
+  <module>../org.obeonetwork.dsl.bpmn2.repository</module> -->
+  </modules>
+  
+  
+  <properties>
+  <tycho-version>2.2.0</tycho-version>
+ </properties>
+
+ <repositories>
+  <!-- configure p2 repository to resolve against -->
+  <repository>
+   <id>eclipse</id>
+    <layout>p2</layout>
+    <url>http://download.eclipse.org/releases/2020-12/</url>
+  </repository>
+  <repository>
+   	<id>Sirius</id>
+    <layout>p2</layout>
+    <url>http://download.eclipse.org/sirius/updates/releases/6.4.1/2020-09</url>
+  </repository>
+  <repository>
+   	<id>AcceleoLegacy</id>
+    <layout>p2</layout>
+    <url>http://download.eclipse.org/sirius/updates/legacy/</url>
+  </repository>
+ </repositories>
+ <build>
+ <plugins>
+  <plugin>
+   <!-- enable tycho build extension -->
+   <groupId>org.eclipse.tycho</groupId>
+   <artifactId>tycho-maven-plugin</artifactId>
+   <version>${tycho-version}</version>
+   <extensions>true</extensions>
+  </plugin>
+ </plugins>
+ </build>
+</project>
