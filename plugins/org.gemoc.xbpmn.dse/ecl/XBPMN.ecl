@@ -5,3 +5,6 @@ import 'http://www.eclipse.org/emf/2002/Ecore'
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 
+package bpmn2
+
+endpackage

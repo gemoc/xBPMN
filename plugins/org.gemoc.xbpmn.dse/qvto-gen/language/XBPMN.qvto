@@ -1,5 +1,6 @@
 import org.eclipse.gemoc.moccml_mapping.EclQVToHelper;
 modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+	modeltype inMM1 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI';
 
 modeltype QVT 		uses 'http://www.eclipse.org/QVT/1.0.0/Operational';
 modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
@@ -50,13 +51,13 @@ query identifyUserRelations() {
 
 main() {
 	identifyUserRelations();
-	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map invalid2CCSL();
-	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map invalid2FeedBack();
-	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map invalid2Priority();
+	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map bpmn22CCSL();
+	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map bpmn22FeedBack();
+	inM.rootObjects()[inMM1::Definitions]->asSequence()->first()-> map bpmn22Priority();
 }
 
 			
-	mapping inMM1::Definitions::invalid2CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
+	mapping inMM1::Definitions::bpmn22CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
 	    theCCSLSpec := result;
 	    name := getNameOrUID(self.oclAsType(EObject));
 	    theMainBlock :=object TimeModel::CCSLModel::Block{
@@ -123,7 +124,7 @@ main() {
 
 
 
-mapping inMM1::Definitions::invalid2FeedBack() : FeedBack::ActionModel {
+mapping inMM1::Definitions::bpmn22FeedBack() : FeedBack::ActionModel {
 	    theFeedBackSpec := result;
 		importStatements+= object FeedBack::ImportStatement{
 			importURI := getModelPath(ccsl.objectsOfType(TimeModel::Clock)->asSequence()->first().oclAsType(EObject));
@@ -141,7 +142,7 @@ mapping inMM1::Definitions::invalid2FeedBack() : FeedBack::ActionModel {
 
 //priority stuff
 
-mapping inMM1::Definitions::invalid2Priority()  :Priority::PrioritySpecification  {
+mapping inMM1::Definitions::bpmn22Priority()  :Priority::PrioritySpecification  {
 	thePrioritySpec := result;
 	importedModel := object Priority::ImportStatement{
 		importURI := getModelPath(ccsl.objectsOfType(TimeModel::Clock)->asSequence()->first().oclAsType(EObject));
