@@ -27,3 +27,4 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
 Bundle-ActivationPolicy: lazy
 Export-Package: xbpmn.xdsml.api.impl
 Automatic-Module-Name: org.gemoc.xbpmn
+Bundle-Vendor: GEMOC

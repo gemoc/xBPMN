@@ -24,11 +24,34 @@
 		<module>../org.obeonetwork.dsl.bpmn2.repository</module> -->
 		
 		<module>org.gemoc.xbpmn</module>
+		<module>org.gemoc.xbpmn.k3dsa</module>
 	</modules>
 
 
 	<properties>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend-version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>xtend-install-debug-info</goal>
+							<goal>testCompile</goal>
+							<goal>xtend-test-install-debug-info</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>xtend-gen</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
