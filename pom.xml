@@ -29,6 +29,8 @@
 		<tycho-version>2.2.0</tycho-version>
 		<eclipse-version>2020-12</eclipse-version>
 		<sirius-p2-url>http://download.eclipse.org/sirius/updates/releases/6.4.1/2020-09</sirius-p2-url>
+		<gemoc-p2-url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-p2-url>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho.scmUrl>scm:git:https://github.com/gemoc/xbpmn.git</tycho.scmUrl>
 
@@ -38,5 +40,39 @@
 
 		<maven.deploy.skip>false</maven.deploy.skip>
 	</properties>
-
+	<repositories>
+		<!-- configure p2 repository to resolve against -->
+		<repository>
+			<id>eclipse</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/${eclipse-version}</url>
+		</repository>
+		<repository>
+			<id>Sirius</id>
+			<layout>p2</layout>
+			<url>${sirius-p2-url}</url>
+		</repository>
+		<repository>
+			<id>AcceleoLegacy</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/sirius/updates/legacy/</url>
+		</repository>
+		<repository>
+			<id>gemoc-repo</id>
+			<url>${gemoc-p2-url}</url>
+			<layout>p2</layout>
+		</repository>
+		
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
