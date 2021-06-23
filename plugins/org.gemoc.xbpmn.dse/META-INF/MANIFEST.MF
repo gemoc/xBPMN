@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XBPMN Domain Specific Events
+Bundle-SymbolicName: org.gemoc.xbpmn.dse
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GEMOC
+Automatic-Module-Name: org.gemoc.xbpmn.dse
+Bundle-RequiredExecutionEnvironment: JavaSE-11

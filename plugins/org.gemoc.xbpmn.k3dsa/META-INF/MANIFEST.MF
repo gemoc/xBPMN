@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.gemoc.xbpmn.k3dsa
+Bundle-Name: XBPMN Domain Specific Actions
 Bundle-SymbolicName: org.gemoc.xbpmn.k3dsa; singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0";visibility:="reexport",
