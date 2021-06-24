@@ -68,6 +68,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FormalExpression getTransformation() {
 		return (FormalExpression) eDynamicGet(Bpmn2Package.DATA_ASSOCIATION__TRANSFORMATION,
 				Bpmn2Package.Literals.DATA_ASSOCIATION__TRANSFORMATION, true, true);
@@ -89,6 +90,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTransformation(FormalExpression newTransformation) {
 		eDynamicSet(Bpmn2Package.DATA_ASSOCIATION__TRANSFORMATION,
 				Bpmn2Package.Literals.DATA_ASSOCIATION__TRANSFORMATION, newTransformation);
@@ -100,6 +102,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Assignment> getAssignment() {
 		return (EList<Assignment>) eDynamicGet(Bpmn2Package.DATA_ASSOCIATION__ASSIGNMENT,
 				Bpmn2Package.Literals.DATA_ASSOCIATION__ASSIGNMENT, true, true);
@@ -110,6 +113,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemAwareElement getTargetRef() {
 		return (ItemAwareElement) eDynamicGet(Bpmn2Package.DATA_ASSOCIATION__TARGET_REF,
 				Bpmn2Package.Literals.DATA_ASSOCIATION__TARGET_REF, true, true);
@@ -130,6 +134,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetRef(ItemAwareElement newTargetRef) {
 		eDynamicSet(Bpmn2Package.DATA_ASSOCIATION__TARGET_REF, Bpmn2Package.Literals.DATA_ASSOCIATION__TARGET_REF,
 				newTargetRef);
@@ -141,6 +146,7 @@ public class DataAssociationImpl extends BaseElementImpl implements DataAssociat
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ItemAwareElement> getSourceRef() {
 		return (EList<ItemAwareElement>) eDynamicGet(Bpmn2Package.DATA_ASSOCIATION__SOURCE_REF,
 				Bpmn2Package.Literals.DATA_ASSOCIATION__SOURCE_REF, true, true);

@@ -20,19 +20,147 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.obeonetwork.dsl.bpmn2.AdHocOrdering;
+import org.obeonetwork.dsl.bpmn2.AdHocSubProcess;
+import org.obeonetwork.dsl.bpmn2.Assignment;
+import org.obeonetwork.dsl.bpmn2.Association;
+import org.obeonetwork.dsl.bpmn2.AssociationDirection;
+import org.obeonetwork.dsl.bpmn2.Auditing;
+import org.obeonetwork.dsl.bpmn2.BoundaryEvent;
+import org.obeonetwork.dsl.bpmn2.Bpmn2Factory;
+import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
+import org.obeonetwork.dsl.bpmn2.BusinessRuleTask;
+import org.obeonetwork.dsl.bpmn2.CallActivity;
+import org.obeonetwork.dsl.bpmn2.CallChoreography;
+import org.obeonetwork.dsl.bpmn2.CallConversation;
+import org.obeonetwork.dsl.bpmn2.CancelEventDefinition;
+import org.obeonetwork.dsl.bpmn2.Category;
+import org.obeonetwork.dsl.bpmn2.CategoryValue;
+import org.obeonetwork.dsl.bpmn2.Choreography;
+import org.obeonetwork.dsl.bpmn2.ChoreographyLoopType;
+import org.obeonetwork.dsl.bpmn2.ChoreographyTask;
+import org.obeonetwork.dsl.bpmn2.Collaboration;
+import org.obeonetwork.dsl.bpmn2.CompensateEventDefinition;
+import org.obeonetwork.dsl.bpmn2.ComplexBehaviorDefinition;
+import org.obeonetwork.dsl.bpmn2.ComplexGateway;
+import org.obeonetwork.dsl.bpmn2.ConditionalEventDefinition;
+import org.obeonetwork.dsl.bpmn2.Conversation;
+import org.obeonetwork.dsl.bpmn2.ConversationAssociation;
+import org.obeonetwork.dsl.bpmn2.ConversationLink;
+import org.obeonetwork.dsl.bpmn2.CorrelationKey;
+import org.obeonetwork.dsl.bpmn2.CorrelationProperty;
+import org.obeonetwork.dsl.bpmn2.CorrelationPropertyBinding;
+import org.obeonetwork.dsl.bpmn2.CorrelationPropertyRetrievalExpression;
+import org.obeonetwork.dsl.bpmn2.CorrelationSubscription;
+import org.obeonetwork.dsl.bpmn2.DataAssociation;
+import org.obeonetwork.dsl.bpmn2.DataInput;
+import org.obeonetwork.dsl.bpmn2.DataInputAssociation;
+import org.obeonetwork.dsl.bpmn2.DataObject;
+import org.obeonetwork.dsl.bpmn2.DataObjectReference;
+import org.obeonetwork.dsl.bpmn2.DataOutput;
+import org.obeonetwork.dsl.bpmn2.DataOutputAssociation;
+import org.obeonetwork.dsl.bpmn2.DataState;
+import org.obeonetwork.dsl.bpmn2.DataStore;
+import org.obeonetwork.dsl.bpmn2.DataStoreReference;
+import org.obeonetwork.dsl.bpmn2.Definitions;
+import org.obeonetwork.dsl.bpmn2.Documentation;
+import org.obeonetwork.dsl.bpmn2.EndEvent;
+import org.obeonetwork.dsl.bpmn2.EndPoint;
+import org.obeonetwork.dsl.bpmn2.ErrorEventDefinition;
+import org.obeonetwork.dsl.bpmn2.Escalation;
+import org.obeonetwork.dsl.bpmn2.EscalationEventDefinition;
+import org.obeonetwork.dsl.bpmn2.EventBasedGateway;
+import org.obeonetwork.dsl.bpmn2.EventBasedGatewayType;
+import org.obeonetwork.dsl.bpmn2.ExclusiveGateway;
+import org.obeonetwork.dsl.bpmn2.Expression;
+import org.obeonetwork.dsl.bpmn2.Extension;
+import org.obeonetwork.dsl.bpmn2.ExtensionAttributeDefinition;
+import org.obeonetwork.dsl.bpmn2.ExtensionAttributeValue;
+import org.obeonetwork.dsl.bpmn2.ExtensionDefinition;
+import org.obeonetwork.dsl.bpmn2.FormalExpression;
+import org.obeonetwork.dsl.bpmn2.GatewayDirection;
+import org.obeonetwork.dsl.bpmn2.GlobalBusinessRuleTask;
+import org.obeonetwork.dsl.bpmn2.GlobalChoreographyTask;
+import org.obeonetwork.dsl.bpmn2.GlobalConversation;
+import org.obeonetwork.dsl.bpmn2.GlobalManualTask;
+import org.obeonetwork.dsl.bpmn2.GlobalScriptTask;
+import org.obeonetwork.dsl.bpmn2.GlobalTask;
+import org.obeonetwork.dsl.bpmn2.GlobalUserTask;
+import org.obeonetwork.dsl.bpmn2.Group;
+import org.obeonetwork.dsl.bpmn2.HumanPerformer;
+import org.obeonetwork.dsl.bpmn2.ImplicitThrowEvent;
+import org.obeonetwork.dsl.bpmn2.Import;
+import org.obeonetwork.dsl.bpmn2.InclusiveGateway;
+import org.obeonetwork.dsl.bpmn2.InputOutputBinding;
+import org.obeonetwork.dsl.bpmn2.InputOutputSpecification;
+import org.obeonetwork.dsl.bpmn2.InputSet;
+import org.obeonetwork.dsl.bpmn2.Interface;
+import org.obeonetwork.dsl.bpmn2.IntermediateCatchEvent;
+import org.obeonetwork.dsl.bpmn2.IntermediateThrowEvent;
+import org.obeonetwork.dsl.bpmn2.ItemAwareElement;
+import org.obeonetwork.dsl.bpmn2.ItemDefinition;
+import org.obeonetwork.dsl.bpmn2.ItemKind;
+import org.obeonetwork.dsl.bpmn2.Lane;
+import org.obeonetwork.dsl.bpmn2.LaneSet;
+import org.obeonetwork.dsl.bpmn2.LinkEventDefinition;
+import org.obeonetwork.dsl.bpmn2.ManualTask;
+import org.obeonetwork.dsl.bpmn2.Message;
+import org.obeonetwork.dsl.bpmn2.MessageEventDefinition;
+import org.obeonetwork.dsl.bpmn2.MessageFlow;
+import org.obeonetwork.dsl.bpmn2.MessageFlowAssociation;
+import org.obeonetwork.dsl.bpmn2.Monitoring;
+import org.obeonetwork.dsl.bpmn2.MultiInstanceBehavior;
+import org.obeonetwork.dsl.bpmn2.MultiInstanceLoopCharacteristics;
+import org.obeonetwork.dsl.bpmn2.Operation;
+import org.obeonetwork.dsl.bpmn2.OutputSet;
+import org.obeonetwork.dsl.bpmn2.ParallelGateway;
+import org.obeonetwork.dsl.bpmn2.Participant;
+import org.obeonetwork.dsl.bpmn2.ParticipantAssociation;
+import org.obeonetwork.dsl.bpmn2.ParticipantMultiplicity;
+import org.obeonetwork.dsl.bpmn2.PartnerEntity;
+import org.obeonetwork.dsl.bpmn2.PartnerRole;
+import org.obeonetwork.dsl.bpmn2.Performer;
+import org.obeonetwork.dsl.bpmn2.PotentialOwner;
+import org.obeonetwork.dsl.bpmn2.ProcessType;
+import org.obeonetwork.dsl.bpmn2.Property;
+import org.obeonetwork.dsl.bpmn2.ReceiveTask;
+import org.obeonetwork.dsl.bpmn2.Relationship;
+import org.obeonetwork.dsl.bpmn2.RelationshipDirection;
+import org.obeonetwork.dsl.bpmn2.Rendering;
+import org.obeonetwork.dsl.bpmn2.Resource;
+import org.obeonetwork.dsl.bpmn2.ResourceAssignmentExpression;
+import org.obeonetwork.dsl.bpmn2.ResourceParameter;
+import org.obeonetwork.dsl.bpmn2.ResourceParameterBinding;
+import org.obeonetwork.dsl.bpmn2.ResourceRole;
+import org.obeonetwork.dsl.bpmn2.ScriptTask;
+import org.obeonetwork.dsl.bpmn2.SendTask;
+import org.obeonetwork.dsl.bpmn2.SequenceFlow;
+import org.obeonetwork.dsl.bpmn2.ServiceTask;
+import org.obeonetwork.dsl.bpmn2.Signal;
+import org.obeonetwork.dsl.bpmn2.SignalEventDefinition;
+import org.obeonetwork.dsl.bpmn2.StandardLoopCharacteristics;
+import org.obeonetwork.dsl.bpmn2.StartEvent;
+import org.obeonetwork.dsl.bpmn2.SubChoreography;
+import org.obeonetwork.dsl.bpmn2.SubConversation;
+import org.obeonetwork.dsl.bpmn2.SubProcess;
+import org.obeonetwork.dsl.bpmn2.Task;
+import org.obeonetwork.dsl.bpmn2.TerminateEventDefinition;
+import org.obeonetwork.dsl.bpmn2.TextAnnotation;
+import org.obeonetwork.dsl.bpmn2.TimerEventDefinition;
+import org.obeonetwork.dsl.bpmn2.Transaction;
+import org.obeonetwork.dsl.bpmn2.UserTask;
 import org.obeonetwork.dsl.bpmn2.*;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static Bpmn2Factory init() {
@@ -60,7 +188,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -313,7 +440,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -344,7 +470,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -375,7 +500,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Interface createInterface() {
@@ -385,7 +509,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExtensionDefinition createExtensionDefinition() {
@@ -395,7 +518,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExtensionAttributeDefinition createExtensionAttributeDefinition() {
@@ -405,7 +527,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExtensionAttributeValue createExtensionAttributeValue() {
@@ -415,7 +536,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Documentation createDocumentation() {
@@ -425,7 +545,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Operation createOperation() {
@@ -435,7 +554,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Message createMessage() {
@@ -445,7 +563,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ItemDefinition createItemDefinition() {
@@ -455,7 +572,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Import createImport() {
@@ -465,7 +581,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.obeonetwork.dsl.bpmn2.Error createError() {
@@ -475,7 +590,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EndPoint createEndPoint() {
@@ -485,7 +599,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Auditing createAuditing() {
@@ -495,7 +608,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalTask createGlobalTask() {
@@ -505,7 +617,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public InputOutputSpecification createInputOutputSpecification() {
@@ -515,7 +626,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public InputSet createInputSet() {
@@ -525,7 +635,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataInput createDataInput() {
@@ -535,7 +644,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ItemAwareElement createItemAwareElement() {
@@ -545,7 +653,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataState createDataState() {
@@ -555,7 +662,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public OutputSet createOutputSet() {
@@ -565,7 +671,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataOutput createDataOutput() {
@@ -575,7 +680,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public InputOutputBinding createInputOutputBinding() {
@@ -585,7 +689,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ResourceRole createResourceRole() {
@@ -595,7 +698,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Resource createResource() {
@@ -605,7 +707,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ResourceParameter createResourceParameter() {
@@ -615,7 +716,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ResourceParameterBinding createResourceParameterBinding() {
@@ -625,7 +725,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Expression createExpression() {
@@ -635,7 +734,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ResourceAssignmentExpression createResourceAssignmentExpression() {
@@ -645,7 +743,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Monitoring createMonitoring() {
@@ -655,7 +752,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Performer createPerformer() {
@@ -665,7 +761,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public org.obeonetwork.dsl.bpmn2.Process createProcess() {
@@ -675,7 +770,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CategoryValue createCategoryValue() {
@@ -685,7 +779,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public LaneSet createLaneSet() {
@@ -695,7 +788,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Lane createLane() {
@@ -705,7 +797,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SequenceFlow createSequenceFlow() {
@@ -715,7 +806,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Property createProperty() {
@@ -725,7 +815,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Collaboration createCollaboration() {
@@ -735,7 +824,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Choreography createChoreography() {
@@ -745,7 +833,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ParticipantAssociation createParticipantAssociation() {
@@ -755,7 +842,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Participant createParticipant() {
@@ -765,7 +851,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ConversationLink createConversationLink() {
@@ -775,7 +860,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ParticipantMultiplicity createParticipantMultiplicity() {
@@ -785,7 +869,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MessageFlowAssociation createMessageFlowAssociation() {
@@ -795,7 +878,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MessageFlow createMessageFlow() {
@@ -805,7 +887,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ConversationAssociation createConversationAssociation() {
@@ -815,7 +896,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CorrelationKey createCorrelationKey() {
@@ -825,7 +905,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CorrelationProperty createCorrelationProperty() {
@@ -835,7 +914,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CorrelationPropertyRetrievalExpression createCorrelationPropertyRetrievalExpression() {
@@ -845,7 +923,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public FormalExpression createFormalExpression() {
@@ -855,7 +932,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CorrelationSubscription createCorrelationSubscription() {
@@ -865,7 +941,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CorrelationPropertyBinding createCorrelationPropertyBinding() {
@@ -875,7 +950,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalManualTask createGlobalManualTask() {
@@ -885,7 +959,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ManualTask createManualTask() {
@@ -895,7 +968,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Task createTask() {
@@ -905,7 +977,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public BoundaryEvent createBoundaryEvent() {
@@ -915,7 +986,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataOutputAssociation createDataOutputAssociation() {
@@ -925,7 +995,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataAssociation createDataAssociation() {
@@ -935,7 +1004,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Assignment createAssignment() {
@@ -945,7 +1013,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataInputAssociation createDataInputAssociation() {
@@ -955,7 +1022,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public UserTask createUserTask() {
@@ -965,7 +1031,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Rendering createRendering() {
@@ -975,7 +1040,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public HumanPerformer createHumanPerformer() {
@@ -985,7 +1049,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public PotentialOwner createPotentialOwner() {
@@ -995,7 +1058,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalUserTask createGlobalUserTask() {
@@ -1005,7 +1067,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EventBasedGateway createEventBasedGateway() {
@@ -1015,7 +1076,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ComplexGateway createComplexGateway() {
@@ -1025,7 +1085,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ExclusiveGateway createExclusiveGateway() {
@@ -1035,7 +1094,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public InclusiveGateway createInclusiveGateway() {
@@ -1045,7 +1103,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ParallelGateway createParallelGateway() {
@@ -1055,7 +1112,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Relationship createRelationship() {
@@ -1065,7 +1121,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Extension createExtension() {
@@ -1075,7 +1130,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public IntermediateCatchEvent createIntermediateCatchEvent() {
@@ -1085,7 +1139,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public IntermediateThrowEvent createIntermediateThrowEvent() {
@@ -1095,7 +1148,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EndEvent createEndEvent() {
@@ -1105,7 +1157,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StartEvent createStartEvent() {
@@ -1115,7 +1166,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CancelEventDefinition createCancelEventDefinition() {
@@ -1125,7 +1175,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ErrorEventDefinition createErrorEventDefinition() {
@@ -1135,7 +1184,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TerminateEventDefinition createTerminateEventDefinition() {
@@ -1145,7 +1193,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EscalationEventDefinition createEscalationEventDefinition() {
@@ -1155,7 +1202,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Escalation createEscalation() {
@@ -1165,7 +1211,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CompensateEventDefinition createCompensateEventDefinition() {
@@ -1175,7 +1220,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TimerEventDefinition createTimerEventDefinition() {
@@ -1185,7 +1229,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public LinkEventDefinition createLinkEventDefinition() {
@@ -1195,7 +1238,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MessageEventDefinition createMessageEventDefinition() {
@@ -1205,7 +1247,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ConditionalEventDefinition createConditionalEventDefinition() {
@@ -1215,7 +1256,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SignalEventDefinition createSignalEventDefinition() {
@@ -1225,7 +1265,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Signal createSignal() {
@@ -1235,7 +1274,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ImplicitThrowEvent createImplicitThrowEvent() {
@@ -1245,7 +1283,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataObject createDataObject() {
@@ -1255,7 +1292,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataStore createDataStore() {
@@ -1265,7 +1301,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataStoreReference createDataStoreReference() {
@@ -1275,7 +1310,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DataObjectReference createDataObjectReference() {
@@ -1285,7 +1319,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CallConversation createCallConversation() {
@@ -1295,7 +1328,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Conversation createConversation() {
@@ -1305,7 +1337,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SubConversation createSubConversation() {
@@ -1315,7 +1346,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalConversation createGlobalConversation() {
@@ -1325,7 +1355,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public PartnerEntity createPartnerEntity() {
@@ -1335,7 +1364,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public PartnerRole createPartnerRole() {
@@ -1345,7 +1373,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CallChoreography createCallChoreography() {
@@ -1355,7 +1382,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SubChoreography createSubChoreography() {
@@ -1365,7 +1391,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ChoreographyTask createChoreographyTask() {
@@ -1375,7 +1400,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalChoreographyTask createGlobalChoreographyTask() {
@@ -1385,7 +1409,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public TextAnnotation createTextAnnotation() {
@@ -1395,7 +1418,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Group createGroup() {
@@ -1405,7 +1427,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Association createAssociation() {
@@ -1415,7 +1436,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Category createCategory() {
@@ -1425,7 +1445,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ServiceTask createServiceTask() {
@@ -1435,7 +1454,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SubProcess createSubProcess() {
@@ -1445,7 +1463,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MultiInstanceLoopCharacteristics createMultiInstanceLoopCharacteristics() {
@@ -1455,7 +1472,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ComplexBehaviorDefinition createComplexBehaviorDefinition() {
@@ -1465,7 +1481,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public StandardLoopCharacteristics createStandardLoopCharacteristics() {
@@ -1475,7 +1490,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CallActivity createCallActivity() {
@@ -1485,7 +1499,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SendTask createSendTask() {
@@ -1495,7 +1508,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ReceiveTask createReceiveTask() {
@@ -1505,7 +1517,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ScriptTask createScriptTask() {
@@ -1515,7 +1526,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public BusinessRuleTask createBusinessRuleTask() {
@@ -1525,7 +1535,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AdHocSubProcess createAdHocSubProcess() {
@@ -1535,7 +1544,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Transaction createTransaction() {
@@ -1545,7 +1553,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalScriptTask createGlobalScriptTask() {
@@ -1555,7 +1562,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GlobalBusinessRuleTask createGlobalBusinessRuleTask() {
@@ -1565,7 +1571,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Definitions createDefinitions() {
@@ -1575,7 +1580,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ItemKind createItemKindFromString(EDataType eDataType, String initialValue) {
@@ -1588,7 +1592,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertItemKindToString(EDataType eDataType, Object instanceValue) {
@@ -1597,7 +1600,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ProcessType createProcessTypeFromString(EDataType eDataType, String initialValue) {
@@ -1610,7 +1612,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertProcessTypeToString(EDataType eDataType, Object instanceValue) {
@@ -1619,7 +1620,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public GatewayDirection createGatewayDirectionFromString(EDataType eDataType, String initialValue) {
@@ -1632,7 +1632,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertGatewayDirectionToString(EDataType eDataType, Object instanceValue) {
@@ -1641,7 +1640,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EventBasedGatewayType createEventBasedGatewayTypeFromString(EDataType eDataType, String initialValue) {
@@ -1654,7 +1652,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertEventBasedGatewayTypeToString(EDataType eDataType, Object instanceValue) {
@@ -1663,7 +1660,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public RelationshipDirection createRelationshipDirectionFromString(EDataType eDataType, String initialValue) {
@@ -1676,7 +1672,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertRelationshipDirectionToString(EDataType eDataType, Object instanceValue) {
@@ -1685,7 +1680,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ChoreographyLoopType createChoreographyLoopTypeFromString(EDataType eDataType, String initialValue) {
@@ -1698,7 +1692,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertChoreographyLoopTypeToString(EDataType eDataType, Object instanceValue) {
@@ -1707,7 +1700,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AssociationDirection createAssociationDirectionFromString(EDataType eDataType, String initialValue) {
@@ -1720,7 +1712,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertAssociationDirectionToString(EDataType eDataType, Object instanceValue) {
@@ -1729,7 +1720,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public MultiInstanceBehavior createMultiInstanceBehaviorFromString(EDataType eDataType, String initialValue) {
@@ -1742,7 +1732,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertMultiInstanceBehaviorToString(EDataType eDataType, Object instanceValue) {
@@ -1751,7 +1740,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public AdHocOrdering createAdHocOrderingFromString(EDataType eDataType, String initialValue) {
@@ -1764,7 +1752,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String convertAdHocOrderingToString(EDataType eDataType, Object instanceValue) {
@@ -1773,7 +1760,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public Bpmn2Package getBpmn2Package() {
@@ -1782,7 +1768,6 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @deprecated
 	 * @generated
 	 */

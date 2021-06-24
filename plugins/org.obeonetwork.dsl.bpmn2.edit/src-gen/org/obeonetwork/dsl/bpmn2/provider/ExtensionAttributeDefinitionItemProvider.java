@@ -72,9 +72,9 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -88,9 +88,9 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
@@ -120,9 +120,9 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
@@ -136,9 +136,9 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This returns ExtensionAttributeDefinition.png. <!-- begin-user-doc --> <!--
+	 * This returns ExtensionAttributeDefinition.png.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,6 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,10 +172,9 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -195,10 +193,10 @@ public class ExtensionAttributeDefinitionItemProvider extends ItemProviderAdapte
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

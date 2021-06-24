@@ -56,6 +56,7 @@ public class ErrorEventDefinitionImpl extends EventDefinitionImpl implements Err
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.obeonetwork.dsl.bpmn2.Error getErrorRef() {
 		return (org.obeonetwork.dsl.bpmn2.Error) eDynamicGet(Bpmn2Package.ERROR_EVENT_DEFINITION__ERROR_REF,
 				Bpmn2Package.Literals.ERROR_EVENT_DEFINITION__ERROR_REF, true, true);
@@ -76,6 +77,7 @@ public class ErrorEventDefinitionImpl extends EventDefinitionImpl implements Err
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setErrorRef(org.obeonetwork.dsl.bpmn2.Error newErrorRef) {
 		eDynamicSet(Bpmn2Package.ERROR_EVENT_DEFINITION__ERROR_REF,
 				Bpmn2Package.Literals.ERROR_EVENT_DEFINITION__ERROR_REF, newErrorRef);

@@ -59,6 +59,7 @@ public abstract class LabeledShapeImpl extends ShapeImpl implements LabeledShape
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Label> getOwnedLabel() {
 		return (EList<Label>) eDynamicGet(DiPackage.LABELED_SHAPE__OWNED_LABEL,
 				DiPackage.Literals.LABELED_SHAPE__OWNED_LABEL, true, true);

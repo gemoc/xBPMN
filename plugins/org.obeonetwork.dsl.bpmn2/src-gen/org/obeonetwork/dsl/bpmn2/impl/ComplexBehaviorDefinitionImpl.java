@@ -61,6 +61,7 @@ public class ComplexBehaviorDefinitionImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FormalExpression getCondition() {
 		return (FormalExpression) eDynamicGet(Bpmn2Package.COMPLEX_BEHAVIOR_DEFINITION__CONDITION,
 				Bpmn2Package.Literals.COMPLEX_BEHAVIOR_DEFINITION__CONDITION, true, true);
@@ -82,6 +83,7 @@ public class ComplexBehaviorDefinitionImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(FormalExpression newCondition) {
 		eDynamicSet(Bpmn2Package.COMPLEX_BEHAVIOR_DEFINITION__CONDITION,
 				Bpmn2Package.Literals.COMPLEX_BEHAVIOR_DEFINITION__CONDITION, newCondition);
@@ -92,6 +94,7 @@ public class ComplexBehaviorDefinitionImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ImplicitThrowEvent getEvent() {
 		return (ImplicitThrowEvent) eDynamicGet(Bpmn2Package.COMPLEX_BEHAVIOR_DEFINITION__EVENT,
 				Bpmn2Package.Literals.COMPLEX_BEHAVIOR_DEFINITION__EVENT, true, true);
@@ -112,6 +115,7 @@ public class ComplexBehaviorDefinitionImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEvent(ImplicitThrowEvent newEvent) {
 		eDynamicSet(Bpmn2Package.COMPLEX_BEHAVIOR_DEFINITION__EVENT,
 				Bpmn2Package.Literals.COMPLEX_BEHAVIOR_DEFINITION__EVENT, newEvent);

@@ -83,6 +83,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getIncomingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__INCOMING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS, true, true);
@@ -94,6 +95,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getOutgoingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__OUTGOING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS, true, true);
@@ -104,6 +106,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__NAME, Bpmn2Package.Literals.CONVERSATION_NODE__NAME,
 				true, true);
@@ -114,6 +117,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CONVERSATION_NODE__NAME, Bpmn2Package.Literals.CONVERSATION_NODE__NAME, newName);
 	}
@@ -124,6 +128,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Participant> getParticipantRefs() {
 		return (EList<Participant>) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__PARTICIPANT_REFS,
 				Bpmn2Package.Literals.CONVERSATION_NODE__PARTICIPANT_REFS, true, true);
@@ -135,6 +140,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<MessageFlow> getMessageFlowRefs() {
 		return (EList<MessageFlow>) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__MESSAGE_FLOW_REFS,
 				Bpmn2Package.Literals.CONVERSATION_NODE__MESSAGE_FLOW_REFS, true, true);
@@ -146,6 +152,7 @@ public abstract class ConversationNodeImpl extends BaseElementImpl implements Co
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationKey> getCorrelationKeys() {
 		return (EList<CorrelationKey>) eDynamicGet(Bpmn2Package.CONVERSATION_NODE__CORRELATION_KEYS,
 				Bpmn2Package.Literals.CONVERSATION_NODE__CORRELATION_KEYS, true, true);

@@ -32,10 +32,9 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.ReceiveTask;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.ReceiveTask} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.ReceiveTask} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class ReceiveTaskItemProvider extends TaskItemProvider implements IEditingDomainItemProvider,
@@ -132,8 +131,8 @@ public class ReceiveTaskItemProvider extends TaskItemProvider implements IEditin
 	}
 
 	/**
-	 * This returns ReceiveTask.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns ReceiveTask.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -147,7 +146,6 @@ public class ReceiveTaskItemProvider extends TaskItemProvider implements IEditin
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -168,10 +166,9 @@ public class ReceiveTaskItemProvider extends TaskItemProvider implements IEditin
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -188,10 +185,10 @@ public class ReceiveTaskItemProvider extends TaskItemProvider implements IEditin
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

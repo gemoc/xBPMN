@@ -59,6 +59,7 @@ public class ConditionalEventDefinitionImpl extends EventDefinitionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getCondition() {
 		return (Expression) eDynamicGet(Bpmn2Package.CONDITIONAL_EVENT_DEFINITION__CONDITION,
 				Bpmn2Package.Literals.CONDITIONAL_EVENT_DEFINITION__CONDITION, true, true);
@@ -80,6 +81,7 @@ public class ConditionalEventDefinitionImpl extends EventDefinitionImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(Expression newCondition) {
 		eDynamicSet(Bpmn2Package.CONDITIONAL_EVENT_DEFINITION__CONDITION,
 				Bpmn2Package.Literals.CONDITIONAL_EVENT_DEFINITION__CONDITION, newCondition);

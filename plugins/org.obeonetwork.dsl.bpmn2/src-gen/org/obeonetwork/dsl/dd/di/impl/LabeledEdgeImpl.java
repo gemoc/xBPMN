@@ -59,6 +59,7 @@ public abstract class LabeledEdgeImpl extends EdgeImpl implements LabeledEdge {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Label> getOwnedLabel() {
 		return (EList<Label>) eDynamicGet(DiPackage.LABELED_EDGE__OWNED_LABEL,
 				DiPackage.Literals.LABELED_EDGE__OWNED_LABEL, true, true);

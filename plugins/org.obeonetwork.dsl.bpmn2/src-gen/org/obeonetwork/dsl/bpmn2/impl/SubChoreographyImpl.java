@@ -69,6 +69,7 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowElement> getFlowElements() {
 		return (EList<FlowElement>) eDynamicGet(Bpmn2Package.SUB_CHOREOGRAPHY__FLOW_ELEMENTS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS, true, true);
@@ -80,6 +81,7 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<LaneSet> getLaneSets() {
 		return (EList<LaneSet>) eDynamicGet(Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS, true, true);
@@ -91,6 +93,7 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Artifact> getArtifacts() {
 		return (EList<Artifact>) eDynamicGet(Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS,
 				Bpmn2Package.Literals.SUB_CHOREOGRAPHY__ARTIFACTS, true, true);

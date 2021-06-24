@@ -59,6 +59,7 @@ public class MessageEventDefinitionImpl extends EventDefinitionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.MESSAGE_EVENT_DEFINITION__MESSAGE_REF,
 				Bpmn2Package.Literals.MESSAGE_EVENT_DEFINITION__MESSAGE_REF, true, true);
@@ -79,6 +80,7 @@ public class MessageEventDefinitionImpl extends EventDefinitionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageRef(Message newMessageRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_EVENT_DEFINITION__MESSAGE_REF,
 				Bpmn2Package.Literals.MESSAGE_EVENT_DEFINITION__MESSAGE_REF, newMessageRef);
@@ -89,6 +91,7 @@ public class MessageEventDefinitionImpl extends EventDefinitionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Operation getOperationRef() {
 		return (Operation) eDynamicGet(Bpmn2Package.MESSAGE_EVENT_DEFINITION__OPERATION_REF,
 				Bpmn2Package.Literals.MESSAGE_EVENT_DEFINITION__OPERATION_REF, true, true);
@@ -109,6 +112,7 @@ public class MessageEventDefinitionImpl extends EventDefinitionImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperationRef(Operation newOperationRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_EVENT_DEFINITION__OPERATION_REF,
 				Bpmn2Package.Literals.MESSAGE_EVENT_DEFINITION__OPERATION_REF, newOperationRef);

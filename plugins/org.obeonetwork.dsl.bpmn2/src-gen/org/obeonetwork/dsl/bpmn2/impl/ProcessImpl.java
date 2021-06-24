@@ -115,6 +115,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowElement> getFlowElements() {
 		return (EList<FlowElement>) eDynamicGet(Bpmn2Package.PROCESS__FLOW_ELEMENTS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS, true, true);
@@ -126,6 +127,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<LaneSet> getLaneSets() {
 		return (EList<LaneSet>) eDynamicGet(Bpmn2Package.PROCESS__LANE_SETS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS, true, true);
@@ -136,6 +138,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProcessType getProcessType() {
 		return (ProcessType) eDynamicGet(Bpmn2Package.PROCESS__PROCESS_TYPE,
 				Bpmn2Package.Literals.PROCESS__PROCESS_TYPE, true, true);
@@ -146,6 +149,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProcessType(ProcessType newProcessType) {
 		eDynamicSet(Bpmn2Package.PROCESS__PROCESS_TYPE, Bpmn2Package.Literals.PROCESS__PROCESS_TYPE, newProcessType);
 	}
@@ -155,6 +159,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsClosed() {
 		return (Boolean) eDynamicGet(Bpmn2Package.PROCESS__IS_CLOSED, Bpmn2Package.Literals.PROCESS__IS_CLOSED, true,
 				true);
@@ -165,6 +170,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsClosed(boolean newIsClosed) {
 		eDynamicSet(Bpmn2Package.PROCESS__IS_CLOSED, Bpmn2Package.Literals.PROCESS__IS_CLOSED, newIsClosed);
 	}
@@ -174,6 +180,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Auditing getAuditing() {
 		return (Auditing) eDynamicGet(Bpmn2Package.PROCESS__AUDITING, Bpmn2Package.Literals.PROCESS__AUDITING, true,
 				true);
@@ -194,6 +201,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuditing(Auditing newAuditing) {
 		eDynamicSet(Bpmn2Package.PROCESS__AUDITING, Bpmn2Package.Literals.PROCESS__AUDITING, newAuditing);
 	}
@@ -203,6 +211,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Monitoring getMonitoring() {
 		return (Monitoring) eDynamicGet(Bpmn2Package.PROCESS__MONITORING, Bpmn2Package.Literals.PROCESS__MONITORING,
 				true, true);
@@ -223,6 +232,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMonitoring(Monitoring newMonitoring) {
 		eDynamicSet(Bpmn2Package.PROCESS__MONITORING, Bpmn2Package.Literals.PROCESS__MONITORING, newMonitoring);
 	}
@@ -233,6 +243,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Property> getProperties() {
 		return (EList<Property>) eDynamicGet(Bpmn2Package.PROCESS__PROPERTIES,
 				Bpmn2Package.Literals.PROCESS__PROPERTIES, true, true);
@@ -244,6 +255,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<org.obeonetwork.dsl.bpmn2.Process> getSupports() {
 		return (EList<org.obeonetwork.dsl.bpmn2.Process>) eDynamicGet(Bpmn2Package.PROCESS__SUPPORTS,
 				Bpmn2Package.Literals.PROCESS__SUPPORTS, true, true);
@@ -254,6 +266,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Collaboration getDefinitionalCollaborationRef() {
 		return (Collaboration) eDynamicGet(Bpmn2Package.PROCESS__DEFINITIONAL_COLLABORATION_REF,
 				Bpmn2Package.Literals.PROCESS__DEFINITIONAL_COLLABORATION_REF, true, true);
@@ -274,6 +287,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefinitionalCollaborationRef(Collaboration newDefinitionalCollaborationRef) {
 		eDynamicSet(Bpmn2Package.PROCESS__DEFINITIONAL_COLLABORATION_REF,
 				Bpmn2Package.Literals.PROCESS__DEFINITIONAL_COLLABORATION_REF, newDefinitionalCollaborationRef);
@@ -284,6 +298,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsExecutable() {
 		return (Boolean) eDynamicGet(Bpmn2Package.PROCESS__IS_EXECUTABLE, Bpmn2Package.Literals.PROCESS__IS_EXECUTABLE,
 				true, true);
@@ -294,6 +309,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsExecutable(boolean newIsExecutable) {
 		eDynamicSet(Bpmn2Package.PROCESS__IS_EXECUTABLE, Bpmn2Package.Literals.PROCESS__IS_EXECUTABLE, newIsExecutable);
 	}
@@ -304,6 +320,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ResourceRole> getResources() {
 		return (EList<ResourceRole>) eDynamicGet(Bpmn2Package.PROCESS__RESOURCES,
 				Bpmn2Package.Literals.PROCESS__RESOURCES, true, true);
@@ -315,6 +332,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Artifact> getArtifacts() {
 		return (EList<Artifact>) eDynamicGet(Bpmn2Package.PROCESS__ARTIFACTS, Bpmn2Package.Literals.PROCESS__ARTIFACTS,
 				true, true);
@@ -326,6 +344,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationSubscription> getCorrelationSubscriptions() {
 		return (EList<CorrelationSubscription>) eDynamicGet(Bpmn2Package.PROCESS__CORRELATION_SUBSCRIPTIONS,
 				Bpmn2Package.Literals.PROCESS__CORRELATION_SUBSCRIPTIONS, true, true);
@@ -337,6 +356,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<org.obeonetwork.dsl.bpmn2.Process> getDecomposedBy() {
 		return (EList<org.obeonetwork.dsl.bpmn2.Process>) eDynamicGet(Bpmn2Package.PROCESS__DECOMPOSED_BY,
 				Bpmn2Package.Literals.PROCESS__DECOMPOSED_BY, true, true);
@@ -347,6 +367,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.obeonetwork.dsl.bpmn2.Process getDecomposes() {
 		return (org.obeonetwork.dsl.bpmn2.Process) eDynamicGet(Bpmn2Package.PROCESS__DECOMPOSES,
 				Bpmn2Package.Literals.PROCESS__DECOMPOSES, true, true);
@@ -368,6 +389,7 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDecomposes(org.obeonetwork.dsl.bpmn2.Process newDecomposes) {
 		eDynamicSet(Bpmn2Package.PROCESS__DECOMPOSES, Bpmn2Package.Literals.PROCESS__DECOMPOSES, newDecomposes);
 	}

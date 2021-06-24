@@ -61,6 +61,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getTimeDate() {
 		return (Expression) eDynamicGet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_DATE,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_DATE, true, true);
@@ -81,6 +82,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeDate(Expression newTimeDate) {
 		eDynamicSet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_DATE,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_DATE, newTimeDate);
@@ -91,6 +93,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getTimeCycle() {
 		return (Expression) eDynamicGet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_CYCLE,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_CYCLE, true, true);
@@ -112,6 +115,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeCycle(Expression newTimeCycle) {
 		eDynamicSet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_CYCLE,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_CYCLE, newTimeCycle);
@@ -122,6 +126,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getTimeDuration() {
 		return (Expression) eDynamicGet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_DURATION,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_DURATION, true, true);
@@ -143,6 +148,7 @@ public class TimerEventDefinitionImpl extends EventDefinitionImpl implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimeDuration(Expression newTimeDuration) {
 		eDynamicSet(Bpmn2Package.TIMER_EVENT_DEFINITION__TIME_DURATION,
 				Bpmn2Package.Literals.TIMER_EVENT_DEFINITION__TIME_DURATION, newTimeDuration);

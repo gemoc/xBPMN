@@ -132,6 +132,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__NAME, Bpmn2Package.Literals.DEFINITIONS__NAME, true,
 				true);
@@ -142,6 +143,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__NAME, Bpmn2Package.Literals.DEFINITIONS__NAME, newName);
 	}
@@ -151,6 +153,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTargetNamespace() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__TARGET_NAMESPACE,
 				Bpmn2Package.Literals.DEFINITIONS__TARGET_NAMESPACE, true, true);
@@ -161,6 +164,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetNamespace(String newTargetNamespace) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__TARGET_NAMESPACE, Bpmn2Package.Literals.DEFINITIONS__TARGET_NAMESPACE,
 				newTargetNamespace);
@@ -171,6 +175,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExpressionLanguage() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__EXPRESSION_LANGUAGE,
 				Bpmn2Package.Literals.DEFINITIONS__EXPRESSION_LANGUAGE, true, true);
@@ -181,6 +186,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpressionLanguage(String newExpressionLanguage) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__EXPRESSION_LANGUAGE,
 				Bpmn2Package.Literals.DEFINITIONS__EXPRESSION_LANGUAGE, newExpressionLanguage);
@@ -191,6 +197,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTypeLanguage() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__TYPE_LANGUAGE,
 				Bpmn2Package.Literals.DEFINITIONS__TYPE_LANGUAGE, true, true);
@@ -201,6 +208,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeLanguage(String newTypeLanguage) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__TYPE_LANGUAGE, Bpmn2Package.Literals.DEFINITIONS__TYPE_LANGUAGE,
 				newTypeLanguage);
@@ -212,6 +220,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Import> getImports() {
 		return (EList<Import>) eDynamicGet(Bpmn2Package.DEFINITIONS__IMPORTS,
 				Bpmn2Package.Literals.DEFINITIONS__IMPORTS, true, true);
@@ -223,6 +232,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Extension> getExtensions() {
 		return (EList<Extension>) eDynamicGet(Bpmn2Package.DEFINITIONS__EXTENSIONS,
 				Bpmn2Package.Literals.DEFINITIONS__EXTENSIONS, true, true);
@@ -234,6 +244,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Relationship> getRelationships() {
 		return (EList<Relationship>) eDynamicGet(Bpmn2Package.DEFINITIONS__RELATIONSHIPS,
 				Bpmn2Package.Literals.DEFINITIONS__RELATIONSHIPS, true, true);
@@ -245,6 +256,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<RootElement> getRootElements() {
 		return (EList<RootElement>) eDynamicGet(Bpmn2Package.DEFINITIONS__ROOT_ELEMENTS,
 				Bpmn2Package.Literals.DEFINITIONS__ROOT_ELEMENTS, true, true);
@@ -256,6 +268,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BPMNDiagram> getDiagrams() {
 		return (EList<BPMNDiagram>) eDynamicGet(Bpmn2Package.DEFINITIONS__DIAGRAMS,
 				Bpmn2Package.Literals.DEFINITIONS__DIAGRAMS, true, true);
@@ -266,6 +279,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExporter() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__EXPORTER, Bpmn2Package.Literals.DEFINITIONS__EXPORTER,
 				true, true);
@@ -276,6 +290,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExporter(String newExporter) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__EXPORTER, Bpmn2Package.Literals.DEFINITIONS__EXPORTER, newExporter);
 	}
@@ -285,6 +300,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExporterVersion() {
 		return (String) eDynamicGet(Bpmn2Package.DEFINITIONS__EXPORTER_VERSION,
 				Bpmn2Package.Literals.DEFINITIONS__EXPORTER_VERSION, true, true);
@@ -295,6 +311,7 @@ public class DefinitionsImpl extends BaseElementImpl implements Definitions {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExporterVersion(String newExporterVersion) {
 		eDynamicSet(Bpmn2Package.DEFINITIONS__EXPORTER_VERSION, Bpmn2Package.Literals.DEFINITIONS__EXPORTER_VERSION,
 				newExporterVersion);

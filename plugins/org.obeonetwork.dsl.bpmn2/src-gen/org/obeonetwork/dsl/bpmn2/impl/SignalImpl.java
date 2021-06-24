@@ -68,6 +68,7 @@ public class SignalImpl extends RootElementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getStructureRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.SIGNAL__STRUCTURE_REF,
 				Bpmn2Package.Literals.SIGNAL__STRUCTURE_REF, true, true);
@@ -88,6 +89,7 @@ public class SignalImpl extends RootElementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructureRef(ItemDefinition newStructureRef) {
 		eDynamicSet(Bpmn2Package.SIGNAL__STRUCTURE_REF, Bpmn2Package.Literals.SIGNAL__STRUCTURE_REF, newStructureRef);
 	}
@@ -97,6 +99,7 @@ public class SignalImpl extends RootElementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.SIGNAL__NAME, Bpmn2Package.Literals.SIGNAL__NAME, true, true);
 	}
@@ -106,6 +109,7 @@ public class SignalImpl extends RootElementImpl implements Signal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.SIGNAL__NAME, Bpmn2Package.Literals.SIGNAL__NAME, newName);
 	}

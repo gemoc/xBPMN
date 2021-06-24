@@ -76,6 +76,7 @@ public class InterfaceImpl extends RootElementImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.INTERFACE__NAME, Bpmn2Package.Literals.INTERFACE__NAME, true, true);
 	}
@@ -85,6 +86,7 @@ public class InterfaceImpl extends RootElementImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.INTERFACE__NAME, Bpmn2Package.Literals.INTERFACE__NAME, newName);
 	}
@@ -95,6 +97,7 @@ public class InterfaceImpl extends RootElementImpl implements Interface {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Operation> getOperations() {
 		return (EList<Operation>) eDynamicGet(Bpmn2Package.INTERFACE__OPERATIONS,
 				Bpmn2Package.Literals.INTERFACE__OPERATIONS, true, true);
@@ -105,6 +108,7 @@ public class InterfaceImpl extends RootElementImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getImplementationRef() {
 		return (EObject) eDynamicGet(Bpmn2Package.INTERFACE__IMPLEMENTATION_REF,
 				Bpmn2Package.Literals.INTERFACE__IMPLEMENTATION_REF, true, true);
@@ -125,6 +129,7 @@ public class InterfaceImpl extends RootElementImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementationRef(EObject newImplementationRef) {
 		eDynamicSet(Bpmn2Package.INTERFACE__IMPLEMENTATION_REF, Bpmn2Package.Literals.INTERFACE__IMPLEMENTATION_REF,
 				newImplementationRef);

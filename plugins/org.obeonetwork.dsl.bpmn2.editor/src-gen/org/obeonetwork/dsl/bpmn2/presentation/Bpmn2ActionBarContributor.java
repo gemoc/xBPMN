@@ -172,6 +172,7 @@ public class Bpmn2ActionBarContributor extends EditingDomainActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("bpmn2-settings"));
 		toolBarManager.add(new Separator("bpmn2-additions"));
 	}
@@ -208,6 +209,7 @@ public class Bpmn2ActionBarContributor extends EditingDomainActionBarContributor
 		// Force an update because Eclipse hides empty menus now.
 		//
 		submenuManager.addMenuListener(new IMenuListener() {
+			@Override
 			public void menuAboutToShow(IMenuManager menuManager) {
 				menuManager.updateAll(true);
 			}
@@ -254,6 +256,7 @@ public class Bpmn2ActionBarContributor extends EditingDomainActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
 		//

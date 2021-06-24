@@ -184,8 +184,7 @@ public class DataOutputItemProvider extends ItemAwareElementItemProvider impleme
 	@Override
 	public String getText(Object object) {
 		String label = ((DataOutput) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_DataOutput_type")
-				:  label;
+		return label == null || label.length() == 0 ? getString("_UI_DataOutput_type") : label;
 	}
 
 	/**

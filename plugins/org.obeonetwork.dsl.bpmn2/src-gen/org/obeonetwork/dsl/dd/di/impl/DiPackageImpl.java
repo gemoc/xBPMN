@@ -147,7 +147,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DiPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -162,25 +162,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 			return (DiPackage) EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DiPackageImpl theDiPackage = (DiPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DiPackageImpl
-				? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new DiPackageImpl());
+		Object registeredDiPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DiPackageImpl theDiPackage = registeredDiPackage instanceof DiPackageImpl ? (DiPackageImpl) registeredDiPackage
+				: new DiPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(Bpmn2Package.eNS_URI) instanceof Bpmn2PackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI)
-						: Bpmn2Package.eINSTANCE);
-		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(BpmnDiPackage.eNS_URI) instanceof BpmnDiPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI)
-						: BpmnDiPackage.eINSTANCE);
-		DcPackageImpl theDcPackage = (DcPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(DcPackage.eNS_URI) instanceof DcPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(DcPackage.eNS_URI)
-						: DcPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI);
+		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (registeredPackage instanceof Bpmn2PackageImpl
+				? registeredPackage
+				: Bpmn2Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
+		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (registeredPackage instanceof BpmnDiPackageImpl
+				? registeredPackage
+				: BpmnDiPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DcPackage.eNS_URI);
+		DcPackageImpl theDcPackage = (DcPackageImpl) (registeredPackage instanceof DcPackageImpl ? registeredPackage
+				: DcPackage.eINSTANCE);
 
 		// Load packages
 		theBpmn2Package.loadPackage();
@@ -200,6 +199,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(theDiPackage, new EValidator.Descriptor() {
+			@Override
 			public EValidator getEValidator() {
 				return DiValidator.INSTANCE;
 			}
@@ -218,6 +218,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDiagramElement() {
 		return diagramElementEClass;
 	}
@@ -227,6 +228,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagramElement_OwningDiagram() {
 		return (EReference) diagramElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -236,6 +238,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagramElement_OwningElement() {
 		return (EReference) diagramElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -245,6 +248,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagramElement_OwnedElement() {
 		return (EReference) diagramElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -254,6 +258,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagramElement_ModelElement() {
 		return (EReference) diagramElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -263,6 +268,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagramElement_Style() {
 		return (EReference) diagramElementEClass.getEStructuralFeatures().get(4);
 	}
@@ -272,6 +278,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
@@ -281,6 +288,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDiagram_Name() {
 		return (EAttribute) diagramEClass.getEStructuralFeatures().get(0);
 	}
@@ -290,6 +298,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDiagram_Documentation() {
 		return (EAttribute) diagramEClass.getEStructuralFeatures().get(1);
 	}
@@ -299,6 +308,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDiagram_Resolution() {
 		return (EAttribute) diagramEClass.getEStructuralFeatures().get(2);
 	}
@@ -308,6 +318,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagram_OwnedStyle() {
 		return (EReference) diagramEClass.getEStructuralFeatures().get(3);
 	}
@@ -317,6 +328,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDiagram_RootElement() {
 		return (EReference) diagramEClass.getEStructuralFeatures().get(4);
 	}
@@ -326,6 +338,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStyle() {
 		return styleEClass;
 	}
@@ -335,6 +348,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNode() {
 		return nodeEClass;
 	}
@@ -344,6 +358,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -353,6 +368,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEdge_Source() {
 		return (EReference) edgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -362,6 +378,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEdge_Target() {
 		return (EReference) edgeEClass.getEStructuralFeatures().get(1);
 	}
@@ -371,6 +388,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEdge_Waypoint() {
 		return (EReference) edgeEClass.getEStructuralFeatures().get(2);
 	}
@@ -380,6 +398,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getShape() {
 		return shapeEClass;
 	}
@@ -389,6 +408,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getShape_Bounds() {
 		return (EReference) shapeEClass.getEStructuralFeatures().get(0);
 	}
@@ -398,6 +418,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLabeledEdge() {
 		return labeledEdgeEClass;
 	}
@@ -407,6 +428,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLabeledEdge_OwnedLabel() {
 		return (EReference) labeledEdgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -416,6 +438,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLabel() {
 		return labelEClass;
 	}
@@ -425,6 +448,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLabel_Bounds() {
 		return (EReference) labelEClass.getEStructuralFeatures().get(0);
 	}
@@ -434,6 +458,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLabeledShape() {
 		return labeledShapeEClass;
 	}
@@ -443,6 +468,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLabeledShape_OwnedLabel() {
 		return (EReference) labeledShapeEClass.getEStructuralFeatures().get(0);
 	}
@@ -452,6 +478,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPlane() {
 		return planeEClass;
 	}
@@ -461,6 +488,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPlane_PlaneElement() {
 		return (EReference) planeEClass.getEStructuralFeatures().get(0);
 	}
@@ -470,6 +498,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiFactory getDiFactory() {
 		return (DiFactory) getEFactoryInstance();
 	}

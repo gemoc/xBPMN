@@ -113,6 +113,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getIncomingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.ACTIVITY__INCOMING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS, true, true);
@@ -124,6 +125,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getOutgoingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.ACTIVITY__OUTGOING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS, true, true);
@@ -134,6 +136,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsForCompensation() {
 		return (Boolean) eDynamicGet(Bpmn2Package.ACTIVITY__IS_FOR_COMPENSATION,
 				Bpmn2Package.Literals.ACTIVITY__IS_FOR_COMPENSATION, true, true);
@@ -144,6 +147,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsForCompensation(boolean newIsForCompensation) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__IS_FOR_COMPENSATION, Bpmn2Package.Literals.ACTIVITY__IS_FOR_COMPENSATION,
 				newIsForCompensation);
@@ -154,6 +158,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LoopCharacteristics getLoopCharacteristics() {
 		return (LoopCharacteristics) eDynamicGet(Bpmn2Package.ACTIVITY__LOOP_CHARACTERISTICS,
 				Bpmn2Package.Literals.ACTIVITY__LOOP_CHARACTERISTICS, true, true);
@@ -176,6 +181,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopCharacteristics(LoopCharacteristics newLoopCharacteristics) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__LOOP_CHARACTERISTICS, Bpmn2Package.Literals.ACTIVITY__LOOP_CHARACTERISTICS,
 				newLoopCharacteristics);
@@ -187,6 +193,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ResourceRole> getResources() {
 		return (EList<ResourceRole>) eDynamicGet(Bpmn2Package.ACTIVITY__RESOURCES,
 				Bpmn2Package.Literals.ACTIVITY__RESOURCES, true, true);
@@ -197,6 +204,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SequenceFlow getDefault() {
 		return (SequenceFlow) eDynamicGet(Bpmn2Package.ACTIVITY__DEFAULT, Bpmn2Package.Literals.ACTIVITY__DEFAULT, true,
 				true);
@@ -217,6 +225,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(SequenceFlow newDefault) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__DEFAULT, Bpmn2Package.Literals.ACTIVITY__DEFAULT, newDefault);
 	}
@@ -227,6 +236,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Property> getProperties() {
 		return (EList<Property>) eDynamicGet(Bpmn2Package.ACTIVITY__PROPERTIES,
 				Bpmn2Package.Literals.ACTIVITY__PROPERTIES, true, true);
@@ -237,6 +247,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputOutputSpecification getIoSpecification() {
 		return (InputOutputSpecification) eDynamicGet(Bpmn2Package.ACTIVITY__IO_SPECIFICATION,
 				Bpmn2Package.Literals.ACTIVITY__IO_SPECIFICATION, true, true);
@@ -258,6 +269,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIoSpecification(InputOutputSpecification newIoSpecification) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__IO_SPECIFICATION, Bpmn2Package.Literals.ACTIVITY__IO_SPECIFICATION,
 				newIoSpecification);
@@ -269,6 +281,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BoundaryEvent> getBoundaryEventRefs() {
 		return (EList<BoundaryEvent>) eDynamicGet(Bpmn2Package.ACTIVITY__BOUNDARY_EVENT_REFS,
 				Bpmn2Package.Literals.ACTIVITY__BOUNDARY_EVENT_REFS, true, true);
@@ -280,6 +293,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInputAssociation> getDataInputAssociations() {
 		return (EList<DataInputAssociation>) eDynamicGet(Bpmn2Package.ACTIVITY__DATA_INPUT_ASSOCIATIONS,
 				Bpmn2Package.Literals.ACTIVITY__DATA_INPUT_ASSOCIATIONS, true, true);
@@ -291,6 +305,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutputAssociation> getDataOutputAssociations() {
 		return (EList<DataOutputAssociation>) eDynamicGet(Bpmn2Package.ACTIVITY__DATA_OUTPUT_ASSOCIATIONS,
 				Bpmn2Package.Literals.ACTIVITY__DATA_OUTPUT_ASSOCIATIONS, true, true);
@@ -301,6 +316,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getStartQuantity() {
 		return (Integer) eDynamicGet(Bpmn2Package.ACTIVITY__START_QUANTITY,
 				Bpmn2Package.Literals.ACTIVITY__START_QUANTITY, true, true);
@@ -311,6 +327,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStartQuantity(int newStartQuantity) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__START_QUANTITY, Bpmn2Package.Literals.ACTIVITY__START_QUANTITY,
 				newStartQuantity);
@@ -321,6 +338,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getCompletionQuantity() {
 		return (Integer) eDynamicGet(Bpmn2Package.ACTIVITY__COMPLETION_QUANTITY,
 				Bpmn2Package.Literals.ACTIVITY__COMPLETION_QUANTITY, true, true);
@@ -331,6 +349,7 @@ public abstract class ActivityImpl extends FlowNodeImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompletionQuantity(int newCompletionQuantity) {
 		eDynamicSet(Bpmn2Package.ACTIVITY__COMPLETION_QUANTITY, Bpmn2Package.Literals.ACTIVITY__COMPLETION_QUANTITY,
 				newCompletionQuantity);

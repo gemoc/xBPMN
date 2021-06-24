@@ -79,6 +79,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutput> getDataOutputRefs() {
 		return (EList<DataOutput>) eDynamicGet(Bpmn2Package.OUTPUT_SET__DATA_OUTPUT_REFS,
 				Bpmn2Package.Literals.OUTPUT_SET__DATA_OUTPUT_REFS, true, true);
@@ -90,6 +91,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutput> getOptionalOutputRefs() {
 		return (EList<DataOutput>) eDynamicGet(Bpmn2Package.OUTPUT_SET__OPTIONAL_OUTPUT_REFS,
 				Bpmn2Package.Literals.OUTPUT_SET__OPTIONAL_OUTPUT_REFS, true, true);
@@ -101,6 +103,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutput> getWhileExecutingOutputRefs() {
 		return (EList<DataOutput>) eDynamicGet(Bpmn2Package.OUTPUT_SET__WHILE_EXECUTING_OUTPUT_REFS,
 				Bpmn2Package.Literals.OUTPUT_SET__WHILE_EXECUTING_OUTPUT_REFS, true, true);
@@ -111,6 +114,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.OUTPUT_SET__NAME, Bpmn2Package.Literals.OUTPUT_SET__NAME, true, true);
 	}
@@ -120,6 +124,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.OUTPUT_SET__NAME, Bpmn2Package.Literals.OUTPUT_SET__NAME, newName);
 	}
@@ -130,6 +135,7 @@ public class OutputSetImpl extends BaseElementImpl implements OutputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputSet> getInputSetRefs() {
 		return (EList<InputSet>) eDynamicGet(Bpmn2Package.OUTPUT_SET__INPUT_SET_REFS,
 				Bpmn2Package.Literals.OUTPUT_SET__INPUT_SET_REFS, true, true);

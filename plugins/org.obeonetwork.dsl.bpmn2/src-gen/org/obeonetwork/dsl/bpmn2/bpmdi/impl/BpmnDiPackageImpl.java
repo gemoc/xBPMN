@@ -128,7 +128,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link BpmnDiPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -143,25 +143,24 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 			return (BpmnDiPackage) EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
 
 		// Obtain or create and register package
-		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof BpmnDiPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new BpmnDiPackageImpl());
+		Object registeredBpmnDiPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		BpmnDiPackageImpl theBpmnDiPackage = registeredBpmnDiPackage instanceof BpmnDiPackageImpl
+				? (BpmnDiPackageImpl) registeredBpmnDiPackage
+				: new BpmnDiPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(Bpmn2Package.eNS_URI) instanceof Bpmn2PackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI)
-						: Bpmn2Package.eINSTANCE);
-		DiPackageImpl theDiPackage = (DiPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(DiPackage.eNS_URI) instanceof DiPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI)
-						: DiPackage.eINSTANCE);
-		DcPackageImpl theDcPackage = (DcPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(DcPackage.eNS_URI) instanceof DcPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(DcPackage.eNS_URI)
-						: DcPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI);
+		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (registeredPackage instanceof Bpmn2PackageImpl
+				? registeredPackage
+				: Bpmn2Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI);
+		DiPackageImpl theDiPackage = (DiPackageImpl) (registeredPackage instanceof DiPackageImpl ? registeredPackage
+				: DiPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DcPackage.eNS_URI);
+		DcPackageImpl theDcPackage = (DcPackageImpl) (registeredPackage instanceof DcPackageImpl ? registeredPackage
+				: DcPackage.eINSTANCE);
 
 		// Load packages
 		theBpmn2Package.loadPackage();
@@ -192,6 +191,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNPlane() {
 		return bpmnPlaneEClass;
 	}
@@ -201,6 +201,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNPlane_BpmnElement() {
 		return (EReference) bpmnPlaneEClass.getEStructuralFeatures().get(0);
 	}
@@ -210,6 +211,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNShape() {
 		return bpmnShapeEClass;
 	}
@@ -219,6 +221,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNShape_BpmnElement() {
 		return (EReference) bpmnShapeEClass.getEStructuralFeatures().get(0);
 	}
@@ -228,6 +231,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNShape_IsHorizontal() {
 		return (EAttribute) bpmnShapeEClass.getEStructuralFeatures().get(1);
 	}
@@ -237,6 +241,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNShape_IsExpanded() {
 		return (EAttribute) bpmnShapeEClass.getEStructuralFeatures().get(2);
 	}
@@ -246,6 +251,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNShape_IsMarkerVisible() {
 		return (EAttribute) bpmnShapeEClass.getEStructuralFeatures().get(3);
 	}
@@ -255,6 +261,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNShape_Label() {
 		return (EReference) bpmnShapeEClass.getEStructuralFeatures().get(4);
 	}
@@ -264,6 +271,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNShape_IsMessageVisible() {
 		return (EAttribute) bpmnShapeEClass.getEStructuralFeatures().get(5);
 	}
@@ -273,6 +281,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNShape_ParticipantBandKind() {
 		return (EAttribute) bpmnShapeEClass.getEStructuralFeatures().get(6);
 	}
@@ -282,6 +291,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNShape_ChoreographyActivityShape() {
 		return (EReference) bpmnShapeEClass.getEStructuralFeatures().get(7);
 	}
@@ -291,6 +301,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNLabel() {
 		return bpmnLabelEClass;
 	}
@@ -300,6 +311,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNLabel_LabelStyle() {
 		return (EReference) bpmnLabelEClass.getEStructuralFeatures().get(0);
 	}
@@ -309,6 +321,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNLabelStyle() {
 		return bpmnLabelStyleEClass;
 	}
@@ -318,6 +331,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNLabelStyle_Font() {
 		return (EReference) bpmnLabelStyleEClass.getEStructuralFeatures().get(0);
 	}
@@ -327,6 +341,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNEdge() {
 		return bpmnEdgeEClass;
 	}
@@ -336,6 +351,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNEdge_Label() {
 		return (EReference) bpmnEdgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -345,6 +361,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNEdge_BpmnElement() {
 		return (EReference) bpmnEdgeEClass.getEStructuralFeatures().get(1);
 	}
@@ -354,6 +371,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNEdge_SourceElement() {
 		return (EReference) bpmnEdgeEClass.getEStructuralFeatures().get(2);
 	}
@@ -363,6 +381,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNEdge_TargetElement() {
 		return (EReference) bpmnEdgeEClass.getEStructuralFeatures().get(3);
 	}
@@ -372,6 +391,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBPMNEdge_MessageVisibleKind() {
 		return (EAttribute) bpmnEdgeEClass.getEStructuralFeatures().get(4);
 	}
@@ -381,6 +401,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBPMNDiagram() {
 		return bpmnDiagramEClass;
 	}
@@ -390,6 +411,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNDiagram_Plane() {
 		return (EReference) bpmnDiagramEClass.getEStructuralFeatures().get(0);
 	}
@@ -399,6 +421,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBPMNDiagram_LabelStyle() {
 		return (EReference) bpmnDiagramEClass.getEStructuralFeatures().get(1);
 	}
@@ -408,6 +431,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getParticipantBandKind() {
 		return participantBandKindEEnum;
 	}
@@ -417,6 +441,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMessageVisibleKind() {
 		return messageVisibleKindEEnum;
 	}
@@ -426,6 +451,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BpmnDiFactory getBpmnDiFactory() {
 		return (BpmnDiFactory) getEFactoryInstance();
 	}

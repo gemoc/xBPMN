@@ -32,10 +32,9 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Signal;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.Signal} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.Signal} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class SignalItemProvider extends RootElementItemProvider implements IEditingDomainItemProvider,
@@ -83,9 +82,9 @@ public class SignalItemProvider extends RootElementItemProvider implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -98,8 +97,8 @@ public class SignalItemProvider extends RootElementItemProvider implements IEdit
 	}
 
 	/**
-	 * This returns Signal.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Signal.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -113,7 +112,6 @@ public class SignalItemProvider extends RootElementItemProvider implements IEdit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,10 +132,9 @@ public class SignalItemProvider extends RootElementItemProvider implements IEdit
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,10 +150,10 @@ public class SignalItemProvider extends RootElementItemProvider implements IEdit
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

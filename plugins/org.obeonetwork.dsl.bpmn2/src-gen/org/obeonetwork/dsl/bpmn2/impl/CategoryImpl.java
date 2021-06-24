@@ -75,6 +75,7 @@ public class CategoryImpl extends RootElementImpl implements Category {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CategoryValue> getCategoryValue() {
 		return (EList<CategoryValue>) eDynamicGet(Bpmn2Package.CATEGORY__CATEGORY_VALUE,
 				Bpmn2Package.Literals.CATEGORY__CATEGORY_VALUE, true, true);
@@ -85,6 +86,7 @@ public class CategoryImpl extends RootElementImpl implements Category {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CATEGORY__NAME, Bpmn2Package.Literals.CATEGORY__NAME, true, true);
 	}
@@ -94,6 +96,7 @@ public class CategoryImpl extends RootElementImpl implements Category {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CATEGORY__NAME, Bpmn2Package.Literals.CATEGORY__NAME, newName);
 	}

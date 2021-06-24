@@ -71,6 +71,7 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DiagramElement> getPlaneElement() {
 		return (EList<DiagramElement>) eDynamicGet(DiPackage.PLANE__PLANE_ELEMENT,
 				DiPackage.Literals.PLANE__PLANE_ELEMENT, true, true);
@@ -81,6 +82,7 @@ public abstract class PlaneImpl extends NodeImpl implements Plane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean plane_element_type(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant

@@ -107,6 +107,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getX() {
 		return (Float) eDynamicGet(DcPackage.BOUNDS__X, DcPackage.Literals.BOUNDS__X, true, true);
 	}
@@ -116,6 +117,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setX(float newX) {
 		eDynamicSet(DcPackage.BOUNDS__X, DcPackage.Literals.BOUNDS__X, newX);
 	}
@@ -125,6 +127,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getY() {
 		return (Float) eDynamicGet(DcPackage.BOUNDS__Y, DcPackage.Literals.BOUNDS__Y, true, true);
 	}
@@ -134,6 +137,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setY(float newY) {
 		eDynamicSet(DcPackage.BOUNDS__Y, DcPackage.Literals.BOUNDS__Y, newY);
 	}
@@ -143,6 +147,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getWidth() {
 		return (Float) eDynamicGet(DcPackage.BOUNDS__WIDTH, DcPackage.Literals.BOUNDS__WIDTH, true, true);
 	}
@@ -152,6 +157,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWidth(float newWidth) {
 		eDynamicSet(DcPackage.BOUNDS__WIDTH, DcPackage.Literals.BOUNDS__WIDTH, newWidth);
 	}
@@ -161,6 +167,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getHeight() {
 		return (Float) eDynamicGet(DcPackage.BOUNDS__HEIGHT, DcPackage.Literals.BOUNDS__HEIGHT, true, true);
 	}
@@ -170,6 +177,7 @@ public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHeight(float newHeight) {
 		eDynamicSet(DcPackage.BOUNDS__HEIGHT, DcPackage.Literals.BOUNDS__HEIGHT, newHeight);
 	}

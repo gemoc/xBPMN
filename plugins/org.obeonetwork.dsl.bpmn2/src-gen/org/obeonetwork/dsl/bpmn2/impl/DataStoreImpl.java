@@ -86,6 +86,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.DATA_STORE__NAME, Bpmn2Package.Literals.DATA_STORE__NAME, true, true);
 	}
@@ -95,6 +96,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.DATA_STORE__NAME, Bpmn2Package.Literals.DATA_STORE__NAME, newName);
 	}
@@ -104,6 +106,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getCapacity() {
 		return (Integer) eDynamicGet(Bpmn2Package.DATA_STORE__CAPACITY, Bpmn2Package.Literals.DATA_STORE__CAPACITY,
 				true, true);
@@ -114,6 +117,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCapacity(int newCapacity) {
 		eDynamicSet(Bpmn2Package.DATA_STORE__CAPACITY, Bpmn2Package.Literals.DATA_STORE__CAPACITY, newCapacity);
 	}
@@ -123,6 +127,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsUnlimited() {
 		return (Boolean) eDynamicGet(Bpmn2Package.DATA_STORE__IS_UNLIMITED,
 				Bpmn2Package.Literals.DATA_STORE__IS_UNLIMITED, true, true);
@@ -133,6 +138,7 @@ public class DataStoreImpl extends ItemAwareElementImpl implements DataStore {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsUnlimited(boolean newIsUnlimited) {
 		eDynamicSet(Bpmn2Package.DATA_STORE__IS_UNLIMITED, Bpmn2Package.Literals.DATA_STORE__IS_UNLIMITED,
 				newIsUnlimited);

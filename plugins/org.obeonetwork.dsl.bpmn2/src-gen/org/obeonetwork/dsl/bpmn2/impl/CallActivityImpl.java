@@ -57,6 +57,7 @@ public class CallActivityImpl extends ActivityImpl implements CallActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CallableElement getCalledElementRef() {
 		return (CallableElement) eDynamicGet(Bpmn2Package.CALL_ACTIVITY__CALLED_ELEMENT_REF,
 				Bpmn2Package.Literals.CALL_ACTIVITY__CALLED_ELEMENT_REF, true, true);
@@ -77,6 +78,7 @@ public class CallActivityImpl extends ActivityImpl implements CallActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCalledElementRef(CallableElement newCalledElementRef) {
 		eDynamicSet(Bpmn2Package.CALL_ACTIVITY__CALLED_ELEMENT_REF,
 				Bpmn2Package.Literals.CALL_ACTIVITY__CALLED_ELEMENT_REF, newCalledElementRef);

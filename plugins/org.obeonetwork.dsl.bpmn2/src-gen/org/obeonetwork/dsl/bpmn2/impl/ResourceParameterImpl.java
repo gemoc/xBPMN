@@ -78,6 +78,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.RESOURCE_PARAMETER__NAME,
 				Bpmn2Package.Literals.RESOURCE_PARAMETER__NAME, true, true);
@@ -88,6 +89,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.RESOURCE_PARAMETER__NAME, Bpmn2Package.Literals.RESOURCE_PARAMETER__NAME, newName);
 	}
@@ -97,6 +99,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsRequired() {
 		return (Boolean) eDynamicGet(Bpmn2Package.RESOURCE_PARAMETER__IS_REQUIRED,
 				Bpmn2Package.Literals.RESOURCE_PARAMETER__IS_REQUIRED, true, true);
@@ -107,6 +110,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsRequired(boolean newIsRequired) {
 		eDynamicSet(Bpmn2Package.RESOURCE_PARAMETER__IS_REQUIRED, Bpmn2Package.Literals.RESOURCE_PARAMETER__IS_REQUIRED,
 				newIsRequired);
@@ -117,6 +121,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getType() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.RESOURCE_PARAMETER__TYPE,
 				Bpmn2Package.Literals.RESOURCE_PARAMETER__TYPE, true, true);
@@ -137,6 +142,7 @@ public class ResourceParameterImpl extends BaseElementImpl implements ResourcePa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ItemDefinition newType) {
 		eDynamicSet(Bpmn2Package.RESOURCE_PARAMETER__TYPE, Bpmn2Package.Literals.RESOURCE_PARAMETER__TYPE, newType);
 	}

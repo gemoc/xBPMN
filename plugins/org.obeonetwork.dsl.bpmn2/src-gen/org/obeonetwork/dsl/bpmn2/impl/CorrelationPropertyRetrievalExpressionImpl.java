@@ -62,6 +62,7 @@ public class CorrelationPropertyRetrievalExpressionImpl extends BaseElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FormalExpression getMessagePath() {
 		return (FormalExpression) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_PATH,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_PATH, true, true);
@@ -83,6 +84,7 @@ public class CorrelationPropertyRetrievalExpressionImpl extends BaseElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessagePath(FormalExpression newMessagePath) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_PATH,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_PATH, newMessagePath);
@@ -93,6 +95,7 @@ public class CorrelationPropertyRetrievalExpressionImpl extends BaseElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_REF,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_REF, true, true);
@@ -113,6 +116,7 @@ public class CorrelationPropertyRetrievalExpressionImpl extends BaseElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageRef(Message newMessageRef) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_REF,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION__MESSAGE_REF, newMessageRef);

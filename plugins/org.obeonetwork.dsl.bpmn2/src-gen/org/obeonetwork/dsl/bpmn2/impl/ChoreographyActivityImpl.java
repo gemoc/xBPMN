@@ -79,6 +79,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Participant> getParticipantRefs() {
 		return (EList<Participant>) eDynamicGet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__PARTICIPANT_REFS,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__PARTICIPANT_REFS, true, true);
@@ -89,6 +90,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Participant getInitiatingParticipantRef() {
 		return (Participant) eDynamicGet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__INITIATING_PARTICIPANT_REF,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__INITIATING_PARTICIPANT_REF, true, true);
@@ -109,6 +111,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInitiatingParticipantRef(Participant newInitiatingParticipantRef) {
 		eDynamicSet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__INITIATING_PARTICIPANT_REF,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__INITIATING_PARTICIPANT_REF, newInitiatingParticipantRef);
@@ -120,6 +123,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationKey> getCorrelationKeys() {
 		return (EList<CorrelationKey>) eDynamicGet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__CORRELATION_KEYS,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__CORRELATION_KEYS, true, true);
@@ -130,6 +134,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChoreographyLoopType getLoopType() {
 		return (ChoreographyLoopType) eDynamicGet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__LOOP_TYPE,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__LOOP_TYPE, true, true);
@@ -140,6 +145,7 @@ public abstract class ChoreographyActivityImpl extends FlowNodeImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopType(ChoreographyLoopType newLoopType) {
 		eDynamicSet(Bpmn2Package.CHOREOGRAPHY_ACTIVITY__LOOP_TYPE,
 				Bpmn2Package.Literals.CHOREOGRAPHY_ACTIVITY__LOOP_TYPE, newLoopType);

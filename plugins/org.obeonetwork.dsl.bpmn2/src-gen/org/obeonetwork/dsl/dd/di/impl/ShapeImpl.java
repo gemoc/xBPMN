@@ -59,6 +59,7 @@ public abstract class ShapeImpl extends NodeImpl implements Shape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Bounds getBounds() {
 		return (Bounds) eDynamicGet(DiPackage.SHAPE__BOUNDS, DiPackage.Literals.SHAPE__BOUNDS, true, true);
 	}
@@ -78,6 +79,7 @@ public abstract class ShapeImpl extends NodeImpl implements Shape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBounds(Bounds newBounds) {
 		eDynamicSet(DiPackage.SHAPE__BOUNDS, DiPackage.Literals.SHAPE__BOUNDS, newBounds);
 	}

@@ -115,6 +115,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getBpmnElement() {
 		return (BaseElement) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__BPMN_ELEMENT,
 				BpmnDiPackage.Literals.BPMN_SHAPE__BPMN_ELEMENT, true, true);
@@ -135,6 +136,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBpmnElement(BaseElement newBpmnElement) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__BPMN_ELEMENT, BpmnDiPackage.Literals.BPMN_SHAPE__BPMN_ELEMENT,
 				newBpmnElement);
@@ -145,6 +147,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsHorizontal() {
 		return (Boolean) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__IS_HORIZONTAL,
 				BpmnDiPackage.Literals.BPMN_SHAPE__IS_HORIZONTAL, true, true);
@@ -155,6 +158,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsHorizontal(boolean newIsHorizontal) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__IS_HORIZONTAL, BpmnDiPackage.Literals.BPMN_SHAPE__IS_HORIZONTAL,
 				newIsHorizontal);
@@ -165,6 +169,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsExpanded() {
 		return (Boolean) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__IS_EXPANDED,
 				BpmnDiPackage.Literals.BPMN_SHAPE__IS_EXPANDED, true, true);
@@ -175,6 +180,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsExpanded(boolean newIsExpanded) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__IS_EXPANDED, BpmnDiPackage.Literals.BPMN_SHAPE__IS_EXPANDED,
 				newIsExpanded);
@@ -185,6 +191,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsMarkerVisible() {
 		return (Boolean) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__IS_MARKER_VISIBLE,
 				BpmnDiPackage.Literals.BPMN_SHAPE__IS_MARKER_VISIBLE, true, true);
@@ -195,6 +202,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsMarkerVisible(boolean newIsMarkerVisible) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__IS_MARKER_VISIBLE, BpmnDiPackage.Literals.BPMN_SHAPE__IS_MARKER_VISIBLE,
 				newIsMarkerVisible);
@@ -205,6 +213,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPMNLabel getLabel() {
 		return (BPMNLabel) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__LABEL, BpmnDiPackage.Literals.BPMN_SHAPE__LABEL, true,
 				true);
@@ -225,6 +234,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLabel(BPMNLabel newLabel) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__LABEL, BpmnDiPackage.Literals.BPMN_SHAPE__LABEL, newLabel);
 	}
@@ -234,6 +244,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsMessageVisible() {
 		return (Boolean) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__IS_MESSAGE_VISIBLE,
 				BpmnDiPackage.Literals.BPMN_SHAPE__IS_MESSAGE_VISIBLE, true, true);
@@ -244,6 +255,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsMessageVisible(boolean newIsMessageVisible) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__IS_MESSAGE_VISIBLE, BpmnDiPackage.Literals.BPMN_SHAPE__IS_MESSAGE_VISIBLE,
 				newIsMessageVisible);
@@ -254,6 +266,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParticipantBandKind getParticipantBandKind() {
 		return (ParticipantBandKind) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__PARTICIPANT_BAND_KIND,
 				BpmnDiPackage.Literals.BPMN_SHAPE__PARTICIPANT_BAND_KIND, true, true);
@@ -264,6 +277,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParticipantBandKind(ParticipantBandKind newParticipantBandKind) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__PARTICIPANT_BAND_KIND,
 				BpmnDiPackage.Literals.BPMN_SHAPE__PARTICIPANT_BAND_KIND, newParticipantBandKind);
@@ -274,6 +288,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPMNShape getChoreographyActivityShape() {
 		return (BPMNShape) eDynamicGet(BpmnDiPackage.BPMN_SHAPE__CHOREOGRAPHY_ACTIVITY_SHAPE,
 				BpmnDiPackage.Literals.BPMN_SHAPE__CHOREOGRAPHY_ACTIVITY_SHAPE, true, true);
@@ -294,6 +309,7 @@ public class BPMNShapeImpl extends LabeledShapeImpl implements BPMNShape {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setChoreographyActivityShape(BPMNShape newChoreographyActivityShape) {
 		eDynamicSet(BpmnDiPackage.BPMN_SHAPE__CHOREOGRAPHY_ACTIVITY_SHAPE,
 				BpmnDiPackage.Literals.BPMN_SHAPE__CHOREOGRAPHY_ACTIVITY_SHAPE, newChoreographyActivityShape);

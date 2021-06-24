@@ -60,6 +60,7 @@ public class AssignmentImpl extends BaseElementImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getFrom() {
 		return (Expression) eDynamicGet(Bpmn2Package.ASSIGNMENT__FROM, Bpmn2Package.Literals.ASSIGNMENT__FROM, true,
 				true);
@@ -80,6 +81,7 @@ public class AssignmentImpl extends BaseElementImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrom(Expression newFrom) {
 		eDynamicSet(Bpmn2Package.ASSIGNMENT__FROM, Bpmn2Package.Literals.ASSIGNMENT__FROM, newFrom);
 	}
@@ -89,6 +91,7 @@ public class AssignmentImpl extends BaseElementImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getTo() {
 		return (Expression) eDynamicGet(Bpmn2Package.ASSIGNMENT__TO, Bpmn2Package.Literals.ASSIGNMENT__TO, true, true);
 	}
@@ -108,6 +111,7 @@ public class AssignmentImpl extends BaseElementImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(Expression newTo) {
 		eDynamicSet(Bpmn2Package.ASSIGNMENT__TO, Bpmn2Package.Literals.ASSIGNMENT__TO, newTo);
 	}

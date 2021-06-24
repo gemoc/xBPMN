@@ -76,6 +76,7 @@ public class ScriptTaskImpl extends TaskImpl implements ScriptTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getScriptFormat() {
 		return (String) eDynamicGet(Bpmn2Package.SCRIPT_TASK__SCRIPT_FORMAT,
 				Bpmn2Package.Literals.SCRIPT_TASK__SCRIPT_FORMAT, true, true);
@@ -86,6 +87,7 @@ public class ScriptTaskImpl extends TaskImpl implements ScriptTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScriptFormat(String newScriptFormat) {
 		eDynamicSet(Bpmn2Package.SCRIPT_TASK__SCRIPT_FORMAT, Bpmn2Package.Literals.SCRIPT_TASK__SCRIPT_FORMAT,
 				newScriptFormat);
@@ -96,6 +98,7 @@ public class ScriptTaskImpl extends TaskImpl implements ScriptTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getScript() {
 		return (String) eDynamicGet(Bpmn2Package.SCRIPT_TASK__SCRIPT, Bpmn2Package.Literals.SCRIPT_TASK__SCRIPT, true,
 				true);
@@ -106,6 +109,7 @@ public class ScriptTaskImpl extends TaskImpl implements ScriptTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScript(String newScript) {
 		eDynamicSet(Bpmn2Package.SCRIPT_TASK__SCRIPT, Bpmn2Package.Literals.SCRIPT_TASK__SCRIPT, newScript);
 	}

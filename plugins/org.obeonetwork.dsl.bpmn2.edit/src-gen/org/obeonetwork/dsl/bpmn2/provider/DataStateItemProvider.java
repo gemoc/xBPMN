@@ -32,10 +32,9 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.DataState;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.DataState} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.DataState} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class DataStateItemProvider extends BaseElementItemProvider implements IEditingDomainItemProvider,
@@ -67,9 +66,9 @@ public class DataStateItemProvider extends BaseElementItemProvider implements IE
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -83,8 +82,8 @@ public class DataStateItemProvider extends BaseElementItemProvider implements IE
 	}
 
 	/**
-	 * This returns DataState.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns DataState.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -98,7 +97,6 @@ public class DataStateItemProvider extends BaseElementItemProvider implements IE
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,10 +117,9 @@ public class DataStateItemProvider extends BaseElementItemProvider implements IE
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,10 +135,10 @@ public class DataStateItemProvider extends BaseElementItemProvider implements IE
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

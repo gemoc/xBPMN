@@ -58,6 +58,7 @@ public class BPMNPlaneImpl extends PlaneImpl implements BPMNPlane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getBpmnElement() {
 		return (BaseElement) eDynamicGet(BpmnDiPackage.BPMN_PLANE__BPMN_ELEMENT,
 				BpmnDiPackage.Literals.BPMN_PLANE__BPMN_ELEMENT, true, true);
@@ -78,6 +79,7 @@ public class BPMNPlaneImpl extends PlaneImpl implements BPMNPlane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBpmnElement(BaseElement newBpmnElement) {
 		eDynamicSet(BpmnDiPackage.BPMN_PLANE__BPMN_ELEMENT, BpmnDiPackage.Literals.BPMN_PLANE__BPMN_ELEMENT,
 				newBpmnElement);

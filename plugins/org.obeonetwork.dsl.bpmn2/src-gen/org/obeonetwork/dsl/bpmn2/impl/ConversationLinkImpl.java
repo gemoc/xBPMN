@@ -71,6 +71,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InteractionNode getSourceRef() {
 		return (InteractionNode) eDynamicGet(Bpmn2Package.CONVERSATION_LINK__SOURCE_REF,
 				Bpmn2Package.Literals.CONVERSATION_LINK__SOURCE_REF, true, true);
@@ -101,6 +102,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceRef(InteractionNode newSourceRef) {
 		eDynamicSet(Bpmn2Package.CONVERSATION_LINK__SOURCE_REF, Bpmn2Package.Literals.CONVERSATION_LINK__SOURCE_REF,
 				newSourceRef);
@@ -111,6 +113,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CONVERSATION_LINK__NAME, Bpmn2Package.Literals.CONVERSATION_LINK__NAME,
 				true, true);
@@ -121,6 +124,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CONVERSATION_LINK__NAME, Bpmn2Package.Literals.CONVERSATION_LINK__NAME, newName);
 	}
@@ -130,6 +134,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InteractionNode getTargetRef() {
 		return (InteractionNode) eDynamicGet(Bpmn2Package.CONVERSATION_LINK__TARGET_REF,
 				Bpmn2Package.Literals.CONVERSATION_LINK__TARGET_REF, true, true);
@@ -160,6 +165,7 @@ public class ConversationLinkImpl extends BaseElementImpl implements Conversatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetRef(InteractionNode newTargetRef) {
 		eDynamicSet(Bpmn2Package.CONVERSATION_LINK__TARGET_REF, Bpmn2Package.Literals.CONVERSATION_LINK__TARGET_REF,
 				newTargetRef);

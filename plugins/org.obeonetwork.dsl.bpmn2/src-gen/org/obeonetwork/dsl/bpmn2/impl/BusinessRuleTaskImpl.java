@@ -66,6 +66,7 @@ public class BusinessRuleTaskImpl extends TaskImpl implements BusinessRuleTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.BUSINESS_RULE_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.BUSINESS_RULE_TASK__IMPLEMENTATION, true, true);
@@ -76,6 +77,7 @@ public class BusinessRuleTaskImpl extends TaskImpl implements BusinessRuleTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.BUSINESS_RULE_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.BUSINESS_RULE_TASK__IMPLEMENTATION, newImplementation);

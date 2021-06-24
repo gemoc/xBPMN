@@ -80,6 +80,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.RECEIVE_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.RECEIVE_TASK__IMPLEMENTATION, true, true);
@@ -90,6 +91,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.RECEIVE_TASK__IMPLEMENTATION, Bpmn2Package.Literals.RECEIVE_TASK__IMPLEMENTATION,
 				newImplementation);
@@ -100,6 +102,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isInstantiate() {
 		return (Boolean) eDynamicGet(Bpmn2Package.RECEIVE_TASK__INSTANTIATE,
 				Bpmn2Package.Literals.RECEIVE_TASK__INSTANTIATE, true, true);
@@ -110,6 +113,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInstantiate(boolean newInstantiate) {
 		eDynamicSet(Bpmn2Package.RECEIVE_TASK__INSTANTIATE, Bpmn2Package.Literals.RECEIVE_TASK__INSTANTIATE,
 				newInstantiate);
@@ -120,6 +124,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Operation getOperationRef() {
 		return (Operation) eDynamicGet(Bpmn2Package.RECEIVE_TASK__OPERATION_REF,
 				Bpmn2Package.Literals.RECEIVE_TASK__OPERATION_REF, true, true);
@@ -140,6 +145,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperationRef(Operation newOperationRef) {
 		eDynamicSet(Bpmn2Package.RECEIVE_TASK__OPERATION_REF, Bpmn2Package.Literals.RECEIVE_TASK__OPERATION_REF,
 				newOperationRef);
@@ -150,6 +156,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.RECEIVE_TASK__MESSAGE_REF,
 				Bpmn2Package.Literals.RECEIVE_TASK__MESSAGE_REF, true, true);
@@ -170,6 +177,7 @@ public class ReceiveTaskImpl extends TaskImpl implements ReceiveTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageRef(Message newMessageRef) {
 		eDynamicSet(Bpmn2Package.RECEIVE_TASK__MESSAGE_REF, Bpmn2Package.Literals.RECEIVE_TASK__MESSAGE_REF,
 				newMessageRef);

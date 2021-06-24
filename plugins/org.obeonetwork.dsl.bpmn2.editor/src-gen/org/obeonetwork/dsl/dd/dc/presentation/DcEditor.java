@@ -73,6 +73,7 @@ import org.eclipse.swt.events.ControlEvent;
 
 import org.eclipse.swt.graphics.Point;
 
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
@@ -279,6 +280,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * @generated
 	 */
 	protected IPartListener partListener = new IPartListener() {
+		@Override
 		public void partActivated(IWorkbenchPart p) {
 			if (p instanceof ContentOutline) {
 				if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
@@ -296,18 +298,22 @@ public class DcEditor extends MultiPageEditorPart
 			}
 		}
 
+		@Override
 		public void partBroughtToTop(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partClosed(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partDeactivated(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partOpened(IWorkbenchPart p) {
 			// Ignore.
 		}
@@ -389,6 +395,7 @@ public class DcEditor extends MultiPageEditorPart
 			if (updateProblemIndication && !dispatching) {
 				dispatching = true;
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+					@Override
 					public void run() {
 						dispatching = false;
 						updateProblemIndication();
@@ -417,6 +424,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * @generated
 	 */
 	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 			IResourceDelta delta = event.getDelta();
 			try {
@@ -425,6 +433,7 @@ public class DcEditor extends MultiPageEditorPart
 					protected Collection<Resource> changedResources = new ArrayList<Resource>();
 					protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
+					@Override
 					public boolean visit(IResourceDelta delta) {
 						if (delta.getResource().getType() == IResource.FILE) {
 							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
@@ -459,6 +468,7 @@ public class DcEditor extends MultiPageEditorPart
 
 				if (!visitor.getRemovedResources().isEmpty()) {
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
 							removedResources.addAll(visitor.getRemovedResources());
 							if (!isDirty()) {
@@ -470,6 +480,7 @@ public class DcEditor extends MultiPageEditorPart
 
 				if (!visitor.getChangedResources().isEmpty()) {
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
 							changedResources.addAll(visitor.getChangedResources());
 							if (getSite().getPage().getActiveEditor() == DcEditor.this) {
@@ -525,8 +536,9 @@ public class DcEditor extends MultiPageEditorPart
 	 */
 	protected void handleChangedResources() {
 		if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict())) {
+			ResourceSet resourceSet = editingDomain.getResourceSet();
 			if (isDirty()) {
-				changedResources.addAll(editingDomain.getResourceSet().getResources());
+				changedResources.addAll(resourceSet.getResources());
 			}
 			editingDomain.getCommandStack().flush();
 
@@ -535,7 +547,7 @@ public class DcEditor extends MultiPageEditorPart
 				if (resource.isLoaded()) {
 					resource.unload();
 					try {
-						resource.load(Collections.EMPTY_MAP);
+						resource.load(resourceSet.getLoadOptions());
 					} catch (IOException exception) {
 						if (!resourceToDiagnosticMap.containsKey(resource)) {
 							resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
@@ -649,8 +661,10 @@ public class DcEditor extends MultiPageEditorPart
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
 		//
 		commandStack.addCommandStackListener(new CommandStackListener() {
+			@Override
 			public void commandStackChanged(final EventObject event) {
 				getContainer().getDisplay().asyncExec(new Runnable() {
+					@Override
 					public void run() {
 						firePropertyChange(IEditorPart.PROP_DIRTY);
 
@@ -662,7 +676,7 @@ public class DcEditor extends MultiPageEditorPart
 						}
 						for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
 							PropertySheetPage propertySheetPage = i.next();
-							if (propertySheetPage.getControl().isDisposed()) {
+							if (propertySheetPage.getControl() == null || propertySheetPage.getControl().isDisposed()) {
 								i.remove();
 							} else {
 								propertySheetPage.refresh();
@@ -701,6 +715,7 @@ public class DcEditor extends MultiPageEditorPart
 		//
 		if (theSelection != null && !theSelection.isEmpty()) {
 			Runnable runnable = new Runnable() {
+				@Override
 				public void run() {
 					// Try to select the items in the current content viewer of the editor.
 					//
@@ -721,6 +736,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EditingDomain getEditingDomain() {
 		return editingDomain;
 	}
@@ -801,6 +817,7 @@ public class DcEditor extends MultiPageEditorPart
 				selectionChangedListener = new ISelectionChangedListener() {
 					// This just notifies those things that are affected by the section.
 					//
+					@Override
 					public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
 						setSelection(selectionChangedEvent.getSelection());
 					}
@@ -835,6 +852,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Viewer getViewer() {
 		return currentViewer;
 	}
@@ -944,8 +962,11 @@ public class DcEditor extends MultiPageEditorPart
 			setPageText(pageIndex, getString("_UI_SelectionPage_label"));
 
 			getSite().getShell().getDisplay().asyncExec(new Runnable() {
+				@Override
 				public void run() {
-					setActivePage(0);
+					if (!getContainer().isDisposed()) {
+						setActivePage(0);
+					}
 				}
 			});
 		}
@@ -967,6 +988,7 @@ public class DcEditor extends MultiPageEditorPart
 		});
 
 		getSite().getShell().getDisplay().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				updateProblemIndication();
 			}
@@ -984,9 +1006,9 @@ public class DcEditor extends MultiPageEditorPart
 		if (getPageCount() <= 1) {
 			setPageText(0, "");
 			if (getContainer() instanceof CTabFolder) {
-				((CTabFolder) getContainer()).setTabHeight(1);
 				Point point = getContainer().getSize();
-				getContainer().setSize(point.x, point.y + 6);
+				Rectangle clientArea = getContainer().getClientArea();
+				getContainer().setSize(point.x, 2 * point.y - clientArea.height - clientArea.y);
 			}
 		}
 	}
@@ -1002,9 +1024,9 @@ public class DcEditor extends MultiPageEditorPart
 		if (getPageCount() > 1) {
 			setPageText(0, getString("_UI_SelectionPage_label"));
 			if (getContainer() instanceof CTabFolder) {
-				((CTabFolder) getContainer()).setTabHeight(SWT.DEFAULT);
 				Point point = getContainer().getSize();
-				getContainer().setSize(point.x, point.y - 6);
+				Rectangle clientArea = getContainer().getClientArea();
+				getContainer().setSize(point.x, clientArea.height + clientArea.y);
 			}
 		}
 	}
@@ -1032,13 +1054,13 @@ public class DcEditor extends MultiPageEditorPart
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public Object getAdapter(Class key) {
+	public <T> T getAdapter(Class<T> key) {
 		if (key.equals(IContentOutlinePage.class)) {
-			return showOutlineView() ? getContentOutlinePage() : null;
+			return showOutlineView() ? key.cast(getContentOutlinePage()) : null;
 		} else if (key.equals(IPropertySheetPage.class)) {
-			return getPropertySheetPage();
+			return key.cast(getPropertySheetPage());
 		} else if (key.equals(IGotoMarker.class)) {
-			return this;
+			return key.cast(this);
 		} else {
 			return super.getAdapter(key);
 		}
@@ -1101,6 +1123,7 @@ public class DcEditor extends MultiPageEditorPart
 			contentOutlinePage.addSelectionChangedListener(new ISelectionChangedListener() {
 				// This ensures that we handle selections correctly.
 				//
+				@Override
 				public void selectionChanged(SelectionChangedEvent event) {
 					handleContentOutlineSelection(event.getSelection());
 				}
@@ -1307,6 +1330,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void gotoMarker(IMarker marker) {
 		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain, marker);
 		if (!targetObjects.isEmpty()) {
@@ -1347,6 +1371,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.add(listener);
 	}
@@ -1357,6 +1382,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.remove(listener);
 	}
@@ -1367,6 +1393,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISelection getSelection() {
 		return editorSelection;
 	}
@@ -1378,6 +1405,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSelection(ISelection selection) {
 		editorSelection = selection;
 
@@ -1448,6 +1476,7 @@ public class DcEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener) getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 	}

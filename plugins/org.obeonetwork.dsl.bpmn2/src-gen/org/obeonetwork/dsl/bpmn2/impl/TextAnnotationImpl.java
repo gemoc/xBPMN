@@ -76,6 +76,7 @@ public class TextAnnotationImpl extends ArtifactImpl implements TextAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return (String) eDynamicGet(Bpmn2Package.TEXT_ANNOTATION__TEXT, Bpmn2Package.Literals.TEXT_ANNOTATION__TEXT,
 				true, true);
@@ -86,6 +87,7 @@ public class TextAnnotationImpl extends ArtifactImpl implements TextAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		eDynamicSet(Bpmn2Package.TEXT_ANNOTATION__TEXT, Bpmn2Package.Literals.TEXT_ANNOTATION__TEXT, newText);
 	}
@@ -95,6 +97,7 @@ public class TextAnnotationImpl extends ArtifactImpl implements TextAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTextFormat() {
 		return (String) eDynamicGet(Bpmn2Package.TEXT_ANNOTATION__TEXT_FORMAT,
 				Bpmn2Package.Literals.TEXT_ANNOTATION__TEXT_FORMAT, true, true);
@@ -105,6 +108,7 @@ public class TextAnnotationImpl extends ArtifactImpl implements TextAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTextFormat(String newTextFormat) {
 		eDynamicSet(Bpmn2Package.TEXT_ANNOTATION__TEXT_FORMAT, Bpmn2Package.Literals.TEXT_ANNOTATION__TEXT_FORMAT,
 				newTextFormat);

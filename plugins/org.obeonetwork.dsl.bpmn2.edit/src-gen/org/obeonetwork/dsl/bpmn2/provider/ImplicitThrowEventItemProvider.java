@@ -62,9 +62,9 @@ public class ImplicitThrowEventItemProvider extends ThrowEventItemProvider imple
 	}
 
 	/**
-	 * This returns ImplicitThrowEvent.png. <!-- begin-user-doc --> <!--
+	 * This returns ImplicitThrowEvent.png.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,6 @@ public class ImplicitThrowEventItemProvider extends ThrowEventItemProvider imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,10 +98,9 @@ public class ImplicitThrowEventItemProvider extends ThrowEventItemProvider imple
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -112,10 +110,10 @@ public class ImplicitThrowEventItemProvider extends ThrowEventItemProvider imple
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

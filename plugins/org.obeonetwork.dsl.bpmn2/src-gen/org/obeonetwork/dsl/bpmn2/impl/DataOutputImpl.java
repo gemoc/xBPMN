@@ -86,6 +86,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.DATA_OUTPUT__NAME, Bpmn2Package.Literals.DATA_OUTPUT__NAME, true,
 				true);
@@ -96,6 +97,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.DATA_OUTPUT__NAME, Bpmn2Package.Literals.DATA_OUTPUT__NAME, newName);
 	}
@@ -105,6 +107,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsCollection() {
 		return (Boolean) eDynamicGet(Bpmn2Package.DATA_OUTPUT__IS_COLLECTION,
 				Bpmn2Package.Literals.DATA_OUTPUT__IS_COLLECTION, true, true);
@@ -115,6 +118,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsCollection(boolean newIsCollection) {
 		eDynamicSet(Bpmn2Package.DATA_OUTPUT__IS_COLLECTION, Bpmn2Package.Literals.DATA_OUTPUT__IS_COLLECTION,
 				newIsCollection);
@@ -126,6 +130,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<OutputSet> getOutputSetWithOptional() {
 		return (EList<OutputSet>) eDynamicGet(Bpmn2Package.DATA_OUTPUT__OUTPUT_SET_WITH_OPTIONAL,
 				Bpmn2Package.Literals.DATA_OUTPUT__OUTPUT_SET_WITH_OPTIONAL, true, true);
@@ -137,6 +142,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<OutputSet> getOutputSetWithWhileExecuting() {
 		return (EList<OutputSet>) eDynamicGet(Bpmn2Package.DATA_OUTPUT__OUTPUT_SET_WITH_WHILE_EXECUTING,
 				Bpmn2Package.Literals.DATA_OUTPUT__OUTPUT_SET_WITH_WHILE_EXECUTING, true, true);
@@ -148,6 +154,7 @@ public class DataOutputImpl extends ItemAwareElementImpl implements DataOutput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<OutputSet> getOutputSetRefs() {
 		return (EList<OutputSet>) eDynamicGet(Bpmn2Package.DATA_OUTPUT__OUTPUT_SET_REFS,
 				Bpmn2Package.Literals.DATA_OUTPUT__OUTPUT_SET_REFS, true, true);

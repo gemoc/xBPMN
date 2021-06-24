@@ -64,6 +64,7 @@ public class SubConversationImpl extends ConversationNodeImpl implements SubConv
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationNode> getConversationNodes() {
 		return (EList<ConversationNode>) eDynamicGet(Bpmn2Package.SUB_CONVERSATION__CONVERSATION_NODES,
 				Bpmn2Package.Literals.SUB_CONVERSATION__CONVERSATION_NODES, true, true);

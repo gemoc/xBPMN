@@ -75,6 +75,7 @@ public class LaneSetImpl extends BaseElementImpl implements LaneSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Lane> getLanes() {
 		return (EList<Lane>) eDynamicGet(Bpmn2Package.LANE_SET__LANES, Bpmn2Package.Literals.LANE_SET__LANES, true,
 				true);
@@ -85,6 +86,7 @@ public class LaneSetImpl extends BaseElementImpl implements LaneSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.LANE_SET__NAME, Bpmn2Package.Literals.LANE_SET__NAME, true, true);
 	}
@@ -94,6 +96,7 @@ public class LaneSetImpl extends BaseElementImpl implements LaneSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.LANE_SET__NAME, Bpmn2Package.Literals.LANE_SET__NAME, newName);
 	}

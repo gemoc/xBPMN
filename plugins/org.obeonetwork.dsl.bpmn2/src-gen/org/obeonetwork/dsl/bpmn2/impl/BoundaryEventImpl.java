@@ -70,6 +70,7 @@ public class BoundaryEventImpl extends CatchEventImpl implements BoundaryEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCancelActivity() {
 		return (Boolean) eDynamicGet(Bpmn2Package.BOUNDARY_EVENT__CANCEL_ACTIVITY,
 				Bpmn2Package.Literals.BOUNDARY_EVENT__CANCEL_ACTIVITY, true, true);
@@ -80,6 +81,7 @@ public class BoundaryEventImpl extends CatchEventImpl implements BoundaryEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCancelActivity(boolean newCancelActivity) {
 		eDynamicSet(Bpmn2Package.BOUNDARY_EVENT__CANCEL_ACTIVITY, Bpmn2Package.Literals.BOUNDARY_EVENT__CANCEL_ACTIVITY,
 				newCancelActivity);
@@ -90,6 +92,7 @@ public class BoundaryEventImpl extends CatchEventImpl implements BoundaryEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Activity getAttachedToRef() {
 		return (Activity) eDynamicGet(Bpmn2Package.BOUNDARY_EVENT__ATTACHED_TO_REF,
 				Bpmn2Package.Literals.BOUNDARY_EVENT__ATTACHED_TO_REF, true, true);
@@ -121,6 +124,7 @@ public class BoundaryEventImpl extends CatchEventImpl implements BoundaryEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAttachedToRef(Activity newAttachedToRef) {
 		eDynamicSet(Bpmn2Package.BOUNDARY_EVENT__ATTACHED_TO_REF, Bpmn2Package.Literals.BOUNDARY_EVENT__ATTACHED_TO_REF,
 				newAttachedToRef);

@@ -78,6 +78,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.FLOW_ELEMENT__NAME, Bpmn2Package.Literals.FLOW_ELEMENT__NAME, true,
 				true);
@@ -88,6 +89,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.FLOW_ELEMENT__NAME, Bpmn2Package.Literals.FLOW_ELEMENT__NAME, newName);
 	}
@@ -97,6 +99,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Auditing getAuditing() {
 		return (Auditing) eDynamicGet(Bpmn2Package.FLOW_ELEMENT__AUDITING, Bpmn2Package.Literals.FLOW_ELEMENT__AUDITING,
 				true, true);
@@ -117,6 +120,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuditing(Auditing newAuditing) {
 		eDynamicSet(Bpmn2Package.FLOW_ELEMENT__AUDITING, Bpmn2Package.Literals.FLOW_ELEMENT__AUDITING, newAuditing);
 	}
@@ -126,6 +130,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Monitoring getMonitoring() {
 		return (Monitoring) eDynamicGet(Bpmn2Package.FLOW_ELEMENT__MONITORING,
 				Bpmn2Package.Literals.FLOW_ELEMENT__MONITORING, true, true);
@@ -146,6 +151,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMonitoring(Monitoring newMonitoring) {
 		eDynamicSet(Bpmn2Package.FLOW_ELEMENT__MONITORING, Bpmn2Package.Literals.FLOW_ELEMENT__MONITORING,
 				newMonitoring);
@@ -157,6 +163,7 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CategoryValue> getCategoryValueRef() {
 		return (EList<CategoryValue>) eDynamicGet(Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF,
 				Bpmn2Package.Literals.FLOW_ELEMENT__CATEGORY_VALUE_REF, true, true);

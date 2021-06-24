@@ -77,6 +77,7 @@ public class CorrelationPropertyImpl extends RootElementImpl implements Correlat
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationPropertyRetrievalExpression> getCorrelationPropertyRetrievalExpression() {
 		return (EList<CorrelationPropertyRetrievalExpression>) eDynamicGet(
 				Bpmn2Package.CORRELATION_PROPERTY__CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION,
@@ -88,6 +89,7 @@ public class CorrelationPropertyImpl extends RootElementImpl implements Correlat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY__NAME,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY__NAME, true, true);
@@ -98,6 +100,7 @@ public class CorrelationPropertyImpl extends RootElementImpl implements Correlat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY__NAME, Bpmn2Package.Literals.CORRELATION_PROPERTY__NAME, newName);
 	}
@@ -107,6 +110,7 @@ public class CorrelationPropertyImpl extends RootElementImpl implements Correlat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getType() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY__TYPE,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY__TYPE, true, true);
@@ -127,6 +131,7 @@ public class CorrelationPropertyImpl extends RootElementImpl implements Correlat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ItemDefinition newType) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY__TYPE, Bpmn2Package.Literals.CORRELATION_PROPERTY__TYPE, newType);
 	}

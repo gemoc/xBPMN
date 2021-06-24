@@ -34,10 +34,9 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Escalation;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.Escalation} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.Escalation} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EscalationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
@@ -87,9 +86,9 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -119,9 +118,9 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
@@ -135,8 +134,8 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This returns Escalation.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Escalation.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -150,7 +149,6 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,10 +169,9 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -192,10 +189,10 @@ public class EscalationItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

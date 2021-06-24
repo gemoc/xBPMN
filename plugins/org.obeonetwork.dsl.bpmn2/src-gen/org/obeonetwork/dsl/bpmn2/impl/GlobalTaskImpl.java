@@ -64,6 +64,7 @@ public class GlobalTaskImpl extends CallableElementImpl implements GlobalTask {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ResourceRole> getResources() {
 		return (EList<ResourceRole>) eDynamicGet(Bpmn2Package.GLOBAL_TASK__RESOURCES,
 				Bpmn2Package.Literals.GLOBAL_TASK__RESOURCES, true, true);

@@ -73,23 +73,23 @@ public class InclusiveGatewayItemProvider extends GatewayItemProvider implements
 	 * 
 	 * @generated NOT
 	 */
-	protected void addDefaultPropertyDescriptor(Object object) {		
+	protected void addDefaultPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-		.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_InclusiveGateway_default_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_InclusiveGateway_default_feature",
-						"_UI_InclusiveGateway_type"),
-				Bpmn2Package.Literals.INCLUSIVE_GATEWAY__DEFAULT, true, false, true, null, null, null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				List<Object> choiceOfValues = new ArrayList<Object>();
-				if (object instanceof InclusiveGateway) {
-					choiceOfValues.add(null);
-					choiceOfValues.addAll(((InclusiveGateway) object).getOutgoing());
-				}
-				return choiceOfValues;
-			}
-		});
+				.add(new ItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_InclusiveGateway_default_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_InclusiveGateway_default_feature",
+								"_UI_InclusiveGateway_type"),
+						Bpmn2Package.Literals.INCLUSIVE_GATEWAY__DEFAULT, true, false, true, null, null, null) {
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						List<Object> choiceOfValues = new ArrayList<Object>();
+						if (object instanceof InclusiveGateway) {
+							choiceOfValues.add(null);
+							choiceOfValues.addAll(((InclusiveGateway) object).getOutgoing());
+						}
+						return choiceOfValues;
+					}
+				});
 	}
 
 	/**
@@ -109,7 +109,6 @@ public class InclusiveGatewayItemProvider extends GatewayItemProvider implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,10 +129,9 @@ public class InclusiveGatewayItemProvider extends GatewayItemProvider implements
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -143,10 +141,10 @@ public class InclusiveGatewayItemProvider extends GatewayItemProvider implements
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

@@ -76,6 +76,7 @@ public class TransactionImpl extends SubProcessImpl implements Transaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProtocol() {
 		return (String) eDynamicGet(Bpmn2Package.TRANSACTION__PROTOCOL, Bpmn2Package.Literals.TRANSACTION__PROTOCOL,
 				true, true);
@@ -86,6 +87,7 @@ public class TransactionImpl extends SubProcessImpl implements Transaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProtocol(String newProtocol) {
 		eDynamicSet(Bpmn2Package.TRANSACTION__PROTOCOL, Bpmn2Package.Literals.TRANSACTION__PROTOCOL, newProtocol);
 	}
@@ -95,6 +97,7 @@ public class TransactionImpl extends SubProcessImpl implements Transaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMethod() {
 		return (String) eDynamicGet(Bpmn2Package.TRANSACTION__METHOD, Bpmn2Package.Literals.TRANSACTION__METHOD, true,
 				true);
@@ -105,6 +108,7 @@ public class TransactionImpl extends SubProcessImpl implements Transaction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMethod(String newMethod) {
 		eDynamicSet(Bpmn2Package.TRANSACTION__METHOD, Bpmn2Package.Literals.TRANSACTION__METHOD, newMethod);
 	}

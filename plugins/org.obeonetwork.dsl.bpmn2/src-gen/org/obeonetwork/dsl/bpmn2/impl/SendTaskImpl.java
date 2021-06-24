@@ -70,6 +70,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.SEND_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.SEND_TASK__IMPLEMENTATION, true, true);
@@ -80,6 +81,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.SEND_TASK__IMPLEMENTATION, Bpmn2Package.Literals.SEND_TASK__IMPLEMENTATION,
 				newImplementation);
@@ -90,6 +92,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Operation getOperationRef() {
 		return (Operation) eDynamicGet(Bpmn2Package.SEND_TASK__OPERATION_REF,
 				Bpmn2Package.Literals.SEND_TASK__OPERATION_REF, true, true);
@@ -110,6 +113,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperationRef(Operation newOperationRef) {
 		eDynamicSet(Bpmn2Package.SEND_TASK__OPERATION_REF, Bpmn2Package.Literals.SEND_TASK__OPERATION_REF,
 				newOperationRef);
@@ -120,6 +124,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.SEND_TASK__MESSAGE_REF, Bpmn2Package.Literals.SEND_TASK__MESSAGE_REF,
 				true, true);
@@ -140,6 +145,7 @@ public class SendTaskImpl extends TaskImpl implements SendTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageRef(Message newMessageRef) {
 		eDynamicSet(Bpmn2Package.SEND_TASK__MESSAGE_REF, Bpmn2Package.Literals.SEND_TASK__MESSAGE_REF, newMessageRef);
 	}

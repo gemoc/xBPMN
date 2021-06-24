@@ -78,6 +78,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CALLABLE_ELEMENT__NAME, Bpmn2Package.Literals.CALLABLE_ELEMENT__NAME,
 				true, true);
@@ -88,6 +89,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CALLABLE_ELEMENT__NAME, Bpmn2Package.Literals.CALLABLE_ELEMENT__NAME, newName);
 	}
@@ -97,6 +99,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputOutputSpecification getIoSpecification() {
 		return (InputOutputSpecification) eDynamicGet(Bpmn2Package.CALLABLE_ELEMENT__IO_SPECIFICATION,
 				Bpmn2Package.Literals.CALLABLE_ELEMENT__IO_SPECIFICATION, true, true);
@@ -119,6 +122,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIoSpecification(InputOutputSpecification newIoSpecification) {
 		eDynamicSet(Bpmn2Package.CALLABLE_ELEMENT__IO_SPECIFICATION,
 				Bpmn2Package.Literals.CALLABLE_ELEMENT__IO_SPECIFICATION, newIoSpecification);
@@ -130,6 +134,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Interface> getSupportedInterfaceRefs() {
 		return (EList<Interface>) eDynamicGet(Bpmn2Package.CALLABLE_ELEMENT__SUPPORTED_INTERFACE_REFS,
 				Bpmn2Package.Literals.CALLABLE_ELEMENT__SUPPORTED_INTERFACE_REFS, true, true);
@@ -141,6 +146,7 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputOutputBinding> getIoBinding() {
 		return (EList<InputOutputBinding>) eDynamicGet(Bpmn2Package.CALLABLE_ELEMENT__IO_BINDING,
 				Bpmn2Package.Literals.CALLABLE_ELEMENT__IO_BINDING, true, true);

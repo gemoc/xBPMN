@@ -104,6 +104,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(DiPackage.DIAGRAM__NAME, DiPackage.Literals.DIAGRAM__NAME, true, true);
 	}
@@ -113,6 +114,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(DiPackage.DIAGRAM__NAME, DiPackage.Literals.DIAGRAM__NAME, newName);
 	}
@@ -122,6 +124,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDocumentation() {
 		return (String) eDynamicGet(DiPackage.DIAGRAM__DOCUMENTATION, DiPackage.Literals.DIAGRAM__DOCUMENTATION, true,
 				true);
@@ -132,6 +135,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDocumentation(String newDocumentation) {
 		eDynamicSet(DiPackage.DIAGRAM__DOCUMENTATION, DiPackage.Literals.DIAGRAM__DOCUMENTATION, newDocumentation);
 	}
@@ -141,6 +145,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getResolution() {
 		return (Float) eDynamicGet(DiPackage.DIAGRAM__RESOLUTION, DiPackage.Literals.DIAGRAM__RESOLUTION, true, true);
 	}
@@ -150,6 +155,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResolution(float newResolution) {
 		eDynamicSet(DiPackage.DIAGRAM__RESOLUTION, DiPackage.Literals.DIAGRAM__RESOLUTION, newResolution);
 	}
@@ -160,6 +166,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Style> getOwnedStyle() {
 		return (EList<Style>) eDynamicGet(DiPackage.DIAGRAM__OWNED_STYLE, DiPackage.Literals.DIAGRAM__OWNED_STYLE, true,
 				true);
@@ -170,6 +177,7 @@ public abstract class DiagramImpl extends BPMN2ObjectImpl implements Diagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getRootElement() {
 		return (DiagramElement) eDynamicGet(DiPackage.DIAGRAM__ROOT_ELEMENT, DiPackage.Literals.DIAGRAM__ROOT_ELEMENT,
 				true, true);

@@ -64,6 +64,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getItemSubjectRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.DATA_OBJECT_REFERENCE__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, true, true);
@@ -84,6 +85,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setItemSubjectRef(ItemDefinition newItemSubjectRef) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT_REFERENCE__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, newItemSubjectRef);
@@ -94,6 +96,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataState getDataState() {
 		return (DataState) eDynamicGet(Bpmn2Package.DATA_OBJECT_REFERENCE__DATA_STATE,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE, true, true);
@@ -114,6 +117,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataState(DataState newDataState) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT_REFERENCE__DATA_STATE,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE, newDataState);
@@ -124,6 +128,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataObject getDataObjectRef() {
 		return (DataObject) eDynamicGet(Bpmn2Package.DATA_OBJECT_REFERENCE__DATA_OBJECT_REF,
 				Bpmn2Package.Literals.DATA_OBJECT_REFERENCE__DATA_OBJECT_REF, true, true);
@@ -144,6 +149,7 @@ public class DataObjectReferenceImpl extends FlowElementImpl implements DataObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataObjectRef(DataObject newDataObjectRef) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT_REFERENCE__DATA_OBJECT_REF,
 				Bpmn2Package.Literals.DATA_OBJECT_REFERENCE__DATA_OBJECT_REF, newDataObjectRef);

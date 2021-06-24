@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Factory
  * @model kind="package"
+ *        annotation="http://www.obeonetwork.com/bpmn2/addons"
  * @generated
  */
 public interface Bpmn2Package extends EPackage {

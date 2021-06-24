@@ -79,6 +79,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.LANE__NAME, Bpmn2Package.Literals.LANE__NAME, true, true);
 	}
@@ -88,6 +89,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.LANE__NAME, Bpmn2Package.Literals.LANE__NAME, newName);
 	}
@@ -97,6 +99,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LaneSet getChildLaneSet() {
 		return (LaneSet) eDynamicGet(Bpmn2Package.LANE__CHILD_LANE_SET, Bpmn2Package.Literals.LANE__CHILD_LANE_SET,
 				true, true);
@@ -117,6 +120,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setChildLaneSet(LaneSet newChildLaneSet) {
 		eDynamicSet(Bpmn2Package.LANE__CHILD_LANE_SET, Bpmn2Package.Literals.LANE__CHILD_LANE_SET, newChildLaneSet);
 	}
@@ -126,6 +130,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getPartitionElementRef() {
 		return (BaseElement) eDynamicGet(Bpmn2Package.LANE__PARTITION_ELEMENT_REF,
 				Bpmn2Package.Literals.LANE__PARTITION_ELEMENT_REF, true, true);
@@ -146,6 +151,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPartitionElementRef(BaseElement newPartitionElementRef) {
 		eDynamicSet(Bpmn2Package.LANE__PARTITION_ELEMENT_REF, Bpmn2Package.Literals.LANE__PARTITION_ELEMENT_REF,
 				newPartitionElementRef);
@@ -157,6 +163,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowNode> getFlowNodeRefs() {
 		return (EList<FlowNode>) eDynamicGet(Bpmn2Package.LANE__FLOW_NODE_REFS,
 				Bpmn2Package.Literals.LANE__FLOW_NODE_REFS, true, true);
@@ -167,6 +174,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getPartitionElement() {
 		return (BaseElement) eDynamicGet(Bpmn2Package.LANE__PARTITION_ELEMENT,
 				Bpmn2Package.Literals.LANE__PARTITION_ELEMENT, true, true);
@@ -187,6 +195,7 @@ public class LaneImpl extends BaseElementImpl implements Lane {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPartitionElement(BaseElement newPartitionElement) {
 		eDynamicSet(Bpmn2Package.LANE__PARTITION_ELEMENT, Bpmn2Package.Literals.LANE__PARTITION_ELEMENT,
 				newPartitionElement);

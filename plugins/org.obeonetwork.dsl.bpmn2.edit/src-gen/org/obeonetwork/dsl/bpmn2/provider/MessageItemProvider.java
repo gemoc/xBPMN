@@ -32,10 +32,9 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Message;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.Message} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.Message} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class MessageItemProvider extends RootElementItemProvider implements IEditingDomainItemProvider,
@@ -68,9 +67,9 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
@@ -83,9 +82,9 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 	}
 
 	/**
-	 * This adds a property descriptor for the Item Ref feature. <!-- begin-user-doc
+	 * This adds a property descriptor for the Item Ref feature.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addItemRefPropertyDescriptor(Object object) {
@@ -98,8 +97,8 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 	}
 
 	/**
-	 * This returns Message.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Message.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -113,7 +112,6 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,10 +132,9 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -153,10 +150,10 @@ public class MessageItemProvider extends RootElementItemProvider implements IEdi
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

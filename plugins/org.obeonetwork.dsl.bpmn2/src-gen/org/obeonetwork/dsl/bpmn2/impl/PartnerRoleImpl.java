@@ -71,6 +71,7 @@ public class PartnerRoleImpl extends RootElementImpl implements PartnerRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.PARTNER_ROLE__NAME, Bpmn2Package.Literals.PARTNER_ROLE__NAME, true,
 				true);
@@ -81,6 +82,7 @@ public class PartnerRoleImpl extends RootElementImpl implements PartnerRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.PARTNER_ROLE__NAME, Bpmn2Package.Literals.PARTNER_ROLE__NAME, newName);
 	}
@@ -91,6 +93,7 @@ public class PartnerRoleImpl extends RootElementImpl implements PartnerRole {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Participant> getParticipantRef() {
 		return (EList<Participant>) eDynamicGet(Bpmn2Package.PARTNER_ROLE__PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTNER_ROLE__PARTICIPANT_REF, true, true);

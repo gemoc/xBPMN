@@ -77,6 +77,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getStructureRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.ERROR__STRUCTURE_REF,
 				Bpmn2Package.Literals.ERROR__STRUCTURE_REF, true, true);
@@ -97,6 +98,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructureRef(ItemDefinition newStructureRef) {
 		eDynamicSet(Bpmn2Package.ERROR__STRUCTURE_REF, Bpmn2Package.Literals.ERROR__STRUCTURE_REF, newStructureRef);
 	}
@@ -106,6 +108,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.ERROR__NAME, Bpmn2Package.Literals.ERROR__NAME, true, true);
 	}
@@ -115,6 +118,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.ERROR__NAME, Bpmn2Package.Literals.ERROR__NAME, newName);
 	}
@@ -124,6 +128,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getErrorCode() {
 		return (String) eDynamicGet(Bpmn2Package.ERROR__ERROR_CODE, Bpmn2Package.Literals.ERROR__ERROR_CODE, true,
 				true);
@@ -134,6 +139,7 @@ public class ErrorImpl extends RootElementImpl implements org.obeonetwork.dsl.bp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setErrorCode(String newErrorCode) {
 		eDynamicSet(Bpmn2Package.ERROR__ERROR_CODE, Bpmn2Package.Literals.ERROR__ERROR_CODE, newErrorCode);
 	}

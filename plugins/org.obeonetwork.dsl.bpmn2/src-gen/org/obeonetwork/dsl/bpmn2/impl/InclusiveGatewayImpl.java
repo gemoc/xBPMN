@@ -57,6 +57,7 @@ public class InclusiveGatewayImpl extends GatewayImpl implements InclusiveGatewa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SequenceFlow getDefault() {
 		return (SequenceFlow) eDynamicGet(Bpmn2Package.INCLUSIVE_GATEWAY__DEFAULT,
 				Bpmn2Package.Literals.INCLUSIVE_GATEWAY__DEFAULT, true, true);
@@ -77,6 +78,7 @@ public class InclusiveGatewayImpl extends GatewayImpl implements InclusiveGatewa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(SequenceFlow newDefault) {
 		eDynamicSet(Bpmn2Package.INCLUSIVE_GATEWAY__DEFAULT, Bpmn2Package.Literals.INCLUSIVE_GATEWAY__DEFAULT,
 				newDefault);

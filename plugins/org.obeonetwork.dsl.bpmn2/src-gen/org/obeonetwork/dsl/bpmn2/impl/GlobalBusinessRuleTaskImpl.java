@@ -66,6 +66,7 @@ public class GlobalBusinessRuleTaskImpl extends GlobalTaskImpl implements Global
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.GLOBAL_BUSINESS_RULE_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.GLOBAL_BUSINESS_RULE_TASK__IMPLEMENTATION, true, true);
@@ -76,6 +77,7 @@ public class GlobalBusinessRuleTaskImpl extends GlobalTaskImpl implements Global
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.GLOBAL_BUSINESS_RULE_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.GLOBAL_BUSINESS_RULE_TASK__IMPLEMENTATION, newImplementation);

@@ -66,6 +66,7 @@ public class BPMNDiagramImpl extends DiagramImpl implements BPMNDiagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPMNPlane getPlane() {
 		return (BPMNPlane) eDynamicGet(BpmnDiPackage.BPMN_DIAGRAM__PLANE, BpmnDiPackage.Literals.BPMN_DIAGRAM__PLANE,
 				true, true);
@@ -86,6 +87,7 @@ public class BPMNDiagramImpl extends DiagramImpl implements BPMNDiagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPlane(BPMNPlane newPlane) {
 		eDynamicSet(BpmnDiPackage.BPMN_DIAGRAM__PLANE, BpmnDiPackage.Literals.BPMN_DIAGRAM__PLANE, newPlane);
 	}
@@ -96,6 +98,7 @@ public class BPMNDiagramImpl extends DiagramImpl implements BPMNDiagram {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<BPMNLabelStyle> getLabelStyle() {
 		return (EList<BPMNLabelStyle>) eDynamicGet(BpmnDiPackage.BPMN_DIAGRAM__LABEL_STYLE,
 				BpmnDiPackage.Literals.BPMN_DIAGRAM__LABEL_STYLE, true, true);

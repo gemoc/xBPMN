@@ -81,6 +81,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isParallelMultiple() {
 		return (Boolean) eDynamicGet(Bpmn2Package.CATCH_EVENT__PARALLEL_MULTIPLE,
 				Bpmn2Package.Literals.CATCH_EVENT__PARALLEL_MULTIPLE, true, true);
@@ -91,6 +92,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParallelMultiple(boolean newParallelMultiple) {
 		eDynamicSet(Bpmn2Package.CATCH_EVENT__PARALLEL_MULTIPLE, Bpmn2Package.Literals.CATCH_EVENT__PARALLEL_MULTIPLE,
 				newParallelMultiple);
@@ -101,6 +103,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OutputSet getOutputSet() {
 		return (OutputSet) eDynamicGet(Bpmn2Package.CATCH_EVENT__OUTPUT_SET,
 				Bpmn2Package.Literals.CATCH_EVENT__OUTPUT_SET, true, true);
@@ -121,6 +124,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutputSet(OutputSet newOutputSet) {
 		eDynamicSet(Bpmn2Package.CATCH_EVENT__OUTPUT_SET, Bpmn2Package.Literals.CATCH_EVENT__OUTPUT_SET, newOutputSet);
 	}
@@ -131,6 +135,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EventDefinition> getEventDefinitionRefs() {
 		return (EList<EventDefinition>) eDynamicGet(Bpmn2Package.CATCH_EVENT__EVENT_DEFINITION_REFS,
 				Bpmn2Package.Literals.CATCH_EVENT__EVENT_DEFINITION_REFS, true, true);
@@ -142,6 +147,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutputAssociation> getDataOutputAssociation() {
 		return (EList<DataOutputAssociation>) eDynamicGet(Bpmn2Package.CATCH_EVENT__DATA_OUTPUT_ASSOCIATION,
 				Bpmn2Package.Literals.CATCH_EVENT__DATA_OUTPUT_ASSOCIATION, true, true);
@@ -153,6 +159,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutput> getDataOutputs() {
 		return (EList<DataOutput>) eDynamicGet(Bpmn2Package.CATCH_EVENT__DATA_OUTPUTS,
 				Bpmn2Package.Literals.CATCH_EVENT__DATA_OUTPUTS, true, true);
@@ -164,6 +171,7 @@ public abstract class CatchEventImpl extends EventImpl implements CatchEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EventDefinition> getEventDefinitions() {
 		return (EList<EventDefinition>) eDynamicGet(Bpmn2Package.CATCH_EVENT__EVENT_DEFINITIONS,
 				Bpmn2Package.Literals.CATCH_EVENT__EVENT_DEFINITIONS, true, true);

@@ -70,6 +70,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLanguage() {
 		return (String) eDynamicGet(Bpmn2Package.FORMAL_EXPRESSION__LANGUAGE,
 				Bpmn2Package.Literals.FORMAL_EXPRESSION__LANGUAGE, true, true);
@@ -80,6 +81,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(String newLanguage) {
 		eDynamicSet(Bpmn2Package.FORMAL_EXPRESSION__LANGUAGE, Bpmn2Package.Literals.FORMAL_EXPRESSION__LANGUAGE,
 				newLanguage);
@@ -90,6 +92,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getBody() {
 		return (EObject) eDynamicGet(Bpmn2Package.FORMAL_EXPRESSION__BODY,
 				Bpmn2Package.Literals.FORMAL_EXPRESSION__BODY, true, true);
@@ -110,6 +113,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBody(EObject newBody) {
 		eDynamicSet(Bpmn2Package.FORMAL_EXPRESSION__BODY, Bpmn2Package.Literals.FORMAL_EXPRESSION__BODY, newBody);
 	}
@@ -119,6 +123,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getEvaluatesToTypeRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.FORMAL_EXPRESSION__EVALUATES_TO_TYPE_REF,
 				Bpmn2Package.Literals.FORMAL_EXPRESSION__EVALUATES_TO_TYPE_REF, true, true);
@@ -139,6 +144,7 @@ public class FormalExpressionImpl extends ExpressionImpl implements FormalExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEvaluatesToTypeRef(ItemDefinition newEvaluatesToTypeRef) {
 		eDynamicSet(Bpmn2Package.FORMAL_EXPRESSION__EVALUATES_TO_TYPE_REF,
 				Bpmn2Package.Literals.FORMAL_EXPRESSION__EVALUATES_TO_TYPE_REF, newEvaluatesToTypeRef);

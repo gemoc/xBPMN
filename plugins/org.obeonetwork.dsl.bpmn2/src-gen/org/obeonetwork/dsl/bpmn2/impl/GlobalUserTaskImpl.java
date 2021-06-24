@@ -74,6 +74,7 @@ public class GlobalUserTaskImpl extends GlobalTaskImpl implements GlobalUserTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.GLOBAL_USER_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.GLOBAL_USER_TASK__IMPLEMENTATION, true, true);
@@ -84,6 +85,7 @@ public class GlobalUserTaskImpl extends GlobalTaskImpl implements GlobalUserTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.GLOBAL_USER_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.GLOBAL_USER_TASK__IMPLEMENTATION, newImplementation);
@@ -95,6 +97,7 @@ public class GlobalUserTaskImpl extends GlobalTaskImpl implements GlobalUserTask
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Rendering> getRenderings() {
 		return (EList<Rendering>) eDynamicGet(Bpmn2Package.GLOBAL_USER_TASK__RENDERINGS,
 				Bpmn2Package.Literals.GLOBAL_USER_TASK__RENDERINGS, true, true);

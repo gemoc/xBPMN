@@ -68,6 +68,7 @@ public abstract class EventImpl extends FlowNodeImpl implements Event {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getIncomingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.EVENT__INCOMING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS, true, true);
@@ -79,6 +80,7 @@ public abstract class EventImpl extends FlowNodeImpl implements Event {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getOutgoingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.EVENT__OUTGOING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS, true, true);
@@ -90,6 +92,7 @@ public abstract class EventImpl extends FlowNodeImpl implements Event {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Property> getProperties() {
 		return (EList<Property>) eDynamicGet(Bpmn2Package.EVENT__PROPERTIES, Bpmn2Package.Literals.EVENT__PROPERTIES,
 				true, true);

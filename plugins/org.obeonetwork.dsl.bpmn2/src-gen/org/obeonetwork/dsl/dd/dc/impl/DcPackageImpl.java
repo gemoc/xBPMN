@@ -90,7 +90,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link DcPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -105,25 +105,24 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 			return (DcPackage) EPackage.Registry.INSTANCE.getEPackage(DcPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DcPackageImpl theDcPackage = (DcPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DcPackageImpl
-				? EPackage.Registry.INSTANCE.get(eNS_URI)
-				: new DcPackageImpl());
+		Object registeredDcPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DcPackageImpl theDcPackage = registeredDcPackage instanceof DcPackageImpl ? (DcPackageImpl) registeredDcPackage
+				: new DcPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(Bpmn2Package.eNS_URI) instanceof Bpmn2PackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI)
-						: Bpmn2Package.eINSTANCE);
-		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(BpmnDiPackage.eNS_URI) instanceof BpmnDiPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI)
-						: BpmnDiPackage.eINSTANCE);
-		DiPackageImpl theDiPackage = (DiPackageImpl) (EPackage.Registry.INSTANCE
-				.getEPackage(DiPackage.eNS_URI) instanceof DiPackageImpl
-						? EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI)
-						: DiPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI);
+		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (registeredPackage instanceof Bpmn2PackageImpl
+				? registeredPackage
+				: Bpmn2Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
+		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (registeredPackage instanceof BpmnDiPackageImpl
+				? registeredPackage
+				: BpmnDiPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI);
+		DiPackageImpl theDiPackage = (DiPackageImpl) (registeredPackage instanceof DiPackageImpl ? registeredPackage
+				: DiPackage.eINSTANCE);
 
 		// Load packages
 		theBpmn2Package.loadPackage();
@@ -143,6 +142,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(theDcPackage, new EValidator.Descriptor() {
+			@Override
 			public EValidator getEValidator() {
 				return DcValidator.INSTANCE;
 			}
@@ -161,6 +161,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFont() {
 		return fontEClass;
 	}
@@ -170,6 +171,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_Name() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(0);
 	}
@@ -179,6 +181,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_Size() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(1);
 	}
@@ -188,6 +191,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_IsBold() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(2);
 	}
@@ -197,6 +201,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_IsItalic() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(3);
 	}
@@ -206,6 +211,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_IsUnderline() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(4);
 	}
@@ -215,6 +221,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFont_IsStrikeThrough() {
 		return (EAttribute) fontEClass.getEStructuralFeatures().get(5);
 	}
@@ -224,6 +231,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPoint() {
 		return pointEClass;
 	}
@@ -233,6 +241,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPoint_X() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(0);
 	}
@@ -242,6 +251,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPoint_Y() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(1);
 	}
@@ -251,6 +261,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBounds() {
 		return boundsEClass;
 	}
@@ -260,6 +271,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBounds_X() {
 		return (EAttribute) boundsEClass.getEStructuralFeatures().get(0);
 	}
@@ -269,6 +281,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBounds_Y() {
 		return (EAttribute) boundsEClass.getEStructuralFeatures().get(1);
 	}
@@ -278,6 +291,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBounds_Width() {
 		return (EAttribute) boundsEClass.getEStructuralFeatures().get(2);
 	}
@@ -287,6 +301,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBounds_Height() {
 		return (EAttribute) boundsEClass.getEStructuralFeatures().get(3);
 	}
@@ -296,6 +311,7 @@ public class DcPackageImpl extends EPackageImpl implements DcPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcFactory getDcFactory() {
 		return (DcFactory) getEFactoryInstance();
 	}

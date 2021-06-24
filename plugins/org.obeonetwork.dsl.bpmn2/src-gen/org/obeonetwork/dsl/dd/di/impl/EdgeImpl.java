@@ -66,6 +66,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getSource() {
 		return (DiagramElement) eDynamicGet(DiPackage.EDGE__SOURCE, DiPackage.Literals.EDGE__SOURCE, true, true);
 	}
@@ -84,6 +85,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getTarget() {
 		return (DiagramElement) eDynamicGet(DiPackage.EDGE__TARGET, DiPackage.Literals.EDGE__TARGET, true, true);
 	}
@@ -103,6 +105,7 @@ public abstract class EdgeImpl extends DiagramElementImpl implements Edge {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Point> getWaypoint() {
 		return (EList<Point>) eDynamicGet(DiPackage.EDGE__WAYPOINT, DiPackage.Literals.EDGE__WAYPOINT, true, true);
 	}

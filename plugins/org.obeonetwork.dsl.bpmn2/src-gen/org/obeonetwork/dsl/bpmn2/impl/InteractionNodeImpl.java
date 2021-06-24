@@ -74,6 +74,7 @@ public abstract class InteractionNodeImpl extends BPMN2ObjectImpl implements Int
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getIncomingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS, true, true);
@@ -85,6 +86,7 @@ public abstract class InteractionNodeImpl extends BPMN2ObjectImpl implements Int
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getOutgoingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS, true, true);

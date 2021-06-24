@@ -61,6 +61,7 @@ public class ItemAwareElementImpl extends BaseElementImpl implements ItemAwareEl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getItemSubjectRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, true, true);
@@ -81,6 +82,7 @@ public class ItemAwareElementImpl extends BaseElementImpl implements ItemAwareEl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setItemSubjectRef(ItemDefinition newItemSubjectRef) {
 		eDynamicSet(Bpmn2Package.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, newItemSubjectRef);
@@ -91,6 +93,7 @@ public class ItemAwareElementImpl extends BaseElementImpl implements ItemAwareEl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataState getDataState() {
 		return (DataState) eDynamicGet(Bpmn2Package.ITEM_AWARE_ELEMENT__DATA_STATE,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE, true, true);
@@ -111,6 +114,7 @@ public class ItemAwareElementImpl extends BaseElementImpl implements ItemAwareEl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataState(DataState newDataState) {
 		eDynamicSet(Bpmn2Package.ITEM_AWARE_ELEMENT__DATA_STATE, Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE,
 				newDataState);

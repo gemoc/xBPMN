@@ -28,10 +28,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.obeonetwork.dsl.bpmn2.Performer;
 
 /**
- * This is the item provider adapter for a
- * {@link org.obeonetwork.dsl.bpmn2.Performer} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.Performer} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class PerformerItemProvider extends ResourceRoleItemProvider implements IEditingDomainItemProvider,
@@ -62,8 +61,8 @@ public class PerformerItemProvider extends ResourceRoleItemProvider implements I
 	}
 
 	/**
-	 * This returns Performer.png. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns Performer.png.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -77,7 +76,6 @@ public class PerformerItemProvider extends ResourceRoleItemProvider implements I
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,10 +96,9 @@ public class PerformerItemProvider extends ResourceRoleItemProvider implements I
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update
-	 * any cached children and by creating a viewer notification, which it passes to
-	 * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,10 +108,10 @@ public class PerformerItemProvider extends ResourceRoleItemProvider implements I
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing
-	 * the children that can be created under this object. <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

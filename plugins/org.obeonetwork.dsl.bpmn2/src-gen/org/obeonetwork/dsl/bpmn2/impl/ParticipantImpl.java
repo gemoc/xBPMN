@@ -84,6 +84,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getIncomingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.PARTICIPANT__INCOMING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__INCOMING_CONVERSATION_LINKS, true, true);
@@ -95,6 +96,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getOutgoingConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.PARTICIPANT__OUTGOING_CONVERSATION_LINKS,
 				Bpmn2Package.Literals.INTERACTION_NODE__OUTGOING_CONVERSATION_LINKS, true, true);
@@ -105,6 +107,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.PARTICIPANT__NAME, Bpmn2Package.Literals.PARTICIPANT__NAME, true,
 				true);
@@ -115,6 +118,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.PARTICIPANT__NAME, Bpmn2Package.Literals.PARTICIPANT__NAME, newName);
 	}
@@ -125,6 +129,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Interface> getInterfaceRefs() {
 		return (EList<Interface>) eDynamicGet(Bpmn2Package.PARTICIPANT__INTERFACE_REFS,
 				Bpmn2Package.Literals.PARTICIPANT__INTERFACE_REFS, true, true);
@@ -135,6 +140,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ParticipantMultiplicity getParticipantMultiplicity() {
 		return (ParticipantMultiplicity) eDynamicGet(Bpmn2Package.PARTICIPANT__PARTICIPANT_MULTIPLICITY,
 				Bpmn2Package.Literals.PARTICIPANT__PARTICIPANT_MULTIPLICITY, true, true);
@@ -157,6 +163,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParticipantMultiplicity(ParticipantMultiplicity newParticipantMultiplicity) {
 		eDynamicSet(Bpmn2Package.PARTICIPANT__PARTICIPANT_MULTIPLICITY,
 				Bpmn2Package.Literals.PARTICIPANT__PARTICIPANT_MULTIPLICITY, newParticipantMultiplicity);
@@ -168,6 +175,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EndPoint> getEndPointRefs() {
 		return (EList<EndPoint>) eDynamicGet(Bpmn2Package.PARTICIPANT__END_POINT_REFS,
 				Bpmn2Package.Literals.PARTICIPANT__END_POINT_REFS, true, true);
@@ -178,6 +186,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public org.obeonetwork.dsl.bpmn2.Process getProcessRef() {
 		return (org.obeonetwork.dsl.bpmn2.Process) eDynamicGet(Bpmn2Package.PARTICIPANT__PROCESS_REF,
 				Bpmn2Package.Literals.PARTICIPANT__PROCESS_REF, true, true);
@@ -198,6 +207,7 @@ public class ParticipantImpl extends BaseElementImpl implements Participant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProcessRef(org.obeonetwork.dsl.bpmn2.Process newProcessRef) {
 		eDynamicSet(Bpmn2Package.PARTICIPANT__PROCESS_REF, Bpmn2Package.Literals.PARTICIPANT__PROCESS_REF,
 				newProcessRef);

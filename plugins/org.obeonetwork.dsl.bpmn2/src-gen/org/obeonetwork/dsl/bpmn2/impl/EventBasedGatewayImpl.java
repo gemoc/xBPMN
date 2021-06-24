@@ -77,6 +77,7 @@ public class EventBasedGatewayImpl extends GatewayImpl implements EventBasedGate
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isInstantiate() {
 		return (Boolean) eDynamicGet(Bpmn2Package.EVENT_BASED_GATEWAY__INSTANTIATE,
 				Bpmn2Package.Literals.EVENT_BASED_GATEWAY__INSTANTIATE, true, true);
@@ -87,6 +88,7 @@ public class EventBasedGatewayImpl extends GatewayImpl implements EventBasedGate
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInstantiate(boolean newInstantiate) {
 		eDynamicSet(Bpmn2Package.EVENT_BASED_GATEWAY__INSTANTIATE,
 				Bpmn2Package.Literals.EVENT_BASED_GATEWAY__INSTANTIATE, newInstantiate);
@@ -97,6 +99,7 @@ public class EventBasedGatewayImpl extends GatewayImpl implements EventBasedGate
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EventBasedGatewayType getEventGatewayType() {
 		return (EventBasedGatewayType) eDynamicGet(Bpmn2Package.EVENT_BASED_GATEWAY__EVENT_GATEWAY_TYPE,
 				Bpmn2Package.Literals.EVENT_BASED_GATEWAY__EVENT_GATEWAY_TYPE, true, true);
@@ -107,6 +110,7 @@ public class EventBasedGatewayImpl extends GatewayImpl implements EventBasedGate
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEventGatewayType(EventBasedGatewayType newEventGatewayType) {
 		eDynamicSet(Bpmn2Package.EVENT_BASED_GATEWAY__EVENT_GATEWAY_TYPE,
 				Bpmn2Package.Literals.EVENT_BASED_GATEWAY__EVENT_GATEWAY_TYPE, newEventGatewayType);

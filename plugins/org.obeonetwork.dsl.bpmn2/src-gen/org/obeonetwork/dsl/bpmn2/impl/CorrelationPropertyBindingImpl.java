@@ -61,6 +61,7 @@ public class CorrelationPropertyBindingImpl extends BaseElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FormalExpression getDataPath() {
 		return (FormalExpression) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY_BINDING__DATA_PATH,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_BINDING__DATA_PATH, true, true);
@@ -82,6 +83,7 @@ public class CorrelationPropertyBindingImpl extends BaseElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataPath(FormalExpression newDataPath) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY_BINDING__DATA_PATH,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_BINDING__DATA_PATH, newDataPath);
@@ -92,6 +94,7 @@ public class CorrelationPropertyBindingImpl extends BaseElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CorrelationProperty getCorrelationPropertyRef() {
 		return (CorrelationProperty) eDynamicGet(Bpmn2Package.CORRELATION_PROPERTY_BINDING__CORRELATION_PROPERTY_REF,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_BINDING__CORRELATION_PROPERTY_REF, true, true);
@@ -112,6 +115,7 @@ public class CorrelationPropertyBindingImpl extends BaseElementImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCorrelationPropertyRef(CorrelationProperty newCorrelationPropertyRef) {
 		eDynamicSet(Bpmn2Package.CORRELATION_PROPERTY_BINDING__CORRELATION_PROPERTY_REF,
 				Bpmn2Package.Literals.CORRELATION_PROPERTY_BINDING__CORRELATION_PROPERTY_REF,

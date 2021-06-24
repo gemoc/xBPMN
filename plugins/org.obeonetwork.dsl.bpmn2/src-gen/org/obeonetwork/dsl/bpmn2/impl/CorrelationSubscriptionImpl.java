@@ -65,6 +65,7 @@ public class CorrelationSubscriptionImpl extends BaseElementImpl implements Corr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CorrelationKey getCorrelationKeyRef() {
 		return (CorrelationKey) eDynamicGet(Bpmn2Package.CORRELATION_SUBSCRIPTION__CORRELATION_KEY_REF,
 				Bpmn2Package.Literals.CORRELATION_SUBSCRIPTION__CORRELATION_KEY_REF, true, true);
@@ -85,6 +86,7 @@ public class CorrelationSubscriptionImpl extends BaseElementImpl implements Corr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCorrelationKeyRef(CorrelationKey newCorrelationKeyRef) {
 		eDynamicSet(Bpmn2Package.CORRELATION_SUBSCRIPTION__CORRELATION_KEY_REF,
 				Bpmn2Package.Literals.CORRELATION_SUBSCRIPTION__CORRELATION_KEY_REF, newCorrelationKeyRef);
@@ -96,6 +98,7 @@ public class CorrelationSubscriptionImpl extends BaseElementImpl implements Corr
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationPropertyBinding> getCorrelationPropertyBinding() {
 		return (EList<CorrelationPropertyBinding>) eDynamicGet(
 				Bpmn2Package.CORRELATION_SUBSCRIPTION__CORRELATION_PROPERTY_BINDING,

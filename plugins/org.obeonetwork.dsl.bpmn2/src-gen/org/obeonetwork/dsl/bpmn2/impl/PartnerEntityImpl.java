@@ -71,6 +71,7 @@ public class PartnerEntityImpl extends RootElementImpl implements PartnerEntity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.PARTNER_ENTITY__NAME, Bpmn2Package.Literals.PARTNER_ENTITY__NAME, true,
 				true);
@@ -81,6 +82,7 @@ public class PartnerEntityImpl extends RootElementImpl implements PartnerEntity 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.PARTNER_ENTITY__NAME, Bpmn2Package.Literals.PARTNER_ENTITY__NAME, newName);
 	}
@@ -91,6 +93,7 @@ public class PartnerEntityImpl extends RootElementImpl implements PartnerEntity 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Participant> getParticipantRef() {
 		return (EList<Participant>) eDynamicGet(Bpmn2Package.PARTNER_ENTITY__PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTNER_ENTITY__PARTICIPANT_REF, true, true);

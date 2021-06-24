@@ -72,6 +72,7 @@ public class CategoryValueImpl extends BaseElementImpl implements CategoryValue 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValue() {
 		return (String) eDynamicGet(Bpmn2Package.CATEGORY_VALUE__VALUE, Bpmn2Package.Literals.CATEGORY_VALUE__VALUE,
 				true, true);
@@ -82,6 +83,7 @@ public class CategoryValueImpl extends BaseElementImpl implements CategoryValue 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(String newValue) {
 		eDynamicSet(Bpmn2Package.CATEGORY_VALUE__VALUE, Bpmn2Package.Literals.CATEGORY_VALUE__VALUE, newValue);
 	}
@@ -92,6 +94,7 @@ public class CategoryValueImpl extends BaseElementImpl implements CategoryValue 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowElement> getCategorizedFlowElements() {
 		return (EList<FlowElement>) eDynamicGet(Bpmn2Package.CATEGORY_VALUE__CATEGORIZED_FLOW_ELEMENTS,
 				Bpmn2Package.Literals.CATEGORY_VALUE__CATEGORIZED_FLOW_ELEMENTS, true, true);

@@ -70,6 +70,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputSet getInputSet() {
 		return (InputSet) eDynamicGet(Bpmn2Package.THROW_EVENT__INPUT_SET, Bpmn2Package.Literals.THROW_EVENT__INPUT_SET,
 				true, true);
@@ -90,6 +91,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInputSet(InputSet newInputSet) {
 		eDynamicSet(Bpmn2Package.THROW_EVENT__INPUT_SET, Bpmn2Package.Literals.THROW_EVENT__INPUT_SET, newInputSet);
 	}
@@ -100,6 +102,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EventDefinition> getEventDefinitionRefs() {
 		return (EList<EventDefinition>) eDynamicGet(Bpmn2Package.THROW_EVENT__EVENT_DEFINITION_REFS,
 				Bpmn2Package.Literals.THROW_EVENT__EVENT_DEFINITION_REFS, true, true);
@@ -111,6 +114,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInputAssociation> getDataInputAssociation() {
 		return (EList<DataInputAssociation>) eDynamicGet(Bpmn2Package.THROW_EVENT__DATA_INPUT_ASSOCIATION,
 				Bpmn2Package.Literals.THROW_EVENT__DATA_INPUT_ASSOCIATION, true, true);
@@ -122,6 +126,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInput> getDataInputs() {
 		return (EList<DataInput>) eDynamicGet(Bpmn2Package.THROW_EVENT__DATA_INPUTS,
 				Bpmn2Package.Literals.THROW_EVENT__DATA_INPUTS, true, true);
@@ -133,6 +138,7 @@ public abstract class ThrowEventImpl extends EventImpl implements ThrowEvent {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EventDefinition> getEventDefinitions() {
 		return (EList<EventDefinition>) eDynamicGet(Bpmn2Package.THROW_EVENT__EVENT_DEFINITIONS,
 				Bpmn2Package.Literals.THROW_EVENT__EVENT_DEFINITIONS, true, true);

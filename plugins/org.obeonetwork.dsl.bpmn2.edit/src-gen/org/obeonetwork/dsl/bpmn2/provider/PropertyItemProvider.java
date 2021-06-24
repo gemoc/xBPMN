@@ -117,8 +117,7 @@ public class PropertyItemProvider extends ItemAwareElementItemProvider implement
 	@Override
 	public String getText(Object object) {
 		String label = ((Property) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Property_type")
-				:label;
+		return label == null || label.length() == 0 ? getString("_UI_Property_type") : label;
 	}
 
 	/**

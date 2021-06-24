@@ -57,6 +57,7 @@ public class GroupImpl extends ArtifactImpl implements Group {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CategoryValue getCategoryValueRef() {
 		return (CategoryValue) eDynamicGet(Bpmn2Package.GROUP__CATEGORY_VALUE_REF,
 				Bpmn2Package.Literals.GROUP__CATEGORY_VALUE_REF, true, true);
@@ -77,6 +78,7 @@ public class GroupImpl extends ArtifactImpl implements Group {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCategoryValueRef(CategoryValue newCategoryValueRef) {
 		eDynamicSet(Bpmn2Package.GROUP__CATEGORY_VALUE_REF, Bpmn2Package.Literals.GROUP__CATEGORY_VALUE_REF,
 				newCategoryValueRef);

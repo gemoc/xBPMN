@@ -135,6 +135,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(DcPackage.FONT__NAME, DcPackage.Literals.FONT__NAME, true, true);
 	}
@@ -144,6 +145,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(DcPackage.FONT__NAME, DcPackage.Literals.FONT__NAME, newName);
 	}
@@ -153,6 +155,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getSize() {
 		return (Float) eDynamicGet(DcPackage.FONT__SIZE, DcPackage.Literals.FONT__SIZE, true, true);
 	}
@@ -162,6 +165,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSize(float newSize) {
 		eDynamicSet(DcPackage.FONT__SIZE, DcPackage.Literals.FONT__SIZE, newSize);
 	}
@@ -171,6 +175,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsBold() {
 		return (Boolean) eDynamicGet(DcPackage.FONT__IS_BOLD, DcPackage.Literals.FONT__IS_BOLD, true, true);
 	}
@@ -180,6 +185,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsBold(boolean newIsBold) {
 		eDynamicSet(DcPackage.FONT__IS_BOLD, DcPackage.Literals.FONT__IS_BOLD, newIsBold);
 	}
@@ -189,6 +195,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsItalic() {
 		return (Boolean) eDynamicGet(DcPackage.FONT__IS_ITALIC, DcPackage.Literals.FONT__IS_ITALIC, true, true);
 	}
@@ -198,6 +205,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsItalic(boolean newIsItalic) {
 		eDynamicSet(DcPackage.FONT__IS_ITALIC, DcPackage.Literals.FONT__IS_ITALIC, newIsItalic);
 	}
@@ -207,6 +215,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsUnderline() {
 		return (Boolean) eDynamicGet(DcPackage.FONT__IS_UNDERLINE, DcPackage.Literals.FONT__IS_UNDERLINE, true, true);
 	}
@@ -216,6 +225,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsUnderline(boolean newIsUnderline) {
 		eDynamicSet(DcPackage.FONT__IS_UNDERLINE, DcPackage.Literals.FONT__IS_UNDERLINE, newIsUnderline);
 	}
@@ -225,6 +235,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsStrikeThrough() {
 		return (Boolean) eDynamicGet(DcPackage.FONT__IS_STRIKE_THROUGH, DcPackage.Literals.FONT__IS_STRIKE_THROUGH,
 				true, true);
@@ -235,6 +246,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsStrikeThrough(boolean newIsStrikeThrough) {
 		eDynamicSet(DcPackage.FONT__IS_STRIKE_THROUGH, DcPackage.Literals.FONT__IS_STRIKE_THROUGH, newIsStrikeThrough);
 	}
@@ -244,6 +256,7 @@ public class FontImpl extends BPMN2ObjectImpl implements Font {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean non_negative_size(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant

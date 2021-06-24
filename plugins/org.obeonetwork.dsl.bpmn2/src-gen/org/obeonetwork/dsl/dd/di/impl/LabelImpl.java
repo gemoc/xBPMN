@@ -59,6 +59,7 @@ public abstract class LabelImpl extends NodeImpl implements Label {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Bounds getBounds() {
 		return (Bounds) eDynamicGet(DiPackage.LABEL__BOUNDS, DiPackage.Literals.LABEL__BOUNDS, true, true);
 	}
@@ -78,6 +79,7 @@ public abstract class LabelImpl extends NodeImpl implements Label {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBounds(Bounds newBounds) {
 		eDynamicSet(DiPackage.LABEL__BOUNDS, DiPackage.Literals.LABEL__BOUNDS, newBounds);
 	}

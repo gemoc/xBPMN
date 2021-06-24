@@ -75,6 +75,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.OPERATION__NAME, Bpmn2Package.Literals.OPERATION__NAME, true, true);
 	}
@@ -84,6 +85,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.OPERATION__NAME, Bpmn2Package.Literals.OPERATION__NAME, newName);
 	}
@@ -93,6 +95,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getInMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.OPERATION__IN_MESSAGE_REF,
 				Bpmn2Package.Literals.OPERATION__IN_MESSAGE_REF, true, true);
@@ -113,6 +116,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInMessageRef(Message newInMessageRef) {
 		eDynamicSet(Bpmn2Package.OPERATION__IN_MESSAGE_REF, Bpmn2Package.Literals.OPERATION__IN_MESSAGE_REF,
 				newInMessageRef);
@@ -123,6 +127,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getOutMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.OPERATION__OUT_MESSAGE_REF,
 				Bpmn2Package.Literals.OPERATION__OUT_MESSAGE_REF, true, true);
@@ -143,6 +148,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutMessageRef(Message newOutMessageRef) {
 		eDynamicSet(Bpmn2Package.OPERATION__OUT_MESSAGE_REF, Bpmn2Package.Literals.OPERATION__OUT_MESSAGE_REF,
 				newOutMessageRef);
@@ -154,6 +160,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<org.obeonetwork.dsl.bpmn2.Error> getErrorRefs() {
 		return (EList<org.obeonetwork.dsl.bpmn2.Error>) eDynamicGet(Bpmn2Package.OPERATION__ERROR_REFS,
 				Bpmn2Package.Literals.OPERATION__ERROR_REFS, true, true);
@@ -164,6 +171,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getImplementationRef() {
 		return (EObject) eDynamicGet(Bpmn2Package.OPERATION__IMPLEMENTATION_REF,
 				Bpmn2Package.Literals.OPERATION__IMPLEMENTATION_REF, true, true);
@@ -184,6 +192,7 @@ public class OperationImpl extends BaseElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementationRef(EObject newImplementationRef) {
 		eDynamicSet(Bpmn2Package.OPERATION__IMPLEMENTATION_REF, Bpmn2Package.Literals.OPERATION__IMPLEMENTATION_REF,
 				newImplementationRef);

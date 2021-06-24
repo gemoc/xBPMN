@@ -60,6 +60,7 @@ public class BPMNLabelStyleImpl extends StyleImpl implements BPMNLabelStyle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Font getFont() {
 		return (Font) eDynamicGet(BpmnDiPackage.BPMN_LABEL_STYLE__FONT, BpmnDiPackage.Literals.BPMN_LABEL_STYLE__FONT,
 				true, true);
@@ -80,6 +81,7 @@ public class BPMNLabelStyleImpl extends StyleImpl implements BPMNLabelStyle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFont(Font newFont) {
 		eDynamicSet(BpmnDiPackage.BPMN_LABEL_STYLE__FONT, BpmnDiPackage.Literals.BPMN_LABEL_STYLE__FONT, newFont);
 	}

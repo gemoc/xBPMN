@@ -81,6 +81,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getCompletionCondition() {
 		return (Expression) eDynamicGet(Bpmn2Package.AD_HOC_SUB_PROCESS__COMPLETION_CONDITION,
 				Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__COMPLETION_CONDITION, true, true);
@@ -102,6 +103,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompletionCondition(Expression newCompletionCondition) {
 		eDynamicSet(Bpmn2Package.AD_HOC_SUB_PROCESS__COMPLETION_CONDITION,
 				Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__COMPLETION_CONDITION, newCompletionCondition);
@@ -112,6 +114,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AdHocOrdering getOrdering() {
 		return (AdHocOrdering) eDynamicGet(Bpmn2Package.AD_HOC_SUB_PROCESS__ORDERING,
 				Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__ORDERING, true, true);
@@ -122,6 +125,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOrdering(AdHocOrdering newOrdering) {
 		eDynamicSet(Bpmn2Package.AD_HOC_SUB_PROCESS__ORDERING, Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__ORDERING,
 				newOrdering);
@@ -132,6 +136,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isCancelRemainingInstances() {
 		return (Boolean) eDynamicGet(Bpmn2Package.AD_HOC_SUB_PROCESS__CANCEL_REMAINING_INSTANCES,
 				Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__CANCEL_REMAINING_INSTANCES, true, true);
@@ -142,6 +147,7 @@ public class AdHocSubProcessImpl extends SubProcessImpl implements AdHocSubProce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCancelRemainingInstances(boolean newCancelRemainingInstances) {
 		eDynamicSet(Bpmn2Package.AD_HOC_SUB_PROCESS__CANCEL_REMAINING_INSTANCES,
 				Bpmn2Package.Literals.AD_HOC_SUB_PROCESS__CANCEL_REMAINING_INSTANCES, newCancelRemainingInstances);

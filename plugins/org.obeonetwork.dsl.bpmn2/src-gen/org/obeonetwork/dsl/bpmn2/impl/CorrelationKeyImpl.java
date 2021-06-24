@@ -72,6 +72,7 @@ public class CorrelationKeyImpl extends BaseElementImpl implements CorrelationKe
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationProperty> getCorrelationPropertyRef() {
 		return (EList<CorrelationProperty>) eDynamicGet(Bpmn2Package.CORRELATION_KEY__CORRELATION_PROPERTY_REF,
 				Bpmn2Package.Literals.CORRELATION_KEY__CORRELATION_PROPERTY_REF, true, true);
@@ -82,6 +83,7 @@ public class CorrelationKeyImpl extends BaseElementImpl implements CorrelationKe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.CORRELATION_KEY__NAME, Bpmn2Package.Literals.CORRELATION_KEY__NAME,
 				true, true);
@@ -92,6 +94,7 @@ public class CorrelationKeyImpl extends BaseElementImpl implements CorrelationKe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.CORRELATION_KEY__NAME, Bpmn2Package.Literals.CORRELATION_KEY__NAME, newName);
 	}

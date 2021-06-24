@@ -83,6 +83,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return (String) eDynamicGet(Bpmn2Package.RELATIONSHIP__TYPE, Bpmn2Package.Literals.RELATIONSHIP__TYPE, true,
 				true);
@@ -93,6 +94,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		eDynamicSet(Bpmn2Package.RELATIONSHIP__TYPE, Bpmn2Package.Literals.RELATIONSHIP__TYPE, newType);
 	}
@@ -102,6 +104,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RelationshipDirection getDirection() {
 		return (RelationshipDirection) eDynamicGet(Bpmn2Package.RELATIONSHIP__DIRECTION,
 				Bpmn2Package.Literals.RELATIONSHIP__DIRECTION, true, true);
@@ -112,6 +115,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDirection(RelationshipDirection newDirection) {
 		eDynamicSet(Bpmn2Package.RELATIONSHIP__DIRECTION, Bpmn2Package.Literals.RELATIONSHIP__DIRECTION, newDirection);
 	}
@@ -122,6 +126,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EObject> getSources() {
 		return (EList<EObject>) eDynamicGet(Bpmn2Package.RELATIONSHIP__SOURCES,
 				Bpmn2Package.Literals.RELATIONSHIP__SOURCES, true, true);
@@ -133,6 +138,7 @@ public class RelationshipImpl extends BaseElementImpl implements Relationship {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<EObject> getTargets() {
 		return (EList<EObject>) eDynamicGet(Bpmn2Package.RELATIONSHIP__TARGETS,
 				Bpmn2Package.Literals.RELATIONSHIP__TARGETS, true, true);

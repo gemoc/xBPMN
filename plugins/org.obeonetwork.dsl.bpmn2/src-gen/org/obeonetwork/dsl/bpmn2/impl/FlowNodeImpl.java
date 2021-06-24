@@ -67,6 +67,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<SequenceFlow> getOutgoing() {
 		return (EList<SequenceFlow>) eDynamicGet(Bpmn2Package.FLOW_NODE__OUTGOING,
 				Bpmn2Package.Literals.FLOW_NODE__OUTGOING, true, true);
@@ -78,6 +79,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<SequenceFlow> getIncoming() {
 		return (EList<SequenceFlow>) eDynamicGet(Bpmn2Package.FLOW_NODE__INCOMING,
 				Bpmn2Package.Literals.FLOW_NODE__INCOMING, true, true);
@@ -89,6 +91,7 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Lane> getLanes() {
 		return (EList<Lane>) eDynamicGet(Bpmn2Package.FLOW_NODE__LANES, Bpmn2Package.Literals.FLOW_NODE__LANES, true,
 				true);

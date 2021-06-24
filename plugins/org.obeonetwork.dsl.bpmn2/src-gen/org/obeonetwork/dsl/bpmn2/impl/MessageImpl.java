@@ -68,6 +68,7 @@ public class MessageImpl extends RootElementImpl implements Message {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.MESSAGE__NAME, Bpmn2Package.Literals.MESSAGE__NAME, true, true);
 	}
@@ -77,6 +78,7 @@ public class MessageImpl extends RootElementImpl implements Message {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.MESSAGE__NAME, Bpmn2Package.Literals.MESSAGE__NAME, newName);
 	}
@@ -86,6 +88,7 @@ public class MessageImpl extends RootElementImpl implements Message {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getItemRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.MESSAGE__ITEM_REF, Bpmn2Package.Literals.MESSAGE__ITEM_REF,
 				true, true);
@@ -106,6 +109,7 @@ public class MessageImpl extends RootElementImpl implements Message {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setItemRef(ItemDefinition newItemRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE__ITEM_REF, Bpmn2Package.Literals.MESSAGE__ITEM_REF, newItemRef);
 	}

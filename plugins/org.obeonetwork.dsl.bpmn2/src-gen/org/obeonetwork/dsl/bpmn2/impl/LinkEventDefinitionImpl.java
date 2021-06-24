@@ -74,6 +74,7 @@ public class LinkEventDefinitionImpl extends EventDefinitionImpl implements Link
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.LINK_EVENT_DEFINITION__NAME,
 				Bpmn2Package.Literals.LINK_EVENT_DEFINITION__NAME, true, true);
@@ -84,6 +85,7 @@ public class LinkEventDefinitionImpl extends EventDefinitionImpl implements Link
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.LINK_EVENT_DEFINITION__NAME, Bpmn2Package.Literals.LINK_EVENT_DEFINITION__NAME,
 				newName);
@@ -94,6 +96,7 @@ public class LinkEventDefinitionImpl extends EventDefinitionImpl implements Link
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LinkEventDefinition getTarget() {
 		return (LinkEventDefinition) eDynamicGet(Bpmn2Package.LINK_EVENT_DEFINITION__TARGET,
 				Bpmn2Package.Literals.LINK_EVENT_DEFINITION__TARGET, true, true);
@@ -124,6 +127,7 @@ public class LinkEventDefinitionImpl extends EventDefinitionImpl implements Link
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(LinkEventDefinition newTarget) {
 		eDynamicSet(Bpmn2Package.LINK_EVENT_DEFINITION__TARGET, Bpmn2Package.Literals.LINK_EVENT_DEFINITION__TARGET,
 				newTarget);
@@ -135,6 +139,7 @@ public class LinkEventDefinitionImpl extends EventDefinitionImpl implements Link
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<LinkEventDefinition> getSource() {
 		return (EList<LinkEventDefinition>) eDynamicGet(Bpmn2Package.LINK_EVENT_DEFINITION__SOURCE,
 				Bpmn2Package.Literals.LINK_EVENT_DEFINITION__SOURCE, true, true);

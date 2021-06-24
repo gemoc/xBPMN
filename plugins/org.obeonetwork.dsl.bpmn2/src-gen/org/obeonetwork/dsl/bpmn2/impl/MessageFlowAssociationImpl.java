@@ -58,6 +58,7 @@ public class MessageFlowAssociationImpl extends BaseElementImpl implements Messa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageFlow getInnerMessageFlowRef() {
 		return (MessageFlow) eDynamicGet(Bpmn2Package.MESSAGE_FLOW_ASSOCIATION__INNER_MESSAGE_FLOW_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW_ASSOCIATION__INNER_MESSAGE_FLOW_REF, true, true);
@@ -78,6 +79,7 @@ public class MessageFlowAssociationImpl extends BaseElementImpl implements Messa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInnerMessageFlowRef(MessageFlow newInnerMessageFlowRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW_ASSOCIATION__INNER_MESSAGE_FLOW_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW_ASSOCIATION__INNER_MESSAGE_FLOW_REF, newInnerMessageFlowRef);
@@ -88,6 +90,7 @@ public class MessageFlowAssociationImpl extends BaseElementImpl implements Messa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageFlow getOuterMessageFlowRef() {
 		return (MessageFlow) eDynamicGet(Bpmn2Package.MESSAGE_FLOW_ASSOCIATION__OUTER_MESSAGE_FLOW_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW_ASSOCIATION__OUTER_MESSAGE_FLOW_REF, true, true);
@@ -108,6 +111,7 @@ public class MessageFlowAssociationImpl extends BaseElementImpl implements Messa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOuterMessageFlowRef(MessageFlow newOuterMessageFlowRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW_ASSOCIATION__OUTER_MESSAGE_FLOW_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW_ASSOCIATION__OUTER_MESSAGE_FLOW_REF, newOuterMessageFlowRef);

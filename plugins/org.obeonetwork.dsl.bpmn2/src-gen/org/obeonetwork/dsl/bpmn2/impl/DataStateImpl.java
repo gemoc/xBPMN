@@ -66,6 +66,7 @@ public class DataStateImpl extends BaseElementImpl implements DataState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.DATA_STATE__NAME, Bpmn2Package.Literals.DATA_STATE__NAME, true, true);
 	}
@@ -75,6 +76,7 @@ public class DataStateImpl extends BaseElementImpl implements DataState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.DATA_STATE__NAME, Bpmn2Package.Literals.DATA_STATE__NAME, newName);
 	}

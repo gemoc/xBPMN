@@ -61,6 +61,7 @@ public class ChoreographyTaskImpl extends ChoreographyActivityImpl implements Ch
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<MessageFlow> getMessageFlowRef() {
 		return (EList<MessageFlow>) eDynamicGet(Bpmn2Package.CHOREOGRAPHY_TASK__MESSAGE_FLOW_REF,
 				Bpmn2Package.Literals.CHOREOGRAPHY_TASK__MESSAGE_FLOW_REF, true, true);

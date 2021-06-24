@@ -68,6 +68,7 @@ public class CompensateEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isWaitForCompletion() {
 		return (Boolean) eDynamicGet(Bpmn2Package.COMPENSATE_EVENT_DEFINITION__WAIT_FOR_COMPLETION,
 				Bpmn2Package.Literals.COMPENSATE_EVENT_DEFINITION__WAIT_FOR_COMPLETION, true, true);
@@ -78,6 +79,7 @@ public class CompensateEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWaitForCompletion(boolean newWaitForCompletion) {
 		eDynamicSet(Bpmn2Package.COMPENSATE_EVENT_DEFINITION__WAIT_FOR_COMPLETION,
 				Bpmn2Package.Literals.COMPENSATE_EVENT_DEFINITION__WAIT_FOR_COMPLETION, newWaitForCompletion);
@@ -88,6 +90,7 @@ public class CompensateEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Activity getActivityRef() {
 		return (Activity) eDynamicGet(Bpmn2Package.COMPENSATE_EVENT_DEFINITION__ACTIVITY_REF,
 				Bpmn2Package.Literals.COMPENSATE_EVENT_DEFINITION__ACTIVITY_REF, true, true);
@@ -108,6 +111,7 @@ public class CompensateEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActivityRef(Activity newActivityRef) {
 		eDynamicSet(Bpmn2Package.COMPENSATE_EVENT_DEFINITION__ACTIVITY_REF,
 				Bpmn2Package.Literals.COMPENSATE_EVENT_DEFINITION__ACTIVITY_REF, newActivityRef);

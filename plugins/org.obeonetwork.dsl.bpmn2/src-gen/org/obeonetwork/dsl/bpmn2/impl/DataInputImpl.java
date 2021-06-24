@@ -86,6 +86,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.DATA_INPUT__NAME, Bpmn2Package.Literals.DATA_INPUT__NAME, true, true);
 	}
@@ -95,6 +96,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.DATA_INPUT__NAME, Bpmn2Package.Literals.DATA_INPUT__NAME, newName);
 	}
@@ -104,6 +106,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsCollection() {
 		return (Boolean) eDynamicGet(Bpmn2Package.DATA_INPUT__IS_COLLECTION,
 				Bpmn2Package.Literals.DATA_INPUT__IS_COLLECTION, true, true);
@@ -114,6 +117,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsCollection(boolean newIsCollection) {
 		eDynamicSet(Bpmn2Package.DATA_INPUT__IS_COLLECTION, Bpmn2Package.Literals.DATA_INPUT__IS_COLLECTION,
 				newIsCollection);
@@ -125,6 +129,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputSet> getInputSetWithOptional() {
 		return (EList<InputSet>) eDynamicGet(Bpmn2Package.DATA_INPUT__INPUT_SET_WITH_OPTIONAL,
 				Bpmn2Package.Literals.DATA_INPUT__INPUT_SET_WITH_OPTIONAL, true, true);
@@ -136,6 +141,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputSet> getInputSetWithWhileExecuting() {
 		return (EList<InputSet>) eDynamicGet(Bpmn2Package.DATA_INPUT__INPUT_SET_WITH_WHILE_EXECUTING,
 				Bpmn2Package.Literals.DATA_INPUT__INPUT_SET_WITH_WHILE_EXECUTING, true, true);
@@ -147,6 +153,7 @@ public class DataInputImpl extends ItemAwareElementImpl implements DataInput {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputSet> getInputSetRefs() {
 		return (EList<InputSet>) eDynamicGet(Bpmn2Package.DATA_INPUT__INPUT_SET_REFS,
 				Bpmn2Package.Literals.DATA_INPUT__INPUT_SET_REFS, true, true);

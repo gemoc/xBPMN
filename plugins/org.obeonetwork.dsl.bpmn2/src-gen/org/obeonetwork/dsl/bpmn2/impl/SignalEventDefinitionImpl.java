@@ -57,6 +57,7 @@ public class SignalEventDefinitionImpl extends EventDefinitionImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Signal getSignalRef() {
 		return (Signal) eDynamicGet(Bpmn2Package.SIGNAL_EVENT_DEFINITION__SIGNAL_REF,
 				Bpmn2Package.Literals.SIGNAL_EVENT_DEFINITION__SIGNAL_REF, true, true);
@@ -77,6 +78,7 @@ public class SignalEventDefinitionImpl extends EventDefinitionImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSignalRef(Signal newSignalRef) {
 		eDynamicSet(Bpmn2Package.SIGNAL_EVENT_DEFINITION__SIGNAL_REF,
 				Bpmn2Package.Literals.SIGNAL_EVENT_DEFINITION__SIGNAL_REF, newSignalRef);

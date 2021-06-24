@@ -74,6 +74,7 @@ public class ResourceImpl extends RootElementImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.RESOURCE__NAME, Bpmn2Package.Literals.RESOURCE__NAME, true, true);
 	}
@@ -83,6 +84,7 @@ public class ResourceImpl extends RootElementImpl implements Resource {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.RESOURCE__NAME, Bpmn2Package.Literals.RESOURCE__NAME, newName);
 	}
@@ -93,6 +95,7 @@ public class ResourceImpl extends RootElementImpl implements Resource {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ResourceParameter> getResourceParameters() {
 		return (EList<ResourceParameter>) eDynamicGet(Bpmn2Package.RESOURCE__RESOURCE_PARAMETERS,
 				Bpmn2Package.Literals.RESOURCE__RESOURCE_PARAMETERS, true, true);

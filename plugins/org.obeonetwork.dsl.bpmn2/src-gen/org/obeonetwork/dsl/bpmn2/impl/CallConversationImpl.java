@@ -65,6 +65,7 @@ public class CallConversationImpl extends ConversationNodeImpl implements CallCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Collaboration getCalledCollaborationRef() {
 		return (Collaboration) eDynamicGet(Bpmn2Package.CALL_CONVERSATION__CALLED_COLLABORATION_REF,
 				Bpmn2Package.Literals.CALL_CONVERSATION__CALLED_COLLABORATION_REF, true, true);
@@ -85,6 +86,7 @@ public class CallConversationImpl extends ConversationNodeImpl implements CallCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCalledCollaborationRef(Collaboration newCalledCollaborationRef) {
 		eDynamicSet(Bpmn2Package.CALL_CONVERSATION__CALLED_COLLABORATION_REF,
 				Bpmn2Package.Literals.CALL_CONVERSATION__CALLED_COLLABORATION_REF, newCalledCollaborationRef);
@@ -96,6 +98,7 @@ public class CallConversationImpl extends ConversationNodeImpl implements CallCo
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ParticipantAssociation> getParticipantAssociations() {
 		return (EList<ParticipantAssociation>) eDynamicGet(Bpmn2Package.CALL_CONVERSATION__PARTICIPANT_ASSOCIATIONS,
 				Bpmn2Package.Literals.CALL_CONVERSATION__PARTICIPANT_ASSOCIATIONS, true, true);

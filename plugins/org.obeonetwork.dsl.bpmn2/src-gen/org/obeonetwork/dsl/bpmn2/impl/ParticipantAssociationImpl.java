@@ -58,6 +58,7 @@ public class ParticipantAssociationImpl extends BaseElementImpl implements Parti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Participant getInnerParticipantRef() {
 		return (Participant) eDynamicGet(Bpmn2Package.PARTICIPANT_ASSOCIATION__INNER_PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTICIPANT_ASSOCIATION__INNER_PARTICIPANT_REF, true, true);
@@ -78,6 +79,7 @@ public class ParticipantAssociationImpl extends BaseElementImpl implements Parti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInnerParticipantRef(Participant newInnerParticipantRef) {
 		eDynamicSet(Bpmn2Package.PARTICIPANT_ASSOCIATION__INNER_PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTICIPANT_ASSOCIATION__INNER_PARTICIPANT_REF, newInnerParticipantRef);
@@ -88,6 +90,7 @@ public class ParticipantAssociationImpl extends BaseElementImpl implements Parti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Participant getOuterParticipantRef() {
 		return (Participant) eDynamicGet(Bpmn2Package.PARTICIPANT_ASSOCIATION__OUTER_PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTICIPANT_ASSOCIATION__OUTER_PARTICIPANT_REF, true, true);
@@ -108,6 +111,7 @@ public class ParticipantAssociationImpl extends BaseElementImpl implements Parti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOuterParticipantRef(Participant newOuterParticipantRef) {
 		eDynamicSet(Bpmn2Package.PARTICIPANT_ASSOCIATION__OUTER_PARTICIPANT_REF,
 				Bpmn2Package.Literals.PARTICIPANT_ASSOCIATION__OUTER_PARTICIPANT_REF, newOuterParticipantRef);

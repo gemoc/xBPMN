@@ -17,6 +17,7 @@ package org.obeonetwork.dsl.bpmn2.bpmdi.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.obeonetwork.dsl.bpmn2.bpmdi.*;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BPMNDiagram;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BPMNEdge;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BPMNLabel;

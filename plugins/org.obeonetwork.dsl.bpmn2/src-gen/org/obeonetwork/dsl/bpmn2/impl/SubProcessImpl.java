@@ -80,6 +80,7 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowElement> getFlowElements() {
 		return (EList<FlowElement>) eDynamicGet(Bpmn2Package.SUB_PROCESS__FLOW_ELEMENTS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS, true, true);
@@ -91,6 +92,7 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<LaneSet> getLaneSets() {
 		return (EList<LaneSet>) eDynamicGet(Bpmn2Package.SUB_PROCESS__LANE_SETS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS, true, true);
@@ -101,6 +103,7 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isTriggeredByEvent() {
 		return (Boolean) eDynamicGet(Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT,
 				Bpmn2Package.Literals.SUB_PROCESS__TRIGGERED_BY_EVENT, true, true);
@@ -111,6 +114,7 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTriggeredByEvent(boolean newTriggeredByEvent) {
 		eDynamicSet(Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT, Bpmn2Package.Literals.SUB_PROCESS__TRIGGERED_BY_EVENT,
 				newTriggeredByEvent);
@@ -122,6 +126,7 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Artifact> getArtifacts() {
 		return (EList<Artifact>) eDynamicGet(Bpmn2Package.SUB_PROCESS__ARTIFACTS,
 				Bpmn2Package.Literals.SUB_PROCESS__ARTIFACTS, true, true);

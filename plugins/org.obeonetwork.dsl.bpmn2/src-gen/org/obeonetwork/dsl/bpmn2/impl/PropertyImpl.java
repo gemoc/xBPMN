@@ -66,6 +66,7 @@ public class PropertyImpl extends ItemAwareElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.PROPERTY__NAME, Bpmn2Package.Literals.PROPERTY__NAME, true, true);
 	}
@@ -75,6 +76,7 @@ public class PropertyImpl extends ItemAwareElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.PROPERTY__NAME, Bpmn2Package.Literals.PROPERTY__NAME, newName);
 	}

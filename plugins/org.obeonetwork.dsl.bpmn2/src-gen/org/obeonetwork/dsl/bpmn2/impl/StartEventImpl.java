@@ -66,6 +66,7 @@ public class StartEventImpl extends CatchEventImpl implements StartEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsInterrupting() {
 		return (Boolean) eDynamicGet(Bpmn2Package.START_EVENT__IS_INTERRUPTING,
 				Bpmn2Package.Literals.START_EVENT__IS_INTERRUPTING, true, true);
@@ -76,6 +77,7 @@ public class StartEventImpl extends CatchEventImpl implements StartEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsInterrupting(boolean newIsInterrupting) {
 		eDynamicSet(Bpmn2Package.START_EVENT__IS_INTERRUPTING, Bpmn2Package.Literals.START_EVENT__IS_INTERRUPTING,
 				newIsInterrupting);

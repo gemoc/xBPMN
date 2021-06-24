@@ -81,6 +81,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemKind getItemKind() {
 		return (ItemKind) eDynamicGet(Bpmn2Package.ITEM_DEFINITION__ITEM_KIND,
 				Bpmn2Package.Literals.ITEM_DEFINITION__ITEM_KIND, true, true);
@@ -91,6 +92,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setItemKind(ItemKind newItemKind) {
 		eDynamicSet(Bpmn2Package.ITEM_DEFINITION__ITEM_KIND, Bpmn2Package.Literals.ITEM_DEFINITION__ITEM_KIND,
 				newItemKind);
@@ -101,6 +103,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getStructureRef() {
 		return (EObject) eDynamicGet(Bpmn2Package.ITEM_DEFINITION__STRUCTURE_REF,
 				Bpmn2Package.Literals.ITEM_DEFINITION__STRUCTURE_REF, true, true);
@@ -121,6 +124,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructureRef(EObject newStructureRef) {
 		eDynamicSet(Bpmn2Package.ITEM_DEFINITION__STRUCTURE_REF, Bpmn2Package.Literals.ITEM_DEFINITION__STRUCTURE_REF,
 				newStructureRef);
@@ -131,6 +135,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsCollection() {
 		return (Boolean) eDynamicGet(Bpmn2Package.ITEM_DEFINITION__IS_COLLECTION,
 				Bpmn2Package.Literals.ITEM_DEFINITION__IS_COLLECTION, true, true);
@@ -141,6 +146,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsCollection(boolean newIsCollection) {
 		eDynamicSet(Bpmn2Package.ITEM_DEFINITION__IS_COLLECTION, Bpmn2Package.Literals.ITEM_DEFINITION__IS_COLLECTION,
 				newIsCollection);
@@ -151,6 +157,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Import getImport() {
 		return (Import) eDynamicGet(Bpmn2Package.ITEM_DEFINITION__IMPORT, Bpmn2Package.Literals.ITEM_DEFINITION__IMPORT,
 				true, true);
@@ -171,6 +178,7 @@ public class ItemDefinitionImpl extends RootElementImpl implements ItemDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImport(Import newImport) {
 		eDynamicSet(Bpmn2Package.ITEM_DEFINITION__IMPORT, Bpmn2Package.Literals.ITEM_DEFINITION__IMPORT, newImport);
 	}

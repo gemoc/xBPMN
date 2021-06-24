@@ -102,6 +102,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.COLLABORATION__NAME, Bpmn2Package.Literals.COLLABORATION__NAME, true,
 				true);
@@ -112,6 +113,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.COLLABORATION__NAME, Bpmn2Package.Literals.COLLABORATION__NAME, newName);
 	}
@@ -121,6 +123,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsClosed() {
 		return (Boolean) eDynamicGet(Bpmn2Package.COLLABORATION__IS_CLOSED,
 				Bpmn2Package.Literals.COLLABORATION__IS_CLOSED, true, true);
@@ -131,6 +134,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsClosed(boolean newIsClosed) {
 		eDynamicSet(Bpmn2Package.COLLABORATION__IS_CLOSED, Bpmn2Package.Literals.COLLABORATION__IS_CLOSED, newIsClosed);
 	}
@@ -141,6 +145,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Choreography> getChoreographyRef() {
 		return (EList<Choreography>) eDynamicGet(Bpmn2Package.COLLABORATION__CHOREOGRAPHY_REF,
 				Bpmn2Package.Literals.COLLABORATION__CHOREOGRAPHY_REF, true, true);
@@ -152,6 +157,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Artifact> getArtifacts() {
 		return (EList<Artifact>) eDynamicGet(Bpmn2Package.COLLABORATION__ARTIFACTS,
 				Bpmn2Package.Literals.COLLABORATION__ARTIFACTS, true, true);
@@ -163,6 +169,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ParticipantAssociation> getParticipantAssociations() {
 		return (EList<ParticipantAssociation>) eDynamicGet(Bpmn2Package.COLLABORATION__PARTICIPANT_ASSOCIATIONS,
 				Bpmn2Package.Literals.COLLABORATION__PARTICIPANT_ASSOCIATIONS, true, true);
@@ -174,6 +181,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<MessageFlowAssociation> getMessageFlowAssociations() {
 		return (EList<MessageFlowAssociation>) eDynamicGet(Bpmn2Package.COLLABORATION__MESSAGE_FLOW_ASSOCIATIONS,
 				Bpmn2Package.Literals.COLLABORATION__MESSAGE_FLOW_ASSOCIATIONS, true, true);
@@ -184,6 +192,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConversationAssociation getConversationAssociations() {
 		return (ConversationAssociation) eDynamicGet(Bpmn2Package.COLLABORATION__CONVERSATION_ASSOCIATIONS,
 				Bpmn2Package.Literals.COLLABORATION__CONVERSATION_ASSOCIATIONS, true, true);
@@ -206,6 +215,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConversationAssociations(ConversationAssociation newConversationAssociations) {
 		eDynamicSet(Bpmn2Package.COLLABORATION__CONVERSATION_ASSOCIATIONS,
 				Bpmn2Package.Literals.COLLABORATION__CONVERSATION_ASSOCIATIONS, newConversationAssociations);
@@ -217,6 +227,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Participant> getParticipants() {
 		return (EList<Participant>) eDynamicGet(Bpmn2Package.COLLABORATION__PARTICIPANTS,
 				Bpmn2Package.Literals.COLLABORATION__PARTICIPANTS, true, true);
@@ -228,6 +239,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<MessageFlow> getMessageFlows() {
 		return (EList<MessageFlow>) eDynamicGet(Bpmn2Package.COLLABORATION__MESSAGE_FLOWS,
 				Bpmn2Package.Literals.COLLABORATION__MESSAGE_FLOWS, true, true);
@@ -239,6 +251,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<CorrelationKey> getCorrelationKeys() {
 		return (EList<CorrelationKey>) eDynamicGet(Bpmn2Package.COLLABORATION__CORRELATION_KEYS,
 				Bpmn2Package.Literals.COLLABORATION__CORRELATION_KEYS, true, true);
@@ -250,6 +263,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationNode> getConversations() {
 		return (EList<ConversationNode>) eDynamicGet(Bpmn2Package.COLLABORATION__CONVERSATIONS,
 				Bpmn2Package.Literals.COLLABORATION__CONVERSATIONS, true, true);
@@ -261,6 +275,7 @@ public class CollaborationImpl extends RootElementImpl implements Collaboration 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ConversationLink> getConversationLinks() {
 		return (EList<ConversationLink>) eDynamicGet(Bpmn2Package.COLLABORATION__CONVERSATION_LINKS,
 				Bpmn2Package.Literals.COLLABORATION__CONVERSATION_LINKS, true, true);

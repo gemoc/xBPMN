@@ -70,6 +70,7 @@ public class InputOutputSpecificationImpl extends BaseElementImpl implements Inp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<InputSet> getInputSets() {
 		return (EList<InputSet>) eDynamicGet(Bpmn2Package.INPUT_OUTPUT_SPECIFICATION__INPUT_SETS,
 				Bpmn2Package.Literals.INPUT_OUTPUT_SPECIFICATION__INPUT_SETS, true, true);
@@ -81,6 +82,7 @@ public class InputOutputSpecificationImpl extends BaseElementImpl implements Inp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<OutputSet> getOutputSets() {
 		return (EList<OutputSet>) eDynamicGet(Bpmn2Package.INPUT_OUTPUT_SPECIFICATION__OUTPUT_SETS,
 				Bpmn2Package.Literals.INPUT_OUTPUT_SPECIFICATION__OUTPUT_SETS, true, true);
@@ -92,6 +94,7 @@ public class InputOutputSpecificationImpl extends BaseElementImpl implements Inp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInput> getDataInputs() {
 		return (EList<DataInput>) eDynamicGet(Bpmn2Package.INPUT_OUTPUT_SPECIFICATION__DATA_INPUTS,
 				Bpmn2Package.Literals.INPUT_OUTPUT_SPECIFICATION__DATA_INPUTS, true, true);
@@ -103,6 +106,7 @@ public class InputOutputSpecificationImpl extends BaseElementImpl implements Inp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataOutput> getDataOutputs() {
 		return (EList<DataOutput>) eDynamicGet(Bpmn2Package.INPUT_OUTPUT_SPECIFICATION__DATA_OUTPUTS,
 				Bpmn2Package.Literals.INPUT_OUTPUT_SPECIFICATION__DATA_OUTPUTS, true, true);

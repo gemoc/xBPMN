@@ -78,6 +78,7 @@ public abstract class DiagramElementImpl extends BPMN2ObjectImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Diagram getOwningDiagram() {
 		return (Diagram) eDynamicGet(DiPackage.DIAGRAM_ELEMENT__OWNING_DIAGRAM,
 				DiPackage.Literals.DIAGRAM_ELEMENT__OWNING_DIAGRAM, true, true);
@@ -98,6 +99,7 @@ public abstract class DiagramElementImpl extends BPMN2ObjectImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getOwningElement() {
 		return (DiagramElement) eDynamicGet(DiPackage.DIAGRAM_ELEMENT__OWNING_ELEMENT,
 				DiPackage.Literals.DIAGRAM_ELEMENT__OWNING_ELEMENT, true, true);
@@ -119,6 +121,7 @@ public abstract class DiagramElementImpl extends BPMN2ObjectImpl implements Diag
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DiagramElement> getOwnedElement() {
 		return (EList<DiagramElement>) eDynamicGet(DiPackage.DIAGRAM_ELEMENT__OWNED_ELEMENT,
 				DiPackage.Literals.DIAGRAM_ELEMENT__OWNED_ELEMENT, true, true);
@@ -129,6 +132,7 @@ public abstract class DiagramElementImpl extends BPMN2ObjectImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getModelElement() {
 		return (EObject) eDynamicGet(DiPackage.DIAGRAM_ELEMENT__MODEL_ELEMENT,
 				DiPackage.Literals.DIAGRAM_ELEMENT__MODEL_ELEMENT, true, true);
@@ -149,6 +153,7 @@ public abstract class DiagramElementImpl extends BPMN2ObjectImpl implements Diag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Style getStyle() {
 		return (Style) eDynamicGet(DiPackage.DIAGRAM_ELEMENT__STYLE, DiPackage.Literals.DIAGRAM_ELEMENT__STYLE, true,
 				true);

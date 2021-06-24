@@ -87,6 +87,7 @@ public class PointImpl extends BPMN2ObjectImpl implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getX() {
 		return (Float) eDynamicGet(DcPackage.POINT__X, DcPackage.Literals.POINT__X, true, true);
 	}
@@ -96,6 +97,7 @@ public class PointImpl extends BPMN2ObjectImpl implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setX(float newX) {
 		eDynamicSet(DcPackage.POINT__X, DcPackage.Literals.POINT__X, newX);
 	}
@@ -105,6 +107,7 @@ public class PointImpl extends BPMN2ObjectImpl implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getY() {
 		return (Float) eDynamicGet(DcPackage.POINT__Y, DcPackage.Literals.POINT__Y, true, true);
 	}
@@ -114,6 +117,7 @@ public class PointImpl extends BPMN2ObjectImpl implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setY(float newY) {
 		eDynamicSet(DcPackage.POINT__Y, DcPackage.Literals.POINT__Y, newY);
 	}

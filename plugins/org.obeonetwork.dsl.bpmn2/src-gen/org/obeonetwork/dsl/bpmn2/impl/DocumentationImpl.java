@@ -76,6 +76,7 @@ public class DocumentationImpl extends BaseElementImpl implements Documentation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return (String) eDynamicGet(Bpmn2Package.DOCUMENTATION__TEXT, Bpmn2Package.Literals.DOCUMENTATION__TEXT, true,
 				true);
@@ -86,6 +87,7 @@ public class DocumentationImpl extends BaseElementImpl implements Documentation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		eDynamicSet(Bpmn2Package.DOCUMENTATION__TEXT, Bpmn2Package.Literals.DOCUMENTATION__TEXT, newText);
 	}
@@ -95,6 +97,7 @@ public class DocumentationImpl extends BaseElementImpl implements Documentation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTextFormat() {
 		return (String) eDynamicGet(Bpmn2Package.DOCUMENTATION__TEXT_FORMAT,
 				Bpmn2Package.Literals.DOCUMENTATION__TEXT_FORMAT, true, true);
@@ -105,6 +108,7 @@ public class DocumentationImpl extends BaseElementImpl implements Documentation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTextFormat(String newTextFormat) {
 		eDynamicSet(Bpmn2Package.DOCUMENTATION__TEXT_FORMAT, Bpmn2Package.Literals.DOCUMENTATION__TEXT_FORMAT,
 				newTextFormat);

@@ -66,6 +66,7 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<FlowElement> getFlowElements() {
 		return (EList<FlowElement>) eDynamicGet(Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS, true, true);
@@ -77,6 +78,7 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<LaneSet> getLaneSets() {
 		return (EList<LaneSet>) eDynamicGet(Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS, true, true);

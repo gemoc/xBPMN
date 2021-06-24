@@ -71,6 +71,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.MESSAGE_FLOW__NAME, Bpmn2Package.Literals.MESSAGE_FLOW__NAME, true,
 				true);
@@ -81,6 +82,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW__NAME, Bpmn2Package.Literals.MESSAGE_FLOW__NAME, newName);
 	}
@@ -90,6 +92,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InteractionNode getSourceRef() {
 		return (InteractionNode) eDynamicGet(Bpmn2Package.MESSAGE_FLOW__SOURCE_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW__SOURCE_REF, true, true);
@@ -110,6 +113,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceRef(InteractionNode newSourceRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW__SOURCE_REF, Bpmn2Package.Literals.MESSAGE_FLOW__SOURCE_REF,
 				newSourceRef);
@@ -120,6 +124,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InteractionNode getTargetRef() {
 		return (InteractionNode) eDynamicGet(Bpmn2Package.MESSAGE_FLOW__TARGET_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW__TARGET_REF, true, true);
@@ -140,6 +145,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetRef(InteractionNode newTargetRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW__TARGET_REF, Bpmn2Package.Literals.MESSAGE_FLOW__TARGET_REF,
 				newTargetRef);
@@ -150,6 +156,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Message getMessageRef() {
 		return (Message) eDynamicGet(Bpmn2Package.MESSAGE_FLOW__MESSAGE_REF,
 				Bpmn2Package.Literals.MESSAGE_FLOW__MESSAGE_REF, true, true);
@@ -170,6 +177,7 @@ public class MessageFlowImpl extends BaseElementImpl implements MessageFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageRef(Message newMessageRef) {
 		eDynamicSet(Bpmn2Package.MESSAGE_FLOW__MESSAGE_REF, Bpmn2Package.Literals.MESSAGE_FLOW__MESSAGE_REF,
 				newMessageRef);

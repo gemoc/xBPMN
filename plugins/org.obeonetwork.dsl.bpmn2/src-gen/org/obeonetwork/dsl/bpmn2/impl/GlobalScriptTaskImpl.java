@@ -76,6 +76,7 @@ public class GlobalScriptTaskImpl extends GlobalTaskImpl implements GlobalScript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getScriptLanguage() {
 		return (String) eDynamicGet(Bpmn2Package.GLOBAL_SCRIPT_TASK__SCRIPT_LANGUAGE,
 				Bpmn2Package.Literals.GLOBAL_SCRIPT_TASK__SCRIPT_LANGUAGE, true, true);
@@ -86,6 +87,7 @@ public class GlobalScriptTaskImpl extends GlobalTaskImpl implements GlobalScript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScriptLanguage(String newScriptLanguage) {
 		eDynamicSet(Bpmn2Package.GLOBAL_SCRIPT_TASK__SCRIPT_LANGUAGE,
 				Bpmn2Package.Literals.GLOBAL_SCRIPT_TASK__SCRIPT_LANGUAGE, newScriptLanguage);
@@ -96,6 +98,7 @@ public class GlobalScriptTaskImpl extends GlobalTaskImpl implements GlobalScript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getScript() {
 		return (String) eDynamicGet(Bpmn2Package.GLOBAL_SCRIPT_TASK__SCRIPT,
 				Bpmn2Package.Literals.GLOBAL_SCRIPT_TASK__SCRIPT, true, true);
@@ -106,6 +109,7 @@ public class GlobalScriptTaskImpl extends GlobalTaskImpl implements GlobalScript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScript(String newScript) {
 		eDynamicSet(Bpmn2Package.GLOBAL_SCRIPT_TASK__SCRIPT, Bpmn2Package.Literals.GLOBAL_SCRIPT_TASK__SCRIPT,
 				newScript);

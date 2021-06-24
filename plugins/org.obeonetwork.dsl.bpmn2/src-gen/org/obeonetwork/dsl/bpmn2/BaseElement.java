@@ -139,4 +139,20 @@ public interface BaseElement extends CDOObject {
 	 */
 	void setDescription(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void startEval();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void endEval();
+
 } // BaseElement

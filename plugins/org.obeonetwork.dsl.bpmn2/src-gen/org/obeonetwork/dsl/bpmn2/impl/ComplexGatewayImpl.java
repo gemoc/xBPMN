@@ -61,6 +61,7 @@ public class ComplexGatewayImpl extends GatewayImpl implements ComplexGateway {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getActivationCondition() {
 		return (Expression) eDynamicGet(Bpmn2Package.COMPLEX_GATEWAY__ACTIVATION_CONDITION,
 				Bpmn2Package.Literals.COMPLEX_GATEWAY__ACTIVATION_CONDITION, true, true);
@@ -82,6 +83,7 @@ public class ComplexGatewayImpl extends GatewayImpl implements ComplexGateway {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setActivationCondition(Expression newActivationCondition) {
 		eDynamicSet(Bpmn2Package.COMPLEX_GATEWAY__ACTIVATION_CONDITION,
 				Bpmn2Package.Literals.COMPLEX_GATEWAY__ACTIVATION_CONDITION, newActivationCondition);
@@ -92,6 +94,7 @@ public class ComplexGatewayImpl extends GatewayImpl implements ComplexGateway {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SequenceFlow getDefault() {
 		return (SequenceFlow) eDynamicGet(Bpmn2Package.COMPLEX_GATEWAY__DEFAULT,
 				Bpmn2Package.Literals.COMPLEX_GATEWAY__DEFAULT, true, true);
@@ -112,6 +115,7 @@ public class ComplexGatewayImpl extends GatewayImpl implements ComplexGateway {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefault(SequenceFlow newDefault) {
 		eDynamicSet(Bpmn2Package.COMPLEX_GATEWAY__DEFAULT, Bpmn2Package.Literals.COMPLEX_GATEWAY__DEFAULT, newDefault);
 	}

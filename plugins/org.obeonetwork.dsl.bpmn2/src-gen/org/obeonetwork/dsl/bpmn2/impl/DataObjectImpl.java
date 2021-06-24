@@ -73,6 +73,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemDefinition getItemSubjectRef() {
 		return (ItemDefinition) eDynamicGet(Bpmn2Package.DATA_OBJECT__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, true, true);
@@ -93,6 +94,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setItemSubjectRef(ItemDefinition newItemSubjectRef) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT__ITEM_SUBJECT_REF,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__ITEM_SUBJECT_REF, newItemSubjectRef);
@@ -103,6 +105,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataState getDataState() {
 		return (DataState) eDynamicGet(Bpmn2Package.DATA_OBJECT__DATA_STATE,
 				Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE, true, true);
@@ -123,6 +126,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDataState(DataState newDataState) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT__DATA_STATE, Bpmn2Package.Literals.ITEM_AWARE_ELEMENT__DATA_STATE,
 				newDataState);
@@ -133,6 +137,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsCollection() {
 		return (Boolean) eDynamicGet(Bpmn2Package.DATA_OBJECT__IS_COLLECTION,
 				Bpmn2Package.Literals.DATA_OBJECT__IS_COLLECTION, true, true);
@@ -143,6 +148,7 @@ public class DataObjectImpl extends FlowElementImpl implements DataObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsCollection(boolean newIsCollection) {
 		eDynamicSet(Bpmn2Package.DATA_OBJECT__IS_COLLECTION, Bpmn2Package.Literals.DATA_OBJECT__IS_COLLECTION,
 				newIsCollection);

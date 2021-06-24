@@ -57,6 +57,7 @@ public class EscalationEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Escalation getEscalationRef() {
 		return (Escalation) eDynamicGet(Bpmn2Package.ESCALATION_EVENT_DEFINITION__ESCALATION_REF,
 				Bpmn2Package.Literals.ESCALATION_EVENT_DEFINITION__ESCALATION_REF, true, true);
@@ -77,6 +78,7 @@ public class EscalationEventDefinitionImpl extends EventDefinitionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEscalationRef(Escalation newEscalationRef) {
 		eDynamicSet(Bpmn2Package.ESCALATION_EVENT_DEFINITION__ESCALATION_REF,
 				Bpmn2Package.Literals.ESCALATION_EVENT_DEFINITION__ESCALATION_REF, newEscalationRef);

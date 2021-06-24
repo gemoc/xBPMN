@@ -58,6 +58,7 @@ public class BPMNLabelImpl extends LabelImpl implements BPMNLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPMNLabelStyle getLabelStyle() {
 		return (BPMNLabelStyle) eDynamicGet(BpmnDiPackage.BPMN_LABEL__LABEL_STYLE,
 				BpmnDiPackage.Literals.BPMN_LABEL__LABEL_STYLE, true, true);
@@ -78,6 +79,7 @@ public class BPMNLabelImpl extends LabelImpl implements BPMNLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLabelStyle(BPMNLabelStyle newLabelStyle) {
 		eDynamicSet(BpmnDiPackage.BPMN_LABEL__LABEL_STYLE, BpmnDiPackage.Literals.BPMN_LABEL__LABEL_STYLE,
 				newLabelStyle);

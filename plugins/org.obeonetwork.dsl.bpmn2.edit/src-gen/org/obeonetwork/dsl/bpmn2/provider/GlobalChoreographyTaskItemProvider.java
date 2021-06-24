@@ -114,8 +114,7 @@ public class GlobalChoreographyTaskItemProvider extends ChoreographyItemProvider
 	@Override
 	public String getText(Object object) {
 		String label = ((GlobalChoreographyTask) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_GlobalChoreographyTask_type")
-				:  label;
+		return label == null || label.length() == 0 ? getString("_UI_GlobalChoreographyTask_type") : label;
 	}
 
 	/**

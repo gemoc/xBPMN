@@ -65,6 +65,7 @@ public class CallChoreographyImpl extends ChoreographyActivityImpl implements Ca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Choreography getCalledChoreographyRef() {
 		return (Choreography) eDynamicGet(Bpmn2Package.CALL_CHOREOGRAPHY__CALLED_CHOREOGRAPHY_REF,
 				Bpmn2Package.Literals.CALL_CHOREOGRAPHY__CALLED_CHOREOGRAPHY_REF, true, true);
@@ -85,6 +86,7 @@ public class CallChoreographyImpl extends ChoreographyActivityImpl implements Ca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCalledChoreographyRef(Choreography newCalledChoreographyRef) {
 		eDynamicSet(Bpmn2Package.CALL_CHOREOGRAPHY__CALLED_CHOREOGRAPHY_REF,
 				Bpmn2Package.Literals.CALL_CHOREOGRAPHY__CALLED_CHOREOGRAPHY_REF, newCalledChoreographyRef);
@@ -96,6 +98,7 @@ public class CallChoreographyImpl extends ChoreographyActivityImpl implements Ca
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ParticipantAssociation> getParticipantAssociations() {
 		return (EList<ParticipantAssociation>) eDynamicGet(Bpmn2Package.CALL_CHOREOGRAPHY__PARTICIPANT_ASSOCIATIONS,
 				Bpmn2Package.Literals.CALL_CHOREOGRAPHY__PARTICIPANT_ASSOCIATIONS, true, true);

@@ -57,6 +57,7 @@ public class GlobalChoreographyTaskImpl extends ChoreographyImpl implements Glob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Participant getInitiatingParticipantRef() {
 		return (Participant) eDynamicGet(Bpmn2Package.GLOBAL_CHOREOGRAPHY_TASK__INITIATING_PARTICIPANT_REF,
 				Bpmn2Package.Literals.GLOBAL_CHOREOGRAPHY_TASK__INITIATING_PARTICIPANT_REF, true, true);
@@ -77,6 +78,7 @@ public class GlobalChoreographyTaskImpl extends ChoreographyImpl implements Glob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInitiatingParticipantRef(Participant newInitiatingParticipantRef) {
 		eDynamicSet(Bpmn2Package.GLOBAL_CHOREOGRAPHY_TASK__INITIATING_PARTICIPANT_REF,
 				Bpmn2Package.Literals.GLOBAL_CHOREOGRAPHY_TASK__INITIATING_PARTICIPANT_REF,

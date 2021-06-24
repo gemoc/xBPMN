@@ -71,6 +71,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isTestBefore() {
 		return (Boolean) eDynamicGet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__TEST_BEFORE,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__TEST_BEFORE, true, true);
@@ -81,6 +82,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTestBefore(boolean newTestBefore) {
 		eDynamicSet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__TEST_BEFORE,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__TEST_BEFORE, newTestBefore);
@@ -91,6 +93,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getLoopCondition() {
 		return (Expression) eDynamicGet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__LOOP_CONDITION,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__LOOP_CONDITION, true, true);
@@ -112,6 +115,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopCondition(Expression newLoopCondition) {
 		eDynamicSet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__LOOP_CONDITION,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__LOOP_CONDITION, newLoopCondition);
@@ -122,6 +126,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getLoopMaximum() {
 		return (Expression) eDynamicGet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__LOOP_MAXIMUM,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__LOOP_MAXIMUM, true, true);
@@ -143,6 +148,7 @@ public class StandardLoopCharacteristicsImpl extends LoopCharacteristicsImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopMaximum(Expression newLoopMaximum) {
 		eDynamicSet(Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS__LOOP_MAXIMUM,
 				Bpmn2Package.Literals.STANDARD_LOOP_CHARACTERISTICS__LOOP_MAXIMUM, newLoopMaximum);

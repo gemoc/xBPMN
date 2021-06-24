@@ -73,6 +73,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsImmediate() {
 		return (Boolean) eDynamicGet(Bpmn2Package.SEQUENCE_FLOW__IS_IMMEDIATE,
 				Bpmn2Package.Literals.SEQUENCE_FLOW__IS_IMMEDIATE, true, true);
@@ -83,6 +84,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsImmediate(boolean newIsImmediate) {
 		eDynamicSet(Bpmn2Package.SEQUENCE_FLOW__IS_IMMEDIATE, Bpmn2Package.Literals.SEQUENCE_FLOW__IS_IMMEDIATE,
 				newIsImmediate);
@@ -93,6 +95,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getConditionExpression() {
 		return (Expression) eDynamicGet(Bpmn2Package.SEQUENCE_FLOW__CONDITION_EXPRESSION,
 				Bpmn2Package.Literals.SEQUENCE_FLOW__CONDITION_EXPRESSION, true, true);
@@ -114,6 +117,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConditionExpression(Expression newConditionExpression) {
 		eDynamicSet(Bpmn2Package.SEQUENCE_FLOW__CONDITION_EXPRESSION,
 				Bpmn2Package.Literals.SEQUENCE_FLOW__CONDITION_EXPRESSION, newConditionExpression);
@@ -124,6 +128,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FlowNode getTargetRef() {
 		return (FlowNode) eDynamicGet(Bpmn2Package.SEQUENCE_FLOW__TARGET_REF,
 				Bpmn2Package.Literals.SEQUENCE_FLOW__TARGET_REF, true, true);
@@ -154,6 +159,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetRef(FlowNode newTargetRef) {
 		eDynamicSet(Bpmn2Package.SEQUENCE_FLOW__TARGET_REF, Bpmn2Package.Literals.SEQUENCE_FLOW__TARGET_REF,
 				newTargetRef);
@@ -164,6 +170,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FlowNode getSourceRef() {
 		return (FlowNode) eDynamicGet(Bpmn2Package.SEQUENCE_FLOW__SOURCE_REF,
 				Bpmn2Package.Literals.SEQUENCE_FLOW__SOURCE_REF, true, true);
@@ -194,6 +201,7 @@ public class SequenceFlowImpl extends FlowElementImpl implements SequenceFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceRef(FlowNode newSourceRef) {
 		eDynamicSet(Bpmn2Package.SEQUENCE_FLOW__SOURCE_REF, Bpmn2Package.Literals.SEQUENCE_FLOW__SOURCE_REF,
 				newSourceRef);

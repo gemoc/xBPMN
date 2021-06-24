@@ -70,6 +70,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssociationDirection getAssociationDirection() {
 		return (AssociationDirection) eDynamicGet(Bpmn2Package.ASSOCIATION__ASSOCIATION_DIRECTION,
 				Bpmn2Package.Literals.ASSOCIATION__ASSOCIATION_DIRECTION, true, true);
@@ -80,6 +81,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAssociationDirection(AssociationDirection newAssociationDirection) {
 		eDynamicSet(Bpmn2Package.ASSOCIATION__ASSOCIATION_DIRECTION,
 				Bpmn2Package.Literals.ASSOCIATION__ASSOCIATION_DIRECTION, newAssociationDirection);
@@ -90,6 +92,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getSourceRef() {
 		return (BaseElement) eDynamicGet(Bpmn2Package.ASSOCIATION__SOURCE_REF,
 				Bpmn2Package.Literals.ASSOCIATION__SOURCE_REF, true, true);
@@ -110,6 +113,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceRef(BaseElement newSourceRef) {
 		eDynamicSet(Bpmn2Package.ASSOCIATION__SOURCE_REF, Bpmn2Package.Literals.ASSOCIATION__SOURCE_REF, newSourceRef);
 	}
@@ -119,6 +123,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getTargetRef() {
 		return (BaseElement) eDynamicGet(Bpmn2Package.ASSOCIATION__TARGET_REF,
 				Bpmn2Package.Literals.ASSOCIATION__TARGET_REF, true, true);
@@ -139,6 +144,7 @@ public class AssociationImpl extends ArtifactImpl implements Association {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetRef(BaseElement newTargetRef) {
 		eDynamicSet(Bpmn2Package.ASSOCIATION__TARGET_REF, Bpmn2Package.Literals.ASSOCIATION__TARGET_REF, newTargetRef);
 	}

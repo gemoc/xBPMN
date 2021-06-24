@@ -78,6 +78,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.INPUT_SET__NAME, Bpmn2Package.Literals.INPUT_SET__NAME, true, true);
 	}
@@ -87,6 +88,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.INPUT_SET__NAME, Bpmn2Package.Literals.INPUT_SET__NAME, newName);
 	}
@@ -97,6 +99,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInput> getDataInputRefs() {
 		return (EList<DataInput>) eDynamicGet(Bpmn2Package.INPUT_SET__DATA_INPUT_REFS,
 				Bpmn2Package.Literals.INPUT_SET__DATA_INPUT_REFS, true, true);
@@ -108,6 +111,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInput> getOptionalInputRefs() {
 		return (EList<DataInput>) eDynamicGet(Bpmn2Package.INPUT_SET__OPTIONAL_INPUT_REFS,
 				Bpmn2Package.Literals.INPUT_SET__OPTIONAL_INPUT_REFS, true, true);
@@ -119,6 +123,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<DataInput> getWhileExecutingInputRefs() {
 		return (EList<DataInput>) eDynamicGet(Bpmn2Package.INPUT_SET__WHILE_EXECUTING_INPUT_REFS,
 				Bpmn2Package.Literals.INPUT_SET__WHILE_EXECUTING_INPUT_REFS, true, true);
@@ -130,6 +135,7 @@ public class InputSetImpl extends BaseElementImpl implements InputSet {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<OutputSet> getOutputSetRefs() {
 		return (EList<OutputSet>) eDynamicGet(Bpmn2Package.INPUT_SET__OUTPUT_SET_REFS,
 				Bpmn2Package.Literals.INPUT_SET__OUTPUT_SET_REFS, true, true);

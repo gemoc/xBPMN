@@ -99,6 +99,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsSequential() {
 		return (Boolean) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__IS_SEQUENTIAL,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__IS_SEQUENTIAL, true, true);
@@ -109,6 +110,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsSequential(boolean newIsSequential) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__IS_SEQUENTIAL,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__IS_SEQUENTIAL, newIsSequential);
@@ -119,6 +121,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MultiInstanceBehavior getBehavior() {
 		return (MultiInstanceBehavior) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__BEHAVIOR,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__BEHAVIOR, true, true);
@@ -129,6 +132,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBehavior(MultiInstanceBehavior newBehavior) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__BEHAVIOR,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__BEHAVIOR, newBehavior);
@@ -139,6 +143,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getLoopCardinality() {
 		return (Expression) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_CARDINALITY,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_CARDINALITY, true, true);
@@ -160,6 +165,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopCardinality(Expression newLoopCardinality) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_CARDINALITY,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_CARDINALITY, newLoopCardinality);
@@ -170,6 +176,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemAwareElement getLoopDataInputRef() {
 		return (ItemAwareElement) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_INPUT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_INPUT_REF, true, true);
@@ -190,6 +197,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopDataInputRef(ItemAwareElement newLoopDataInputRef) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_INPUT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_INPUT_REF, newLoopDataInputRef);
@@ -200,6 +208,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ItemAwareElement getLoopDataOutputRef() {
 		return (ItemAwareElement) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_OUTPUT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_OUTPUT_REF, true, true);
@@ -220,6 +229,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoopDataOutputRef(ItemAwareElement newLoopDataOutputRef) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_OUTPUT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__LOOP_DATA_OUTPUT_REF, newLoopDataOutputRef);
@@ -230,6 +240,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataInput getInputDataItem() {
 		return (DataInput) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__INPUT_DATA_ITEM,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__INPUT_DATA_ITEM, true, true);
@@ -251,6 +262,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInputDataItem(DataInput newInputDataItem) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__INPUT_DATA_ITEM,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__INPUT_DATA_ITEM, newInputDataItem);
@@ -261,6 +273,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataOutput getOutputDataItem() {
 		return (DataOutput) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__OUTPUT_DATA_ITEM,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__OUTPUT_DATA_ITEM, true, true);
@@ -282,6 +295,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOutputDataItem(DataOutput newOutputDataItem) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__OUTPUT_DATA_ITEM,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__OUTPUT_DATA_ITEM, newOutputDataItem);
@@ -292,6 +306,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Expression getCompletionCondition() {
 		return (Expression) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__COMPLETION_CONDITION,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__COMPLETION_CONDITION, true, true);
@@ -313,6 +328,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompletionCondition(Expression newCompletionCondition) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__COMPLETION_CONDITION,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__COMPLETION_CONDITION,
@@ -325,6 +341,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ComplexBehaviorDefinition> getComplexBehaviorDefinition() {
 		return (EList<ComplexBehaviorDefinition>) eDynamicGet(
 				Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__COMPLEX_BEHAVIOR_DEFINITION,
@@ -336,6 +353,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EventDefinition getOneBehaviorEventRef() {
 		return (EventDefinition) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__ONE_BEHAVIOR_EVENT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__ONE_BEHAVIOR_EVENT_REF, true, true);
@@ -356,6 +374,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOneBehaviorEventRef(EventDefinition newOneBehaviorEventRef) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__ONE_BEHAVIOR_EVENT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__ONE_BEHAVIOR_EVENT_REF,
@@ -367,6 +386,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EventDefinition getNoneBehaviorEventRef() {
 		return (EventDefinition) eDynamicGet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__NONE_BEHAVIOR_EVENT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__NONE_BEHAVIOR_EVENT_REF, true, true);
@@ -387,6 +407,7 @@ public class MultiInstanceLoopCharacteristicsImpl extends LoopCharacteristicsImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNoneBehaviorEventRef(EventDefinition newNoneBehaviorEventRef) {
 		eDynamicSet(Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS__NONE_BEHAVIOR_EVENT_REF,
 				Bpmn2Package.Literals.MULTI_INSTANCE_LOOP_CHARACTERISTICS__NONE_BEHAVIOR_EVENT_REF,

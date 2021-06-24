@@ -75,6 +75,7 @@ public class UserTaskImpl extends TaskImpl implements UserTask {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Rendering> getRenderings() {
 		return (EList<Rendering>) eDynamicGet(Bpmn2Package.USER_TASK__RENDERINGS,
 				Bpmn2Package.Literals.USER_TASK__RENDERINGS, true, true);
@@ -85,6 +86,7 @@ public class UserTaskImpl extends TaskImpl implements UserTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplementation() {
 		return (String) eDynamicGet(Bpmn2Package.USER_TASK__IMPLEMENTATION,
 				Bpmn2Package.Literals.USER_TASK__IMPLEMENTATION, true, true);
@@ -95,6 +97,7 @@ public class UserTaskImpl extends TaskImpl implements UserTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(String newImplementation) {
 		eDynamicSet(Bpmn2Package.USER_TASK__IMPLEMENTATION, Bpmn2Package.Literals.USER_TASK__IMPLEMENTATION,
 				newImplementation);

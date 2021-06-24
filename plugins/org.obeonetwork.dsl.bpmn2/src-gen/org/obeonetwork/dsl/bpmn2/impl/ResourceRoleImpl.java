@@ -78,6 +78,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Resource getResourceRef() {
 		return (Resource) eDynamicGet(Bpmn2Package.RESOURCE_ROLE__RESOURCE_REF,
 				Bpmn2Package.Literals.RESOURCE_ROLE__RESOURCE_REF, true, true);
@@ -98,6 +99,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResourceRef(Resource newResourceRef) {
 		eDynamicSet(Bpmn2Package.RESOURCE_ROLE__RESOURCE_REF, Bpmn2Package.Literals.RESOURCE_ROLE__RESOURCE_REF,
 				newResourceRef);
@@ -109,6 +111,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<ResourceParameterBinding> getResourceParameterBindings() {
 		return (EList<ResourceParameterBinding>) eDynamicGet(Bpmn2Package.RESOURCE_ROLE__RESOURCE_PARAMETER_BINDINGS,
 				Bpmn2Package.Literals.RESOURCE_ROLE__RESOURCE_PARAMETER_BINDINGS, true, true);
@@ -119,6 +122,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResourceAssignmentExpression getResourceAssignmentExpression() {
 		return (ResourceAssignmentExpression) eDynamicGet(Bpmn2Package.RESOURCE_ROLE__RESOURCE_ASSIGNMENT_EXPRESSION,
 				Bpmn2Package.Literals.RESOURCE_ROLE__RESOURCE_ASSIGNMENT_EXPRESSION, true, true);
@@ -141,6 +145,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResourceAssignmentExpression(ResourceAssignmentExpression newResourceAssignmentExpression) {
 		eDynamicSet(Bpmn2Package.RESOURCE_ROLE__RESOURCE_ASSIGNMENT_EXPRESSION,
 				Bpmn2Package.Literals.RESOURCE_ROLE__RESOURCE_ASSIGNMENT_EXPRESSION, newResourceAssignmentExpression);
@@ -151,6 +156,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(Bpmn2Package.RESOURCE_ROLE__NAME, Bpmn2Package.Literals.RESOURCE_ROLE__NAME, true,
 				true);
@@ -161,6 +167,7 @@ public class ResourceRoleImpl extends BaseElementImpl implements ResourceRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(Bpmn2Package.RESOURCE_ROLE__NAME, Bpmn2Package.Literals.RESOURCE_ROLE__NAME, newName);
 	}

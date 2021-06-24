@@ -77,6 +77,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BPMNLabel getLabel() {
 		return (BPMNLabel) eDynamicGet(BpmnDiPackage.BPMN_EDGE__LABEL, BpmnDiPackage.Literals.BPMN_EDGE__LABEL, true,
 				true);
@@ -97,6 +98,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLabel(BPMNLabel newLabel) {
 		eDynamicSet(BpmnDiPackage.BPMN_EDGE__LABEL, BpmnDiPackage.Literals.BPMN_EDGE__LABEL, newLabel);
 	}
@@ -106,6 +108,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseElement getBpmnElement() {
 		return (BaseElement) eDynamicGet(BpmnDiPackage.BPMN_EDGE__BPMN_ELEMENT,
 				BpmnDiPackage.Literals.BPMN_EDGE__BPMN_ELEMENT, true, true);
@@ -126,6 +129,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBpmnElement(BaseElement newBpmnElement) {
 		eDynamicSet(BpmnDiPackage.BPMN_EDGE__BPMN_ELEMENT, BpmnDiPackage.Literals.BPMN_EDGE__BPMN_ELEMENT,
 				newBpmnElement);
@@ -136,6 +140,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getSourceElement() {
 		return (DiagramElement) eDynamicGet(BpmnDiPackage.BPMN_EDGE__SOURCE_ELEMENT,
 				BpmnDiPackage.Literals.BPMN_EDGE__SOURCE_ELEMENT, true, true);
@@ -156,6 +161,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceElement(DiagramElement newSourceElement) {
 		eDynamicSet(BpmnDiPackage.BPMN_EDGE__SOURCE_ELEMENT, BpmnDiPackage.Literals.BPMN_EDGE__SOURCE_ELEMENT,
 				newSourceElement);
@@ -166,6 +172,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DiagramElement getTargetElement() {
 		return (DiagramElement) eDynamicGet(BpmnDiPackage.BPMN_EDGE__TARGET_ELEMENT,
 				BpmnDiPackage.Literals.BPMN_EDGE__TARGET_ELEMENT, true, true);
@@ -186,6 +193,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetElement(DiagramElement newTargetElement) {
 		eDynamicSet(BpmnDiPackage.BPMN_EDGE__TARGET_ELEMENT, BpmnDiPackage.Literals.BPMN_EDGE__TARGET_ELEMENT,
 				newTargetElement);
@@ -196,6 +204,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageVisibleKind getMessageVisibleKind() {
 		return (MessageVisibleKind) eDynamicGet(BpmnDiPackage.BPMN_EDGE__MESSAGE_VISIBLE_KIND,
 				BpmnDiPackage.Literals.BPMN_EDGE__MESSAGE_VISIBLE_KIND, true, true);
@@ -206,6 +215,7 @@ public class BPMNEdgeImpl extends LabeledEdgeImpl implements BPMNEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageVisibleKind(MessageVisibleKind newMessageVisibleKind) {
 		eDynamicSet(BpmnDiPackage.BPMN_EDGE__MESSAGE_VISIBLE_KIND,
 				BpmnDiPackage.Literals.BPMN_EDGE__MESSAGE_VISIBLE_KIND, newMessageVisibleKind);
