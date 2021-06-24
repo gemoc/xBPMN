@@ -5,6 +5,19 @@ import 'http://www.eclipse.org/emf/2002/Ecore'
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 
+-- event declaration
 package bpmn2
 
+	context Process
+		def : startProcess : Event = self.startEval()
+		def : endProcess : Event = self.endEval()
+endpackage
+
+-- event constraints
+
+package bpmn2
+
+	context Process
+		inv nonReentrant:
+			Relation Alternates(self.startProcess, self.endProcess)
 endpackage

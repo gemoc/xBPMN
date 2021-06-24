@@ -446,8 +446,13 @@ class ProcessAspect extends CallableElementAspect {
 	* please specify which parent you want with the 'super' expected calling
 	*
 	*/
+	def void startEval() {
+		println("startEval Process "+_self.name)
+	}
 
-
+	def void endEval() {
+		println("endEval Process "+_self.name)
+	}
 }
 
 @Aspect(className=FlowElementsContainer)

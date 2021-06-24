@@ -1,6 +1,7 @@
 name = org.gemoc.xbpmn.XBPMN
 ecore = platform:/resource/org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore
-k3 = org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect
+k3 = org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect,\
+	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect
 #k3 = org.gemoc.xbpmn.k3dsa.SystemFunctionAspect,\
 #	 org.gemoc.xbpmn.k3dsa.AbstractEndAspect,\
 #	 org.gemoc.xbpmn.k3dsa.TimeLapseAspect,\

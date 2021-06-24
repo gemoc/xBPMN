@@ -24,8 +24,8 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
  org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare;bundle-version="0.0.0";visibility:="reexport",
  org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate;bundle-version="0.0.0";visibility:="reexport",
- org.gemoc.xbpmn.dse;bundle-version="1.0.0",
- org.gemoc.xbpmn.k3dsa;bundle-version="0.1.0"
+ org.gemoc.xbpmn.dse,
+ org.gemoc.xbpmn.k3dsa
 Bundle-ActivationPolicy: lazy
 Export-Package: xbpmn.xdsml.api.impl
 Automatic-Module-Name: org.gemoc.xbpmn
