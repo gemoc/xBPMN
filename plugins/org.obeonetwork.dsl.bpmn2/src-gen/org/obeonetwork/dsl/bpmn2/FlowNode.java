@@ -15,6 +15,7 @@
 package org.obeonetwork.dsl.bpmn2;
 
 import org.eclipse.emf.common.util.EList;
+import org.obeonetwork.dsl.bpmn2.dynamic.Token;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getLanes <em>Lanes</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowNode()
@@ -88,5 +90,17 @@ public interface FlowNode extends FlowElement {
 	 * @generated
 	 */
 	EList<Lane> getLanes();
+
+	/**
+	 * Returns the value of the '<em><b>Held Tokens</b></em>' reference list.
+	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.dynamic.Token}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Held Tokens</em>' reference list.
+	 * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowNode_HeldTokens()
+	 * @model annotation="aspect"
+	 * @generated
+	 */
+	EList<Token> getHeldTokens();
 
 } // FlowNode

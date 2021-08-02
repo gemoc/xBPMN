@@ -3484,13 +3484,22 @@ public interface Bpmn2Package extends EPackage {
 	int FLOW_NODE__LANES = FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_NODE__HELD_TOKENS = FLOW_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Flow Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_NODE_FEATURE_COUNT = FLOW_ELEMENT_FEATURE_COUNT + 3;
+	int FLOW_NODE_FEATURE_COUNT = FLOW_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.SequenceFlowImpl <em>Sequence Flow</em>}' class.
@@ -5648,6 +5657,15 @@ public interface Bpmn2Package extends EPackage {
 	int ACTIVITY__LANES = FLOW_NODE__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__HELD_TOKENS = FLOW_NODE__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5892,6 +5910,15 @@ public interface Bpmn2Package extends EPackage {
 	int TASK__LANES = ACTIVITY__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__HELD_TOKENS = ACTIVITY__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6134,6 +6161,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int MANUAL_TASK__LANES = TASK__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANUAL_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -6444,6 +6480,15 @@ public interface Bpmn2Package extends EPackage {
 	int EVENT__LANES = FLOW_NODE__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__HELD_TOKENS = FLOW_NODE__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6596,6 +6641,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CATCH_EVENT__LANES = EVENT__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATCH_EVENT__HELD_TOKENS = EVENT__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -6804,6 +6858,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int BOUNDARY_EVENT__LANES = CATCH_EVENT__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOUNDARY_EVENT__HELD_TOKENS = CATCH_EVENT__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -7478,6 +7541,15 @@ public interface Bpmn2Package extends EPackage {
 	int USER_TASK__LANES = TASK__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8131,6 +8203,15 @@ public interface Bpmn2Package extends EPackage {
 	int GATEWAY__LANES = FLOW_NODE__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY__HELD_TOKENS = FLOW_NODE__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8265,6 +8346,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int EVENT_BASED_GATEWAY__LANES = GATEWAY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BASED_GATEWAY__HELD_TOKENS = GATEWAY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
@@ -8421,6 +8511,15 @@ public interface Bpmn2Package extends EPackage {
 	int COMPLEX_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_GATEWAY__HELD_TOKENS = GATEWAY__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8575,6 +8674,15 @@ public interface Bpmn2Package extends EPackage {
 	int EXCLUSIVE_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXCLUSIVE_GATEWAY__HELD_TOKENS = GATEWAY__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8720,6 +8828,15 @@ public interface Bpmn2Package extends EPackage {
 	int INCLUSIVE_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCLUSIVE_GATEWAY__HELD_TOKENS = GATEWAY__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8863,6 +8980,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int PARALLEL_GATEWAY__LANES = GATEWAY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARALLEL_GATEWAY__HELD_TOKENS = GATEWAY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Gateway Direction</b></em>' attribute.
@@ -9147,6 +9273,15 @@ public interface Bpmn2Package extends EPackage {
 	int INTERMEDIATE_CATCH_EVENT__LANES = CATCH_EVENT__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_CATCH_EVENT__HELD_TOKENS = CATCH_EVENT__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9355,6 +9490,15 @@ public interface Bpmn2Package extends EPackage {
 	int THROW_EVENT__LANES = EVENT__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THROW_EVENT__HELD_TOKENS = EVENT__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9552,6 +9696,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int INTERMEDIATE_THROW_EVENT__LANES = THROW_EVENT__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_THROW_EVENT__HELD_TOKENS = THROW_EVENT__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -9753,6 +9906,15 @@ public interface Bpmn2Package extends EPackage {
 	int END_EVENT__LANES = THROW_EVENT__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_EVENT__HELD_TOKENS = THROW_EVENT__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9950,6 +10112,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int START_EVENT__LANES = CATCH_EVENT__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START_EVENT__HELD_TOKENS = CATCH_EVENT__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -11070,6 +11241,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int IMPLICIT_THROW_EVENT__LANES = THROW_EVENT__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLICIT_THROW_EVENT__HELD_TOKENS = THROW_EVENT__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -12478,6 +12658,15 @@ public interface Bpmn2Package extends EPackage {
 	int CHOREOGRAPHY_ACTIVITY__LANES = FLOW_NODE__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHOREOGRAPHY_ACTIVITY__HELD_TOKENS = FLOW_NODE__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Participant Refs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12639,6 +12828,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CALL_CHOREOGRAPHY__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_CHOREOGRAPHY__HELD_TOKENS = CHOREOGRAPHY_ACTIVITY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Participant Refs</b></em>' reference list.
@@ -12820,6 +13018,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int SUB_CHOREOGRAPHY__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_CHOREOGRAPHY__HELD_TOKENS = CHOREOGRAPHY_ACTIVITY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Participant Refs</b></em>' reference list.
@@ -13010,6 +13217,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CHOREOGRAPHY_TASK__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHOREOGRAPHY_TASK__HELD_TOKENS = CHOREOGRAPHY_ACTIVITY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Participant Refs</b></em>' reference list.
@@ -13711,6 +13927,15 @@ public interface Bpmn2Package extends EPackage {
 	int SERVICE_TASK__LANES = TASK__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13971,6 +14196,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int SUB_PROCESS__LANES = ACTIVITY__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_PROCESS__HELD_TOKENS = ACTIVITY__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -14589,6 +14823,15 @@ public interface Bpmn2Package extends EPackage {
 	int CALL_ACTIVITY__LANES = ACTIVITY__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL_ACTIVITY__HELD_TOKENS = ACTIVITY__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14840,6 +15083,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int SEND_TASK__LANES = TASK__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -15111,6 +15363,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int RECEIVE_TASK__LANES = TASK__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVE_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -15393,6 +15654,15 @@ public interface Bpmn2Package extends EPackage {
 	int SCRIPT_TASK__LANES = TASK__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15655,6 +15925,15 @@ public interface Bpmn2Package extends EPackage {
 	int BUSINESS_RULE_TASK__LANES = TASK__LANES;
 
 	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_RULE_TASK__HELD_TOKENS = TASK__HELD_TOKENS;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15906,6 +16185,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int AD_HOC_SUB_PROCESS__LANES = SUB_PROCESS__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AD_HOC_SUB_PROCESS__HELD_TOKENS = SUB_PROCESS__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -16213,6 +16501,15 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int TRANSACTION__LANES = SUB_PROCESS__LANES;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSACTION__HELD_TOKENS = SUB_PROCESS__HELD_TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Conversation Links</b></em>' reference list.
@@ -18612,6 +18909,17 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getFlowNode_Lanes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens <em>Held Tokens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Held Tokens</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens()
+	 * @see #getFlowNode()
+	 * @generated
+	 */
+	EReference getFlowNode_HeldTokens();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.SequenceFlow <em>Sequence Flow</em>}'.
@@ -23355,6 +23663,14 @@ public interface Bpmn2Package extends EPackage {
 		 * @generated
 		 */
 		EReference FLOW_NODE__LANES = eINSTANCE.getFlowNode_Lanes();
+
+		/**
+		 * The meta object literal for the '<em><b>Held Tokens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FLOW_NODE__HELD_TOKENS = eINSTANCE.getFlowNode_HeldTokens();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.bpmn2.impl.SequenceFlowImpl <em>Sequence Flow</em>}' class.

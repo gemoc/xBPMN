@@ -31,6 +31,8 @@ import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiFactory;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiPackage;
 import org.obeonetwork.dsl.bpmn2.bpmdi.MessageVisibleKind;
 import org.obeonetwork.dsl.bpmn2.bpmdi.ParticipantBandKind;
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage;
+import org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl;
 import org.obeonetwork.dsl.bpmn2.impl.Bpmn2PackageImpl;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 import org.obeonetwork.dsl.dd.dc.impl.DcPackageImpl;
@@ -155,6 +157,10 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (registeredPackage instanceof Bpmn2PackageImpl
 				? registeredPackage
 				: Bpmn2Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DynamicPackage.eNS_URI);
+		DynamicPackageImpl theDynamicPackage = (DynamicPackageImpl) (registeredPackage instanceof DynamicPackageImpl
+				? registeredPackage
+				: DynamicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DiPackage.eNS_URI);
 		DiPackageImpl theDiPackage = (DiPackageImpl) (registeredPackage instanceof DiPackageImpl ? registeredPackage
 				: DiPackage.eINSTANCE);
@@ -177,6 +183,7 @@ public class BpmnDiPackageImpl extends EPackageImpl implements BpmnDiPackage {
 
 		// Fix loaded packages
 		theBpmn2Package.fixPackageContents();
+		theDynamicPackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBpmnDiPackage.freeze();

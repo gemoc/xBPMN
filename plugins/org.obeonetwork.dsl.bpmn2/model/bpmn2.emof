@@ -1,0 +1,1348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emof:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml"
+    xmi:id="bpmn2" name="bpmn2" uri="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI">
+  <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+    <eAnnotations source="http://www.obeonetwork.com/bpmn2/addons" references="bpmn2.BaseElement.description bpmn2.Process.decomposedBy bpmn2.Process.decomposes"/>
+  </xmi:Extension>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Interface" name="Interface" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Interface.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Interface.operations" name="operations" upper="*"
+        type="bpmn2.Operation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Interface.implementationRef" name="implementationRef"
+        lower="0">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.RootElement" name="RootElement" isAbstract="true"
+      superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.BaseElement" name="BaseElement" isAbstract="true">
+    <ownedOperation xmi:id="bpmn2.BaseElement.startEval" name="startEval" isOrdered="true"
+        lower="0"/>
+    <ownedOperation xmi:id="bpmn2.BaseElement.endEval" name="endEval" isOrdered="true"
+        lower="0"/>
+    <ownedAttribute xmi:id="bpmn2.BaseElement.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.BaseElement.extensionDefinitions" name="extensionDefinitions"
+        lower="0" upper="*" type="bpmn2.ExtensionDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.BaseElement.extensionValues" name="extensionValues"
+        lower="0" upper="*" type="bpmn2.ExtensionAttributeValue" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.BaseElement.documentation" name="documentation"
+        lower="0" upper="*" type="bpmn2.Documentation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.BaseElement.description" name="description" isOrdered="true"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ExtensionDefinition" name="ExtensionDefinition">
+    <ownedAttribute xmi:id="bpmn2.ExtensionDefinition.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionDefinition.extensionAttributeDefinitions"
+        name="extensionAttributeDefinitions" lower="0" upper="*" type="bpmn2.ExtensionAttributeDefinition"
+        isComposite="true" opposite="bpmn2.ExtensionAttributeDefinition.extensionDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.ExtensionDefinition.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ExtensionAttributeDefinition" name="ExtensionAttributeDefinition">
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeDefinition.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeDefinition.type" name="type">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeDefinition.isReference" name="isReference"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeDefinition.extensionDefinition"
+        name="extensionDefinition" type="bpmn2.ExtensionDefinition" opposite="bpmn2.ExtensionDefinition.extensionAttributeDefinitions"/>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeDefinition.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ExtensionAttributeValue" name="ExtensionAttributeValue">
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeValue.valueRef" name="valueRef"
+        lower="0">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeValue.value" name="value" lower="0"
+        isComposite="true">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeValue.extensionAttributeDefinition"
+        name="extensionAttributeDefinition" lower="0" type="bpmn2.ExtensionAttributeDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.ExtensionAttributeValue.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Documentation" name="Documentation"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Documentation.text" name="text">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Documentation.textFormat" name="textFormat" default="text/plain">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Operation" name="Operation" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Operation.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Operation.inMessageRef" name="inMessageRef" type="bpmn2.Message"/>
+    <ownedAttribute xmi:id="bpmn2.Operation.outMessageRef" name="outMessageRef" lower="0"
+        type="bpmn2.Message"/>
+    <ownedAttribute xmi:id="bpmn2.Operation.errorRefs" name="errorRefs" lower="0"
+        upper="*" type="bpmn2.Error"/>
+    <ownedAttribute xmi:id="bpmn2.Operation.implementationRef" name="implementationRef"
+        lower="0">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Message" name="Message" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Message.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Message.itemRef" name="itemRef" lower="0" type="bpmn2.ItemDefinition"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ItemDefinition" name="ItemDefinition"
+      superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.ItemDefinition.itemKind" name="itemKind" type="bpmn2.ItemKind"/>
+    <ownedAttribute xmi:id="bpmn2.ItemDefinition.structureRef" name="structureRef">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ItemDefinition.isCollection" name="isCollection"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ItemDefinition.import" name="import" lower="0" type="bpmn2.Import"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.ItemKind" name="ItemKind">
+    <ownedLiteral xmi:id="bpmn2.ItemKind.Physical" name="Physical"/>
+    <ownedLiteral xmi:id="bpmn2.ItemKind.Information" name="Information">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Import" name="Import">
+    <ownedAttribute xmi:id="bpmn2.Import.importType" name="importType">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Import.location" name="location">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Import.namespace" name="namespace">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Import.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Error" name="Error" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Error.structureRef" name="structureRef" lower="0"
+        type="bpmn2.ItemDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.Error.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Error.errorCode" name="errorCode">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.EndPoint" name="EndPoint" superClass="bpmn2.RootElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Auditing" name="Auditing" superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalTask" name="GlobalTask" superClass="bpmn2.CallableElement">
+    <ownedAttribute xmi:id="bpmn2.GlobalTask.resources" name="resources" lower="0"
+        upper="*" type="bpmn2.ResourceRole" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CallableElement" name="CallableElement"
+      isAbstract="true" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.CallableElement.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.CallableElement.ioSpecification" name="ioSpecification"
+        lower="0" type="bpmn2.InputOutputSpecification" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CallableElement.supportedInterfaceRefs" name="supportedInterfaceRefs"
+        lower="0" upper="*" type="bpmn2.Interface"/>
+    <ownedAttribute xmi:id="bpmn2.CallableElement.ioBinding" name="ioBinding" lower="0"
+        upper="*" type="bpmn2.InputOutputBinding" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.InputOutputSpecification" name="InputOutputSpecification"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.InputOutputSpecification.inputSets" name="inputSets"
+        lower="0" upper="*" type="bpmn2.InputSet" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputSpecification.outputSets" name="outputSets"
+        lower="0" upper="*" type="bpmn2.OutputSet" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputSpecification.dataInputs" name="dataInputs"
+        lower="0" upper="*" type="bpmn2.DataInput" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputSpecification.dataOutputs" name="dataOutputs"
+        lower="0" upper="*" type="bpmn2.DataOutput" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.InputSet" name="InputSet" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.InputSet.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.InputSet.dataInputRefs" name="dataInputRefs" lower="0"
+        upper="*" type="bpmn2.DataInput" opposite="bpmn2.DataInput.inputSetRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.InputSet.optionalInputRefs" name="optionalInputRefs"
+        lower="0" upper="*" type="bpmn2.DataInput" opposite="bpmn2.DataInput.inputSetWithOptional">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.InputSet.whileExecutingInputRefs" name="whileExecutingInputRefs"
+        lower="0" upper="*" type="bpmn2.DataInput" opposite="bpmn2.DataInput.inputSetWithWhileExecuting">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.InputSet.outputSetRefs" name="outputSetRefs" lower="0"
+        upper="*" type="bpmn2.OutputSet" opposite="bpmn2.OutputSet.inputSetRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataInput" name="DataInput" superClass="bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.DataInput.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataInput.isCollection" name="isCollection" default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataInput.inputSetWithOptional" name="inputSetWithOptional"
+        lower="0" upper="*" type="bpmn2.InputSet" isDerived="true" opposite="bpmn2.InputSet.optionalInputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataInput.inputSetWithWhileExecuting" name="inputSetWithWhileExecuting"
+        lower="0" upper="*" type="bpmn2.InputSet" isDerived="true" opposite="bpmn2.InputSet.whileExecutingInputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataInput.inputSetRefs" name="inputSetRefs" lower="0"
+        upper="*" type="bpmn2.InputSet" isDerived="true" opposite="bpmn2.InputSet.dataInputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ItemAwareElement" name="ItemAwareElement"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ItemAwareElement.itemSubjectRef" name="itemSubjectRef"
+        lower="0" type="bpmn2.ItemDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.ItemAwareElement.dataState" name="dataState" lower="0"
+        type="bpmn2.DataState" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataState" name="DataState" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.DataState.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.OutputSet" name="OutputSet" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.OutputSet.dataOutputRefs" name="dataOutputRefs"
+        lower="0" upper="*" type="bpmn2.DataOutput" opposite="bpmn2.DataOutput.outputSetRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.OutputSet.optionalOutputRefs" name="optionalOutputRefs"
+        lower="0" upper="*" type="bpmn2.DataOutput" opposite="bpmn2.DataOutput.outputSetWithOptional">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.OutputSet.whileExecutingOutputRefs" name="whileExecutingOutputRefs"
+        lower="0" upper="*" type="bpmn2.DataOutput" isDerived="true" opposite="bpmn2.DataOutput.outputSetWithWhileExecuting">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.OutputSet.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.OutputSet.inputSetRefs" name="inputSetRefs" lower="0"
+        upper="*" type="bpmn2.InputSet" opposite="bpmn2.InputSet.outputSetRefs"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataOutput" name="DataOutput" superClass="bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.DataOutput.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataOutput.isCollection" name="isCollection" default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataOutput.outputSetWithOptional" name="outputSetWithOptional"
+        lower="0" upper="*" type="bpmn2.OutputSet" isDerived="true" opposite="bpmn2.OutputSet.optionalOutputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataOutput.outputSetWithWhileExecuting" name="outputSetWithWhileExecuting"
+        lower="0" upper="*" type="bpmn2.OutputSet" isDerived="true" opposite="bpmn2.OutputSet.whileExecutingOutputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataOutput.outputSetRefs" name="outputSetRefs" lower="0"
+        upper="*" type="bpmn2.OutputSet" isDerived="true" opposite="bpmn2.OutputSet.dataOutputRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.InputOutputBinding" name="InputOutputBinding">
+    <ownedAttribute xmi:id="bpmn2.InputOutputBinding.inputDataRef" name="inputDataRef"
+        type="bpmn2.InputSet"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputBinding.outputDataRef" name="outputDataRef"
+        type="bpmn2.OutputSet"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputBinding.operationRef" name="operationRef"
+        type="bpmn2.Operation"/>
+    <ownedAttribute xmi:id="bpmn2.InputOutputBinding.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ResourceRole" name="ResourceRole"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ResourceRole.resourceRef" name="resourceRef" lower="0"
+        type="bpmn2.Resource"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceRole.resourceParameterBindings" name="resourceParameterBindings"
+        lower="0" upper="*" type="bpmn2.ResourceParameterBinding" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceRole.resourceAssignmentExpression" name="resourceAssignmentExpression"
+        lower="0" type="bpmn2.ResourceAssignmentExpression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceRole.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Resource" name="Resource" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Resource.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Resource.resourceParameters" name="resourceParameters"
+        lower="0" upper="*" type="bpmn2.ResourceParameter" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ResourceParameter" name="ResourceParameter"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ResourceParameter.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ResourceParameter.isRequired" name="isRequired">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ResourceParameter.type" name="type" lower="0" type="bpmn2.ItemDefinition"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ResourceParameterBinding" name="ResourceParameterBinding">
+    <ownedAttribute xmi:id="bpmn2.ResourceParameterBinding.expression" name="expression"
+        type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceParameterBinding.parameterRef" name="parameterRef"
+        type="bpmn2.ResourceParameter"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceParameterBinding.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Expression" name="Expression" superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ResourceAssignmentExpression" name="ResourceAssignmentExpression">
+    <ownedAttribute xmi:id="bpmn2.ResourceAssignmentExpression.expression" name="expression"
+        type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ResourceAssignmentExpression.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Monitoring" name="Monitoring" superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Performer" name="Performer" superClass="bpmn2.ResourceRole"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Process" name="Process" superClass="bpmn2.CallableElement bpmn2.FlowElementsContainer">
+    <ownedAttribute xmi:id="bpmn2.Process.processType" name="processType" type="bpmn2.ProcessType"/>
+    <ownedAttribute xmi:id="bpmn2.Process.isClosed" name="isClosed">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Process.auditing" name="auditing" lower="0" type="bpmn2.Auditing"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.monitoring" name="monitoring" lower="0"
+        type="bpmn2.Monitoring" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.properties" name="properties" lower="0"
+        upper="*" type="bpmn2.Property" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.supports" name="supports" lower="0" upper="*"
+        type="bpmn2.Process"/>
+    <ownedAttribute xmi:id="bpmn2.Process.definitionalCollaborationRef" name="definitionalCollaborationRef"
+        lower="0" type="bpmn2.Collaboration"/>
+    <ownedAttribute xmi:id="bpmn2.Process.isExecutable" name="isExecutable">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Process.resources" name="resources" lower="0" upper="*"
+        type="bpmn2.ResourceRole" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.artifacts" name="artifacts" lower="0" upper="*"
+        type="bpmn2.Artifact" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.correlationSubscriptions" name="correlationSubscriptions"
+        lower="0" upper="*" type="bpmn2.CorrelationSubscription" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Process.decomposedBy" name="decomposedBy" isOrdered="true"
+        lower="0" upper="*" type="bpmn2.Process" isComposite="true" opposite="bpmn2.Process.decomposes"/>
+    <ownedAttribute xmi:id="bpmn2.Process.decomposes" name="decomposes" isOrdered="true"
+        lower="0" type="bpmn2.Process" opposite="bpmn2.Process.decomposedBy"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.FlowElementsContainer" name="FlowElementsContainer"
+      isAbstract="true" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.FlowElementsContainer.flowElements" name="flowElements"
+        lower="0" upper="*" type="bpmn2.FlowElement" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.FlowElementsContainer.laneSets" name="laneSets"
+        lower="0" upper="*" type="bpmn2.LaneSet" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.FlowElement" name="FlowElement" isAbstract="true"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.FlowElement.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.FlowElement.auditing" name="auditing" lower="0"
+        type="bpmn2.Auditing" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.FlowElement.monitoring" name="monitoring" lower="0"
+        type="bpmn2.Monitoring" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.FlowElement.categoryValueRef" name="categoryValueRef"
+        lower="0" upper="*" type="bpmn2.CategoryValue" opposite="bpmn2.CategoryValue.categorizedFlowElements">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CategoryValue" name="CategoryValue"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.CategoryValue.value" name="value">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.CategoryValue.categorizedFlowElements" name="categorizedFlowElements"
+        lower="0" upper="*" type="bpmn2.FlowElement" isReadOnly="true" isDerived="true"
+        opposite="bpmn2.FlowElement.categoryValueRef">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.LaneSet" name="LaneSet" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.LaneSet.lanes" name="lanes" lower="0" upper="*"
+        type="bpmn2.Lane" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.LaneSet.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Lane" name="Lane" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Lane.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Lane.childLaneSet" name="childLaneSet" lower="0"
+        type="bpmn2.LaneSet" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Lane.partitionElementRef" name="partitionElementRef"
+        lower="0" type="bpmn2.BaseElement"/>
+    <ownedAttribute xmi:id="bpmn2.Lane.flowNodeRefs" name="flowNodeRefs" lower="0"
+        upper="*" type="bpmn2.FlowNode" opposite="bpmn2.FlowNode.lanes">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <resolveProxies>false</resolveProxies>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Lane.partitionElement" name="partitionElement" lower="0"
+        type="bpmn2.BaseElement" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.FlowNode" name="FlowNode" isAbstract="true"
+      superClass="bpmn2.FlowElement">
+    <ownedAttribute xmi:id="bpmn2.FlowNode.outgoing" name="outgoing" isOrdered="true"
+        lower="0" upper="*" type="bpmn2.SequenceFlow" opposite="bpmn2.SequenceFlow.sourceRef"/>
+    <ownedAttribute xmi:id="bpmn2.FlowNode.incoming" name="incoming" lower="0" upper="*"
+        type="bpmn2.SequenceFlow" opposite="bpmn2.SequenceFlow.targetRef"/>
+    <ownedAttribute xmi:id="bpmn2.FlowNode.lanes" name="lanes" lower="0" upper="*"
+        type="bpmn2.Lane" isDerived="true" opposite="bpmn2.Lane.flowNodeRefs">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SequenceFlow" name="SequenceFlow"
+      superClass="bpmn2.FlowElement">
+    <ownedAttribute xmi:id="bpmn2.SequenceFlow.isImmediate" name="isImmediate" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.SequenceFlow.conditionExpression" name="conditionExpression"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.SequenceFlow.targetRef" name="targetRef" lower="0"
+        type="bpmn2.FlowNode" opposite="bpmn2.FlowNode.incoming"/>
+    <ownedAttribute xmi:id="bpmn2.SequenceFlow.sourceRef" name="sourceRef" lower="0"
+        type="bpmn2.FlowNode" opposite="bpmn2.FlowNode.outgoing"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.ProcessType" name="ProcessType">
+    <ownedLiteral xmi:id="bpmn2.ProcessType.None" name="None"/>
+    <ownedLiteral xmi:id="bpmn2.ProcessType.Public" name="Public">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.ProcessType.Private" name="Private">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Property" name="Property" superClass="bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.Property.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Collaboration" name="Collaboration"
+      superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Collaboration.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.isClosed" name="isClosed">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.choreographyRef" name="choreographyRef"
+        lower="0" upper="*" type="bpmn2.Choreography"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.artifacts" name="artifacts" lower="0"
+        upper="*" type="bpmn2.Artifact" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.participantAssociations" name="participantAssociations"
+        lower="0" upper="*" type="bpmn2.ParticipantAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.messageFlowAssociations" name="messageFlowAssociations"
+        lower="0" upper="*" type="bpmn2.MessageFlowAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.conversationAssociations" name="conversationAssociations"
+        lower="0" type="bpmn2.ConversationAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.participants" name="participants"
+        lower="0" upper="*" type="bpmn2.Participant" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.messageFlows" name="messageFlows"
+        lower="0" upper="*" type="bpmn2.MessageFlow" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.correlationKeys" name="correlationKeys"
+        lower="0" upper="*" type="bpmn2.CorrelationKey" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.conversations" name="conversations"
+        lower="0" upper="*" type="bpmn2.ConversationNode" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Collaboration.conversationLinks" name="conversationLinks"
+        lower="0" upper="*" type="bpmn2.ConversationLink" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Choreography" name="Choreography"
+      superClass="bpmn2.Collaboration bpmn2.FlowElementsContainer"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Artifact" name="Artifact" isAbstract="true"
+      superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ParticipantAssociation" name="ParticipantAssociation"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ParticipantAssociation.innerParticipantRef" name="innerParticipantRef"
+        type="bpmn2.Participant"/>
+    <ownedAttribute xmi:id="bpmn2.ParticipantAssociation.outerParticipantRef" name="outerParticipantRef"
+        type="bpmn2.Participant"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Participant" name="Participant" superClass="bpmn2.BaseElement bpmn2.InteractionNode">
+    <ownedAttribute xmi:id="bpmn2.Participant.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Participant.interfaceRefs" name="interfaceRefs"
+        lower="0" upper="*" type="bpmn2.Interface"/>
+    <ownedAttribute xmi:id="bpmn2.Participant.participantMultiplicity" name="participantMultiplicity"
+        lower="0" type="bpmn2.ParticipantMultiplicity" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Participant.endPointRefs" name="endPointRefs" lower="0"
+        upper="*" type="bpmn2.EndPoint"/>
+    <ownedAttribute xmi:id="bpmn2.Participant.processRef" name="processRef" lower="0"
+        type="bpmn2.Process"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.InteractionNode" name="InteractionNode"
+      isAbstract="true">
+    <ownedAttribute xmi:id="bpmn2.InteractionNode.incomingConversationLinks" name="incomingConversationLinks"
+        lower="0" upper="*" type="bpmn2.ConversationLink" isReadOnly="true" isDerived="true"
+        opposite="bpmn2.ConversationLink.targetRef">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.InteractionNode.outgoingConversationLinks" name="outgoingConversationLinks"
+        lower="0" upper="*" type="bpmn2.ConversationLink" isReadOnly="true" isDerived="true"
+        opposite="bpmn2.ConversationLink.sourceRef">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ConversationLink" name="ConversationLink"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ConversationLink.sourceRef" name="sourceRef" type="bpmn2.InteractionNode"
+        opposite="bpmn2.InteractionNode.outgoingConversationLinks">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ConversationLink.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ConversationLink.targetRef" name="targetRef" type="bpmn2.InteractionNode"
+        opposite="bpmn2.InteractionNode.incomingConversationLinks">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <transient>true</transient>
+      </xmi:Extension>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ParticipantMultiplicity" name="ParticipantMultiplicity">
+    <ownedAttribute xmi:id="bpmn2.ParticipantMultiplicity.minimum" name="minimum"
+        default="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ParticipantMultiplicity.maximum" name="maximum"
+        lower="0" default="1">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ParticipantMultiplicity.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.MessageFlowAssociation" name="MessageFlowAssociation"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.MessageFlowAssociation.innerMessageFlowRef" name="innerMessageFlowRef"
+        type="bpmn2.MessageFlow"/>
+    <ownedAttribute xmi:id="bpmn2.MessageFlowAssociation.outerMessageFlowRef" name="outerMessageFlowRef"
+        type="bpmn2.MessageFlow"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.MessageFlow" name="MessageFlow" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.MessageFlow.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.MessageFlow.sourceRef" name="sourceRef" lower="0"
+        type="bpmn2.InteractionNode"/>
+    <ownedAttribute xmi:id="bpmn2.MessageFlow.targetRef" name="targetRef" lower="0"
+        type="bpmn2.InteractionNode"/>
+    <ownedAttribute xmi:id="bpmn2.MessageFlow.messageRef" name="messageRef" lower="0"
+        type="bpmn2.Message"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ConversationAssociation" name="ConversationAssociation"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ConversationAssociation.innerConversationNodeRef"
+        name="innerConversationNodeRef" type="bpmn2.ConversationNode"/>
+    <ownedAttribute xmi:id="bpmn2.ConversationAssociation.outerConversationNodeRef"
+        name="outerConversationNodeRef" type="bpmn2.ConversationNode"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ConversationNode" name="ConversationNode"
+      isAbstract="true" superClass="bpmn2.BaseElement bpmn2.InteractionNode">
+    <ownedAttribute xmi:id="bpmn2.ConversationNode.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ConversationNode.participantRefs" name="participantRefs"
+        lower="2" upper="*" type="bpmn2.Participant"/>
+    <ownedAttribute xmi:id="bpmn2.ConversationNode.messageFlowRefs" name="messageFlowRefs"
+        lower="0" upper="*" type="bpmn2.MessageFlow"/>
+    <ownedAttribute xmi:id="bpmn2.ConversationNode.correlationKeys" name="correlationKeys"
+        lower="0" upper="*" type="bpmn2.CorrelationKey" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CorrelationKey" name="CorrelationKey"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.CorrelationKey.correlationPropertyRef" name="correlationPropertyRef"
+        lower="0" upper="*" type="bpmn2.CorrelationProperty"/>
+    <ownedAttribute xmi:id="bpmn2.CorrelationKey.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CorrelationProperty" name="CorrelationProperty"
+      superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.CorrelationProperty.correlationPropertyRetrievalExpression"
+        name="correlationPropertyRetrievalExpression" upper="*" type="bpmn2.CorrelationPropertyRetrievalExpression"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CorrelationProperty.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.CorrelationProperty.type" name="type" lower="0"
+        type="bpmn2.ItemDefinition"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CorrelationPropertyRetrievalExpression"
+      name="CorrelationPropertyRetrievalExpression" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.CorrelationPropertyRetrievalExpression.messagePath"
+        name="messagePath" type="bpmn2.FormalExpression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CorrelationPropertyRetrievalExpression.messageRef"
+        name="messageRef" type="bpmn2.Message"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.FormalExpression" name="FormalExpression"
+      superClass="bpmn2.Expression">
+    <ownedAttribute xmi:id="bpmn2.FormalExpression.language" name="language">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.FormalExpression.body" name="body">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.FormalExpression.evaluatesToTypeRef" name="evaluatesToTypeRef"
+        type="bpmn2.ItemDefinition"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CorrelationSubscription" name="CorrelationSubscription"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.CorrelationSubscription.correlationKeyRef" name="correlationKeyRef"
+        type="bpmn2.CorrelationKey"/>
+    <ownedAttribute xmi:id="bpmn2.CorrelationSubscription.correlationPropertyBinding"
+        name="correlationPropertyBinding" lower="0" upper="*" type="bpmn2.CorrelationPropertyBinding"
+        isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CorrelationPropertyBinding" name="CorrelationPropertyBinding"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.CorrelationPropertyBinding.dataPath" name="dataPath"
+        type="bpmn2.FormalExpression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CorrelationPropertyBinding.correlationPropertyRef"
+        name="correlationPropertyRef" type="bpmn2.CorrelationProperty"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalManualTask" name="GlobalManualTask"
+      superClass="bpmn2.GlobalTask"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ManualTask" name="ManualTask" superClass="bpmn2.Task"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Task" name="Task" superClass="bpmn2.Activity"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Activity" name="Activity" isAbstract="true"
+      superClass="bpmn2.FlowNode bpmn2.InteractionNode">
+    <ownedAttribute xmi:id="bpmn2.Activity.isForCompensation" name="isForCompensation"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Activity.loopCharacteristics" name="loopCharacteristics"
+        lower="0" type="bpmn2.LoopCharacteristics" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.resources" name="resources" lower="0" upper="*"
+        type="bpmn2.ResourceRole" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.default" name="default" lower="0" type="bpmn2.SequenceFlow"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.properties" name="properties" lower="0"
+        upper="*" type="bpmn2.Property" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.ioSpecification" name="ioSpecification"
+        lower="0" type="bpmn2.InputOutputSpecification" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.boundaryEventRefs" name="boundaryEventRefs"
+        lower="0" upper="*" type="bpmn2.BoundaryEvent" opposite="bpmn2.BoundaryEvent.attachedToRef"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.dataInputAssociations" name="dataInputAssociations"
+        lower="0" upper="*" type="bpmn2.DataInputAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.dataOutputAssociations" name="dataOutputAssociations"
+        lower="0" upper="*" type="bpmn2.DataOutputAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Activity.startQuantity" name="startQuantity" default="1">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Activity.completionQuantity" name="completionQuantity"
+        default="1">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.LoopCharacteristics" name="LoopCharacteristics"
+      isAbstract="true" superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.BoundaryEvent" name="BoundaryEvent"
+      superClass="bpmn2.CatchEvent">
+    <ownedAttribute xmi:id="bpmn2.BoundaryEvent.cancelActivity" name="cancelActivity"
+        default="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.BoundaryEvent.attachedToRef" name="attachedToRef"
+        type="bpmn2.Activity" opposite="bpmn2.Activity.boundaryEventRefs"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CatchEvent" name="CatchEvent" isAbstract="true"
+      superClass="bpmn2.Event">
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.parallelMultiple" name="parallelMultiple"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.outputSet" name="outputSet" lower="0"
+        type="bpmn2.OutputSet" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.eventDefinitionRefs" name="eventDefinitionRefs"
+        lower="0" upper="*" type="bpmn2.EventDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.dataOutputAssociation" name="dataOutputAssociation"
+        lower="0" upper="*" type="bpmn2.DataOutputAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.dataOutputs" name="dataOutputs" lower="0"
+        upper="*" type="bpmn2.DataOutput" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.CatchEvent.eventDefinitions" name="eventDefinitions"
+        lower="0" upper="*" type="bpmn2.EventDefinition" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Event" name="Event" isAbstract="true"
+      superClass="bpmn2.FlowNode bpmn2.InteractionNode">
+    <ownedAttribute xmi:id="bpmn2.Event.properties" name="properties" lower="0" upper="*"
+        type="bpmn2.Property" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.EventDefinition" name="EventDefinition"
+      isAbstract="true" superClass="bpmn2.RootElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataOutputAssociation" name="DataOutputAssociation"
+      superClass="bpmn2.DataAssociation"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataAssociation" name="DataAssociation"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.DataAssociation.transformation" name="transformation"
+        lower="0" type="bpmn2.FormalExpression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.DataAssociation.assignment" name="assignment" lower="0"
+        upper="*" type="bpmn2.Assignment" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.DataAssociation.targetRef" name="targetRef" type="bpmn2.ItemAwareElement"/>
+    <ownedAttribute xmi:id="bpmn2.DataAssociation.sourceRef" name="sourceRef" lower="0"
+        upper="*" type="bpmn2.ItemAwareElement"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Assignment" name="Assignment" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Assignment.from" name="from" type="bpmn2.Expression"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Assignment.to" name="to" type="bpmn2.Expression"
+        isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataInputAssociation" name="DataInputAssociation"
+      superClass="bpmn2.DataAssociation"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.UserTask" name="UserTask" superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.UserTask.renderings" name="renderings" lower="0"
+        upper="*" type="bpmn2.Rendering" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.UserTask.implementation" name="implementation" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Rendering" name="Rendering" superClass="bpmn2.BaseElement"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.HumanPerformer" name="HumanPerformer"
+      superClass="bpmn2.Performer"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.PotentialOwner" name="PotentialOwner"
+      superClass="bpmn2.HumanPerformer"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalUserTask" name="GlobalUserTask"
+      superClass="bpmn2.GlobalTask">
+    <ownedAttribute xmi:id="bpmn2.GlobalUserTask.implementation" name="implementation">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.GlobalUserTask.renderings" name="renderings" lower="0"
+        upper="*" type="bpmn2.Rendering" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Gateway" name="Gateway" isAbstract="true"
+      superClass="bpmn2.FlowNode">
+    <ownedAttribute xmi:id="bpmn2.Gateway.gatewayDirection" name="gatewayDirection"
+        type="bpmn2.GatewayDirection" default="Unspecified"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.GatewayDirection" name="GatewayDirection">
+    <ownedLiteral xmi:id="bpmn2.GatewayDirection.Unspecified" name="Unspecified"/>
+    <ownedLiteral xmi:id="bpmn2.GatewayDirection.Converging" name="Converging">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.GatewayDirection.Diverging" name="Diverging">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.GatewayDirection.Mixed" name="Mixed">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>3</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.EventBasedGateway" name="EventBasedGateway"
+      superClass="bpmn2.Gateway">
+    <ownedAttribute xmi:id="bpmn2.EventBasedGateway.instantiate" name="instantiate"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.EventBasedGateway.eventGatewayType" name="eventGatewayType"
+        type="bpmn2.EventBasedGatewayType"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.EventBasedGatewayType" name="EventBasedGatewayType">
+    <ownedLiteral xmi:id="bpmn2.EventBasedGatewayType.Parallel" name="Parallel"/>
+    <ownedLiteral xmi:id="bpmn2.EventBasedGatewayType.Exclusive" name="Exclusive">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ComplexGateway" name="ComplexGateway"
+      superClass="bpmn2.Gateway">
+    <ownedAttribute xmi:id="bpmn2.ComplexGateway.activationCondition" name="activationCondition"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ComplexGateway.default" name="default" lower="0"
+        type="bpmn2.SequenceFlow"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ExclusiveGateway" name="ExclusiveGateway"
+      superClass="bpmn2.Gateway">
+    <ownedAttribute xmi:id="bpmn2.ExclusiveGateway.default" name="default" lower="0"
+        type="bpmn2.SequenceFlow"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.InclusiveGateway" name="InclusiveGateway"
+      superClass="bpmn2.Gateway">
+    <ownedAttribute xmi:id="bpmn2.InclusiveGateway.default" name="default" lower="0"
+        type="bpmn2.SequenceFlow"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ParallelGateway" name="ParallelGateway"
+      superClass="bpmn2.Gateway"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Relationship" name="Relationship"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Relationship.type" name="type">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Relationship.direction" name="direction" type="bpmn2.RelationshipDirection"/>
+    <ownedAttribute xmi:id="bpmn2.Relationship.sources" name="sources" upper="*">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Relationship.targets" name="targets" upper="*">
+      <type xmi:type="emof:Class" href="http://www.eclipse.org/emf/2002/Ecore.emof#ecore.EObject"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.RelationshipDirection" name="RelationshipDirection">
+    <ownedLiteral xmi:id="bpmn2.RelationshipDirection.None" name="None"/>
+    <ownedLiteral xmi:id="bpmn2.RelationshipDirection.Forward" name="Forward">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.RelationshipDirection.Backward" name="Backward">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.RelationshipDirection.Both" name="Both">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>3</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Extension" name="Extension">
+    <ownedAttribute xmi:id="bpmn2.Extension.mustUnderstand" name="mustUnderstand"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Extension.definition" name="definition" type="bpmn2.ExtensionDefinition"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Extension.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.IntermediateCatchEvent" name="IntermediateCatchEvent"
+      superClass="bpmn2.CatchEvent"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.IntermediateThrowEvent" name="IntermediateThrowEvent"
+      superClass="bpmn2.ThrowEvent"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ThrowEvent" name="ThrowEvent" isAbstract="true"
+      superClass="bpmn2.Event">
+    <ownedAttribute xmi:id="bpmn2.ThrowEvent.inputSet" name="inputSet" lower="0" type="bpmn2.InputSet"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ThrowEvent.eventDefinitionRefs" name="eventDefinitionRefs"
+        lower="0" upper="*" type="bpmn2.EventDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.ThrowEvent.dataInputAssociation" name="dataInputAssociation"
+        lower="0" upper="*" type="bpmn2.DataInputAssociation" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ThrowEvent.dataInputs" name="dataInputs" lower="0"
+        upper="*" type="bpmn2.DataInput" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ThrowEvent.eventDefinitions" name="eventDefinitions"
+        lower="0" upper="*" type="bpmn2.EventDefinition" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.EndEvent" name="EndEvent" superClass="bpmn2.ThrowEvent"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.StartEvent" name="StartEvent" superClass="bpmn2.CatchEvent">
+    <ownedAttribute xmi:id="bpmn2.StartEvent.isInterrupting" name="isInterrupting"
+        default="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CancelEventDefinition" name="CancelEventDefinition"
+      superClass="bpmn2.EventDefinition"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ErrorEventDefinition" name="ErrorEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.ErrorEventDefinition.errorRef" name="errorRef" lower="0"
+        type="bpmn2.Error"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.TerminateEventDefinition" name="TerminateEventDefinition"
+      superClass="bpmn2.EventDefinition"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.EscalationEventDefinition" name="EscalationEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.EscalationEventDefinition.escalationRef" name="escalationRef"
+        lower="0" type="bpmn2.Escalation"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Escalation" name="Escalation">
+    <ownedAttribute xmi:id="bpmn2.Escalation.structureRef" name="structureRef" lower="0"
+        type="bpmn2.ItemDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.Escalation.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Escalation.escalationCode" name="escalationCode">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Escalation.id" name="id" isID="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CompensateEventDefinition" name="CompensateEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.CompensateEventDefinition.waitForCompletion" name="waitForCompletion">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.CompensateEventDefinition.activityRef" name="activityRef"
+        lower="0" type="bpmn2.Activity"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.TimerEventDefinition" name="TimerEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.TimerEventDefinition.timeDate" name="timeDate" lower="0"
+        type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.TimerEventDefinition.timeCycle" name="timeCycle"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.TimerEventDefinition.timeDuration" name="timeDuration"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.LinkEventDefinition" name="LinkEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.LinkEventDefinition.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.LinkEventDefinition.target" name="target" lower="0"
+        type="bpmn2.LinkEventDefinition" opposite="bpmn2.LinkEventDefinition.source"/>
+    <ownedAttribute xmi:id="bpmn2.LinkEventDefinition.source" name="source" lower="0"
+        upper="*" type="bpmn2.LinkEventDefinition" opposite="bpmn2.LinkEventDefinition.target"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.MessageEventDefinition" name="MessageEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.MessageEventDefinition.messageRef" name="messageRef"
+        lower="0" type="bpmn2.Message"/>
+    <ownedAttribute xmi:id="bpmn2.MessageEventDefinition.operationRef" name="operationRef"
+        lower="0" type="bpmn2.Operation"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ConditionalEventDefinition" name="ConditionalEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.ConditionalEventDefinition.condition" name="condition"
+        type="bpmn2.Expression" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SignalEventDefinition" name="SignalEventDefinition"
+      superClass="bpmn2.EventDefinition">
+    <ownedAttribute xmi:id="bpmn2.SignalEventDefinition.signalRef" name="signalRef"
+        lower="0" type="bpmn2.Signal"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Signal" name="Signal" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Signal.structureRef" name="structureRef" lower="0"
+        type="bpmn2.ItemDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.Signal.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ImplicitThrowEvent" name="ImplicitThrowEvent"
+      superClass="bpmn2.ThrowEvent"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataObject" name="DataObject" superClass="bpmn2.FlowElement bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.DataObject.isCollection" name="isCollection" default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataStore" name="DataStore" superClass="bpmn2.ItemAwareElement bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.DataStore.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataStore.capacity" name="capacity">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.DataStore.isUnlimited" name="isUnlimited" default="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataStoreReference" name="DataStoreReference"
+      superClass="bpmn2.FlowElement bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.DataStoreReference.dataStoreRef" name="dataStoreRef"
+        lower="0" type="bpmn2.DataStore"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.DataObjectReference" name="DataObjectReference"
+      superClass="bpmn2.FlowElement bpmn2.ItemAwareElement">
+    <ownedAttribute xmi:id="bpmn2.DataObjectReference.dataObjectRef" name="dataObjectRef"
+        type="bpmn2.DataObject"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CallConversation" name="CallConversation"
+      superClass="bpmn2.ConversationNode">
+    <ownedAttribute xmi:id="bpmn2.CallConversation.calledCollaborationRef" name="calledCollaborationRef"
+        lower="0" type="bpmn2.Collaboration"/>
+    <ownedAttribute xmi:id="bpmn2.CallConversation.participantAssociations" name="participantAssociations"
+        lower="0" upper="*" type="bpmn2.ParticipantAssociation" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Conversation" name="Conversation"
+      superClass="bpmn2.ConversationNode"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SubConversation" name="SubConversation"
+      superClass="bpmn2.ConversationNode">
+    <ownedAttribute xmi:id="bpmn2.SubConversation.conversationNodes" name="conversationNodes"
+        lower="0" upper="*" type="bpmn2.ConversationNode" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalConversation" name="GlobalConversation"
+      superClass="bpmn2.Collaboration"/>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.PartnerEntity" name="PartnerEntity"
+      superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.PartnerEntity.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.PartnerEntity.participantRef" name="participantRef"
+        lower="0" upper="*" type="bpmn2.Participant"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.PartnerRole" name="PartnerRole" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.PartnerRole.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.PartnerRole.participantRef" name="participantRef"
+        lower="0" upper="*" type="bpmn2.Participant"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ChoreographyActivity" name="ChoreographyActivity"
+      isAbstract="true" superClass="bpmn2.FlowNode">
+    <ownedAttribute xmi:id="bpmn2.ChoreographyActivity.participantRefs" name="participantRefs"
+        lower="0" upper="*" type="bpmn2.Participant"/>
+    <ownedAttribute xmi:id="bpmn2.ChoreographyActivity.initiatingParticipantRef" name="initiatingParticipantRef"
+        lower="0" type="bpmn2.Participant"/>
+    <ownedAttribute xmi:id="bpmn2.ChoreographyActivity.correlationKeys" name="correlationKeys"
+        lower="0" upper="*" type="bpmn2.CorrelationKey" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ChoreographyActivity.loopType" name="loopType" type="bpmn2.ChoreographyLoopType"
+        default="None"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.ChoreographyLoopType" name="ChoreographyLoopType">
+    <ownedLiteral xmi:id="bpmn2.ChoreographyLoopType.None" name="None"/>
+    <ownedLiteral xmi:id="bpmn2.ChoreographyLoopType.Standard" name="Standard">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.ChoreographyLoopType.MultiInstanceSequential" name="MultiInstanceSequential">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.ChoreographyLoopType.MultiInstanceParallel" name="MultiInstanceParallel">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>3</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CallChoreography" name="CallChoreography"
+      superClass="bpmn2.ChoreographyActivity">
+    <ownedAttribute xmi:id="bpmn2.CallChoreography.calledChoreographyRef" name="calledChoreographyRef"
+        lower="0" type="bpmn2.Choreography"/>
+    <ownedAttribute xmi:id="bpmn2.CallChoreography.participantAssociations" name="participantAssociations"
+        lower="0" upper="*" type="bpmn2.ParticipantAssociation" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SubChoreography" name="SubChoreography"
+      superClass="bpmn2.ChoreographyActivity bpmn2.FlowElementsContainer">
+    <ownedAttribute xmi:id="bpmn2.SubChoreography.artifacts" name="artifacts" lower="0"
+        upper="*" type="bpmn2.Artifact" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ChoreographyTask" name="ChoreographyTask"
+      superClass="bpmn2.ChoreographyActivity">
+    <ownedAttribute xmi:id="bpmn2.ChoreographyTask.messageFlowRef" name="messageFlowRef"
+        lower="0" upper="2" type="bpmn2.MessageFlow"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalChoreographyTask" name="GlobalChoreographyTask"
+      superClass="bpmn2.Choreography">
+    <ownedAttribute xmi:id="bpmn2.GlobalChoreographyTask.initiatingParticipantRef"
+        name="initiatingParticipantRef" type="bpmn2.Participant"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.TextAnnotation" name="TextAnnotation"
+      superClass="bpmn2.Artifact">
+    <ownedAttribute xmi:id="bpmn2.TextAnnotation.text" name="text" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.TextAnnotation.textFormat" name="textFormat" default="text/plain">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Group" name="Group" superClass="bpmn2.Artifact">
+    <ownedAttribute xmi:id="bpmn2.Group.categoryValueRef" name="categoryValueRef"
+        lower="0" type="bpmn2.CategoryValue"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Association" name="Association" superClass="bpmn2.Artifact">
+    <ownedAttribute xmi:id="bpmn2.Association.associationDirection" name="associationDirection"
+        type="bpmn2.AssociationDirection"/>
+    <ownedAttribute xmi:id="bpmn2.Association.sourceRef" name="sourceRef" lower="0"
+        type="bpmn2.BaseElement"/>
+    <ownedAttribute xmi:id="bpmn2.Association.targetRef" name="targetRef" lower="0"
+        type="bpmn2.BaseElement"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.AssociationDirection" name="AssociationDirection">
+    <ownedLiteral xmi:id="bpmn2.AssociationDirection.None" name="None"/>
+    <ownedLiteral xmi:id="bpmn2.AssociationDirection.One" name="One">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.AssociationDirection.Both" name="Both">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Category" name="Category" superClass="bpmn2.RootElement">
+    <ownedAttribute xmi:id="bpmn2.Category.categoryValue" name="categoryValue" lower="0"
+        upper="*" type="bpmn2.CategoryValue" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Category.name" name="name">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ServiceTask" name="ServiceTask" superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.ServiceTask.implementation" name="implementation"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ServiceTask.operationRef" name="operationRef" lower="0"
+        type="bpmn2.Operation"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SubProcess" name="SubProcess" superClass="bpmn2.Activity bpmn2.FlowElementsContainer">
+    <ownedAttribute xmi:id="bpmn2.SubProcess.triggeredByEvent" name="triggeredByEvent"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.SubProcess.artifacts" name="artifacts" lower="0"
+        upper="*" type="bpmn2.Artifact" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.MultiInstanceBehavior" name="MultiInstanceBehavior">
+    <ownedLiteral xmi:id="bpmn2.MultiInstanceBehavior.None" name="None"/>
+    <ownedLiteral xmi:id="bpmn2.MultiInstanceBehavior.One" name="One">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.MultiInstanceBehavior.All" name="All">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>2</value>
+      </xmi:Extension>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="bpmn2.MultiInstanceBehavior.Complex" name="Complex">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>3</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.MultiInstanceLoopCharacteristics"
+      name="MultiInstanceLoopCharacteristics" superClass="bpmn2.LoopCharacteristics">
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.isSequential" name="isSequential"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.behavior" name="behavior"
+        type="bpmn2.MultiInstanceBehavior" default="All"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.loopCardinality"
+        name="loopCardinality" lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.loopDataInputRef"
+        name="loopDataInputRef" lower="0" type="bpmn2.ItemAwareElement"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.loopDataOutputRef"
+        name="loopDataOutputRef" lower="0" type="bpmn2.ItemAwareElement"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.inputDataItem"
+        name="inputDataItem" lower="0" type="bpmn2.DataInput" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.outputDataItem"
+        name="outputDataItem" lower="0" type="bpmn2.DataOutput" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.completionCondition"
+        name="completionCondition" lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.complexBehaviorDefinition"
+        name="complexBehaviorDefinition" lower="0" upper="*" type="bpmn2.ComplexBehaviorDefinition"
+        isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.oneBehaviorEventRef"
+        name="oneBehaviorEventRef" lower="0" type="bpmn2.EventDefinition"/>
+    <ownedAttribute xmi:id="bpmn2.MultiInstanceLoopCharacteristics.noneBehaviorEventRef"
+        name="noneBehaviorEventRef" lower="0" type="bpmn2.EventDefinition"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ComplexBehaviorDefinition" name="ComplexBehaviorDefinition"
+      superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.ComplexBehaviorDefinition.condition" name="condition"
+        type="bpmn2.FormalExpression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.ComplexBehaviorDefinition.event" name="event" lower="0"
+        type="bpmn2.ImplicitThrowEvent" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.StandardLoopCharacteristics" name="StandardLoopCharacteristics"
+      superClass="bpmn2.LoopCharacteristics">
+    <ownedAttribute xmi:id="bpmn2.StandardLoopCharacteristics.testBefore" name="testBefore"
+        default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.StandardLoopCharacteristics.loopCondition" name="loopCondition"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.StandardLoopCharacteristics.loopMaximum" name="loopMaximum"
+        lower="0" type="bpmn2.Expression" isComposite="true"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.CallActivity" name="CallActivity"
+      superClass="bpmn2.Activity">
+    <ownedAttribute xmi:id="bpmn2.CallActivity.calledElementRef" name="calledElementRef"
+        lower="0" type="bpmn2.CallableElement"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.SendTask" name="SendTask" superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.SendTask.implementation" name="implementation" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.SendTask.operationRef" name="operationRef" lower="0"
+        type="bpmn2.Operation"/>
+    <ownedAttribute xmi:id="bpmn2.SendTask.messageRef" name="messageRef" lower="0"
+        type="bpmn2.Message"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ReceiveTask" name="ReceiveTask" superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.ReceiveTask.implementation" name="implementation"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ReceiveTask.instantiate" name="instantiate" default="false">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ReceiveTask.operationRef" name="operationRef" lower="0"
+        type="bpmn2.Operation"/>
+    <ownedAttribute xmi:id="bpmn2.ReceiveTask.messageRef" name="messageRef" lower="0"
+        type="bpmn2.Message"/>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.ScriptTask" name="ScriptTask" superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.ScriptTask.scriptFormat" name="scriptFormat" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.ScriptTask.script" name="script" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.BusinessRuleTask" name="BusinessRuleTask"
+      superClass="bpmn2.Task">
+    <ownedAttribute xmi:id="bpmn2.BusinessRuleTask.implementation" name="implementation"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.AdHocSubProcess" name="AdHocSubProcess"
+      superClass="bpmn2.SubProcess">
+    <ownedAttribute xmi:id="bpmn2.AdHocSubProcess.completionCondition" name="completionCondition"
+        type="bpmn2.Expression" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.AdHocSubProcess.ordering" name="ordering" type="bpmn2.AdHocOrdering"/>
+    <ownedAttribute xmi:id="bpmn2.AdHocSubProcess.cancelRemainingInstances" name="cancelRemainingInstances"
+        default="true">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Enumeration" xmi:id="bpmn2.AdHocOrdering" name="AdHocOrdering">
+    <ownedLiteral xmi:id="bpmn2.AdHocOrdering.Parallel" name="Parallel"/>
+    <ownedLiteral xmi:id="bpmn2.AdHocOrdering.Sequential" name="Sequential">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <value>1</value>
+      </xmi:Extension>
+    </ownedLiteral>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Transaction" name="Transaction" superClass="bpmn2.SubProcess">
+    <ownedAttribute xmi:id="bpmn2.Transaction.protocol" name="protocol" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Transaction.method" name="method">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalScriptTask" name="GlobalScriptTask"
+      superClass="bpmn2.GlobalTask">
+    <ownedAttribute xmi:id="bpmn2.GlobalScriptTask.scriptLanguage" name="scriptLanguage">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.GlobalScriptTask.script" name="script">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.GlobalBusinessRuleTask" name="GlobalBusinessRuleTask"
+      superClass="bpmn2.GlobalTask">
+    <ownedAttribute xmi:id="bpmn2.GlobalBusinessRuleTask.implementation" name="implementation">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <ownedType xmi:type="emof:Class" xmi:id="bpmn2.Definitions" name="Definitions" superClass="bpmn2.BaseElement">
+    <ownedAttribute xmi:id="bpmn2.Definitions.name" name="name" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.targetNamespace" name="targetNamespace"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.expressionLanguage" name="expressionLanguage"
+        default="http://www.w3.org/1999/XPath">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.typeLanguage" name="typeLanguage" default="http://www.w3.org/2001/XMLSchema">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.imports" name="imports" lower="0" upper="*"
+        type="bpmn2.Import" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Definitions.extensions" name="extensions" lower="0"
+        upper="*" type="bpmn2.Extension" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Definitions.relationships" name="relationships"
+        lower="0" upper="*" type="bpmn2.Relationship" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Definitions.rootElements" name="rootElements" lower="0"
+        upper="*" type="bpmn2.RootElement" isComposite="true"/>
+    <ownedAttribute xmi:id="bpmn2.Definitions.diagrams" name="diagrams" lower="0"
+        upper="*" isComposite="true">
+      <type xmi:type="emof:Class" href="BPMNDI.ecore#//BPMNDiagram"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.exporter" name="exporter" lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="bpmn2.Definitions.exporterVersion" name="exporterVersion"
+        lower="0">
+      <type xmi:type="emof:PrimitiveType" href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String"/>
+    </ownedAttribute>
+  </ownedType>
+  <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+    <nsPrefix>bpmn</nsPrefix>
+  </xmi:Extension>
+</emof:Package>

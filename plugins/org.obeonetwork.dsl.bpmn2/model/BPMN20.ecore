@@ -325,6 +325,10 @@
         upperBound="-1" eType="#//SequenceFlow" eOpposite="#//SequenceFlow/targetRef"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lanes" ordered="false"
         upperBound="-1" eType="#//Lane" transient="true" derived="true" eOpposite="#//Lane/flowNodeRefs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokens" upperBound="-1"
+        eType="#//dynamic/Token">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow" eSuperTypes="#//FlowElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImmediate" ordered="false"
@@ -975,4 +979,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exporterVersion" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eSubpackages name="dynamic" nsURI="http://gemoc.org/xbpmn/dynamic" nsPrefix="dynamic">
+    <eClassifiers xsi:type="ecore:EClass" name="Token"/>
+  </eSubpackages>
 </ecore:EPackage>

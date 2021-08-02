@@ -32,6 +32,8 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Factory;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiPackage;
 import org.obeonetwork.dsl.bpmn2.bpmdi.impl.BpmnDiPackageImpl;
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage;
+import org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 import org.obeonetwork.dsl.dd.dc.impl.DcPackageImpl;
 import org.obeonetwork.dsl.dd.di.DiPackage;
@@ -1122,7 +1124,11 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DynamicPackage.eNS_URI);
+		DynamicPackageImpl theDynamicPackage = (DynamicPackageImpl) (registeredPackage instanceof DynamicPackageImpl
+				? registeredPackage
+				: DynamicPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
 		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (registeredPackage instanceof BpmnDiPackageImpl
 				? registeredPackage
 				: BpmnDiPackage.eINSTANCE);
@@ -1148,6 +1154,7 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 
 		// Fix loaded packages
 		theBpmn2Package.fixPackageContents();
+		theDynamicPackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBpmn2Package.freeze();
@@ -2911,6 +2918,16 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 	@Override
 	public EReference getFlowNode_Lanes() {
 		return (EReference) getFlowNode().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFlowNode_HeldTokens() {
+		return (EReference) getFlowNode().getEStructuralFeatures().get(3);
 	}
 
 	/**

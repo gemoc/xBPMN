@@ -25,6 +25,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiPackage;
 import org.obeonetwork.dsl.bpmn2.bpmdi.impl.BpmnDiPackageImpl;
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage;
+import org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl;
 import org.obeonetwork.dsl.bpmn2.impl.Bpmn2PackageImpl;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 import org.obeonetwork.dsl.dd.dc.impl.DcPackageImpl;
@@ -173,6 +175,10 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		Bpmn2PackageImpl theBpmn2Package = (Bpmn2PackageImpl) (registeredPackage instanceof Bpmn2PackageImpl
 				? registeredPackage
 				: Bpmn2Package.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DynamicPackage.eNS_URI);
+		DynamicPackageImpl theDynamicPackage = (DynamicPackageImpl) (registeredPackage instanceof DynamicPackageImpl
+				? registeredPackage
+				: DynamicPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BpmnDiPackage.eNS_URI);
 		BpmnDiPackageImpl theBpmnDiPackage = (BpmnDiPackageImpl) (registeredPackage instanceof BpmnDiPackageImpl
 				? registeredPackage
@@ -196,6 +202,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		// Fix loaded packages
 		theBpmn2Package.fixPackageContents();
+		theDynamicPackage.fixPackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(theDiPackage, new EValidator.Descriptor() {

@@ -24,6 +24,14 @@
             genModel="model/BPMN20.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated BPMN20 -->
+      <package
+            uri="http://gemoc.org/xbpmn/dynamic"
+            class="org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage"
+            genModel="model/BPMN20.genmodel"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="bpmn2"
