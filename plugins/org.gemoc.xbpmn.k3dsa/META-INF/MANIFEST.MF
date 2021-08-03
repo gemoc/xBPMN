@@ -13,5 +13,6 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
  org.obeonetwork.dsl.bpmn2;bundle-version="0.0.0";visibility:=private
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.gemoc.xbpmn.k3dsa.bpmn2.aspects
+Export-Package: org.gemoc.xbpmn.k3dsa.bpmn2.aspects,
+ org.gemoc.xbpmn.k3dsa.commons
 Bundle-Vendor: GEMOC

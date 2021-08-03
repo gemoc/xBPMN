@@ -1,0 +1,10 @@
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Lane){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.startEval((org.obeonetwork.dsl.bpmn2.Lane)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Lane){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.endEval((org.obeonetwork.dsl.bpmn2.Lane)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect

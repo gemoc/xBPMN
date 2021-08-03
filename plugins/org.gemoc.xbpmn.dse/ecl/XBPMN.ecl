@@ -11,6 +11,18 @@ package bpmn2
 	context Process
 		def : startProcess : Event = self.startEval()
 		def : endProcess : Event = self.endEval()
+		
+	context Lane
+		def : startLane : Event = self.startEval()
+		def : endLane : Event = self.endEval()
+		
+	context _'StartEvent'
+		def : triggerStartEvent : Event = self.startEval()
+		-- def : endStartEvent : Event = self.endEval()
+		
+	context EndEvent
+		def : triggerEndEvent : Event = self.startEval()
+		-- def : endEndEvent : Event = self.endEval()
 endpackage
 
 -- event constraints
@@ -20,4 +32,26 @@ package bpmn2
 	context Process
 		inv nonReentrant:
 			Relation Alternates(self.startProcess, self.endProcess)
+	
+	-- TODO Stop Process when all Lanes have stopped
+	
+	context Lane
+		inv nonReentrant:
+			Relation Alternates(self.startLane, self.endLane)
+					
+		-- can stop Lane only if received a StopEvent associated to the Lane
+		-- FIXME -- OneTickAndNoMore instead of Union ?
+		inv canStopWhenReceivedEndEvent:
+			--let anyEndLaneInLane : Event = Expression Union(self.flowNodeRefs->select(n |n.oclIsKindOf(EndEvent))->collect(b | b.oclAsType(EndEvent).endEndEvent) ) in
+			let anyEndEventInLane : Event = Expression Union(self.flowNodeRefs->selectByKind(EndEvent).triggerEndEvent) in
+			Relation Precedes(anyEndEventInLane, self.endLane  ) 
+			
+	context _'StartEvent'
+		
+		-- can be triggered only if owning process is started	
+		-- TODO doesn't deal with end of process and pending events
+		inv canStartWhenProcessIsStarted:
+			Relation Precedes(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).startProcess, self.triggerStartEvent  )  
+			
+		
 endpackage

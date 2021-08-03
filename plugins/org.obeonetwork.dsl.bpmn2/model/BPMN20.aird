@@ -7,7 +7,7 @@
     <semanticResources>DC.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_E437QPN0EeuSAP1a4rykkA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C0H_0fN1EeuSAP1a4rykkA" name="bpmn2 inheritance class diagram" repPath="#_C0GKoPN1EeuSAP1a4rykkA" changeId="65ba3713-3b02-40cd-b357-df06f3ec75fd">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C0H_0fN1EeuSAP1a4rykkA" name="bpmn2 inheritance class diagram" repPath="#_C0GKoPN1EeuSAP1a4rykkA" changeId="85f0e45b-5c4f-48e4-9fba-39a0a7b1a446">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="BPMN20.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -14303,6 +14303,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_U8JrdPOREeuSAP1a4rykkA" description="_V9p1d_N1EeuSAP1a4rykkA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_U8JrdvOREeuSAP1a4rykkA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_U8JrdfOREeuSAP1a4rykkA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -14319,6 +14320,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_U8Jre_OREeuSAP1a4rykkA" description="_V9p1d_N1EeuSAP1a4rykkA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_U8JrffOREeuSAP1a4rykkA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_U8JrfPOREeuSAP1a4rykkA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -14335,6 +14337,7 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_U8JrgvOREeuSAP1a4rykkA" description="_V9qch_N1EeuSAP1a4rykkA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_U8JrhPOREeuSAP1a4rykkA" showIcon="false">
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_U8Jrg_OREeuSAP1a4rykkA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
