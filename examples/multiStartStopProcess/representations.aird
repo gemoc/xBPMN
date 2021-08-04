@@ -2,6 +2,9 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_HKdE8PU4Eeuyev_wuzpFqw" selectedViews="_HMxZIPU4Eeuyev_wuzpFqw" version="14.3.1.202003261200">
     <semanticResources>definitions.bpmn</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20210804_175309/definitions.bpmn</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20210804_175443/definitions.bpmn</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20210804_175838/definitions.bpmn</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_HMxZIPU4Eeuyev_wuzpFqw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_U-4eIPU4Eeuyev_wuzpFqw" name="MultiStartStopProcess" repPath="#_U994IPU4Eeuyev_wuzpFqw" changeId="39de3cea-b161-4859-b6f2-813524245530">
