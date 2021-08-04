@@ -32,15 +32,24 @@ package bpmn2
 	context Process
 --		inv nonReentrant:
 --			Relation Alternates(self.startProcess, self.endProcess)
-
-			
+		
 		inv noSimultaneousStarts:
 			Relation Exclusion(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
+		inv noSimultaneousStops:
+			Relation Exclusion(self.flowElements->selectByKind(EndEvent).triggerEndEvent)
 			
 		inv noMultipleCallOfStartEvents:
 		let allStartEvents : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
 		let allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
 			Relation Alternates(allStartEvents, allEndEvents)
+			
+		inv startProcessOnAnyStartEvent:
+		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
+			Relation Coincides(allStartEvents_2, self.startProcess)
+			
+		inv endProcessOnAnyStartEvent:
+		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
+			Relation Coincides(allEndEvents_2, self.endProcess)
 	
 	-- TODO Stop Process when all Lanes have stopped
 	
@@ -55,14 +64,14 @@ package bpmn2
 --			let anyEndEventInLane : Event = Expression Union(self.flowNodeRefs->selectByKind(EndEvent).triggerEndEvent) in
 --			Relation Precedes(anyEndEventInLane, self.endLane  ) 
 			
-	context _'StartEvent'
-		
-		inv startProcessOnStartEvent:
-			Relation Coincides(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).startProcess, self.triggerStartEvent  )  
-	
-	context EndEvent
-			
-		inv endProcessOnEndEvent:
-			Relation Coincides(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).endProcess, self.triggerEndEvent  )
+--	context _'StartEvent'
+--		
+--		inv startProcessOnStartEvent:
+--			Relation Precedes(self.triggerStartEvent, self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).startProcess  )  
+--	
+--	context EndEvent
+--			
+--		inv endProcessOnEndEvent:
+--			Relation Precedes(self.triggerEndEvent, self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).endProcess  )
 		
 endpackage
