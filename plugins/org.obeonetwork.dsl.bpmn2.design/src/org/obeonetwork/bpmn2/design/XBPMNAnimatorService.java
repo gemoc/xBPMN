@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
+import org.eclipse.xtext.EcoreUtil2;
 import org.obeonetwork.dsl.bpmn2.Lane;
 import org.obeonetwork.dsl.bpmn2.Process;
 
@@ -35,12 +37,18 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 
 	
 	public boolean isStarted(EObject eo) {
+		boolean res = false;
 		if (eo instanceof Lane) {
-			System.out.println("isStarted Lane: "+((Lane)eo).getName()+" "+XBPMNRTDAccessor.getIsStarted((Lane)eo) );
-			return XBPMNRTDAccessor.getIsStarted((Lane)eo);
+			Lane lane = (Lane)eo;
+			// Lane is started if container Process is started
+			res = XBPMNRTDAccessor.getIsStarted(EcoreUtil2.getContainerOfType(lane, Process.class));
+			System.out.println("isStarted Lane: "+lane.getName()+" "+res );
+			return res;
 		}else if (eo instanceof Process) {
-			System.out.println("isStarted Process: "+((Process)eo).getName()+" "+XBPMNRTDAccessor.getIsStarted((Process)eo) );
-			return XBPMNRTDAccessor.getIsStarted((Process)eo);
+			Process process =  (Process)eo;
+			res = XBPMNRTDAccessor.getIsStarted(process);
+			System.out.println("isStarted Process: "+process.getName()+" "+res );
+			return res;
 		} else {
 			return false;
 		}

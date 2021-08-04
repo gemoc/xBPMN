@@ -12,9 +12,9 @@ package bpmn2
 		def : startProcess : Event = self.startEval()
 		def : endProcess : Event = self.endEval()
 		
-	context Lane
-		def : startLane : Event = self.startEval()
-		def : endLane : Event = self.endEval()
+--	context Lane
+--		def : startLane : Event = self.startEval()
+--		def : endLane : Event = self.endEval()
 		
 	context _'StartEvent'
 		def : triggerStartEvent : Event = self.startEval()
@@ -30,28 +30,39 @@ endpackage
 package bpmn2
 
 	context Process
-		inv nonReentrant:
-			Relation Alternates(self.startProcess, self.endProcess)
+--		inv nonReentrant:
+--			Relation Alternates(self.startProcess, self.endProcess)
+
+			
+		inv noSimultaneousStarts:
+			Relation Exclusion(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
+			
+		inv noMultipleCallOfStartEvents:
+		let allStartEvents : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
+		let allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
+			Relation Alternates(allStartEvents, allEndEvents)
 	
 	-- TODO Stop Process when all Lanes have stopped
 	
-	context Lane
-		inv nonReentrant:
-			Relation Alternates(self.startLane, self.endLane)
+--	context Lane
+--		inv nonReentrant:
+--			Relation Alternates(self.startLane, self.endLane)
 					
 		-- can stop Lane only if received a StopEvent associated to the Lane
 		-- FIXME -- OneTickAndNoMore instead of Union ?
-		inv canStopWhenReceivedEndEvent:
-			--let anyEndLaneInLane : Event = Expression Union(self.flowNodeRefs->select(n |n.oclIsKindOf(EndEvent))->collect(b | b.oclAsType(EndEvent).endEndEvent) ) in
-			let anyEndEventInLane : Event = Expression Union(self.flowNodeRefs->selectByKind(EndEvent).triggerEndEvent) in
-			Relation Precedes(anyEndEventInLane, self.endLane  ) 
+--		inv canStopWhenReceivedEndEvent:
+--			--let anyEndLaneInLane : Event = Expression Union(self.flowNodeRefs->select(n |n.oclIsKindOf(EndEvent))->collect(b | b.oclAsType(EndEvent).endEndEvent) ) in
+--			let anyEndEventInLane : Event = Expression Union(self.flowNodeRefs->selectByKind(EndEvent).triggerEndEvent) in
+--			Relation Precedes(anyEndEventInLane, self.endLane  ) 
 			
 	context _'StartEvent'
 		
-		-- can be triggered only if owning process is started	
-		-- TODO doesn't deal with end of process and pending events
-		inv canStartWhenProcessIsStarted:
-			Relation Precedes(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).startProcess, self.triggerStartEvent  )  
+		inv startProcessOnStartEvent:
+			Relation Coincides(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).startProcess, self.triggerStartEvent  )  
+	
+	context EndEvent
 			
+		inv endProcessOnEndEvent:
+			Relation Coincides(self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).endProcess, self.triggerEndEvent  )
 		
 endpackage
