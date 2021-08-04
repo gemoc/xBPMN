@@ -280,11 +280,16 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
 
 @Aspect(className=Lane)
 class LaneAspect extends BaseElementAspect {
+	
+	public Boolean isStarted = false
+	
 	def void startEval() {
 		println("startEval Lane "+_self.name)
+		_self.isStarted = true
 	}
 
 	def void endEval() {
 		println("endEval Lane "+_self.name)
+		_self.isStarted = false
 	}
 }

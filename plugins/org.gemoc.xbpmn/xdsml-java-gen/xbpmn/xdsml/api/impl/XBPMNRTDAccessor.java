@@ -9,6 +9,18 @@ import org.eclipse.gemoc.executionframework.engine.commons.K3DslHelper;
 
 
 public class XBPMNRTDAccessor {
+	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted");
+	}
+	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted", newValue);
+	}
+	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Lane eObject) {
+		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect", "isStarted");
+	}
+	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Lane eObject, java.lang.Boolean newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect", "isStarted", newValue);
+	}
 
 	public static Object getAspectProperty(EObject eObject, String languageName, String aspectName, String propertyName) {
 		List<Class<?>> aspects = K3DslHelper.getAspectsOn(languageName, eObject.getClass());

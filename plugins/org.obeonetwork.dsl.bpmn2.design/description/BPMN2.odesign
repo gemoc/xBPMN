@@ -1778,6 +1778,12 @@
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>
+      <additionalLayers name="Debug"/>
+      <additionalLayers name="Animation" activeByDefault="true">
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="IsStarted" position="NORTH_WEST" preconditionExpression="service:isStarted" imageExpression="/org.obeonetwork.dsl.bpmn2.design/icons/xbpmn/play-48.png" mappings="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='SubProcess'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='SubProcessDiagram']/@defaultLayer/@containerMappings[name='SubProcess']"/>
+        </decorationDescriptionsSet>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="CollaborationDiagram" label="Collaboration Diagram" titleExpression="aql:self.name" pasteDescriptions="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='CollaborationDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste']" domainClass="bpmn2.Collaboration" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore#/"/>
@@ -5338,6 +5344,8 @@
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.ProcessService"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.NamingService"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.ServiceHelper"/>
+    <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.XBPMNDebuggerService"/>
+    <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.XBPMNAnimatorService"/>
   </ownedViewpoints>
   <userColorsPalettes name="Colors">
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="LaneBackgroundRight"/>

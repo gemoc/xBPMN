@@ -19,7 +19,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.sirius.ext.base,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.eclipse.gemoc.executionframework.extensions.sirius,
+ org.eclipse.gemoc.execution.concurrent.ccsljavaengine.ui;bundle-version="2.3.0",
+ org.gemoc.xbpmn;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.obeonetwork.bpmn2.design
