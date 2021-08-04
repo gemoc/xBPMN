@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_HK2tkfU4Eeuyev_wuzpFqw">
+  <rootElements xsi:type="bpmn:Process" id="_HK2tkPU4Eeuyev_wuzpFqw" name="MultiStartEvent MultiStopEvent Process">
+    <flowElements xsi:type="bpmn:StartEvent" id="_ihAmYPU4Eeuyev_wuzpFqw" name="Start1" outgoing="_6sVh8PU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:StartEvent" id="_j9sm0PU4Eeuyev_wuzpFqw" name="Start2" outgoing="_77_L8PU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:EndEvent" id="_n2HC0PU4Eeuyev_wuzpFqw" name="End1" incoming="_wRihkPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:EndEvent" id="_quDgUPU4Eeuyev_wuzpFqw" name="End2" incoming="_KFI38PU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:Task" id="_t6YSYPU4Eeuyev_wuzpFqw" name="T1" outgoing="_sUxxEPU5Eeuyev_wuzpFqw" incoming="_6sVh8PU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:Task" id="_yJ_GYPU4Eeuyev_wuzpFqw" name="T2" outgoing="_jaU-kPU5Eeuyev_wuzpFqw" incoming="_77_L8PU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:Task" id="_3scpYPU4Eeuyev_wuzpFqw" name="T3" outgoing="_uFPCEPU5Eeuyev_wuzpFqw" incoming="_sy_XEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_6sVh8PU4Eeuyev_wuzpFqw" targetRef="_t6YSYPU4Eeuyev_wuzpFqw" sourceRef="_ihAmYPU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_77_L8PU4Eeuyev_wuzpFqw" targetRef="_yJ_GYPU4Eeuyev_wuzpFqw" sourceRef="_j9sm0PU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_ImOp8PU5Eeuyev_wuzpFqw" outgoing="_KFI38PU5Eeuyev_wuzpFqw" incoming="_vMHKkPU5Eeuyev_wuzpFqw _vrUPEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_KFI38PU5Eeuyev_wuzpFqw" targetRef="_quDgUPU4Eeuyev_wuzpFqw" sourceRef="_ImOp8PU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:Task" id="_cL0wgPU5Eeuyev_wuzpFqw" name="T4" outgoing="_unuEEPU5Eeuyev_wuzpFqw _vMHKkPU5Eeuyev_wuzpFqw" incoming="_rRB1EPU5Eeuyev_wuzpFqw _tOdLEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:Task" id="_eiDBAPU5Eeuyev_wuzpFqw" name="T5" outgoing="_vrUPEPU5Eeuyev_wuzpFqw" incoming="_rz0ZEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_iHT3gPU5Eeuyev_wuzpFqw" outgoing="_rRB1EPU5Eeuyev_wuzpFqw _rz0ZEPU5Eeuyev_wuzpFqw" incoming="_jaU-kPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_jaU-kPU5Eeuyev_wuzpFqw" targetRef="_iHT3gPU5Eeuyev_wuzpFqw" sourceRef="_yJ_GYPU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_ouXEAPU5Eeuyev_wuzpFqw" outgoing="_sy_XEPU5Eeuyev_wuzpFqw _tOdLEPU5Eeuyev_wuzpFqw" incoming="_sUxxEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_qMvGgPU5Eeuyev_wuzpFqw" outgoing="_wRihkPU5Eeuyev_wuzpFqw" incoming="_uFPCEPU5Eeuyev_wuzpFqw _unuEEPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_rRB1EPU5Eeuyev_wuzpFqw" targetRef="_cL0wgPU5Eeuyev_wuzpFqw" sourceRef="_iHT3gPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_rz0ZEPU5Eeuyev_wuzpFqw" targetRef="_eiDBAPU5Eeuyev_wuzpFqw" sourceRef="_iHT3gPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_sUxxEPU5Eeuyev_wuzpFqw" targetRef="_ouXEAPU5Eeuyev_wuzpFqw" sourceRef="_t6YSYPU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_sy_XEPU5Eeuyev_wuzpFqw" targetRef="_3scpYPU4Eeuyev_wuzpFqw" sourceRef="_ouXEAPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_tOdLEPU5Eeuyev_wuzpFqw" targetRef="_cL0wgPU5Eeuyev_wuzpFqw" sourceRef="_ouXEAPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_uFPCEPU5Eeuyev_wuzpFqw" targetRef="_qMvGgPU5Eeuyev_wuzpFqw" sourceRef="_3scpYPU4Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_unuEEPU5Eeuyev_wuzpFqw" targetRef="_qMvGgPU5Eeuyev_wuzpFqw" sourceRef="_cL0wgPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_vMHKkPU5Eeuyev_wuzpFqw" targetRef="_ImOp8PU5Eeuyev_wuzpFqw" sourceRef="_cL0wgPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_vrUPEPU5Eeuyev_wuzpFqw" targetRef="_ImOp8PU5Eeuyev_wuzpFqw" sourceRef="_eiDBAPU5Eeuyev_wuzpFqw"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_wRihkPU5Eeuyev_wuzpFqw" targetRef="_n2HC0PU4Eeuyev_wuzpFqw" sourceRef="_qMvGgPU5Eeuyev_wuzpFqw"/>
+    <laneSets id="_U-xwcPU4Eeuyev_wuzpFqw" name="MultiStartEvent MultiStopEvent Process">
+      <lanes id="_U-yXgPU4Eeuyev_wuzpFqw" flowNodeRefs="_ihAmYPU4Eeuyev_wuzpFqw _j9sm0PU4Eeuyev_wuzpFqw _n2HC0PU4Eeuyev_wuzpFqw _quDgUPU4Eeuyev_wuzpFqw _t6YSYPU4Eeuyev_wuzpFqw _yJ_GYPU4Eeuyev_wuzpFqw _3scpYPU4Eeuyev_wuzpFqw _ImOp8PU5Eeuyev_wuzpFqw _cL0wgPU5Eeuyev_wuzpFqw _eiDBAPU5Eeuyev_wuzpFqw _iHT3gPU5Eeuyev_wuzpFqw _ouXEAPU5Eeuyev_wuzpFqw _qMvGgPU5Eeuyev_wuzpFqw"/>
+    </laneSets>
+  </rootElements>
+</bpmn:Definitions>
