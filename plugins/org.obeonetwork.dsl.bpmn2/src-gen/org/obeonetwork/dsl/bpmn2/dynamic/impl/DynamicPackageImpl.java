@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
@@ -154,6 +155,16 @@ public class DynamicPackageImpl extends EPackageImpl implements DynamicPackage {
 					.get(0);
 		}
 		return tokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getToken_SourceSequenceFlow() {
+		return (EReference) getToken().getEStructuralFeatures().get(0);
 	}
 
 	/**

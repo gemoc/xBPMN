@@ -10,6 +10,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.obeonetwork.dsl.bpmn2.bpmdi.provider,
+ org.obeonetwork.dsl.bpmn2.dynamic.provider,
  org.obeonetwork.dsl.bpmn2.provider,
  org.obeonetwork.dsl.dd.dc.provider,
  org.obeonetwork.dsl.dd.di.provider

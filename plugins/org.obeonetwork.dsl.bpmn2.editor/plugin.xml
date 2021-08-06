@@ -46,6 +46,34 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated BPMN20 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicModelWizardID"
+            name="%_UI_DynamicModelWizard_label"
+            class="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DynamicModelFile.gif">
+         <description>%_UI_DynamicModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated BPMN20 -->
+      <editor
+            id="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicEditorID"
+            name="%_UI_DynamicEditor_label"
+            icon="icons/full/obj16/DynamicModelFile.gif"
+            extensions="dynamic"
+            class="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicEditor"
+            contributorClass="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicActionBarContributor">
+      </editor>
+   </extension>
+
    <extension point="org.eclipse.ui.editors">
       <editor
             id="org.obeonetwork.dsl.bpmn2.bpmdi.presentation.BpmnDiEditorID"

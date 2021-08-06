@@ -16,6 +16,7 @@ package org.obeonetwork.dsl.bpmn2.dynamic;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,13 +77,22 @@ public interface DynamicPackage extends EPackage {
 	int TOKEN = 0;
 
 	/**
+	 * The feature id for the '<em><b>Source Sequence Flow</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOKEN__SOURCE_SEQUENCE_FLOW = 0;
+
+	/**
 	 * The number of structural features of the '<em>Token</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN_FEATURE_COUNT = 0;
+	int TOKEN_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token <em>Token</em>}'.
@@ -93,6 +103,17 @@ public interface DynamicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getToken();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getSourceSequenceFlow <em>Source Sequence Flow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Sequence Flow</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getSourceSequenceFlow()
+	 * @see #getToken()
+	 * @generated
+	 */
+	EReference getToken_SourceSequenceFlow();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -125,6 +146,13 @@ public interface DynamicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TOKEN = eINSTANCE.getToken();
+		/**
+		 * The meta object literal for the '<em><b>Source Sequence Flow</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOKEN__SOURCE_SEQUENCE_FLOW = eINSTANCE.getToken_SourceSequenceFlow();
 
 	}
 

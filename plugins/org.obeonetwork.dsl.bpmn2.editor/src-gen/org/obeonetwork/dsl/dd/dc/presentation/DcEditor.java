@@ -161,6 +161,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import org.obeonetwork.dsl.bpmn2.bpmdi.provider.BpmnDiItemProviderAdapterFactory;
 
+import org.obeonetwork.dsl.bpmn2.dynamic.provider.DynamicItemProviderAdapterFactory;
 import org.obeonetwork.dsl.bpmn2.presentation.Bpmn2EditorPlugin;
 
 import org.obeonetwork.dsl.bpmn2.provider.Bpmn2ItemProviderAdapterFactory;
@@ -649,6 +650,7 @@ public class DcEditor extends MultiPageEditorPart
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Bpmn2ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DynamicItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BpmnDiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DcItemProviderAdapterFactory());

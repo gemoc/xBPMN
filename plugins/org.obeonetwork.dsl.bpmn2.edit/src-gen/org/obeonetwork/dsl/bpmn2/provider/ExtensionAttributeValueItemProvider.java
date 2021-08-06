@@ -41,6 +41,7 @@ import org.obeonetwork.dsl.bpmn2.ExtensionAttributeValue;
 
 import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiFactory;
 
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicFactory;
 import org.obeonetwork.dsl.dd.dc.DcFactory;
 
 /**
@@ -587,6 +588,9 @@ public class ExtensionAttributeValueItemProvider extends ItemProviderAdapter imp
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,
 				Bpmn2Factory.eINSTANCE.createDefinitions()));
+
+		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,
+				DynamicFactory.eINSTANCE.createToken()));
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,
 				BpmnDiFactory.eINSTANCE.createBPMNPlane()));

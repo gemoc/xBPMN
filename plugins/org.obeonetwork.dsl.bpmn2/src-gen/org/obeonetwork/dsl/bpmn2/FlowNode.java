@@ -92,13 +92,14 @@ public interface FlowNode extends FlowElement {
 	EList<Lane> getLanes();
 
 	/**
-	 * Returns the value of the '<em><b>Held Tokens</b></em>' reference list.
+	 * Returns the value of the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.dynamic.Token}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Held Tokens</em>' reference list.
+	 * @return the value of the '<em>Held Tokens</em>' containment reference list.
 	 * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowNode_HeldTokens()
-	 * @model annotation="aspect"
+	 * @model containment="true"
+	 *        annotation="aspect"
 	 * @generated
 	 */
 	EList<Token> getHeldTokens();

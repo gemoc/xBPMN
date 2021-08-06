@@ -276,7 +276,7 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TransactionAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalScriptTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalBusinessRuleTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
-
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
 
 @Aspect(className=Event)
 abstract class EventAspect extends FlowNodeAspect {
@@ -310,6 +310,12 @@ class StartEventAspect extends CatchEventAspect {
 
 	def void startEval() {
 		println("startEval StartEvent "+_self.name)
+		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
+		_self.outgoing.forEach[sequenceFlow |
+			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+			 token.sourceSequenceFlow = sequenceFlow
+			 sequenceFlow.targetRef.heldTokens.add(token)
+		]
 	}
 
 	def void endEval() {

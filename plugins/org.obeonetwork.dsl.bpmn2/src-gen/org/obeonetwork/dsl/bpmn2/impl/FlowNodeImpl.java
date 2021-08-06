@@ -144,6 +144,8 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 			return ((InternalEList<?>) getIncoming()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.FLOW_NODE__LANES:
 			return ((InternalEList<?>) getLanes()).basicRemove(otherEnd, msgs);
+		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
+			return ((InternalEList<?>) getHeldTokens()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

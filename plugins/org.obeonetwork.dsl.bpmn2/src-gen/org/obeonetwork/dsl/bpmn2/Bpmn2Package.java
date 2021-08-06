@@ -3484,7 +3484,7 @@ public interface Bpmn2Package extends EPackage {
 	int FLOW_NODE__LANES = FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5657,7 +5657,7 @@ public interface Bpmn2Package extends EPackage {
 	int ACTIVITY__LANES = FLOW_NODE__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5910,7 +5910,7 @@ public interface Bpmn2Package extends EPackage {
 	int TASK__LANES = ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6163,7 +6163,7 @@ public interface Bpmn2Package extends EPackage {
 	int MANUAL_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6480,7 +6480,7 @@ public interface Bpmn2Package extends EPackage {
 	int EVENT__LANES = FLOW_NODE__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6643,7 +6643,7 @@ public interface Bpmn2Package extends EPackage {
 	int CATCH_EVENT__LANES = EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6860,7 +6860,7 @@ public interface Bpmn2Package extends EPackage {
 	int BOUNDARY_EVENT__LANES = CATCH_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7541,7 +7541,7 @@ public interface Bpmn2Package extends EPackage {
 	int USER_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8203,7 +8203,7 @@ public interface Bpmn2Package extends EPackage {
 	int GATEWAY__LANES = FLOW_NODE__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8348,7 +8348,7 @@ public interface Bpmn2Package extends EPackage {
 	int EVENT_BASED_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8511,7 +8511,7 @@ public interface Bpmn2Package extends EPackage {
 	int COMPLEX_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8674,7 +8674,7 @@ public interface Bpmn2Package extends EPackage {
 	int EXCLUSIVE_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8828,7 +8828,7 @@ public interface Bpmn2Package extends EPackage {
 	int INCLUSIVE_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8982,7 +8982,7 @@ public interface Bpmn2Package extends EPackage {
 	int PARALLEL_GATEWAY__LANES = GATEWAY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9273,7 +9273,7 @@ public interface Bpmn2Package extends EPackage {
 	int INTERMEDIATE_CATCH_EVENT__LANES = CATCH_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9490,7 +9490,7 @@ public interface Bpmn2Package extends EPackage {
 	int THROW_EVENT__LANES = EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9698,7 +9698,7 @@ public interface Bpmn2Package extends EPackage {
 	int INTERMEDIATE_THROW_EVENT__LANES = THROW_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9906,7 +9906,7 @@ public interface Bpmn2Package extends EPackage {
 	int END_EVENT__LANES = THROW_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -10114,7 +10114,7 @@ public interface Bpmn2Package extends EPackage {
 	int START_EVENT__LANES = CATCH_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -11243,7 +11243,7 @@ public interface Bpmn2Package extends EPackage {
 	int IMPLICIT_THROW_EVENT__LANES = THROW_EVENT__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -12658,7 +12658,7 @@ public interface Bpmn2Package extends EPackage {
 	int CHOREOGRAPHY_ACTIVITY__LANES = FLOW_NODE__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -12830,7 +12830,7 @@ public interface Bpmn2Package extends EPackage {
 	int CALL_CHOREOGRAPHY__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -13020,7 +13020,7 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_CHOREOGRAPHY__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -13219,7 +13219,7 @@ public interface Bpmn2Package extends EPackage {
 	int CHOREOGRAPHY_TASK__LANES = CHOREOGRAPHY_ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -13927,7 +13927,7 @@ public interface Bpmn2Package extends EPackage {
 	int SERVICE_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -14198,7 +14198,7 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_PROCESS__LANES = ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -14823,7 +14823,7 @@ public interface Bpmn2Package extends EPackage {
 	int CALL_ACTIVITY__LANES = ACTIVITY__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -15085,7 +15085,7 @@ public interface Bpmn2Package extends EPackage {
 	int SEND_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -15365,7 +15365,7 @@ public interface Bpmn2Package extends EPackage {
 	int RECEIVE_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -15654,7 +15654,7 @@ public interface Bpmn2Package extends EPackage {
 	int SCRIPT_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -15925,7 +15925,7 @@ public interface Bpmn2Package extends EPackage {
 	int BUSINESS_RULE_TASK__LANES = TASK__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -16187,7 +16187,7 @@ public interface Bpmn2Package extends EPackage {
 	int AD_HOC_SUB_PROCESS__LANES = SUB_PROCESS__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -16503,7 +16503,7 @@ public interface Bpmn2Package extends EPackage {
 	int TRANSACTION__LANES = SUB_PROCESS__LANES;
 
 	/**
-	 * The feature id for the '<em><b>Held Tokens</b></em>' reference list.
+	 * The feature id for the '<em><b>Held Tokens</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -18911,10 +18911,10 @@ public interface Bpmn2Package extends EPackage {
 	EReference getFlowNode_Lanes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens <em>Held Tokens</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens <em>Held Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Held Tokens</em>'.
+	 * @return the meta object for the containment reference list '<em>Held Tokens</em>'.
 	 * @see org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens()
 	 * @see #getFlowNode()
 	 * @generated
@@ -23665,7 +23665,7 @@ public interface Bpmn2Package extends EPackage {
 		EReference FLOW_NODE__LANES = eINSTANCE.getFlowNode_Lanes();
 
 		/**
-		 * The meta object literal for the '<em><b>Held Tokens</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Held Tokens</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

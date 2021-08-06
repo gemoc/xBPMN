@@ -10,6 +10,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.obeonetwork.dsl.bpmn2.bpmdi.presentation,
+ org.obeonetwork.dsl.bpmn2.dynamic.presentation,
  org.obeonetwork.dsl.bpmn2.presentation,
  org.obeonetwork.dsl.dd.dc.presentation
 Require-Bundle: org.eclipse.core.runtime,
