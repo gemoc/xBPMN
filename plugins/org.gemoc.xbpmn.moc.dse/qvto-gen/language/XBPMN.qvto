@@ -32,6 +32,10 @@ query identifyUserRelations() {
 	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
 	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
 	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml")[TimeModel::BasicType::Type];
 
 	Kernel_Integer 					:= kernelTypes[name='int']->asSequence()->first();
 	Kernel_Clock_Type				:= kernelTypes[name='clock']->asSequence()->first();	
@@ -80,6 +84,11 @@ main() {
 		imports+= object TimeModel::ImportStatement{
 			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib';
 			alias := 'CCSL';
+			
+		}; 
+		imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml';
+			alias := 'ProcessStartEnd';
 			
 		}; 
 	
@@ -132,10 +141,7 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map noMultipleCallOfStartEvents32noMultipleCallOfStartEvents();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map startProcessOnAnyStartEvent22startProcessOnAnyStartEvent();
-		
-		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map endProcessOnAnyStartEvent22endProcessOnAnyStartEvent();
+		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map processStartEnd_on_StartEvent_EndEvent32processStartEnd_on_StartEvent_EndEvent();
 		
 	}
 
@@ -327,95 +333,6 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM2::Process::intermediate_allStartEvents_22Expression(an1 : StartEvent, an2 : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{ 
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_triggerStartEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_triggerStartEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	mapping inMM2::Process::intermediate_allStartEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.expressions[name = expr.name]->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_triggerStartEvent']->first();
-					
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-	
-	mapping inMM2::Process::allStartEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		init{
-		//from defs
-		
-		//from lets
-		
-
-		var sources : Sequence(StartEvent) := self.flowElements->selectByKind(_'StartEvent')->asSequence();
-		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
-		var i : Integer := 3;
-		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
-		var size : Integer = sources->size(); 
-		if(size = 1)then{
-			result := self.map intermediate_allStartEvents_22Expression(sources->at(1),sources->at(1), 1);
-		}else{
-			lastExpr := self.map intermediate_allStartEvents_22Expression(sources->at(1),sources->at(2), 1);
-			while (i <= size){
-				newExpr := self.map intermediate_allStartEvents_22Expression(lastExpr,sources->at(i), i);
-				lastExpr := newExpr;
-				i := i + 1;
-			};
-			result := lastExpr;
-		}
-		endif;
-		}
-		
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-
-	
-	
-//Create an intermediate expression
-//create the expressions... 
 	mapping inMM2::Process::intermediate_allEndEvents_22Expression(an1 : EndEvent, an2 : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allEndEvents_2'+nb.toString();
@@ -487,6 +404,95 @@ main() {
 			lastExpr := self.map intermediate_allEndEvents_22Expression(sources->at(1),sources->at(2), 1);
 			while (i <= size){
 				newExpr := self.map intermediate_allEndEvents_22Expression(lastExpr,sources->at(i), i);
+				lastExpr := newExpr;
+				i := i + 1;
+			};
+			result := lastExpr;
+		}
+		endif;
+		}
+		
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+
+	
+	
+//Create an intermediate expression
+//create the expressions... 
+	mapping inMM2::Process::intermediate_allStartEvents_22Expression(an1 : StartEvent, an2 : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{ 
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+		//from defs
+		
+		//from lets
+		
+
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_triggerStartEvent']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_triggerStartEvent']->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+
+	mapping inMM2::Process::intermediate_allStartEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
+		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
+		//from defs
+		
+		//from lets
+		
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.expressions[name = expr.name]->first();
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_triggerStartEvent']->first();
+					
+					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
+					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+				};
+		end{
+			theMainBlock.expressions += result;
+		}
+	}
+	
+	mapping inMM2::Process::allStartEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	{
+		init{
+		//from defs
+		
+		//from lets
+		
+
+		var sources : Sequence(StartEvent) := self.flowElements->selectByKind(_'StartEvent')->asSequence();
+		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
+		var i : Integer := 3;
+		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
+		var size : Integer = sources->size(); 
+		if(size = 1)then{
+			result := self.map intermediate_allStartEvents_22Expression(sources->at(1),sources->at(1), 1);
+		}else{
+			lastExpr := self.map intermediate_allStartEvents_22Expression(sources->at(1),sources->at(2), 1);
+			while (i <= size){
+				newExpr := self.map intermediate_allStartEvents_22Expression(lastExpr,sources->at(i), i);
 				lastExpr := newExpr;
 				i := i + 1;
 			};
@@ -697,38 +703,27 @@ main() {
 		}
 		
 	
-		mapping inMM2::Process::startProcessOnAnyStartEvent22startProcessOnAnyStartEvent(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM2::Process::processStartEnd_on_StartEvent_EndEvent32processStartEnd_on_StartEvent_EndEvent(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_startProcessOnAnyStartEvent";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"ProcessStartEnd_processStartEnd_on_StartEvent_EndEvent";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "ProcessStartEnd")->first();
 			
 			
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 							bindable := self -> map allStartEvents_22Expression()->asSequence()->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfAbstractEntity[name = 'PSE_startTrigger']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_startProcess']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfAbstractEntity[name = 'PSE_processStart']->first();
 				};
-		
-		theMainBlock.relations += result;
-		}
-		
-	
-		mapping inMM2::Process::endProcessOnAnyStartEvent22endProcessOnAnyStartEvent(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_endProcessOnAnyStartEvent";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
-			
-			
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 							bindable := self -> map allEndEvents_22Expression()->asSequence()->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					_abstract := seqOfAbstractEntity[name = 'PSE_stopTrigger']->first();
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_endProcess']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfAbstractEntity[name = 'PSE_processEnd']->first();
 				};
 		
 		theMainBlock.relations += result;

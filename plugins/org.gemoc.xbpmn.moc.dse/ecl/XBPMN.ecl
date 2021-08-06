@@ -4,6 +4,7 @@ import 'http://www.eclipse.org/emf/2002/Ecore'
 
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
+ECLimport  "platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml"
 
 -- event declaration
 package bpmn2
@@ -42,16 +43,25 @@ package bpmn2
 		let allStartEvents : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
 		let allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
 			Relation Alternates(allStartEvents, allEndEvents)
-			
-		inv startProcessOnAnyStartEvent:
-		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
-			Relation Coincides(allStartEvents_2, self.startProcess)
-			
-		inv endProcessOnAnyStartEvent:
+		
+		
+		-- Process Start/End:   starts on any StartEvent, ends on any EndEvent
+		inv processStartEnd_on_StartEvent_EndEvent:
+		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent) in
 		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
-			Relation Coincides(allEndEvents_2, self.endProcess)
+			Relation ProcessStartEnd(allStartEvents_2, self.startProcess, allEndEvents_2, self.endProcess)
+--		inv startProcessOnAnyStartEvent:
+--		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
+--			Relation Coincides(allStartEvents_2, self.startProcess)
+--		inv endProcessOnAnyStartEvent:
+--		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
+--			Relation Coincides(allEndEvents_2, self.endProcess)
 	
-	-- TODO Stop Process when all Lanes have stopped
+
+		-- TODO timer based StartEvent
+
+
+--  for example only
 	
 --	context Lane
 --		inv nonReentrant:

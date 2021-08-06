@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XBPMN MoC Lib
+Bundle-SymbolicName: org.gemoc.xbpmn.moc.lib
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.gemoc.xbpmn.moc.lib.Activator
+Bundle-Vendor: GEMOC
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: org.gemoc.xbpmn.moc.lib
+Bundle-ActivationPolicy: lazy

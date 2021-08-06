@@ -1,0 +1,32 @@
+AutomataConstraintLibrary XBPMNMoCC { 
+	import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+	import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSLLib;
+	
+	RelationLibrary automataBased_XBPMN_Process_Relations {
+
+		AutomataRelationDefinition ProcessStartEndDef[ProcessStartEnd]{
+			init:  PSE_initialState
+
+			from PSE_initialState to PSED_Stopped : PSE_initialStateToPSED_Stopped
+			-> ( )
+
+			from PSED_Stopped to PSED_Started : PSED_StoppedToPSED_Started
+			-> ( when PSE_startTrigger , PSE_processStart)
+
+			from PSED_Started to PSED_Stopped : PSED_StartedToPSED_Stopped
+			-> ( when PSE_stopTrigger, PSE_processEnd)
+
+			State PSE_initialState ( out : PSE_initialStateToPSED_Stopped )
+
+			State PSED_Stopped ( in : PSE_initialStateToPSED_Stopped,
+			PSED_StartedToPSED_Stopped out : PSED_StoppedToPSED_Started )
+
+			State PSED_Started ( in : PSED_StoppedToPSED_Started out :
+			PSED_StartedToPSED_Stopped )
+		}
+
+		/* Controls process start/end from trigger start/stop envent */
+		RelationDeclaration ProcessStartEnd(PSE_startTrigger:clock, PSE_processStart:clock, PSE_stopTrigger:clock, PSE_processEnd:clock) 
+		
+	}
+}
