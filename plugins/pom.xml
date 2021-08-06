@@ -25,7 +25,7 @@
 		
 		<module>org.gemoc.xbpmn</module>
 		<module>org.gemoc.xbpmn.k3dsa</module>
-		<module>org.gemoc.xbpmn.dse</module>
+		<module>org.gemoc.xbpmn.moc.dse</module>
 	</modules>
 
 
