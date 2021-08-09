@@ -7,7 +7,7 @@
     <semanticResources>DC.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_E437QPN0EeuSAP1a4rykkA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C0H_0fN1EeuSAP1a4rykkA" name="bpmn2 inheritance class diagram" repPath="#_C0GKoPN1EeuSAP1a4rykkA" changeId="9a4f345f-3c9b-4561-8cbc-48428e2877d7">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_C0H_0fN1EeuSAP1a4rykkA" name="bpmn2 inheritance class diagram" repPath="#_C0GKoPN1EeuSAP1a4rykkA" changeId="735d8fa9-05de-4f42-85a8-da48a1c04c55">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="BPMN20.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -5542,8 +5542,8 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_JJ8Gw_a0Eeuw9c8shVhHug" routing="Tree"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_JJ8GxPa0Eeuw9c8shVhHug" fontName="Noto Sans" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JJ8Gxfa0Eeuw9c8shVhHug" points="[0, 0, -2280, 888]$[2280, -888, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JJ8GzPa0Eeuw9c8shVhHug" id="(0.5,0.5)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JJ8Gxfa0Eeuw9c8shVhHug" points="[-1, -49, -2227, 839]$[-1, -821, -2227, 67]$[2227, -821, 1, 67]$[2227, -839, 1, 49]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JJ8GzPa0Eeuw9c8shVhHug" id="(0.7345132743362832,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JJ8Gzfa0Eeuw9c8shVhHug" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_JJ8Gzva0Eeuw9c8shVhHug" type="4001" element="_JIWydPa0Eeuw9c8shVhHug" source="_FYP3h_N3EeuSAP1a4rykkA" target="_LaTWC_N2EeuSAP1a4rykkA">

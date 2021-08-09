@@ -49,6 +49,14 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 			EObject elem = allContentIt.next();
 
 			Class<?> clazz =null;
+			clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.class);
+			if (clazz.isInstance(elem)) {
+				ElementState elemState = theFactory.createElementState();
+				elemState.setModelElement(elem);
+				res.getOwnedElementstates().add(elemState);
+				AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Task)elem));
+				elemState.getSavedRTDs().add(n2v0);
+			}
 			clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.class);
 			if (clazz.isInstance(elem)) {
 				ElementState elemState = theFactory.createElementState();

@@ -282,5 +282,21 @@ import org.gemoc.xbpmn.k3dsa.commons.NotImplementedException
 
 @Aspect(className=SequenceFlow)
 class SequenceFlowAspect extends FlowElementAspect {
+	
+	
+	def void startEval() {
+		println("startEval SequenceFlow "+_self.name)
+		// consumme the target token that was created when enabling this SequenceFlow
+		val token = _self.targetRef.heldTokens.findFirst[ t | t.sourceSequenceFlow == _self]
+		if(token === null) {
+			// error , this sequence flow should be called by the moc !
+			throw new RuntimeException("error , this sequence flow should be called by the moc, targetRet doesn't hold a valid token"+ _self+ _self.targetRef)
+		}
+		_self.targetRef.heldTokens.remove(token)
+	}
+
+	def void endEval() {
+		println("endEval SequenceFlow "+_self.name)
+	}
 
 }

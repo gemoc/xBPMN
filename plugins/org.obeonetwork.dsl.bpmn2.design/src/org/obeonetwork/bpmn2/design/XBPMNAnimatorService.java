@@ -19,6 +19,7 @@ import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractG
 import org.eclipse.xtext.EcoreUtil2;
 import org.obeonetwork.dsl.bpmn2.Lane;
 import org.obeonetwork.dsl.bpmn2.Process;
+import org.obeonetwork.dsl.bpmn2.Task;
 
 import xbpmn.xdsml.api.impl.XBPMNRTDAccessor;
 
@@ -44,10 +45,15 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 			res = XBPMNRTDAccessor.getIsStarted(EcoreUtil2.getContainerOfType(lane, Process.class));
 			System.out.println("isStarted Lane: "+lane.getName()+" "+res );
 			return res;
-		}else if (eo instanceof Process) {
+		} else if (eo instanceof Process) {
 			Process process =  (Process)eo;
 			res = XBPMNRTDAccessor.getIsStarted(process);
 			System.out.println("isStarted Process: "+process.getName()+" "+res );
+			return res;
+		} else if (eo instanceof Task) {
+			Task task =  (Task)eo;
+			res = XBPMNRTDAccessor.getIsStarted(task);
+			System.out.println("isStarted Task: "+task.getName()+" "+res );
 			return res;
 		} else {
 			return false;

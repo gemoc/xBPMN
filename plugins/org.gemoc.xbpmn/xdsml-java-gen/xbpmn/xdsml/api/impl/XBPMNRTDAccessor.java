@@ -15,6 +15,12 @@ public class XBPMNRTDAccessor {
 	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted", newValue);
 	}
+	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Task eObject) {
+		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "isStarted");
+	}
+	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Task eObject, java.lang.Boolean newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "isStarted", newValue);
+	}
 	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Lane eObject) {
 		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect", "isStarted");
 	}

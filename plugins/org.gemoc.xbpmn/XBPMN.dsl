@@ -5,6 +5,8 @@ k3 = org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect, \
+	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect, \
+	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
 #k3 = org.gemoc.xbpmn.k3dsa.SystemFunctionAspect,\
 #	 org.gemoc.xbpmn.k3dsa.AbstractEndAspect,\
