@@ -317,11 +317,6 @@ class TaskAspect extends ActivityAspect {
 			}
 			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
 		}
-//		_self.outgoing.forEach[sequenceFlow |
-//			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
-//			 token.sourceSequenceFlow = sequenceFlow
-//			 sequenceFlow.targetRef.heldTokens.add(token)
-//		]
 	}
 }
 

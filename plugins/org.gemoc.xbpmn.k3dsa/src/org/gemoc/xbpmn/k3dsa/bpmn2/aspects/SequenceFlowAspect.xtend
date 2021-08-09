@@ -285,16 +285,7 @@ class SequenceFlowAspect extends FlowElementAspect {
 	
 	
 	def void startEval() {
-		println("startEval SequenceFlow "+_self.name)
-		// consumme the target token that was created when enabling this SequenceFlow
-//		val token = _self.targetRef.heldTokens.findFirst[ t | t.sourceSequenceFlow == _self]
-//		if(token === null) {
-//			// error , this sequence flow should be called by the moc !
-//			throw new RuntimeException("error, this sequence flow should be called by the moc, targetRet doesn't hold a valid token"+ _self+ _self.targetRef)
-//		}
-//		_self.targetRef.heldTokens.remove(token)
-//		
-//		
+		println("startEval SequenceFlow "+_self.name)	
 		val sourceRef = _self.sourceRef
 		val targetRef = _self.targetRef
 		switch sourceRef {
@@ -319,7 +310,7 @@ class SequenceFlowAspect extends FlowElementAspect {
 		    		}
 		    		EndEvent : {
 		    			// Activity to EndEvent
-						_self.moveToken(sourceRef, targetRef)
+						_self.removeToken(sourceRef, targetRef)
 		    		}
 		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		    	}
@@ -355,6 +346,14 @@ class SequenceFlowAspect extends FlowElementAspect {
 			println("after movetoken "+sourceRef+sourceRef.heldTokens+" -> "+targetRef+targetRef.heldTokens)
 		} else {
 			throw new RuntimeException("error, cannot moveToken with SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
+		}
+	}
+	
+	def void removeToken(FlowNode sourceRef, FlowNode targetRef) {
+		if(sourceRef.heldTokens.size > 0) {
+			sourceRef.heldTokens.clear
+		} else {
+			throw new RuntimeException("error, cannot removeToken for SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
 		}
 	}
 
