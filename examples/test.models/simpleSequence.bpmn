@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_VfZJsPjnEeuv-cj8qqJa6g" name="SimpleSequenceDefinitions">
+  <rootElements xsi:type="bpmn:Process" id="_fmQsDPjnEeuv-cj8qqJa6g" name="SimpleSequenceProcess">
+    <flowElements xsi:type="bpmn:StartEvent" id="_lM910PjnEeuv-cj8qqJa6g" name="start" outgoing="_slT8YPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:EndEvent" id="_mswNkPjnEeuv-cj8qqJa6g" name="end" incoming="_uq03YPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:Task" id="_oeWuEPjnEeuv-cj8qqJa6g" name="T1" outgoing="_tsGlUPjnEeuv-cj8qqJa6g" incoming="_slT8YPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:Task" id="_pmdloPjnEeuv-cj8qqJa6g" name="T2" outgoing="_uFqU0PjnEeuv-cj8qqJa6g" incoming="_tsGlUPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:Task" id="_q6OTkPjnEeuv-cj8qqJa6g" name="T3" outgoing="_uq03YPjnEeuv-cj8qqJa6g" incoming="_uFqU0PjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_slT8YPjnEeuv-cj8qqJa6g" name="startToT1" targetRef="_oeWuEPjnEeuv-cj8qqJa6g" sourceRef="_lM910PjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_tsGlUPjnEeuv-cj8qqJa6g" name="T1toT2" targetRef="_pmdloPjnEeuv-cj8qqJa6g" sourceRef="_oeWuEPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_uFqU0PjnEeuv-cj8qqJa6g" name="T2toT3" targetRef="_q6OTkPjnEeuv-cj8qqJa6g" sourceRef="_pmdloPjnEeuv-cj8qqJa6g"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_uq03YPjnEeuv-cj8qqJa6g" name="T3toEnd" targetRef="_mswNkPjnEeuv-cj8qqJa6g" sourceRef="_q6OTkPjnEeuv-cj8qqJa6g"/>
+    <laneSets id="_j0zwEPjnEeuv-cj8qqJa6g">
+      <lanes id="_j00XIPjnEeuv-cj8qqJa6g" flowNodeRefs="_lM910PjnEeuv-cj8qqJa6g _mswNkPjnEeuv-cj8qqJa6g _oeWuEPjnEeuv-cj8qqJa6g _pmdloPjnEeuv-cj8qqJa6g _q6OTkPjnEeuv-cj8qqJa6g"/>
+    </laneSets>
+  </rootElements>
+</bpmn:Definitions>
