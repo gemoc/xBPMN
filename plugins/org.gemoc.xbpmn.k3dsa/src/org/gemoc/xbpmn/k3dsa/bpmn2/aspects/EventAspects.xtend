@@ -310,12 +310,13 @@ class StartEventAspect extends CatchEventAspect {
 
 	def void startEval() {
 		println("startEval StartEvent "+_self.name)
+		_self.heldTokens.add(DynamicPackage.eINSTANCE.dynamicFactory.createToken)
 		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
-		_self.outgoing.forEach[sequenceFlow |
-			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
-			 token.sourceSequenceFlow = sequenceFlow
-			 sequenceFlow.targetRef.heldTokens.add(token)
-		]
+//		_self.outgoing.forEach[sequenceFlow |
+//			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+//			 token.sourceSequenceFlow = sequenceFlow
+//			 sequenceFlow.targetRef.heldTokens.add(token)
+//		]
 	}
 
 	def void endEval() {
@@ -341,6 +342,7 @@ class EndEventAspect extends ThrowEventAspect {
 
 	def void startEval() {
 		println("startEval EndEvent "+_self.name)
+		_self.heldTokens.clear
 	}
 
 	def void endEval() {

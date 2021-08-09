@@ -287,16 +287,75 @@ class SequenceFlowAspect extends FlowElementAspect {
 	def void startEval() {
 		println("startEval SequenceFlow "+_self.name)
 		// consumme the target token that was created when enabling this SequenceFlow
-		val token = _self.targetRef.heldTokens.findFirst[ t | t.sourceSequenceFlow == _self]
-		if(token === null) {
-			// error , this sequence flow should be called by the moc !
-			throw new RuntimeException("error , this sequence flow should be called by the moc, targetRet doesn't hold a valid token"+ _self+ _self.targetRef)
+//		val token = _self.targetRef.heldTokens.findFirst[ t | t.sourceSequenceFlow == _self]
+//		if(token === null) {
+//			// error , this sequence flow should be called by the moc !
+//			throw new RuntimeException("error, this sequence flow should be called by the moc, targetRet doesn't hold a valid token"+ _self+ _self.targetRef)
+//		}
+//		_self.targetRef.heldTokens.remove(token)
+//		
+//		
+		val sourceRef = _self.sourceRef
+		val targetRef = _self.targetRef
+		switch sourceRef {
+			StartEvent : {
+				switch targetRef {
+		    		Activity : {
+						// StartEvent to Activity
+						_self.moveToken(sourceRef, targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+			}
+		    Activity : {
+		    	switch targetRef {
+		    		Activity : {
+						// Activity to Activity
+						_self.moveToken(sourceRef, targetRef)
+		    		}
+		    		Gateway : {
+		    			// Activity to Gateway
+						_self.moveToken(sourceRef, targetRef)
+		    		}
+		    		EndEvent : {
+		    			// Activity to EndEvent
+						_self.moveToken(sourceRef, targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+		    } 
+		    Gateway : {
+		    	switch targetRef {
+		    		Activity : {
+		    			// Gateway to Activity
+		    			throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    		}
+		    		Gateway : {
+		    			// Gateway to Gateway
+						throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+		    }
+		    default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		}
-		_self.targetRef.heldTokens.remove(token)
+		
 	}
 
 	def void endEval() {
 		println("endEval SequenceFlow "+_self.name)
+	}
+	
+	def void moveToken(FlowNode sourceRef, FlowNode targetRef) {
+		if(sourceRef.heldTokens.size > 0) {
+			println("before movetoken "+sourceRef+sourceRef.heldTokens+" -> "+targetRef+targetRef.heldTokens)
+			val token = sourceRef.heldTokens.get(0)
+			token.sourceSequenceFlow =  _self
+			targetRef.heldTokens.add(token)
+			println("after movetoken "+sourceRef+sourceRef.heldTokens+" -> "+targetRef+targetRef.heldTokens)
+		} else {
+			throw new RuntimeException("error, cannot moveToken with SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
+		}
 	}
 
 }

@@ -306,11 +306,22 @@ class TaskAspect extends ActivityAspect {
 	def void endEval() {
 		println("endEval Task "+_self.name)
 		_self.isStarted = false
-		_self.outgoing.forEach[sequenceFlow |
-			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
-			 token.sourceSequenceFlow = sequenceFlow
-			 sequenceFlow.targetRef.heldTokens.add(token)
-		]
+		
+		switch _self.outgoing.size {
+			case 0: { _self.heldTokens.clear }
+			case 1: { if(_self.heldTokens.size == 1){
+					_self.heldTokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
+				} else {
+					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". Missing heldTokens")
+				}
+			}
+			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
+		}
+//		_self.outgoing.forEach[sequenceFlow |
+//			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+//			 token.sourceSequenceFlow = sequenceFlow
+//			 sequenceFlow.targetRef.heldTokens.add(token)
+//		]
 	}
 }
 
