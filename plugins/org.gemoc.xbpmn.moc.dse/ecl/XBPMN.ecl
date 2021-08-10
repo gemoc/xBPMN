@@ -117,7 +117,7 @@ package bpmn2
 		-- end all simultaneously
 		inv triggerAllOutgoingSequenceFlow:
 		let allOutgoingSequenceFlow_1 : Event = Expression Union(self.outgoing->selectByKind(SequenceFlow).triggerSequenceFlow)	in
-			Relation Coincides(allOutgoingSequenceFlow_1, self.endGateway)
+			Relation Precedes(self.endGateway, allOutgoingSequenceFlow_1)
 
 	context EndEvent
 		inv triggeredOnAnyIncomingSequenceFlow:

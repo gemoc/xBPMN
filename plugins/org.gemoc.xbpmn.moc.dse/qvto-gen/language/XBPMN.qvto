@@ -1410,17 +1410,17 @@ main() {
 	
 		mapping inMM2::Gateway::triggerAllOutgoingSequenceFlow22triggerAllOutgoingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_triggerAllOutgoingSequenceFlow";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
+		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_triggerAllOutgoingSequenceFlow";
+			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
 			
 			
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-							bindable := self -> map allOutgoingSequenceFlow_12Expression()->asSequence()->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
-				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements[name = getNameOrUID(self.oclAsType(EObject))+'_endGateway']->first();
-					_abstract := seqOfRelationDeclaration[name = 'Coincides']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+				};
+				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+							bindable := self -> map allOutgoingSequenceFlow_12Expression()->asSequence()->first();
+					_abstract := seqOfRelationDeclaration[name = 'Precedes']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
 				};
 		
 		theMainBlock.relations += result;

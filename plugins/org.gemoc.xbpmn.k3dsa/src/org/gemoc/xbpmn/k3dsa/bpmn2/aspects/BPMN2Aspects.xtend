@@ -468,10 +468,7 @@ class LaneSetAspect extends BaseElementAspect {
 
 
 
-@Aspect(className=FlowNode)
-abstract class FlowNodeAspect extends FlowElementAspect {
 
-}
 
 
 

@@ -4,7 +4,7 @@
     <semanticResources>multiStartStopProcess.bpmn</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_LJsEsPjoEeuv-cj8qqJa6g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_M_E5AfjoEeuv-cj8qqJa6g" name="MultiStartEvent MultiStopEvent Process" repPath="#_M_AnkPjoEeuv-cj8qqJa6g" changeId="9d06a440-6ac3-4cb3-9057-d17c55f8a43d">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_M_E5AfjoEeuv-cj8qqJa6g" name="MultiStartEvent MultiStopEvent Process" repPath="#_M_AnkPjoEeuv-cj8qqJa6g" changeId="cd4aed1b-d483-4c06-94c9-45c220b28ea2">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']"/>
         <target xmi:type="bpmn:Process" href="multiStartStopProcess.bpmn#_HK2tkPU4Eeuyev_wuzpFqw"/>
       </ownedRepresentationDescriptors>
@@ -462,7 +462,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_RtUPjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/end-event/end.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='EndEvent_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_SUYfjoEeuv-cj8qqJa6g" name="End2" incomingEdges="_M_zRxfjoEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:EndEvent" href="multiStartStopProcess.bpmn#_quDgUPU4Eeuyev_wuzpFqw"/>
@@ -470,7 +470,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_SUYvjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/end-event/end.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='EndEvent_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_V-wPjoEeuv-cj8qqJa6g" outgoingEdges="_M_zRxfjoEeuv-cj8qqJa6g" incomingEdges="_M_2VEvjoEeuv-cj8qqJa6g _M_2VF_joEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="multiStartStopProcess.bpmn#_ImOp8PU5Eeuyev_wuzpFqw"/>
@@ -478,7 +478,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_V-wfjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/gateway/parallel-gateway.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_V-w_joEeuv-cj8qqJa6g" outgoingEdges="_M_z42fjoEeuv-cj8qqJa6g _M_0f5PjoEeuv-cj8qqJa6g" incomingEdges="_M_z41PjoEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="multiStartStopProcess.bpmn#_iHT3gPU5Eeuyev_wuzpFqw"/>
@@ -486,7 +486,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_Wl0PjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/gateway/parallel-gateway.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_Wl0vjoEeuv-cj8qqJa6g" outgoingEdges="_M_1G8vjoEeuv-cj8qqJa6g _M_1G9_joEeuv-cj8qqJa6g" incomingEdges="_M_0f6fjoEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="multiStartStopProcess.bpmn#_ouXEAPU5Eeuyev_wuzpFqw"/>
@@ -494,7 +494,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_Wl0_joEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/gateway/parallel-gateway.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_Wl1fjoEeuv-cj8qqJa6g" outgoingEdges="_M_28IvjoEeuv-cj8qqJa6g" incomingEdges="_M_1uAvjoEeuv-cj8qqJa6g _M_1uB_joEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="multiStartStopProcess.bpmn#_qMvGgPU5Eeuyev_wuzpFqw"/>
@@ -502,7 +502,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_Wl1vjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/gateway/parallel-gateway.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_XM4PjoEeuv-cj8qqJa6g" name="Start1" outgoingEdges="_M_wOcPjoEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:StartEvent" href="multiStartStopProcess.bpmn#_ihAmYPU4Eeuyev_wuzpFqw"/>
@@ -510,7 +510,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_XM4fjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/start-event/start.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='StartEvent_import']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" uid="_M_Xz8PjoEeuv-cj8qqJa6g" name="Start2" outgoingEdges="_M_zRwPjoEeuv-cj8qqJa6g" width="-1" height="-1">
           <target xmi:type="bpmn:StartEvent" href="multiStartStopProcess.bpmn#_j9sm0PU4Eeuyev_wuzpFqw"/>
@@ -518,7 +518,7 @@
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_M_Xz8fjoEeuv-cj8qqJa6g" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/start-event/start.svg">
             <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent']"/>
+          <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='StartEvent_import']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
     </ownedDiagramElements>

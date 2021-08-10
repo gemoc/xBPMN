@@ -277,47 +277,9 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalScriptTaskAspe
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalBusinessRuleTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
 import org.gemoc.xbpmn.k3dsa.commons.NotImplementedException
-import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
 
 
-
-@Aspect(className=Task)
-class TaskAspect extends ActivityAspect {
-	
-	public Boolean isStarted = false
-	
-	def void startEval() {
-		println("startEval Task "+_self.name)
-		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
-		_self.isStarted = true
-	}
-
-	def void endEval() {
-		println("endEval Task "+_self.name)
-		_self.isStarted = false
-		
-		switch _self.outgoing.size {
-			case 0: { _self.heldTokens.clear }
-			case 1: { if(_self.heldTokens.size == 1){
-					_self.heldTokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
-				} else {
-					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". Missing heldTokens")
-				}
-			}
-			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
-//			todo changer le responsable du déplacemnt des token -> sequencflow uniquement !!!
-		}
-	}
-}
-
-@Aspect(className=ManualTask)
-class ManualTaskAspect extends TaskAspect {
-
-}
-
-
-
-@Aspect(className=UserTask)
-class UserTaskAspect extends TaskAspect {
+@Aspect(className=FlowNode)
+abstract class FlowNodeAspect extends FlowElementAspect {
 
 }

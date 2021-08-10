@@ -982,6 +982,12 @@
   <eSubpackages name="dynamic" nsURI="http://gemoc.org/xbpmn/dynamic" nsPrefix="dynamic">
     <eClassifiers xsi:type="ecore:EClass" name="Token">
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSequenceFlow" eType="#//SequenceFlow"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokens" eType="#//dynamic/ForkedToken"
+          containment="true" eOpposite="#//dynamic/ForkedToken/baseToken"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ForkedToken" eSuperTypes="#//dynamic/Token">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseToken" eType="#//dynamic/Token"
+          eOpposite="#//dynamic/Token/heldTokens"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
