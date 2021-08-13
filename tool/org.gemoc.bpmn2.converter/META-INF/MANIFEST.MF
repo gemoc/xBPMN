@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BPMN2 Converter
+Bundle-SymbolicName: org.gemoc.bpmn.converter
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.gemoc.bpmn2.converter.Activator
+Bundle-Vendor: GEMOC
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.bpmn2;bundle-version="1.5.1",
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: org.gemoc.bpmn.converter
+Bundle-ActivationPolicy: lazy
