@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated bpsim2 -->
+      <package
+            uri="http://www.bpsim.org/schemas/2.0"
+            class="org.gemoc.bpsim2.Bpsim2Package"
+            genModel="model/bpsim2.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated bpsim2 -->
+      <parser
+            type="bpsim"
+            class="org.gemoc.bpsim2.util.Bpsim2ResourceFactoryImpl"/>
+      <parser
+            type="bpsim2"
+            class="org.gemoc.bpsim2.util.Bpsim2ResourceFactoryImpl"/>
+   </extension>
+</plugin>

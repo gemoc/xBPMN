@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.bpsim2.model/src" modelPluginID="org.gemoc.bpsim2.model"
+    modelName="Bpsim2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>bpsim2.ecore</foreignModel>
+  <genPackages prefix="Bpsim2" basePackage="org.gemoc" resource="XML" disposableProviderFactory="true"
+      fileExtensions="bpsim,bpsim2" ecorePackage="bpsim2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpsim2.ecore#//PropertyType">
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/long"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/duration"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//PropertyType/dateTime"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpsim2.ecore#//ResultType">
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//ResultType/min"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//ResultType/max"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//ResultType/mean"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//ResultType/count"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//ResultType/sum"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpsim2.ecore#//TimeUnit">
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/ms"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/s"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/min"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/hour"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/day"/>
+      <genEnumLiterals ecoreEnumLiteral="bpsim2.ecore#//TimeUnit/year"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="bpsim2.ecore#//PropertyTypeObject"/>
+    <genDataTypes ecoreDataType="bpsim2.ecore#//ResultTypeObject"/>
+    <genDataTypes ecoreDataType="bpsim2.ecore#//TimeUnitObject"/>
+    <genClasses ecoreClass="bpsim2.ecore#//BetaDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BetaDistributionType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BetaDistributionType/shape"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//BinomialDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BinomialDistributionType/probability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BinomialDistributionType/trials"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//BooleanParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BooleanParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//BPSimDataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//BPSimDataType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//BPSimDataType/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//Calendar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Calendar/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Calendar/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Calendar/name"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ConstantParameter"/>
+    <genClasses ecoreClass="bpsim2.ecore#//ControlParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ControlParameters/probability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ControlParameters/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ControlParameters/interTriggerTimer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ControlParameters/triggerCount"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//CostParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//CostParameters/fixedCost"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//CostParameters/unitCost"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//DateTimeParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//DateTimeParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//DistributionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//DistributionParameter/timeUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/betaDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/parameterValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/binomialDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/booleanParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/bPSimData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/dateTimeParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/durationParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/enumParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/erlangDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/expressionParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/floatingParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/gammaDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/logNormalDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/negativeExponentialDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/normalDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/numericParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/poissonDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/stringParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/triangularDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/truncatedNormalDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/uniformDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/userDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/userDistributionDataPoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//DocumentRoot/weibullDistribution"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//DurationParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//DurationParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ElementParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/timeParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/controlParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/resourceParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/priorityParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/costParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/propertyParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/vendorExtension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/elementRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/id"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ElementParametersType"/>
+    <genClasses ecoreClass="bpsim2.ecore#//EnumParameterType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//EnumParameterType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//EnumParameterType/parameterValueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//EnumParameterType/parameterValue"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ErlangDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ErlangDistributionType/k"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ErlangDistributionType/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ExpressionParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ExpressionParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//FloatingParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//FloatingParameterType/timeUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//FloatingParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//GammaDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//GammaDistributionType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//GammaDistributionType/shape"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//LogNormalDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//LogNormalDistributionType/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//LogNormalDistributionType/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//NegativeExponentialDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//NegativeExponentialDistributionType/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//NormalDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//NormalDistributionType/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//NormalDistributionType/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//NumericParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//NumericParameterType/timeUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//NumericParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Parameter/resultRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Parameter/parameterValueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//Parameter/parameterValue"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ParameterValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ParameterValue/instance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ParameterValue/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ParameterValue/resultTimeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ParameterValue/validFor"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//PoissonDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//PoissonDistributionType/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//PriorityParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//PriorityParameters/interruptible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//PriorityParameters/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//PropertyParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//PropertyParameters/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//PropertyParameters/queueLength"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//PropertyType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//PropertyType1/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//PropertyType1/type"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ResourceParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ResourceParameters/selection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ResourceParameters/availability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ResourceParameters/quantity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ResourceParameters/role"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//Scenario/scenarioParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//Scenario/elementParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//Scenario/calendar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//Scenario/vendorExtension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/created"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/inherits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/modified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/vendor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//Scenario/version"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ScenarioParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ScenarioParameters/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ScenarioParameters/duration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ScenarioParameters/warmup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ScenarioParameters/propertyParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/baseCurrencyUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/baseResultFrequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/baseResultFrequencyCumul"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/baseTimeUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/replication"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/seed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/traceFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ScenarioParameters/traceOutput"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//ScenarioParametersType"/>
+    <genClasses ecoreClass="bpsim2.ecore#//StringParameterType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//StringParameterType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//TimeParameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/transferTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/queueTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/waitTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/setUpTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/processingTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/validationTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/reworkTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/lagTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/duration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//TimeParameters/elapsedTime"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//TriangularDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TriangularDistributionType/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TriangularDistributionType/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TriangularDistributionType/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//TruncatedNormalDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TruncatedNormalDistributionType/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TruncatedNormalDistributionType/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TruncatedNormalDistributionType/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//TruncatedNormalDistributionType/standardDeviation"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//UniformDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UniformDistributionType/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UniformDistributionType/min"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//UserDistributionDataPointType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UserDistributionDataPointType/parameterValueGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//UserDistributionDataPointType/parameterValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UserDistributionDataPointType/probability"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//UserDistributionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UserDistributionType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bpsim2.ecore#//UserDistributionType/userDistributionDataPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//UserDistributionType/discrete"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//VendorExtension">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//VendorExtension/any"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//VendorExtension/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute bpsim2.ecore#//VendorExtension/anyAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="bpsim2.ecore#//WeibullDistributionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//WeibullDistributionType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//WeibullDistributionType/shape"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated bpsim2 -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.bpsim2.presentation.Bpsim2ModelWizardID"
+            name="%_UI_Bpsim2ModelWizard_label"
+            class="org.gemoc.bpsim2.presentation.Bpsim2ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Bpsim2ModelFile.gif">
+         <description>%_UI_Bpsim2ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated bpsim2 -->
+      <editor
+            id="org.gemoc.bpsim2.presentation.Bpsim2EditorID"
+            name="%_UI_Bpsim2Editor_label"
+            icon="icons/full/obj16/Bpsim2ModelFile.gif"
+            extensions="bpsim,bpsim2"
+            class="org.gemoc.bpsim2.presentation.Bpsim2Editor"
+            contributorClass="org.gemoc.bpsim2.presentation.Bpsim2ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
