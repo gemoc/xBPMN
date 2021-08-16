@@ -60,6 +60,10 @@ import org.gemoc.bpsim2.UserDistributionDataPointType;
 import org.gemoc.bpsim2.UserDistributionType;
 import org.gemoc.bpsim2.VendorExtension;
 import org.gemoc.bpsim2.WeibullDistributionType;
+import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
+import org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiPackage;
+import org.obeonetwork.dsl.dd.dc.DcPackage;
+import org.obeonetwork.dsl.dd.di.DiPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -452,6 +456,10 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 		isInited = true;
 
 		// Initialize simple dependencies
+		Bpmn2Package.eINSTANCE.eClass();
+		BpmnDiPackage.eINSTANCE.eClass();
+		DiPackage.eINSTANCE.eClass();
+		DcPackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -1078,6 +1086,15 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 	 */
 	public EAttribute getElementParameters_Id() {
 		return (EAttribute)elementParametersEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getElementParameters_BpmnElementRef() {
+		return (EReference)elementParametersEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2331,6 +2348,7 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 		createEReference(elementParametersEClass, ELEMENT_PARAMETERS__VENDOR_EXTENSION);
 		createEAttribute(elementParametersEClass, ELEMENT_PARAMETERS__ELEMENT_REF);
 		createEAttribute(elementParametersEClass, ELEMENT_PARAMETERS__ID);
+		createEReference(elementParametersEClass, ELEMENT_PARAMETERS__BPMN_ELEMENT_REF);
 
 		elementParametersTypeEClass = createEClass(ELEMENT_PARAMETERS_TYPE);
 
@@ -2518,6 +2536,7 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 
 		// Obtain other dependent packages
 		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		Bpmn2Package theBpmn2Package = (Bpmn2Package)EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI);
 
 		// Create type parameters
 
@@ -2632,6 +2651,7 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 		initEReference(getElementParameters_VendorExtension(), this.getVendorExtension(), null, "vendorExtension", null, 0, -1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElementParameters_ElementRef(), theXMLTypePackage.getQName(), "elementRef", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElementParameters_Id(), theXMLTypePackage.getID(), "id", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getElementParameters_BpmnElementRef(), theBpmn2Package.getFlowElement(), null, "bpmnElementRef", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementParametersTypeEClass, ElementParametersType.class, "ElementParametersType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

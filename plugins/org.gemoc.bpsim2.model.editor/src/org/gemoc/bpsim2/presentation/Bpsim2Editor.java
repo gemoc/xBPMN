@@ -158,6 +158,11 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.gemoc.bpsim2.provider.Bpsim2ItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.obeonetwork.dsl.bpmn2.bpmdi.provider.BpmnDiItemProviderAdapterFactory;
+import org.obeonetwork.dsl.bpmn2.dynamic.provider.DynamicItemProviderAdapterFactory;
+import org.obeonetwork.dsl.bpmn2.provider.Bpmn2ItemProviderAdapterFactory;
+import org.obeonetwork.dsl.dd.dc.provider.DcItemProviderAdapterFactory;
+import org.obeonetwork.dsl.dd.di.provider.DiItemProviderAdapterFactory;
 
 
 /**
@@ -701,6 +706,11 @@ public class Bpsim2Editor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Bpsim2ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new Bpmn2ItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DynamicItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BpmnDiItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DiItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DcItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

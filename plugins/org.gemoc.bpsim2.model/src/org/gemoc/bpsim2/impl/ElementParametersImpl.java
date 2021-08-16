@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -29,6 +30,7 @@ import org.gemoc.bpsim2.PropertyParameters;
 import org.gemoc.bpsim2.ResourceParameters;
 import org.gemoc.bpsim2.TimeParameters;
 import org.gemoc.bpsim2.VendorExtension;
+import org.obeonetwork.dsl.bpmn2.FlowElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,6 +49,7 @@ import org.gemoc.bpsim2.VendorExtension;
  *   <li>{@link org.gemoc.bpsim2.impl.ElementParametersImpl#getVendorExtension <em>Vendor Extension</em>}</li>
  *   <li>{@link org.gemoc.bpsim2.impl.ElementParametersImpl#getElementRef <em>Element Ref</em>}</li>
  *   <li>{@link org.gemoc.bpsim2.impl.ElementParametersImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.gemoc.bpsim2.impl.ElementParametersImpl#getBpmnElementRef <em>Bpmn Element Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,6 +164,16 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBpmnElementRef() <em>Bpmn Element Ref</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBpmnElementRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected FlowElement bpmnElementRef;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -498,6 +511,44 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FlowElement getBpmnElementRef() {
+		if (bpmnElementRef != null && ((EObject)bpmnElementRef).eIsProxy()) {
+			InternalEObject oldBpmnElementRef = (InternalEObject)bpmnElementRef;
+			bpmnElementRef = (FlowElement)eResolveProxy(oldBpmnElementRef);
+			if (bpmnElementRef != oldBpmnElementRef) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF, oldBpmnElementRef, bpmnElementRef));
+			}
+		}
+		return bpmnElementRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FlowElement basicGetBpmnElementRef() {
+		return bpmnElementRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBpmnElementRef(FlowElement newBpmnElementRef) {
+		FlowElement oldBpmnElementRef = bpmnElementRef;
+		bpmnElementRef = newBpmnElementRef;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF, oldBpmnElementRef, bpmnElementRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -545,6 +596,9 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 				return getElementRef();
 			case Bpsim2Package.ELEMENT_PARAMETERS__ID:
 				return getId();
+			case Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF:
+				if (resolve) return getBpmnElementRef();
+				return basicGetBpmnElementRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -586,6 +640,9 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 			case Bpsim2Package.ELEMENT_PARAMETERS__ID:
 				setId((String)newValue);
 				return;
+			case Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF:
+				setBpmnElementRef((FlowElement)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -625,6 +682,9 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 			case Bpsim2Package.ELEMENT_PARAMETERS__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF:
+				setBpmnElementRef((FlowElement)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -655,6 +715,8 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 				return ELEMENT_REF_EDEFAULT == null ? elementRef != null : !ELEMENT_REF_EDEFAULT.equals(elementRef);
 			case Bpsim2Package.ELEMENT_PARAMETERS__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case Bpsim2Package.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF:
+				return bpmnElementRef != null;
 		}
 		return super.eIsSet(featureID);
 	}

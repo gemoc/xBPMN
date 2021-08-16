@@ -65,6 +65,7 @@ public class ElementParametersItemProvider
 
 			addElementRefPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addBpmnElementRefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class ElementParametersItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Bpmn Element Ref feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBpmnElementRefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ElementParameters_bpmnElementRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementParameters_bpmnElementRef_feature", "_UI_ElementParameters_type"),
+				 Bpsim2Package.Literals.ELEMENT_PARAMETERS__BPMN_ELEMENT_REF,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

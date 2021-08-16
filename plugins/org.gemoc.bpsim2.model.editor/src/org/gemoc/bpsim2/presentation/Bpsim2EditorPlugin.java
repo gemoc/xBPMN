@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.obeonetwork.dsl.bpmn2.provider.Bpmn2EditPlugin;
 
 /**
  * This is the central singleton for the Bpsim2 editor plugin.
@@ -40,6 +41,7 @@ public final class Bpsim2EditorPlugin extends EMFPlugin {
 	public Bpsim2EditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				Bpmn2EditPlugin.INSTANCE,
 			});
 	}
 

@@ -5,6 +5,7 @@ package org.gemoc.bpsim2.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.obeonetwork.dsl.bpmn2.provider.Bpmn2EditPlugin;
 
 /**
  * This is the central singleton for the Bpsim2 edit plugin.
@@ -38,6 +39,7 @@ public final class Bpsim2EditPlugin extends EMFPlugin {
 	public Bpsim2EditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     Bpmn2EditPlugin.INSTANCE,
 		   });
 	}
 

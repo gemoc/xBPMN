@@ -3,6 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.bpsim2.model/src" modelPluginID="org.gemoc.bpsim2.model"
     modelName="Bpsim2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.obeonetwork.dsl.bpmn2/model/BPMN20.genmodel#//bpmn2 ../../org.obeonetwork.dsl.bpmn2/model/BPMN20.genmodel#//bpmdi ../../org.obeonetwork.dsl.bpmn2/model/BPMN20.genmodel#//di ../../org.obeonetwork.dsl.bpmn2/model/BPMN20.genmodel#//dc"
     operationReflection="true" importOrganizing="true">
   <foreignModel>bpsim2.ecore</foreignModel>
   <genPackages prefix="Bpsim2" basePackage="org.gemoc" resource="XML" disposableProviderFactory="true"
@@ -112,6 +113,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/vendorExtension"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/elementRef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/bpmnElementRef"/>
     </genClasses>
     <genClasses ecoreClass="bpsim2.ecore#//ElementParametersType"/>
     <genClasses ecoreClass="bpsim2.ecore#//EnumParameterType">

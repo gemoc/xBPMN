@@ -7,6 +7,7 @@ import javax.xml.namespace.QName;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.obeonetwork.dsl.bpmn2.FlowElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.bpsim2.ElementParameters#getVendorExtension <em>Vendor Extension</em>}</li>
  *   <li>{@link org.gemoc.bpsim2.ElementParameters#getElementRef <em>Element Ref</em>}</li>
  *   <li>{@link org.gemoc.bpsim2.ElementParameters#getId <em>Id</em>}</li>
+ *   <li>{@link org.gemoc.bpsim2.ElementParameters#getBpmnElementRef <em>Bpmn Element Ref</em>}</li>
  * </ul>
  *
  * @see org.gemoc.bpsim2.Bpsim2Package#getElementParameters()
@@ -229,5 +231,27 @@ public interface ElementParameters extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Bpmn Element Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bpmn Element Ref</em>' reference.
+	 * @see #setBpmnElementRef(FlowElement)
+	 * @see org.gemoc.bpsim2.Bpsim2Package#getElementParameters_BpmnElementRef()
+	 * @model
+	 * @generated
+	 */
+	FlowElement getBpmnElementRef();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.bpsim2.ElementParameters#getBpmnElementRef <em>Bpmn Element Ref</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bpmn Element Ref</em>' reference.
+	 * @see #getBpmnElementRef()
+	 * @generated
+	 */
+	void setBpmnElementRef(FlowElement value);
 
 } // ElementParameters

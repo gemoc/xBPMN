@@ -545,6 +545,7 @@
         <details key="name" value="id"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bpmnElementRef" eType="ecore:EClass ../../org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore#//FlowElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementParametersType" eSuperTypes="#//ElementParameters">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

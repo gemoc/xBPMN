@@ -1234,13 +1234,22 @@ public interface Bpsim2Package extends EPackage {
 	int ELEMENT_PARAMETERS__ID = 8;
 
 	/**
+	 * The feature id for the '<em><b>Bpmn Element Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS__BPMN_ELEMENT_REF = 9;
+
+	/**
 	 * The number of structural features of the '<em>Element Parameters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_PARAMETERS_FEATURE_COUNT = 9;
+	int ELEMENT_PARAMETERS_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Element Parameters</em>' class.
@@ -1341,6 +1350,15 @@ public interface Bpsim2Package extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_PARAMETERS_TYPE__ID = ELEMENT_PARAMETERS__ID;
+
+	/**
+	 * The feature id for the '<em><b>Bpmn Element Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS_TYPE__BPMN_ELEMENT_REF = ELEMENT_PARAMETERS__BPMN_ELEMENT_REF;
 
 	/**
 	 * The number of structural features of the '<em>Element Parameters Type</em>' class.
@@ -4515,6 +4533,17 @@ public interface Bpsim2Package extends EPackage {
 	EAttribute getElementParameters_Id();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.bpsim2.ElementParameters#getBpmnElementRef <em>Bpmn Element Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Bpmn Element Ref</em>'.
+	 * @see org.gemoc.bpsim2.ElementParameters#getBpmnElementRef()
+	 * @see #getElementParameters()
+	 * @generated
+	 */
+	EReference getElementParameters_BpmnElementRef();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.bpsim2.ElementParametersType <em>Element Parameters Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6474,6 +6503,14 @@ public interface Bpsim2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELEMENT_PARAMETERS__ID = eINSTANCE.getElementParameters_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Bpmn Element Ref</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT_PARAMETERS__BPMN_ELEMENT_REF = eINSTANCE.getElementParameters_BpmnElementRef();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.bpsim2.impl.ElementParametersTypeImpl <em>Element Parameters Type</em>}' class.
