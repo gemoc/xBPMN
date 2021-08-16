@@ -137,11 +137,12 @@ public class ParameterItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Parameter_type");
+		String label = ((Parameter)object).eContainingFeature().getName() + ":" + getString("_UI_Parameter_type");
+		return label;
 	}
 
 

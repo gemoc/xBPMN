@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.gemoc.bpsim2.Bpsim2Package;
+import org.gemoc.bpsim2.ElementParametersType;
 import org.gemoc.bpsim2.NumericParameterType;
 
 /**
@@ -110,11 +111,17 @@ public class NumericParameterTypeItemProvider extends ConstantParameterItemProvi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((NumericParameterType)object).getInstance();
+		NumericParameterType eo = (NumericParameterType)object;
+		String label = "";
+		if(eo.getInstance() == null || eo.getInstance().isEmpty() ) {
+			label = "" + eo.getValue();
+		} else {
+			label = eo.getInstance();
+		}
 		return label == null || label.length() == 0 ?
 			getString("_UI_NumericParameterType_type") :
 			getString("_UI_NumericParameterType_type") + " " + label;

@@ -64,7 +64,13 @@ public class ElementParametersTypeItemProvider extends ElementParametersItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ElementParametersType)object).getId();
+		ElementParametersType eo = (ElementParametersType)object;
+		String label = "";
+		if(eo.getId() == null || eo.getId().isEmpty() ) {
+			label = "->"+eo.getBpmnElementRef().eClass().getName()+ " "+ eo.getBpmnElementRef().getName();
+		} else {
+			label = eo.getId();
+		}
 		return label == null || label.length() == 0 ?
 			getString("_UI_ElementParametersType_type") :
 			getString("_UI_ElementParametersType_type") + " " + label;
