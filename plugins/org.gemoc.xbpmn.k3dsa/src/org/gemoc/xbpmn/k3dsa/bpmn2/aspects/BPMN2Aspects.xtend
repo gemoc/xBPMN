@@ -299,6 +299,12 @@ abstract class BaseElementAspect {
 	}
 }
 
+
+@Aspect(className=Definitions)
+class DefinitionsAspect extends BaseElementAspect {
+
+}
+
 @Aspect(className=ExtensionDefinition)
 class ExtensionDefinitionAspect {
 
@@ -453,6 +459,66 @@ abstract class FlowElementsContainerAspect extends BaseElementAspect {
 
 @Aspect(className=FlowElement)
 abstract class FlowElementAspect extends BaseElementAspect {
+
+}
+
+@Aspect(className=FlowNode)
+abstract class FlowNodeAspect extends FlowElementAspect {
+
+}
+
+@Aspect(className=Activity)
+abstract class ActivityAspect extends FlowNodeAspect {
+	/*
+	* BE CAREFUL :
+	*
+	* This class has more than one superclass
+	* please specify which parent you want with the 'super' expected calling
+	*
+	*/
+
+
+}
+
+
+@Aspect(className=Task)
+class TaskAspect extends ActivityAspect {
+	
+	public Boolean isStarted = false
+	
+	def void startEval() {
+		println("startEval Task "+_self.name)
+		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
+		_self.isStarted = true
+	}
+
+	def void endEval() {
+		println("endEval Task "+_self.name)
+		_self.isStarted = false
+		
+		switch _self.outgoing.size {
+			case 0: { _self.heldTokens.clear }
+			case 1: { if(_self.heldTokens.size == 1){
+					_self.heldTokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
+				} else {
+					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". Missing heldTokens")
+				}
+			}
+			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
+//			todo changer le responsable du déplacemnt des token -> sequencflow uniquement !!!
+		}
+	}
+}
+
+@Aspect(className=ManualTask)
+class ManualTaskAspect extends TaskAspect {
+
+}
+
+
+
+@Aspect(className=UserTask)
+class UserTaskAspect extends TaskAspect {
 
 }
 
