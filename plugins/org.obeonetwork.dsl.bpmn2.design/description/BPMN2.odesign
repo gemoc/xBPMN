@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="BPMN20" version="12.0.0.2017041100">
-  <ownedViewpoints name="Process" label="BPMN 2.0 - Process" modelFileExtension="bpmn">
+  <ownedViewpoints name="Process" label="BPMN 2.0 - Process" modelFileExtension="bpmn bpmn2 bpsim bpsim2">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ProcessDiagram" label="Process Diagram" titleExpression="aql:self.name" pasteDescriptions="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste']" domainClass="bpmn2.Process" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore#/"/>
+      <metamodel href="../../xBPMN/plugins/org.gemoc.bpsim2.model/model/bpsim2.ecore#/"/>
       <layout xsi:type="description_1:CompositeLayout" direction="LeftToRight"/>
       <diagramInitialisation>
         <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
@@ -1780,9 +1781,17 @@
       </defaultLayer>
       <additionalLayers name="Debug"/>
       <additionalLayers name="Animation" activeByDefault="true">
-        <edgeMappings name="tokenToSourceFlow" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='Task_import']/@borderedNodeMappings[name='TaskToken'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']/@borderedNodeMappings[name='ParallelGatewayToken']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']" targetFinderExpression="aql:self.sourceSequenceFlow">
+        <edgeMappings name="TokenToSourceFlow" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='Task_import']/@borderedNodeMappings[name='TaskToken'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']/@borderedNodeMappings[name='ParallelGatewayToken']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']" targetFinderExpression="aql:self.sourceSequenceFlow">
           <style lineStyle="dash" targetArrow="NoDecoration">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ElementParametersToFlowNode" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='EndEvent_import'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='StartEvent_import'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='Task_import'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='Task']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='ElementParametersNode']" targetFinderExpression="[self.getRelatedElementParameters()/]">
+          <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
@@ -1825,6 +1834,21 @@
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
                 </style>
               </borderedNodeMappings>
+            </subContainerMappings>
+            <subContainerMappings name="ElementParametersNode" semanticCandidatesExpression="[self.getRelatedElementParameters()/]" domainClass="ElementParameters" childrenPresentation="List">
+              <subNodeMappings name="ParametersNode" semanticCandidatesExpression="[self.eAllContents().eContents(Parameter)/]" domainClass="Parameter">
+                <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="[ self.getPrettyLabel()/]" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:id">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
             </subContainerMappings>
           </subContainerMappings>
         </containerMappings>
@@ -5394,6 +5418,7 @@
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.ServiceHelper"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.XBPMNDebuggerService"/>
     <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.XBPMNAnimatorService"/>
+    <ownedJavaExtensions qualifiedClassName="org.obeonetwork.bpmn2.design.BPSimScenarioService"/>
   </ownedViewpoints>
   <userColorsPalettes name="Colors">
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="LaneBackgroundRight"/>

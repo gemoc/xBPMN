@@ -22,9 +22,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.edit.ui,
  org.eclipse.gemoc.executionframework.extensions.sirius,
  org.eclipse.gemoc.execution.concurrent.ccsljavaengine.ui;bundle-version="2.3.0",
- org.gemoc.xbpmn;bundle-version="0.1.0"
+ org.gemoc.xbpmn;bundle-version="0.1.0",
+ org.gemoc.bpsim2.model;bundle-version="1.0.0",
+ org.gemoc.xbpmn.k3dsa
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.obeonetwork.bpmn2.design
 Bundle-Vendor: %providerName
 Import-Package: org.eclipse.gmf.runtime.notation
