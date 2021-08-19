@@ -476,6 +476,8 @@
       <details key="name" value="ElementParameters"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
+    <eOperations name="startEval"/>
+    <eOperations name="endEval"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeParameters" eType="#//TimeParameters"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

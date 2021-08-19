@@ -2,6 +2,7 @@
  */
 package org.gemoc.bpsim2.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import javax.xml.namespace.QName;
@@ -549,6 +550,28 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void startEval() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void endEval() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -719,6 +742,24 @@ public class ElementParametersImpl extends MinimalEObjectImpl.Container implemen
 				return bpmnElementRef != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case Bpsim2Package.ELEMENT_PARAMETERS___START_EVAL:
+				startEval();
+				return null;
+			case Bpsim2Package.ELEMENT_PARAMETERS___END_EVAL:
+				endEval();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

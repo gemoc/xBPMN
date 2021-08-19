@@ -114,6 +114,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/elementRef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpsim2.ecore#//ElementParameters/id"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpsim2.ecore#//ElementParameters/bpmnElementRef"/>
+      <genOperations ecoreOperation="bpsim2.ecore#//ElementParameters/startEval"/>
+      <genOperations ecoreOperation="bpsim2.ecore#//ElementParameters/endEval"/>
     </genClasses>
     <genClasses ecoreClass="bpsim2.ecore#//ElementParametersType"/>
     <genClasses ecoreClass="bpsim2.ecore#//EnumParameterType">

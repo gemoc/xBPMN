@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.gemoc.bpsim2.Bpsim2Package;
-import org.gemoc.bpsim2.ElementParametersType;
 import org.gemoc.bpsim2.NumericParameterType;
 
 /**

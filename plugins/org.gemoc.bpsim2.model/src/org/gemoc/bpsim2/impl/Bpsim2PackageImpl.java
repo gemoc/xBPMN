@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1095,6 +1096,24 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 	 */
 	public EReference getElementParameters_BpmnElementRef() {
 		return (EReference)elementParametersEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getElementParameters__StartEval() {
+		return elementParametersEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getElementParameters__EndEval() {
+		return elementParametersEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -2349,6 +2368,8 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 		createEAttribute(elementParametersEClass, ELEMENT_PARAMETERS__ELEMENT_REF);
 		createEAttribute(elementParametersEClass, ELEMENT_PARAMETERS__ID);
 		createEReference(elementParametersEClass, ELEMENT_PARAMETERS__BPMN_ELEMENT_REF);
+		createEOperation(elementParametersEClass, ELEMENT_PARAMETERS___START_EVAL);
+		createEOperation(elementParametersEClass, ELEMENT_PARAMETERS___END_EVAL);
 
 		elementParametersTypeEClass = createEClass(ELEMENT_PARAMETERS_TYPE);
 
@@ -2652,6 +2673,10 @@ public class Bpsim2PackageImpl extends EPackageImpl implements Bpsim2Package {
 		initEAttribute(getElementParameters_ElementRef(), theXMLTypePackage.getQName(), "elementRef", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElementParameters_Id(), theXMLTypePackage.getID(), "id", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getElementParameters_BpmnElementRef(), theBpmn2Package.getFlowElement(), null, "bpmnElementRef", null, 0, 1, ElementParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getElementParameters__StartEval(), null, "startEval", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getElementParameters__EndEval(), null, "endEval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(elementParametersTypeEClass, ElementParametersType.class, "ElementParametersType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

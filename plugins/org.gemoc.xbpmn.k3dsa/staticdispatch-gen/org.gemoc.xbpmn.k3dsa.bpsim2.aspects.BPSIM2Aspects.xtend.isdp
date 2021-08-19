@@ -13,6 +13,16 @@
 			result = org.gemoc.xbpmn.k3dsa.bpsim2.aspects.NumericParameterTypeAspect.prettyLabel((org.gemoc.bpsim2.NumericParameterType)_self);
 		} else
 		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ParameterValueAspect#String prettyLabel() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.NumericParameterTypeAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect
+		if (_self instanceof org.gemoc.bpsim2.ElementParametersType){
+			org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect.startEval((org.gemoc.bpsim2.ElementParametersType)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect
+		if (_self instanceof org.gemoc.bpsim2.ElementParametersType){
+			org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect.endEval((org.gemoc.bpsim2.ElementParametersType)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect
 	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ConstantParameterAspect#String prettyLabel() from org.gemoc.xbpmn.k3dsa.bpsim2.aspects.NumericParameterTypeAspect
 		if (_self instanceof org.gemoc.bpsim2.NumericParameterType){
 			result = org.gemoc.xbpmn.k3dsa.bpsim2.aspects.NumericParameterTypeAspect.prettyLabel((org.gemoc.bpsim2.NumericParameterType)_self);

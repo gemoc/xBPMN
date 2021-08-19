@@ -1,3 +1,5 @@
+--import 'platform:/resource/org.gemoc.bpsim2.model/model/bpsim2.ecore'
+import 'http://www.bpsim.org/schemas/2.0'
 import 'platform:/resource/org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore'
 --import 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI'
 import 'http://www.eclipse.org/emf/2002/Ecore'
@@ -5,13 +7,21 @@ import 'http://www.eclipse.org/emf/2002/Ecore'
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib"
 ECLimport  "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib"
 ECLimport  "platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.moccml"
-
+ 
 -- event declaration
-package bpmn2
+package bpsim2
+
+	context ElementParameters 
+		def : entering : Event = self.startEval()
+--		def : leaving : Event = self.endEval()
+		 
+endpackage 
+ 
+package bpmn2 
 
 	context Process
 		def : startProcess : Event = self.startEval()
-		def : endProcess : Event = self.endEval()
+		def : endProcess : Event = self.endEval() 
 		
 --	context Lane
 --		def : startLane : Event = self.startEval()
@@ -44,8 +54,21 @@ package bpmn2
 		
 endpackage
 
--- event constraints
+-- BPMN/BPSim coordination event constraints
+package bpsim2
+	context ElementParameters
+		inv simultaneousBPSim_BPMNStartEvent:
+			(self.bpmnElementRef.oclIsKindOf(bpmn2::_'StartEvent'))
+			implies
+				Relation Coincides(self.bpmnElementRef.oclAsType(bpmn2::_'StartEvent').triggerStartEvent, self.entering)
+endpackage
 
+-- BPSim event constraints
+package bpsim2
+
+endpackage
+
+-- BPMN event constraints
 package bpmn2
 
 	context Process
@@ -148,3 +171,4 @@ package bpmn2
 --			Relation Precedes(self.triggerEndEvent, self.oclAsType(ecore::EObject).eContainer().oclAsType(Process).endProcess  )
 		
 endpackage
+

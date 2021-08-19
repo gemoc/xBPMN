@@ -103,12 +103,24 @@ class ScenarioAspect {
 
 @Aspect(className=ElementParameters)
 class ElementParametersAspect {
-
+	def void startEval() {
+		println("startEval ElementParameters "+_self.id)
+	}
+	
+	def void endEval() {
+		println("endEval ElementParameters "+_self.id)
+	}
 }
 
 @Aspect(className=ElementParametersType)
 class ElementParametersTypeAspect extends ElementParametersAspect {
-
+	def void startEval() {
+		println("startEval ElementParametersType "+_self.id)
+	}
+	
+	def void endEval() {
+		println("endEval ElementParametersType "+_self.id)
+	}
 }
 
 @Aspect(className=ControlParameters)

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1252,13 +1253,31 @@ public interface Bpsim2Package extends EPackage {
 	int ELEMENT_PARAMETERS_FEATURE_COUNT = 10;
 
 	/**
+	 * The operation id for the '<em>Start Eval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS___START_EVAL = 0;
+
+	/**
+	 * The operation id for the '<em>End Eval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS___END_EVAL = 1;
+
+	/**
 	 * The number of operations of the '<em>Element Parameters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_PARAMETERS_OPERATION_COUNT = 0;
+	int ELEMENT_PARAMETERS_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.bpsim2.impl.ElementParametersTypeImpl <em>Element Parameters Type</em>}' class.
@@ -1368,6 +1387,24 @@ public interface Bpsim2Package extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_PARAMETERS_TYPE_FEATURE_COUNT = ELEMENT_PARAMETERS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Start Eval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS_TYPE___START_EVAL = ELEMENT_PARAMETERS___START_EVAL;
+
+	/**
+	 * The operation id for the '<em>End Eval</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_PARAMETERS_TYPE___END_EVAL = ELEMENT_PARAMETERS___END_EVAL;
 
 	/**
 	 * The number of operations of the '<em>Element Parameters Type</em>' class.
@@ -4544,6 +4581,26 @@ public interface Bpsim2Package extends EPackage {
 	EReference getElementParameters_BpmnElementRef();
 
 	/**
+	 * Returns the meta object for the '{@link org.gemoc.bpsim2.ElementParameters#startEval() <em>Start Eval</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start Eval</em>' operation.
+	 * @see org.gemoc.bpsim2.ElementParameters#startEval()
+	 * @generated
+	 */
+	EOperation getElementParameters__StartEval();
+
+	/**
+	 * Returns the meta object for the '{@link org.gemoc.bpsim2.ElementParameters#endEval() <em>End Eval</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>End Eval</em>' operation.
+	 * @see org.gemoc.bpsim2.ElementParameters#endEval()
+	 * @generated
+	 */
+	EOperation getElementParameters__EndEval();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.bpsim2.ElementParametersType <em>Element Parameters Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6511,6 +6568,22 @@ public interface Bpsim2Package extends EPackage {
 		 * @generated
 		 */
 		EReference ELEMENT_PARAMETERS__BPMN_ELEMENT_REF = eINSTANCE.getElementParameters_BpmnElementRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Eval</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ELEMENT_PARAMETERS___START_EVAL = eINSTANCE.getElementParameters__StartEval();
+
+		/**
+		 * The meta object literal for the '<em><b>End Eval</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ELEMENT_PARAMETERS___END_EVAL = eINSTANCE.getElementParameters__EndEval();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.bpsim2.impl.ElementParametersTypeImpl <em>Element Parameters Type</em>}' class.

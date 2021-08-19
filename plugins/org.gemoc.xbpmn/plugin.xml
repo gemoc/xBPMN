@@ -2,7 +2,9 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.eclipse.gemoc.gemoc_language_workbench.xdsml">
-    <XDSML_Definition name="org.gemoc.xbpmn.XBPMN" xdsmlFilePath="/org.gemoc.xbpmn/XBPMN.dsl" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.xbpmn.XBPMN" xdsmlFilePath="/org.gemoc.xbpmn/XBPMN.dsl">
+      <XDSML_Definition_Customization fileExtensions="bpsim2" />
+    </XDSML_Definition>
   </extension>
   <extension point="org.eclipse.gemoc.gemoc_language_workbench.moccml.xdsml.addition">
     <MOCCML_XDSML_Addition name="org.gemoc.xbpmn.XBPMN" referencedXDSMLName="org.gemoc.xbpmn.XBPMN" codeExecutor_class="xbpmn.xdsml.api.impl.XBPMNCodeExecutor" solver_class="org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.xbpmn.moc.dse/qvto-gen/modeling/XBPMN.qvto" />
