@@ -5,7 +5,7 @@
     <semanticResources>simpleParalleGateways.bpmn</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_xlEfAAG7EeywO_ViOlgpMA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zeGdMAG7EeywO_ViOlgpMA" name="SimpleParallelGateways" repPath="#_zdO6gAG7EeywO_ViOlgpMA" changeId="b288e386-a0f3-43d0-bdbe-411a781a2430">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zeGdMAG7EeywO_ViOlgpMA" name="SimpleParallelGateways" repPath="#_zdO6gAG7EeywO_ViOlgpMA" changeId="d25e93f8-99b3-45f0-b366-60bcb49bced2">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']"/>
         <target xmi:type="bpmn:Process" href="simpleParalleGateways.bpmn#_24vNgwG6EeywO_ViOlgpMA"/>
       </ownedRepresentationDescriptors>
@@ -151,7 +151,7 @@
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_zikGdAG7EeywO_ViOlgpMA"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_zijfZAG7EeywO_ViOlgpMA" fontColor="10560" fontName="Noto Sans" fontHeight="12" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zijfZQG7EeywO_ViOlgpMA" width="959" height="388"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zijfZQG7EeywO_ViOlgpMA" width="959" height="280"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_zia8gQG7EeywO_ViOlgpMA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_zia8ggG7EeywO_ViOlgpMA"/>
@@ -178,7 +178,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_ufjYMAG-EeyJf8XVv6vtfQ" type="4001" element="_uetDoAG-EeyJf8XVv6vtfQ" source="__WFiYAG8Eey_nuuHB9j3Rg" target="_tyL74AG-EeyJf8XVv6vtfQ">
           <children xmi:type="notation:Node" xmi:id="_ufj_QAG-EeyJf8XVv6vtfQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ufj_QQG-EeyJf8XVv6vtfQ" x="24" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ufj_QQG-EeyJf8XVv6vtfQ" x="10" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_ufkmUAG-EeyJf8XVv6vtfQ" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ufkmUQG-EeyJf8XVv6vtfQ" x="7" y="10"/>
@@ -443,7 +443,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='StartEvent_import']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" uid="_txxsMAG-EeyJf8XVv6vtfQ" outgoingEdges="_5HfANAG-EeyJf8XVv6vtfQ _5m2cxAG-EeyJf8XVv6vtfQ" incomingEdges="_uetDoAG-EeyJf8XVv6vtfQ" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" uid="_txxsMAG-EeyJf8XVv6vtfQ" name="PGW1" outgoingEdges="_5HfANAG-EeyJf8XVv6vtfQ _5m2cxAG-EeyJf8XVv6vtfQ" incomingEdges="_uetDoAG-EeyJf8XVv6vtfQ" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_svDq8AG-EeyJf8XVv6vtfQ"/>
           <semanticElements xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_svDq8AG-EeyJf8XVv6vtfQ"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -454,7 +454,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" uid="_8sAP0AG-EeyJf8XVv6vtfQ" outgoingEdges="_NR314AG_EeyJf8XVv6vtfQ _NwY94AG_EeyJf8XVv6vtfQ _btaSZAG_EeyJf8XVv6vtfQ" incomingEdges="_Mzl-fwG_EeyJf8XVv6vtfQ" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" uid="_8sAP0AG-EeyJf8XVv6vtfQ" name="PGW2" outgoingEdges="_NR314AG_EeyJf8XVv6vtfQ _NwY94AG_EeyJf8XVv6vtfQ _btaSZAG_EeyJf8XVv6vtfQ" incomingEdges="_Mzl-fwG_EeyJf8XVv6vtfQ" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_8rwYMAG-EeyJf8XVv6vtfQ"/>
           <semanticElements xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_8rwYMAG-EeyJf8XVv6vtfQ"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -465,7 +465,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMappingImport" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" uid="_OcsDNQG_EeyJf8XVv6vtfQ" outgoingEdges="_SB85sgG_EeyJf8XVv6vtfQ" incomingEdges="_PVBZZAG_EeyJf8XVv6vtfQ _P1SN0AG_EeyJf8XVv6vtfQ _QV9R-AG_EeyJf8XVv6vtfQ _c0432AG_EeyJf8XVv6vtfQ" width="-1" height="-1">
+        <ownedDiagramElements xmi:type="diagram:DNode" uid="_OcsDNQG_EeyJf8XVv6vtfQ" name="PGW3" outgoingEdges="_SB85sgG_EeyJf8XVv6vtfQ" incomingEdges="_PVBZZAG_EeyJf8XVv6vtfQ _P1SN0AG_EeyJf8XVv6vtfQ _QV9R-AG_EeyJf8XVv6vtfQ _c0432AG_EeyJf8XVv6vtfQ" width="-1" height="-1">
           <target xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_OcmjoAG_EeyJf8XVv6vtfQ"/>
           <semanticElements xmi:type="bpmn:ParallelGateway" href="simpleParalleGateways.bpmn#_OcmjoAG_EeyJf8XVv6vtfQ"/>
           <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_OcsDNgG_EeyJf8XVv6vtfQ" showIcon="false" labelColor="64,41,0" workspacePath="/org.obeonetwork.dsl.bpmn2.design/icons2/nodes/gateway/parallel-gateway.svg">
@@ -566,7 +566,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@edgeMappings[name='ElementParametersToFlowNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_uetDoAG-EeyJf8XVv6vtfQ" sourceNode="__VoPYAG8Eey_nuuHB9j3Rg" targetNode="_txxsMAG-EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_uetDoAG-EeyJf8XVv6vtfQ" name="start_2_PGW1" sourceNode="__VoPYAG8Eey_nuuHB9j3Rg" targetNode="_txxsMAG-EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_ueqnYAG-EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_ueqnYAG-EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ueu40AG-EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">
@@ -577,7 +577,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5HfANAG-EeyJf8XVv6vtfQ" sourceNode="_txxsMAG-EeyJf8XVv6vtfQ" targetNode="_2Ib1IAG-EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5HfANAG-EeyJf8XVv6vtfQ" name="PGW1_2_T1" sourceNode="_txxsMAG-EeyJf8XVv6vtfQ" targetNode="_2Ib1IAG-EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_5HaHsAG-EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_5HaHsAG-EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_5HfnQAG-EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">
@@ -588,7 +588,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5m2cxAG-EeyJf8XVv6vtfQ" sourceNode="_txxsMAG-EeyJf8XVv6vtfQ" targetNode="_3o47QQG-EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_5m2cxAG-EeyJf8XVv6vtfQ" name="PGW1_2_T2" sourceNode="_txxsMAG-EeyJf8XVv6vtfQ" targetNode="_3o47QQG-EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_5mxkQAG-EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_5mxkQAG-EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_5m3q4AG-EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">
@@ -599,7 +599,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GMjZCAG_EeyJf8XVv6vtfQ" sourceNode="_2Ib1IAG-EeyJf8XVv6vtfQ" targetNode="_Ad4mCQG_EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GMjZCAG_EeyJf8XVv6vtfQ" name="T1_2_T3" sourceNode="_2Ib1IAG-EeyJf8XVv6vtfQ" targetNode="_Ad4mCQG_EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_GMgVsAG_EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_GMgVsAG_EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_GMjZCQG_EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">
@@ -610,7 +610,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Mzl-fwG_EeyJf8XVv6vtfQ" sourceNode="_Ad4mCQG_EeyJf8XVv6vtfQ" targetNode="_8sAP0AG-EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Mzl-fwG_EeyJf8XVv6vtfQ" name="T3_2_PGW2" sourceNode="_Ad4mCQG_EeyJf8XVv6vtfQ" targetNode="_8sAP0AG-EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_Mzi7IAG_EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_Mzi7IAG_EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_MzmlgAG_EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">
@@ -643,7 +643,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.obeonetwork.dsl.bpmn2.design/description/BPMN2.odesign#//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_PVBZZAG_EeyJf8XVv6vtfQ" sourceNode="_3o47QQG-EeyJf8XVv6vtfQ" targetNode="_OcsDNQG_EeyJf8XVv6vtfQ">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_PVBZZAG_EeyJf8XVv6vtfQ" name="T2_2_PGW3" sourceNode="_3o47QQG-EeyJf8XVv6vtfQ" targetNode="_OcsDNQG_EeyJf8XVv6vtfQ">
       <target xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_PU-WEAG_EeyJf8XVv6vtfQ"/>
       <semanticElements xmi:type="bpmn:SequenceFlow" href="simpleParalleGateways.bpmn#_PU-WEAG_EeyJf8XVv6vtfQ"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_PVBZZQG_EeyJf8XVv6vtfQ" targetArrow="InputFillClosedArrow" size="2" routingStyle="manhattan" strokeColor="125,125,125">

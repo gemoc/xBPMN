@@ -2,22 +2,22 @@
 <bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_syO3kAG6EeywO_ViOlgpMA" name="SimpleParallelGatewaysDefinitions">
   <rootElements xsi:type="bpmn:Process" id="_24vNgwG6EeywO_ViOlgpMA" name="SimpleParallelGateways">
     <flowElements xsi:type="bpmn:StartEvent" id="_8pcA4QG6EeywO_ViOlgpMA" name="start" outgoing="_ueqnYAG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:ParallelGateway" id="_svDq8AG-EeyJf8XVv6vtfQ" outgoing="_5HaHsAG-EeyJf8XVv6vtfQ _5mxkQAG-EeyJf8XVv6vtfQ" incoming="_ueqnYAG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_ueqnYAG-EeyJf8XVv6vtfQ" targetRef="_svDq8AG-EeyJf8XVv6vtfQ" sourceRef="_8pcA4QG6EeywO_ViOlgpMA"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_svDq8AG-EeyJf8XVv6vtfQ" name="PGW1" outgoing="_5HaHsAG-EeyJf8XVv6vtfQ _5mxkQAG-EeyJf8XVv6vtfQ" incoming="_ueqnYAG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_ueqnYAG-EeyJf8XVv6vtfQ" name="start_2_PGW1" targetRef="_svDq8AG-EeyJf8XVv6vtfQ" sourceRef="_8pcA4QG6EeywO_ViOlgpMA"/>
     <flowElements xsi:type="bpmn:Task" id="_1hw2sAG-EeyJf8XVv6vtfQ" name="T1" outgoing="_GMgVsAG_EeyJf8XVv6vtfQ" incoming="_5HaHsAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:Task" id="_2oo_MAG-EeyJf8XVv6vtfQ" name="T2" outgoing="_PU-WEAG_EeyJf8XVv6vtfQ" incoming="_5mxkQAG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_5HaHsAG-EeyJf8XVv6vtfQ" targetRef="_1hw2sAG-EeyJf8XVv6vtfQ" sourceRef="_svDq8AG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_5mxkQAG-EeyJf8XVv6vtfQ" targetRef="_2oo_MAG-EeyJf8XVv6vtfQ" sourceRef="_svDq8AG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:ParallelGateway" id="_8rwYMAG-EeyJf8XVv6vtfQ" outgoing="_NRv6EAG_EeyJf8XVv6vtfQ _NwUscAG_EeyJf8XVv6vtfQ _btRvgAG_EeyJf8XVv6vtfQ" incoming="_Mzi7IAG_EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_5HaHsAG-EeyJf8XVv6vtfQ" name="PGW1_2_T1" targetRef="_1hw2sAG-EeyJf8XVv6vtfQ" sourceRef="_svDq8AG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_5mxkQAG-EeyJf8XVv6vtfQ" name="PGW1_2_T2" targetRef="_2oo_MAG-EeyJf8XVv6vtfQ" sourceRef="_svDq8AG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_8rwYMAG-EeyJf8XVv6vtfQ" name="PGW2" outgoing="_NRv6EAG_EeyJf8XVv6vtfQ _NwUscAG_EeyJf8XVv6vtfQ _btRvgAG_EeyJf8XVv6vtfQ" incoming="_Mzi7IAG_EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:Task" id="__w6LQAG-EeyJf8XVv6vtfQ" name="T3" outgoing="_Mzi7IAG_EeyJf8XVv6vtfQ" incoming="_GMgVsAG_EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_GMgVsAG_EeyJf8XVv6vtfQ" targetRef="__w6LQAG-EeyJf8XVv6vtfQ" sourceRef="_1hw2sAG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_GMgVsAG_EeyJf8XVv6vtfQ" name="T1_2_T3" targetRef="__w6LQAG-EeyJf8XVv6vtfQ" sourceRef="_1hw2sAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:Task" id="_IPb2wAG_EeyJf8XVv6vtfQ" name="T4" outgoing="_P1JD4AG_EeyJf8XVv6vtfQ" incoming="_NRv6EAG_EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:Task" id="_KhwesAG_EeyJf8XVv6vtfQ" name="T5" outgoing="_QV5nkAG_EeyJf8XVv6vtfQ" incoming="_NwUscAG_EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_Mzi7IAG_EeyJf8XVv6vtfQ" targetRef="_8rwYMAG-EeyJf8XVv6vtfQ" sourceRef="__w6LQAG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_Mzi7IAG_EeyJf8XVv6vtfQ" name="T3_2_PGW2" targetRef="_8rwYMAG-EeyJf8XVv6vtfQ" sourceRef="__w6LQAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:SequenceFlow" id="_NRv6EAG_EeyJf8XVv6vtfQ" targetRef="_IPb2wAG_EeyJf8XVv6vtfQ" sourceRef="_8rwYMAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:SequenceFlow" id="_NwUscAG_EeyJf8XVv6vtfQ" targetRef="_KhwesAG_EeyJf8XVv6vtfQ" sourceRef="_8rwYMAG-EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:ParallelGateway" id="_OcmjoAG_EeyJf8XVv6vtfQ" outgoing="_SB4BMAG_EeyJf8XVv6vtfQ" incoming="_PU-WEAG_EeyJf8XVv6vtfQ _P1JD4AG_EeyJf8XVv6vtfQ _QV5nkAG_EeyJf8XVv6vtfQ _c010gAG_EeyJf8XVv6vtfQ"/>
-    <flowElements xsi:type="bpmn:SequenceFlow" id="_PU-WEAG_EeyJf8XVv6vtfQ" targetRef="_OcmjoAG_EeyJf8XVv6vtfQ" sourceRef="_2oo_MAG-EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_OcmjoAG_EeyJf8XVv6vtfQ" name="PGW3" outgoing="_SB4BMAG_EeyJf8XVv6vtfQ" incoming="_PU-WEAG_EeyJf8XVv6vtfQ _P1JD4AG_EeyJf8XVv6vtfQ _QV5nkAG_EeyJf8XVv6vtfQ _c010gAG_EeyJf8XVv6vtfQ"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_PU-WEAG_EeyJf8XVv6vtfQ" name="T2_2_PGW3" targetRef="_OcmjoAG_EeyJf8XVv6vtfQ" sourceRef="_2oo_MAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:SequenceFlow" id="_P1JD4AG_EeyJf8XVv6vtfQ" targetRef="_OcmjoAG_EeyJf8XVv6vtfQ" sourceRef="_IPb2wAG_EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:SequenceFlow" id="_QV5nkAG_EeyJf8XVv6vtfQ" targetRef="_OcmjoAG_EeyJf8XVv6vtfQ" sourceRef="_KhwesAG_EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:EndEvent" id="_RdVJsAG_EeyJf8XVv6vtfQ" incoming="_SB4BMAG_EeyJf8XVv6vtfQ"/>
@@ -26,7 +26,7 @@
     <flowElements xsi:type="bpmn:SequenceFlow" id="_btRvgAG_EeyJf8XVv6vtfQ" targetRef="_aBLaEAG_EeyJf8XVv6vtfQ" sourceRef="_8rwYMAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:SequenceFlow" id="_c010gAG_EeyJf8XVv6vtfQ" targetRef="_OcmjoAG_EeyJf8XVv6vtfQ" sourceRef="_aBLaEAG_EeyJf8XVv6vtfQ"/>
     <laneSets id="_zdR90AG7EeywO_ViOlgpMA">
-      <lanes id="_zdSk4AG7EeywO_ViOlgpMA" flowNodeRefs="_8pcA4QG6EeywO_ViOlgpMA _svDq8AG-EeyJf8XVv6vtfQ _1hw2sAG-EeyJf8XVv6vtfQ _2oo_MAG-EeyJf8XVv6vtfQ _8rwYMAG-EeyJf8XVv6vtfQ __w6LQAG-EeyJf8XVv6vtfQ _IPb2wAG_EeyJf8XVv6vtfQ _KhwesAG_EeyJf8XVv6vtfQ _OcmjoAG_EeyJf8XVv6vtfQ _RdVJsAG_EeyJf8XVv6vtfQ _aBLaEAG_EeyJf8XVv6vtfQ"/>
+      <lanes id="_zdSk4AG7EeywO_ViOlgpMA" name="" flowNodeRefs="_8pcA4QG6EeywO_ViOlgpMA _svDq8AG-EeyJf8XVv6vtfQ _1hw2sAG-EeyJf8XVv6vtfQ _2oo_MAG-EeyJf8XVv6vtfQ _8rwYMAG-EeyJf8XVv6vtfQ __w6LQAG-EeyJf8XVv6vtfQ _IPb2wAG_EeyJf8XVv6vtfQ _KhwesAG_EeyJf8XVv6vtfQ _OcmjoAG_EeyJf8XVv6vtfQ _RdVJsAG_EeyJf8XVv6vtfQ _aBLaEAG_EeyJf8XVv6vtfQ"/>
     </laneSets>
   </rootElements>
 </bpmn:Definitions>
