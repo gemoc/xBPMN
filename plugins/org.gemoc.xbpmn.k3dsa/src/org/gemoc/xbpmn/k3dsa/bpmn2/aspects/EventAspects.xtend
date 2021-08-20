@@ -317,6 +317,7 @@ class StartEventAspect extends CatchEventAspect {
 		// initiate a token
 		val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
 		token.origin = _self
+		token.position = _self
 		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
 		val process = _self.getContainerOfType(Process) 
 		val context =
@@ -355,7 +356,15 @@ class EndEventAspect extends ThrowEventAspect {
 	def void startEval() {
 		println("startEval EndEvent "+_self.name)
 		_self.tokens.clear
-		// TODO destroy containing process's context for the corresponding token
+		// destroy containing process's context for the corresponding token
+		val process = _self.getContainerOfType(Process) 
+		process.contexts.get(0).ownedTokens.forEach[t | 
+			t.position = null
+			t.origin = null
+			t.sourceSequenceFlow = null
+		]
+		process.contexts.get(0).ownedTokens.clear
+		
 	}
 
 	def void endEval() {
