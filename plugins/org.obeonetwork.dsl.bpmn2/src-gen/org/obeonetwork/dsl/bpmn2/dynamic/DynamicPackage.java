@@ -14,6 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2.dynamic;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -141,13 +142,22 @@ public interface DynamicPackage extends EPackage {
 	int FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Start Counter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER = 1;
+
+	/**
 	 * The number of structural features of the '<em>Flow Element Container Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_ELEMENT_CONTAINER_CONTEXT_FEATURE_COUNT = 1;
+	int FLOW_ELEMENT_CONTAINER_CONTEXT_FEATURE_COUNT = 2;
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token <em>Token</em>}'.
@@ -225,6 +235,17 @@ public interface DynamicPackage extends EPackage {
 	EReference getFlowElementContainerContext_OwnedTokens();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter <em>Start Counter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Counter</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter()
+	 * @see #getFlowElementContainerContext()
+	 * @generated
+	 */
+	EAttribute getFlowElementContainerContext_StartCounter();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,6 +321,14 @@ public interface DynamicPackage extends EPackage {
 		 */
 		EReference FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = eINSTANCE
 				.getFlowElementContainerContext_OwnedTokens();
+		/**
+		 * The meta object literal for the '<em><b>Start Counter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER = eINSTANCE
+				.getFlowElementContainerContext_StartCounter();
 
 	}
 

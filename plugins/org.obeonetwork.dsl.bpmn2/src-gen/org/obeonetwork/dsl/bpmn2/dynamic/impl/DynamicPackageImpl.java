@@ -14,6 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2.dynamic.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
@@ -226,6 +227,16 @@ public class DynamicPackageImpl extends EPackageImpl implements DynamicPackage {
 	@Override
 	public EReference getFlowElementContainerContext_OwnedTokens() {
 		return (EReference) getFlowElementContainerContext().getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFlowElementContainerContext_StartCounter() {
+		return (EAttribute) getFlowElementContainerContext().getEStructuralFeatures().get(1);
 	}
 
 	/**

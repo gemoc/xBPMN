@@ -1810,7 +1810,7 @@
               </style>
             </borderedNodeMappings>
             <borderedNodeMappings name="FlowElementContainerContext_LaneBorder_starts" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+'TODO'" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+self.startCounter" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <forbiddenSides>WEST</forbiddenSides>

@@ -36,11 +36,22 @@ import org.obeonetwork.dsl.bpmn2.dynamic.Token;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl#getOwnedTokens <em>Owned Tokens</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl#getStartCounter <em>Start Counter</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements FlowElementContainerContext {
+	/**
+	 * The default value of the '{@link #getStartCounter() <em>Start Counter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartCounter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int START_COUNTER_EDEFAULT = 0;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,6 +98,28 @@ public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public int getStartCounter() {
+		return (Integer) eDynamicGet(DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER,
+				DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStartCounter(int newStartCounter) {
+		eDynamicSet(DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER,
+				DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER, newStartCounter);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -121,6 +154,8 @@ public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements 
 		switch (featureID) {
 		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS:
 			return getOwnedTokens();
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER:
+			return getStartCounter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,6 +173,9 @@ public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements 
 			getOwnedTokens().clear();
 			getOwnedTokens().addAll((Collection<? extends Token>) newValue);
 			return;
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER:
+			setStartCounter((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -153,6 +191,9 @@ public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements 
 		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS:
 			getOwnedTokens().clear();
 			return;
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER:
+			setStartCounter(START_COUNTER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -167,6 +208,8 @@ public class FlowElementContainerContextImpl extends BPMN2ObjectImpl implements 
 		switch (featureID) {
 		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS:
 			return !getOwnedTokens().isEmpty();
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER:
+			return getStartCounter() != START_COUNTER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

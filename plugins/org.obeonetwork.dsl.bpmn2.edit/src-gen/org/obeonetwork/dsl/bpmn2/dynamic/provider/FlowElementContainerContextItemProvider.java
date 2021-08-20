@@ -30,6 +30,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -68,6 +69,7 @@ public class FlowElementContainerContextItemProvider extends ItemProviderAdapter
 			super.getPropertyDescriptors(object);
 
 			addOwnedTokensPropertyDescriptor(object);
+			addStartCounterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +88,22 @@ public class FlowElementContainerContextItemProvider extends ItemProviderAdapter
 						"_UI_FlowElementContainerContext_type"),
 				DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS, true, false, true, null, null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Start Counter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStartCounterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_FlowElementContainerContext_startCounter_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_FlowElementContainerContext_startCounter_feature",
+						"_UI_FlowElementContainerContext_type"),
+				DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -151,7 +169,8 @@ public class FlowElementContainerContextItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_FlowElementContainerContext_type");
+		FlowElementContainerContext flowElementContainerContext = (FlowElementContainerContext) object;
+		return getString("_UI_FlowElementContainerContext_type") + " " + flowElementContainerContext.getStartCounter();
 	}
 
 	/**
@@ -166,6 +185,9 @@ public class FlowElementContainerContextItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FlowElementContainerContext.class)) {
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;

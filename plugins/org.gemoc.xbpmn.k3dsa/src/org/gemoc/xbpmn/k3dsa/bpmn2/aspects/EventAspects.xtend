@@ -317,11 +317,18 @@ class StartEventAspect extends CatchEventAspect {
 		// initiate a token
 		val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
 		token.origin = _self
-		// create context in containing Process (which is started simultaneously thanks to an ECL rule)
+		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
 		val process = _self.getContainerOfType(Process) 
-		val context = DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext
+		val context =
+			if(process.contexts.size > 0){
+				// we currently support only 1 running process
+				// reuse previous one
+				process.contexts.get(0)
+			} else { DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext }
 		process.contexts.add(context)
 		context.ownedTokens.add(token)
+		// increment startCount for the process
+		context.startCounter = context.startCounter +1
 	}
 
 	def void endEval() {

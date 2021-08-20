@@ -654,6 +654,7 @@
       <genClasses ecoreClass="BPMN20.ecore#//dynamic/FlowElementContainerContext">
         <genFeatures children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference BPMN20.ecore#//dynamic/FlowElementContainerContext/ownedTokens"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BPMN20.ecore#//dynamic/FlowElementContainerContext/startCounter"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

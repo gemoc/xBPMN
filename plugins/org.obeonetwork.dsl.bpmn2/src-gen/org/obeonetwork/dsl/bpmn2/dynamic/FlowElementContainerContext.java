@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens <em>Owned Tokens</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter <em>Start Counter</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getFlowElementContainerContext()
@@ -49,4 +50,27 @@ public interface FlowElementContainerContext extends CDOObject {
 	 * @generated
 	 */
 	EList<Token> getOwnedTokens();
+
+	/**
+	 * Returns the value of the '<em><b>Start Counter</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start Counter</em>' attribute.
+	 * @see #setStartCounter(int)
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getFlowElementContainerContext_StartCounter()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getStartCounter();
+
+	/**
+	 * Sets the value of the '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter <em>Start Counter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start Counter</em>' attribute.
+	 * @see #getStartCounter()
+	 * @generated
+	 */
+	void setStartCounter(int value);
 } // FlowElementContainerContext
