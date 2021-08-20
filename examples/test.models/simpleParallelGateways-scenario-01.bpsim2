@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
+  <bpsim:Scenario name="SimpleParallelGateways-scenario-01">
+    <bpsim:ScenarioParameters/>
+    <bpsim:ElementParameters id="start_param" bpmnElementRef="bpmn:StartEvent simpleParalleGateways.bpmn#_8pcA4QG6EeywO_ViOlgpMA">
+      <bpsim:ControlParameters>
+        <bpsim:InterTriggerTimer>
+          <bpsim:NumericParameter/>
+        </bpsim:InterTriggerTimer>
+        <bpsim:TriggerCount>
+          <bpsim:NumericParameter value="1"/>
+        </bpsim:TriggerCount>
+      </bpsim:ControlParameters>
+    </bpsim:ElementParameters>
+  </bpsim:Scenario>
+</bpsim:BPSimData>

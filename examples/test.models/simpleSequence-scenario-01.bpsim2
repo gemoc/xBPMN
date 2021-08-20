@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpsim2:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpsim2="http://www.bpsim.org/schemas/2.0">
-  <bpsim2:Scenario name="Scenario1">
+  <bpsim2:Scenario id="scenario_1" name="Scenario1">
     <bpsim2:ScenarioParameters replication="1">
       <bpsim2:Duration>
         <bpsim2:DurationParameter value="PT60H"/>
       </bpsim2:Duration>
     </bpsim2:ScenarioParameters>
-    <bpsim2:ElementParameters elementRef="_lM910PjnEeuv-cj8qqJa6g" bpmnElementRef="bpmn:StartEvent simpleSequence.bpmn#_lM910PjnEeuv-cj8qqJa6g">
+    <bpsim2:ElementParameters elementRef="_lM910PjnEeuv-cj8qqJa6g" id="start_param" bpmnElementRef="bpmn:StartEvent simpleSequence.bpmn#_lM910PjnEeuv-cj8qqJa6g">
       <bpsim2:ControlParameters>
+        <bpsim2:InterTriggerTimer>
+          <bpsim2:NumericParameter/>
+        </bpsim2:InterTriggerTimer>
         <bpsim2:TriggerCount>
           <bpsim2:NumericParameter value="1"/>
         </bpsim2:TriggerCount>
