@@ -23,6 +23,9 @@
 		<module>../org.obeonetwork.dsl.bpmn2.feature</module> 
 		<module>../org.obeonetwork.dsl.bpmn2.repository</module> -->
 		
+		<module>org.gemoc.bpsim2.model</module>
+		<module>org.gemoc.bpsim2.model.edit</module>
+		<module>org.gemoc.bpsim2.model.editor</module>
 		<module>org.gemoc.xbpmn</module>
 		<module>org.gemoc.xbpmn.k3dsa</module>
 		<module>org.gemoc.xbpmn.moc.dse</module>
