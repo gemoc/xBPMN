@@ -64,9 +64,9 @@ package bpsim2
 endpackage
 
 -- BPSim event constraints
-package bpsim2
-
-endpackage
+--package bpsim2
+--
+--endpackage
 
 -- BPMN event constraints
 package bpmn2
@@ -79,11 +79,15 @@ package bpmn2
 			Relation Exclusion(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
 		inv noSimultaneousStops:
 			Relation Exclusion(self.flowElements->selectByKind(EndEvent).triggerEndEvent)
+		
+		
+		--def : allStartEvents: Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
+		--def : allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)
 			
-		inv noMultipleCallOfStartEvents:
-		let allStartEvents : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
-		let allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
-			Relation Alternates(allStartEvents, allEndEvents)
+--		inv noMultipleCallOfStartEvents:
+--		let allStartEvents : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
+--		let allEndEvents : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
+--			Relation Alternates(allStartEvents, allEndEvents)
 		
 		
 		-- Process Start/End:   starts on any StartEvent, ends on any EndEvent
@@ -91,6 +95,8 @@ package bpmn2
 		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent) in
 		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
 			Relation ProcessStartEnd(allStartEvents_2, self.startProcess, allEndEvents_2, self.endProcess)
+
+
 --		inv startProcessOnAnyStartEvent:
 --		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)	in
 --			Relation Coincides(allStartEvents_2, self.startProcess)
@@ -100,6 +106,7 @@ package bpmn2
 
 		-- TODO timer based StartEvent	
 
+		
 	context SequenceFlow
 		inv waitActivityBeforeTriggeringFlow:
 			((self.sourceRef).oclIsKindOf(Activity))
@@ -120,6 +127,8 @@ package bpmn2
 
 
 	context Activity
+	
+		-- TODO non Reentrant for a given context
 		inv activityNonReentrant:
 			Relation Alternates(self.startActivity, self.endActivity)
 			

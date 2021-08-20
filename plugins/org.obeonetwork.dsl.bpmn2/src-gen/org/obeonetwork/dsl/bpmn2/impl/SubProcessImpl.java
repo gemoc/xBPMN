@@ -27,6 +27,7 @@ import org.obeonetwork.dsl.bpmn2.FlowElement;
 import org.obeonetwork.dsl.bpmn2.FlowElementsContainer;
 import org.obeonetwork.dsl.bpmn2.LaneSet;
 import org.obeonetwork.dsl.bpmn2.SubProcess;
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,7 @@ import org.obeonetwork.dsl.bpmn2.SubProcess;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubProcessImpl#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubProcessImpl#getLaneSets <em>Lane Sets</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubProcessImpl#getContexts <em>Contexts</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubProcessImpl#isTriggeredByEvent <em>Triggered By Event</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubProcessImpl#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
@@ -103,6 +105,18 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<FlowElementContainerContext> getContexts() {
+		return (EList<FlowElementContainerContext>) eDynamicGet(Bpmn2Package.SUB_PROCESS__CONTEXTS,
+				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public boolean isTriggeredByEvent() {
 		return (Boolean) eDynamicGet(Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT,
@@ -144,6 +158,8 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 			return ((InternalEList<?>) getLaneSets()).basicRemove(otherEnd, msgs);
+		case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.SUB_PROCESS__ARTIFACTS:
 			return ((InternalEList<?>) getArtifacts()).basicRemove(otherEnd, msgs);
 		}
@@ -162,6 +178,8 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 			return getFlowElements();
 		case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 			return getLaneSets();
+		case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+			return getContexts();
 		case Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT:
 			return isTriggeredByEvent();
 		case Bpmn2Package.SUB_PROCESS__ARTIFACTS:
@@ -186,6 +204,10 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 		case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 			getLaneSets().clear();
 			getLaneSets().addAll((Collection<? extends LaneSet>) newValue);
+			return;
+		case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+			getContexts().clear();
+			getContexts().addAll((Collection<? extends FlowElementContainerContext>) newValue);
 			return;
 		case Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT:
 			setTriggeredByEvent((Boolean) newValue);
@@ -212,6 +234,9 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 		case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 			getLaneSets().clear();
 			return;
+		case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+			getContexts().clear();
+			return;
 		case Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT:
 			setTriggeredByEvent(TRIGGERED_BY_EVENT_EDEFAULT);
 			return;
@@ -234,6 +259,8 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 			return !getFlowElements().isEmpty();
 		case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 			return !getLaneSets().isEmpty();
+		case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+			return !getContexts().isEmpty();
 		case Bpmn2Package.SUB_PROCESS__TRIGGERED_BY_EVENT:
 			return isTriggeredByEvent() != TRIGGERED_BY_EVENT_EDEFAULT;
 		case Bpmn2Package.SUB_PROCESS__ARTIFACTS:
@@ -255,6 +282,8 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS;
 			case Bpmn2Package.SUB_PROCESS__LANE_SETS:
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS;
+			case Bpmn2Package.SUB_PROCESS__CONTEXTS:
+				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS;
 			default:
 				return -1;
 			}
@@ -275,6 +304,8 @@ public class SubProcessImpl extends ActivityImpl implements SubProcess {
 				return Bpmn2Package.SUB_PROCESS__FLOW_ELEMENTS;
 			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 				return Bpmn2Package.SUB_PROCESS__LANE_SETS;
+			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+				return Bpmn2Package.SUB_PROCESS__CONTEXTS;
 			default:
 				return -1;
 			}

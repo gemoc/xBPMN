@@ -15,6 +15,7 @@
 package org.obeonetwork.dsl.bpmn2;
 
 import org.eclipse.emf.common.util.EList;
+import org.obeonetwork.dsl.bpmn2.dynamic.Token;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElement#getAuditing <em>Auditing</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElement#getMonitoring <em>Monitoring</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElement#getCategoryValueRef <em>Category Value Ref</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElement#getTokens <em>Tokens</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowElement()
@@ -131,5 +133,20 @@ public interface FlowElement extends BaseElement {
 	 * @generated
 	 */
 	EList<CategoryValue> getCategoryValueRef();
+
+	/**
+	 * Returns the value of the '<em><b>Tokens</b></em>' reference list.
+	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.dynamic.Token}.
+	 * It is bidirectional and its opposite is '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tokens</em>' reference list.
+	 * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowElement_Tokens()
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getPosition
+	 * @model opposite="position"
+	 *        annotation="aspect"
+	 * @generated
+	 */
+	EList<Token> getTokens();
 
 } // FlowElement

@@ -43,6 +43,15 @@ public interface DynamicFactory extends EFactory {
 	Token createToken();
 
 	/**
+	 * Returns a new object of class '<em>Flow Element Container Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Flow Element Container Context</em>'.
+	 * @generated
+	 */
+	FlowElementContainerContext createFlowElementContainerContext();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

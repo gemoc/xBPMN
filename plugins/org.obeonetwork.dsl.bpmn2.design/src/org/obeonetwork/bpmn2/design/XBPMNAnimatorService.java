@@ -18,8 +18,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.eclipse.xtext.EcoreUtil2;
 import org.obeonetwork.dsl.bpmn2.Lane;
+import org.obeonetwork.dsl.bpmn2.ParallelGateway;
 import org.obeonetwork.dsl.bpmn2.Process;
 import org.obeonetwork.dsl.bpmn2.Task;
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 import xbpmn.xdsml.api.impl.XBPMNRTDAccessor;
 
@@ -58,6 +60,18 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 		} else {
 			return false;
 		}
+	}
+	
+	public Integer nbPossibleTokens(EObject eo) {
+		int result = 1;
+		if(eo instanceof FlowElementContainerContext) {
+			FlowElementContainerContext fecc = (FlowElementContainerContext)eo;
+			List<ParallelGateway> gateways = EcoreUtil2.eAllOfType(fecc.eContainer(), ParallelGateway.class);
+			result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).mapToInt(gw -> gw.getOutgoing().size()-1).sum();
+			//gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).forEach(gw -> result += gw.getOutgoing().size() -1);
+			//result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).count();
+		}
+		return result;
 	}
 	
 }

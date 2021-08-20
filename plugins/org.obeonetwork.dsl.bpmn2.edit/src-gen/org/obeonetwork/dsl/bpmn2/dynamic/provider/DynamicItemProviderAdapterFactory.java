@@ -108,6 +108,29 @@ public class DynamicItemProviderAdapterFactory extends DynamicAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FlowElementContainerContextItemProvider flowElementContainerContextItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFlowElementContainerContextAdapter() {
+		if (flowElementContainerContextItemProvider == null) {
+			flowElementContainerContextItemProvider = new FlowElementContainerContextItemProvider(this);
+		}
+
+		return flowElementContainerContextItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -214,6 +237,8 @@ public class DynamicItemProviderAdapterFactory extends DynamicAdapterFactory
 	public void dispose() {
 		if (tokenItemProvider != null)
 			tokenItemProvider.dispose();
+		if (flowElementContainerContextItemProvider != null)
+			flowElementContainerContextItemProvider.dispose();
 	}
 
 }

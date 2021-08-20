@@ -293,7 +293,7 @@ abstract class GatewayAspect extends FlowNodeAspect {
 		_self.outgoing.forEach[sequenceFlow |
 			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
 			 token.sourceSequenceFlow = sequenceFlow
-			 sequenceFlow.targetRef.heldTokens.add(token)
+			 sequenceFlow.targetRef.tokens.add(token)
 		]
 	}
 }

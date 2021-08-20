@@ -497,9 +497,9 @@ class TaskAspect extends ActivityAspect {
 		_self.isStarted = false
 		
 		switch _self.outgoing.size {
-			case 0: { _self.heldTokens.clear }
-			case 1: { if(_self.heldTokens.size == 1){
-					_self.heldTokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
+			case 0: { _self.tokens.clear }
+			case 1: { if(_self.tokens.size == 1){
+					_self.tokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
 				} else {
 					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". Missing heldTokens")
 				}

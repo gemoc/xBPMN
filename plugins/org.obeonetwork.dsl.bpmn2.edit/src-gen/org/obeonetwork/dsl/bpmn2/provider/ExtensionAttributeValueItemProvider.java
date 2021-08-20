@@ -593,6 +593,9 @@ public class ExtensionAttributeValueItemProvider extends ItemProviderAdapter imp
 				DynamicFactory.eINSTANCE.createToken()));
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,
+				DynamicFactory.eINSTANCE.createFlowElementContainerContext()));
+
+		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,
 				BpmnDiFactory.eINSTANCE.createBPMNPlane()));
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.EXTENSION_ATTRIBUTE_VALUE__VALUE,

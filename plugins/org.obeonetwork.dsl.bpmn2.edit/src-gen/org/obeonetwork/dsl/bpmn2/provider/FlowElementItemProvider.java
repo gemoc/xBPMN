@@ -64,6 +64,7 @@ public class FlowElementItemProvider extends BaseElementItemProvider implements 
 
 			addNamePropertyDescriptor(object);
 			addCategoryValueRefPropertyDescriptor(object);
+			addTokensPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +98,21 @@ public class FlowElementItemProvider extends BaseElementItemProvider implements 
 						getString("_UI_PropertyDescriptor_description", "_UI_FlowElement_categoryValueRef_feature",
 								"_UI_FlowElement_type"),
 						Bpmn2Package.Literals.FLOW_ELEMENT__CATEGORY_VALUE_REF, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tokens feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTokensPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_FlowElement_tokens_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FlowElement_tokens_feature",
+								"_UI_FlowElement_type"),
+						Bpmn2Package.Literals.FLOW_ELEMENT__TOKENS, true, false, true, null, null, null));
 	}
 
 	/**

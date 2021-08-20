@@ -84,6 +84,11 @@ public class DynamicAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFlowElementContainerContext(FlowElementContainerContext object) {
+			return createFlowElementContainerContextAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -113,6 +118,20 @@ public class DynamicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext <em>Flow Element Container Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext
+	 * @generated
+	 */
+	public Adapter createFlowElementContainerContextAdapter() {
 		return null;
 	}
 

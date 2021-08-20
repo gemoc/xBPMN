@@ -35,17 +35,16 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.obeonetwork.dsl.bpmn2.dynamic.DynamicFactory;
 import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage;
-
-import org.obeonetwork.dsl.bpmn2.dynamic.Token;
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 import org.obeonetwork.dsl.bpmn2.provider.Bpmn2EditPlugin;
 
 /**
- * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.dynamic.Token} object.
+ * This is the item provider adapter for a {@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TokenItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class FlowElementContainerContextItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -53,7 +52,7 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TokenItemProvider(AdapterFactory adapterFactory) {
+	public FlowElementContainerContextItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,73 +67,59 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourceSequenceFlowPropertyDescriptor(object);
-			addContextPropertyDescriptor(object);
-			addOriginPropertyDescriptor(object);
-			addPositionPropertyDescriptor(object);
+			addOwnedTokensPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Sequence Flow feature.
+	 * This adds a property descriptor for the Owned Tokens feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceSequenceFlowPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Token_sourceSequenceFlow_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Token_sourceSequenceFlow_feature",
-								"_UI_Token_type"),
-						DynamicPackage.Literals.TOKEN__SOURCE_SEQUENCE_FLOW, true, false, true, null, null, null));
+	protected void addOwnedTokensPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_FlowElementContainerContext_ownedTokens_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_FlowElementContainerContext_ownedTokens_feature",
+						"_UI_FlowElementContainerContext_type"),
+				DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS, true, false, true, null, null,
+				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Context feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Token_context_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Token_context_feature", "_UI_Token_type"),
-						DynamicPackage.Literals.TOKEN__CONTEXT, true, false, true, null, null, null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Origin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOriginPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Token_origin_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Token_origin_feature", "_UI_Token_type"),
-						DynamicPackage.Literals.TOKEN__ORIGIN, true, false, true, null, null, null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This adds a property descriptor for the Position feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPositionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Token_position_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Token_position_feature", "_UI_Token_type"),
-						DynamicPackage.Literals.TOKEN__POSITION, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Token.png.
+	 * This returns FlowElementContainerContext.png.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -142,9 +127,9 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public Object getImage(Object object) {
 		try {
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/Token.png"));
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/FlowElementContainerContext.png"));
 		} catch (java.util.MissingResourceException e) {
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/Token.gif"));
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/FlowElementContainerContext.gif"));
 		}
 	}
 
@@ -166,7 +151,7 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Token_type");
+		return getString("_UI_FlowElementContainerContext_type");
 	}
 
 	/**
@@ -179,6 +164,12 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(FlowElementContainerContext.class)) {
+		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -192,6 +183,10 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors
+				.add(createChildParameter(DynamicPackage.Literals.FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS,
+						DynamicFactory.eINSTANCE.createToken()));
 	}
 
 	/**

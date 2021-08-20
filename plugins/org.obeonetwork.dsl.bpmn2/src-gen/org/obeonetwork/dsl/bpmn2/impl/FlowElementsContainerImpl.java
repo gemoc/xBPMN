@@ -25,6 +25,7 @@ import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.FlowElement;
 import org.obeonetwork.dsl.bpmn2.FlowElementsContainer;
 import org.obeonetwork.dsl.bpmn2.LaneSet;
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +37,7 @@ import org.obeonetwork.dsl.bpmn2.LaneSet;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementsContainerImpl#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementsContainerImpl#getLaneSets <em>Lane Sets</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementsContainerImpl#getContexts <em>Contexts</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,18 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<FlowElementContainerContext> getContexts() {
+		return (EList<FlowElementContainerContext>) eDynamicGet(Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS,
+				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -96,6 +110,8 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 			return ((InternalEList<?>) getLaneSets()).basicRemove(otherEnd, msgs);
+		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,6 +128,8 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 			return getFlowElements();
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 			return getLaneSets();
+		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+			return getContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,6 +151,10 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 			getLaneSets().clear();
 			getLaneSets().addAll((Collection<? extends LaneSet>) newValue);
 			return;
+		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+			getContexts().clear();
+			getContexts().addAll((Collection<? extends FlowElementContainerContext>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -151,6 +173,9 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 			getLaneSets().clear();
 			return;
+		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+			getContexts().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -167,6 +192,8 @@ public abstract class FlowElementsContainerImpl extends BaseElementImpl implemen
 			return !getFlowElements().isEmpty();
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 			return !getLaneSets().isEmpty();
+		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
+			return !getContexts().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

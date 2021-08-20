@@ -38,7 +38,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.Token;
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowNodeImpl#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowNodeImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowNodeImpl#getLanes <em>Lanes</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowNodeImpl#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
  *
  * @generated
@@ -106,18 +105,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Token> getHeldTokens() {
-		return (EList<Token>) eDynamicGet(Bpmn2Package.FLOW_NODE__HELD_TOKENS,
-				Bpmn2Package.Literals.FLOW_NODE__HELD_TOKENS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Bpmn2Package.FLOW_NODE__OUTGOING:
@@ -144,8 +131,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 			return ((InternalEList<?>) getIncoming()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.FLOW_NODE__LANES:
 			return ((InternalEList<?>) getLanes()).basicRemove(otherEnd, msgs);
-		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
-			return ((InternalEList<?>) getHeldTokens()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,8 +149,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 			return getIncoming();
 		case Bpmn2Package.FLOW_NODE__LANES:
 			return getLanes();
-		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
-			return getHeldTokens();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,10 +174,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 			getLanes().clear();
 			getLanes().addAll((Collection<? extends Lane>) newValue);
 			return;
-		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
-			getHeldTokens().clear();
-			getHeldTokens().addAll((Collection<? extends Token>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -216,9 +195,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 		case Bpmn2Package.FLOW_NODE__LANES:
 			getLanes().clear();
 			return;
-		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
-			getHeldTokens().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,8 +213,6 @@ public abstract class FlowNodeImpl extends FlowElementImpl implements FlowNode {
 			return !getIncoming().isEmpty();
 		case Bpmn2Package.FLOW_NODE__LANES:
 			return !getLanes().isEmpty();
-		case Bpmn2Package.FLOW_NODE__HELD_TOKENS:
-			return !getHeldTokens().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

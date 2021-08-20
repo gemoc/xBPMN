@@ -15,6 +15,7 @@
 package org.obeonetwork.dsl.bpmn2;
 
 import org.eclipse.emf.common.util.EList;
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElementsContainer#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElementsContainer#getLaneSets <em>Lane Sets</em>}</li>
+ *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowElementsContainer#getContexts <em>Contexts</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowElementsContainer()
@@ -65,5 +67,18 @@ public interface FlowElementsContainer extends BaseElement {
 	 * @generated
 	 */
 	EList<LaneSet> getLaneSets();
+
+	/**
+	 * Returns the value of the '<em><b>Contexts</b></em>' containment reference list.
+	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contexts</em>' containment reference list.
+	 * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowElementsContainer_Contexts()
+	 * @model containment="true"
+	 *        annotation="aspect"
+	 * @generated
+	 */
+	EList<FlowElementContainerContext> getContexts();
 
 } // FlowElementsContainer

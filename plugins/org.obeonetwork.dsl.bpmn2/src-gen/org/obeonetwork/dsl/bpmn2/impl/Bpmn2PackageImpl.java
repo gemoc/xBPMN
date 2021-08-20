@@ -2696,6 +2696,16 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 	 * @generated
 	 */
 	@Override
+	public EReference getFlowElementsContainer_Contexts() {
+		return (EReference) getFlowElementsContainer().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFlowElement() {
 		if (flowElementEClass == null) {
 			flowElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI).getEClassifiers()
@@ -2742,6 +2752,16 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 	@Override
 	public EReference getFlowElement_CategoryValueRef() {
 		return (EReference) getFlowElement().getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFlowElement_Tokens() {
+		return (EReference) getFlowElement().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2918,16 +2938,6 @@ public class Bpmn2PackageImpl extends EPackageImpl implements Bpmn2Package {
 	@Override
 	public EReference getFlowNode_Lanes() {
 		return (EReference) getFlowNode().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFlowNode_HeldTokens() {
-		return (EReference) getFlowNode().getEStructuralFeatures().get(3);
 	}
 
 	/**

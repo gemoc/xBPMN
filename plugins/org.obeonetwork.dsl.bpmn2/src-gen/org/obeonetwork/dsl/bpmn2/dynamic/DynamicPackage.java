@@ -86,13 +86,68 @@ public interface DynamicPackage extends EPackage {
 	int TOKEN__SOURCE_SEQUENCE_FLOW = 0;
 
 	/**
+	 * The feature id for the '<em><b>Context</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOKEN__CONTEXT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Origin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOKEN__ORIGIN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOKEN__POSITION = 3;
+
+	/**
 	 * The number of structural features of the '<em>Token</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN_FEATURE_COUNT = 1;
+	int TOKEN_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl <em>Flow Element Container Context</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl#getFlowElementContainerContext()
+	 * @generated
+	 */
+	int FLOW_ELEMENT_CONTAINER_CONTEXT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Owned Tokens</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Flow Element Container Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_ELEMENT_CONTAINER_CONTEXT_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token <em>Token</em>}'.
@@ -114,6 +169,60 @@ public interface DynamicPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getToken_SourceSequenceFlow();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Context</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext()
+	 * @see #getToken()
+	 * @generated
+	 */
+	EReference getToken_Context();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getOrigin <em>Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Origin</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getOrigin()
+	 * @see #getToken()
+	 * @generated
+	 */
+	EReference getToken_Origin();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Position</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getPosition()
+	 * @see #getToken()
+	 * @generated
+	 */
+	EReference getToken_Position();
+
+	/**
+	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext <em>Flow Element Container Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flow Element Container Context</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext
+	 * @generated
+	 */
+	EClass getFlowElementContainerContext();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens <em>Owned Tokens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Tokens</em>'.
+	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens()
+	 * @see #getFlowElementContainerContext()
+	 * @generated
+	 */
+	EReference getFlowElementContainerContext_OwnedTokens();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -153,6 +262,44 @@ public interface DynamicPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TOKEN__SOURCE_SEQUENCE_FLOW = eINSTANCE.getToken_SourceSequenceFlow();
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOKEN__CONTEXT = eINSTANCE.getToken_Context();
+		/**
+		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOKEN__ORIGIN = eINSTANCE.getToken_Origin();
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOKEN__POSITION = eINSTANCE.getToken_Position();
+		/**
+		 * The meta object literal for the '{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl <em>Flow Element Container Context</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl
+		 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl#getFlowElementContainerContext()
+		 * @generated
+		 */
+		EClass FLOW_ELEMENT_CONTAINER_CONTEXT = eINSTANCE.getFlowElementContainerContext();
+		/**
+		 * The meta object literal for the '<em><b>Owned Tokens</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = eINSTANCE
+				.getFlowElementContainerContext_OwnedTokens();
 
 	}
 

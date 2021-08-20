@@ -1,6 +1,7 @@
 package org.gemoc.xbpmn.k3dsa.bpmn2.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.eclipse.xtext.EcoreUtil2
 import org.obeonetwork.dsl.bpmn2.Interface
 import org.obeonetwork.dsl.bpmn2.RootElement
 import org.obeonetwork.dsl.bpmn2.BaseElement
@@ -138,6 +139,7 @@ import org.obeonetwork.dsl.bpmn2.Transaction
 import org.obeonetwork.dsl.bpmn2.GlobalScriptTask
 import org.obeonetwork.dsl.bpmn2.GlobalBusinessRuleTask
 import org.obeonetwork.dsl.bpmn2.Definitions
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
 
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.InterfaceAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.RootElementAspect.*
@@ -276,7 +278,9 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TransactionAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalScriptTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalBusinessRuleTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
-import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
+
+
+import static extension  org.eclipse.xtext.EcoreUtil2.*
 
 @Aspect(className=Event)
 abstract class EventAspect extends FlowNodeAspect {
@@ -310,13 +314,14 @@ class StartEventAspect extends CatchEventAspect {
 
 	def void startEval() {
 		println("startEval StartEvent "+_self.name)
-		_self.heldTokens.add(DynamicPackage.eINSTANCE.dynamicFactory.createToken)
-		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
-//		_self.outgoing.forEach[sequenceFlow |
-//			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
-//			 token.sourceSequenceFlow = sequenceFlow
-//			 sequenceFlow.targetRef.heldTokens.add(token)
-//		]
+		// initiate a token
+		val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+		token.origin = _self
+		// create context in containing Process (which is started simultaneously thanks to an ECL rule)
+		val process = _self.getContainerOfType(Process) 
+		val context = DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext
+		process.contexts.add(context)
+		context.ownedTokens.add(token)
 	}
 
 	def void endEval() {
@@ -342,7 +347,8 @@ class EndEventAspect extends ThrowEventAspect {
 
 	def void startEval() {
 		println("startEval EndEvent "+_self.name)
-		_self.heldTokens.clear
+		_self.tokens.clear
+		// TODO destroy containing process's context for the corresponding token
 	}
 
 	def void endEval() {

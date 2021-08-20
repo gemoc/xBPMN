@@ -338,20 +338,20 @@ class SequenceFlowAspect extends FlowElementAspect {
 	}
 	
 	def void moveToken(FlowNode sourceRef, FlowNode targetRef) {
-		if(sourceRef.heldTokens.size > 0) {
-			println("before movetoken "+sourceRef+sourceRef.heldTokens+" -> "+targetRef+targetRef.heldTokens)
-			val token = sourceRef.heldTokens.get(0)
+		if(sourceRef.tokens.size > 0) {
+			println("before movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens)
+			val token = sourceRef.tokens.get(0)
 			token.sourceSequenceFlow =  _self
-			targetRef.heldTokens.add(token)
-			println("after movetoken "+sourceRef+sourceRef.heldTokens+" -> "+targetRef+targetRef.heldTokens)
+			targetRef.tokens.add(token)
+			println("after movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens)
 		} else {
 			throw new RuntimeException("error, cannot moveToken with SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
 		}
 	}
 	
 	def void removeToken(FlowNode sourceRef, FlowNode targetRef) {
-		if(sourceRef.heldTokens.size > 0) {
-			sourceRef.heldTokens.clear
+		if(sourceRef.tokens.size > 0) {
+			sourceRef.tokens.clear
 		} else {
 			throw new RuntimeException("error, cannot removeToken for SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
 		}

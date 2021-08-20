@@ -29,7 +29,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.Token;
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getOutgoing <em>Outgoing</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getLanes <em>Lanes</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.FlowNode#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowNode()
@@ -90,18 +89,5 @@ public interface FlowNode extends FlowElement {
 	 * @generated
 	 */
 	EList<Lane> getLanes();
-
-	/**
-	 * Returns the value of the '<em><b>Held Tokens</b></em>' containment reference list.
-	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.dynamic.Token}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Held Tokens</em>' containment reference list.
-	 * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getFlowNode_HeldTokens()
-	 * @model containment="true"
-	 *        annotation="aspect"
-	 * @generated
-	 */
-	EList<Token> getHeldTokens();
 
 } // FlowNode

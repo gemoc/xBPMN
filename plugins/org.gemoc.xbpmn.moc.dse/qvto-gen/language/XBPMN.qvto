@@ -3,8 +3,7 @@ modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	modeltype inMM1 uses 'http://www.bpsim.org/schemas/2.0';
 	modeltype inMM2 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI';
 	modeltype inMM3 uses 'http://www.bpsim.org/schemas/2.0';
-	modeltype inMM4 uses 'http://www.bpsim.org/schemas/2.0';
-	modeltype inMM5 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI';
+	modeltype inMM4 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI';
 
 modeltype QVT 		uses 'http://www.eclipse.org/QVT/1.0.0/Operational';
 modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
@@ -186,9 +185,6 @@ main() {
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map noSimultaneousStops12noSimultaneousStops();
 		
 		
-		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map noMultipleCallOfStartEvents32noMultipleCallOfStartEvents();
-		
-		
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), Process.oclAsType(EClass)).oclAsType(Process)->map processStartEnd_on_StartEvent_EndEvent32processStartEnd_on_StartEvent_EndEvent();
 		
 		
@@ -250,185 +246,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::Process::intermediate_allEndEvents2Expression(an1 : EndEvent, an2 : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{ 
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allEndEvents'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_triggerEndEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_triggerEndEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	mapping inMM5::Process::intermediate_allEndEvents2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allEndEvents'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.expressions[name = expr.name]->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_triggerEndEvent']->first();
-					
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-	
-	mapping inMM5::Process::allEndEvents2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		init{
-		//from defs
-		
-		//from lets
-		
-
-		var sources : Sequence(EndEvent) := self.flowElements->selectByKind(EndEvent)->asSequence();
-		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
-		var i : Integer := 3;
-		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
-		var size : Integer = sources->size(); 
-		if(size = 1)then{
-			result := self.map intermediate_allEndEvents2Expression(sources->at(1),sources->at(1), 1);
-		}else{
-			lastExpr := self.map intermediate_allEndEvents2Expression(sources->at(1),sources->at(2), 1);
-			while (i <= size){
-				newExpr := self.map intermediate_allEndEvents2Expression(lastExpr,sources->at(i), i);
-				lastExpr := newExpr;
-				i := i + 1;
-			};
-			result := lastExpr;
-		}
-		endif;
-		}
-		
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-
-	
-	
-//Create an intermediate expression
-//create the expressions... 
-	mapping inMM5::Process::intermediate_allStartEvents2Expression(an1 : StartEvent, an2 : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{ 
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-		 			bindable := theMainBlock.elements[name = getNameOrUID(an1.oclAsType(EObject))+'_triggerStartEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an2.oclAsType(EObject))+'_triggerStartEvent']->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-	mapping inMM5::Process::intermediate_allStartEvents2Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents'+nb.toString();
-		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
-		//from defs
-		
-		//from lets
-		
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.expressions[name = expr.name]->first();
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-					bindable := theMainBlock.elements[name = getNameOrUID(an.oclAsType(EObject))+'_triggerStartEvent']->first();
-					
-					var seqAbstract : Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity) := seqOfExpressionDeclaration[name = 'Union']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelExpression::Union).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-					seqAbstract := seqAbstract->sortedBy(e | e.name); //just a way to have always the same order ?
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
-				};
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-	
-	mapping inMM5::Process::allStartEvents2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
-	{
-		init{
-		//from defs
-		
-		//from lets
-		
-
-		var sources : Sequence(StartEvent) := self.flowElements->selectByKind(_'StartEvent')->asSequence();
-		var lastExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression :=null;
-		var i : Integer := 3;
-		var newExpr : TimeModel::CCSLModel::ClockExpressionAndRelation::Expression := lastExpr;
-		var size : Integer = sources->size(); 
-		if(size = 1)then{
-			result := self.map intermediate_allStartEvents2Expression(sources->at(1),sources->at(1), 1);
-		}else{
-			lastExpr := self.map intermediate_allStartEvents2Expression(sources->at(1),sources->at(2), 1);
-			while (i <= size){
-				newExpr := self.map intermediate_allStartEvents2Expression(lastExpr,sources->at(i), i);
-				lastExpr := newExpr;
-				i := i + 1;
-			};
-			result := lastExpr;
-		}
-		endif;
-		}
-		
-		end{
-			theMainBlock.expressions += result;
-		}
-	}
-
-
-	
-	
-//Create an intermediate expression
-//create the expressions... 
-	mapping inMM5::Process::intermediate_allEndEvents_22Expression(an1 : EndEvent, an2 : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::intermediate_allEndEvents_22Expression(an1 : EndEvent, an2 : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allEndEvents_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -454,7 +272,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::Process::intermediate_allEndEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::intermediate_allEndEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : EndEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allEndEvents_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -480,7 +298,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Process::allEndEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::allEndEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -517,7 +335,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::Process::intermediate_allStartEvents_22Expression(an1 : StartEvent, an2 : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::intermediate_allStartEvents_22Expression(an1 : StartEvent, an2 : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -543,7 +361,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::Process::intermediate_allStartEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::intermediate_allStartEvents_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : StartEvent, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allStartEvents_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -569,7 +387,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Process::allStartEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Process::allStartEvents_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -606,7 +424,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::Activity::intermediate_allIncomingSequenceFlow_12Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Activity::intermediate_allIncomingSequenceFlow_12Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_1'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -632,7 +450,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::Activity::intermediate_allIncomingSequenceFlow_12Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Activity::intermediate_allIncomingSequenceFlow_12Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_1'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -658,7 +476,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Activity::allIncomingSequenceFlow_12Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Activity::allIncomingSequenceFlow_12Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -695,7 +513,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::Gateway::intermediate_allIncomingSequenceFlow_22Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::intermediate_allIncomingSequenceFlow_22Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -721,7 +539,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::Gateway::intermediate_allIncomingSequenceFlow_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::intermediate_allIncomingSequenceFlow_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -747,7 +565,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Gateway::allIncomingSequenceFlow_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::allIncomingSequenceFlow_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -784,7 +602,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::Gateway::intermediate_allOutgoingSequenceFlow_12Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::intermediate_allOutgoingSequenceFlow_12Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allOutgoingSequenceFlow_1'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -810,7 +628,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::Gateway::intermediate_allOutgoingSequenceFlow_12Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::intermediate_allOutgoingSequenceFlow_12Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allOutgoingSequenceFlow_1'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -836,7 +654,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Gateway::allOutgoingSequenceFlow_12Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::Gateway::allOutgoingSequenceFlow_12Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -873,7 +691,7 @@ main() {
 	
 //Create an intermediate expression
 //create the expressions... 
-	mapping inMM5::EndEvent::intermediate_allIncomingSequenceFlow_22Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::EndEvent::intermediate_allIncomingSequenceFlow_22Expression(an1 : SequenceFlow, an2 : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -899,7 +717,7 @@ main() {
 		}
 	}
 
-	mapping inMM5::EndEvent::intermediate_allIncomingSequenceFlow_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::EndEvent::intermediate_allIncomingSequenceFlow_22Expression(expr :TimeModel::CCSLModel::ClockExpressionAndRelation::Expression , an : SequenceFlow, nb : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_allIncomingSequenceFlow_2'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "Union")->first();
@@ -925,7 +743,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::EndEvent::allIncomingSequenceFlow_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
+	mapping inMM4::EndEvent::allIncomingSequenceFlow_22Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
 		//from defs
@@ -1185,7 +1003,7 @@ main() {
 	
 
 //Create an intermediate relation
-	mapping inMM5::Process::intermediate_noSimultaneousStarts12noSimultaneousStarts(an1 : StartEvent, an2 : StartEvent, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+	mapping inMM4::Process::intermediate_noSimultaneousStarts12noSimultaneousStarts(an1 : StartEvent, an2 : StartEvent, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_noSimultaneousStarts'+nbi.toString()+"_"+nbj.toString();
 		var seqAbstract : Sequence(Stdlib::Element) := seqOfRelationDeclaration[name = 'Exclusion']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::Exclusion).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence();
@@ -1208,7 +1026,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Process::noSimultaneousStarts12noSimultaneousStarts()
+	mapping inMM4::Process::noSimultaneousStarts12noSimultaneousStarts()
 	{
 		init{
 			
@@ -1232,7 +1050,7 @@ main() {
 	
 
 //Create an intermediate relation
-	mapping inMM5::Process::intermediate_noSimultaneousStops12noSimultaneousStops(an1 : EndEvent, an2 : EndEvent, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+	mapping inMM4::Process::intermediate_noSimultaneousStops12noSimultaneousStops(an1 : EndEvent, an2 : EndEvent, nbi : Integer, nbj : Integer):TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_noSimultaneousStops'+nbi.toString()+"_"+nbj.toString();
 		var seqAbstract : Sequence(Stdlib::Element) := seqOfRelationDeclaration[name = 'Exclusion']->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::Exclusion).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence();
@@ -1255,7 +1073,7 @@ main() {
 		}
 	}
 	
-	mapping inMM5::Process::noSimultaneousStops12noSimultaneousStops()
+	mapping inMM4::Process::noSimultaneousStops12noSimultaneousStops()
 	{
 		init{
 			
@@ -1277,26 +1095,7 @@ main() {
 
 		
 	
-		mapping inMM5::Process::noMultipleCallOfStartEvents32noMultipleCallOfStartEvents(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
-		{
-		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_noMultipleCallOfStartEvents";
-			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
-			
-			
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-							bindable := self -> map allStartEvents2Expression()->asSequence()->first();
-					_abstract := seqOfAbstractEntity[name = 'AlternatesLeftClock']->first();
-				};
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
-							bindable := self -> map allEndEvents2Expression()->asSequence()->first();
-					_abstract := seqOfAbstractEntity[name = 'AlternatesRightClock']->first();
-				};
-		
-		theMainBlock.relations += result;
-		}
-		
-	
-		mapping inMM5::Process::processStartEnd_on_StartEvent_EndEvent32processStartEnd_on_StartEvent_EndEvent(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Process::processStartEnd_on_StartEvent_EndEvent32processStartEnd_on_StartEvent_EndEvent(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"ProcessStartEnd_processStartEnd_on_StartEvent_EndEvent";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "ProcessStartEnd")->first();
@@ -1325,7 +1124,7 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM5::SequenceFlow::waitActivityBeforeTriggeringFlow32waitActivityBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::SequenceFlow::waitActivityBeforeTriggeringFlow32waitActivityBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 			when { 
 				
 				((self.sourceRef).oclIsKindOf(Activity)) 
@@ -1349,7 +1148,7 @@ main() {
 		}
 		
 	
-		mapping inMM5::SequenceFlow::waitStartEventBeforeTriggeringFlow32waitStartEventBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::SequenceFlow::waitStartEventBeforeTriggeringFlow32waitStartEventBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 			when { 
 				
 				((self.sourceRef).oclIsKindOf(_'StartEvent')) 
@@ -1373,7 +1172,7 @@ main() {
 		}
 		
 	
-		mapping inMM5::SequenceFlow::waitGatewaytBeforeTriggeringFlow32waitGatewaytBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::SequenceFlow::waitGatewaytBeforeTriggeringFlow32waitGatewaytBeforeTriggeringFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 			when { 
 				
 				((self.sourceRef).oclIsKindOf(Gateway)) 
@@ -1399,7 +1198,7 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM5::Activity::activityNonReentrant12activityNonReentrant(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Activity::activityNonReentrant12activityNonReentrant(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_activityNonReentrant";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
@@ -1418,7 +1217,7 @@ main() {
 		}
 		
 	
-		mapping inMM5::Activity::startOnAnyIncomingSequenceFlow22startOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Activity::startOnAnyIncomingSequenceFlow22startOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_startOnAnyIncomingSequenceFlow";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
@@ -1439,7 +1238,7 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM5::Gateway::gatewayNonReentrant12gatewayNonReentrant(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Gateway::gatewayNonReentrant12gatewayNonReentrant(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Alternates_gatewayNonReentrant";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Alternates")->first();
@@ -1458,7 +1257,7 @@ main() {
 		}
 		
 	
-		mapping inMM5::Gateway::startOnAnyIncomingSequenceFlow22startOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Gateway::startOnAnyIncomingSequenceFlow22startOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_startOnAnyIncomingSequenceFlow";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
@@ -1477,7 +1276,7 @@ main() {
 		}
 		
 	
-		mapping inMM5::Gateway::triggerAllOutgoingSequenceFlow22triggerAllOutgoingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::Gateway::triggerAllOutgoingSequenceFlow22triggerAllOutgoingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Precedes_triggerAllOutgoingSequenceFlow";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Precedes")->first();
@@ -1498,7 +1297,7 @@ main() {
 
 //relation stuff		
 	
-		mapping inMM5::EndEvent::triggeredOnAnyIncomingSequenceFlow22triggeredOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
+		mapping inMM4::EndEvent::triggeredOnAnyIncomingSequenceFlow22triggeredOnAnyIncomingSequenceFlow(): TimeModel::CCSLModel::ClockExpressionAndRelation::Relation
 		{
 		 	name := getNameOrUID(self.oclAsType(EObject))+"Coincides_triggeredOnAnyIncomingSequenceFlow";
 			type := seqOfRelationDeclaration->select(rd | rd.name = "Coincides")->first();
