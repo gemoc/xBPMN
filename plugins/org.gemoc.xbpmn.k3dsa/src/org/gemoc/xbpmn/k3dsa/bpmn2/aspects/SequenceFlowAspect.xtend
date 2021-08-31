@@ -295,6 +295,10 @@ class SequenceFlowAspect extends FlowElementAspect {
 						// StartEvent to Activity
 						_self.moveToken(sourceRef, targetRef)
 		    		}
+		    		ParallelGateway : {
+		    			// StartEvent to ParallelGateway
+		    			_self.moveToken(sourceRef, targetRef)
+		    		}
 		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		    	}
 			}
@@ -319,7 +323,8 @@ class SequenceFlowAspect extends FlowElementAspect {
 		    	switch targetRef {
 		    		Activity : {
 		    			// Gateway to Activity
-		    			throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    			_self.moveToken(sourceRef, targetRef)
+		    			//throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		    		}
 		    		Gateway : {
 		    			// Gateway to Gateway
@@ -341,9 +346,11 @@ class SequenceFlowAspect extends FlowElementAspect {
 		if(sourceRef.tokens.size > 0) {
 			println("before movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens)
 			val token = sourceRef.tokens.get(0)
+			sourceRef.tokens.remove(token)
 			token.sourceSequenceFlow =  _self
+			token.position = targetRef
 			targetRef.tokens.add(token)
-			println("after movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens)
+			println("after movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens + " / "+ token +token.position+token.sourceSequenceFlow)
 		} else {
 			throw new RuntimeException("error, cannot moveToken with SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
 		}

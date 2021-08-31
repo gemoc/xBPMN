@@ -280,6 +280,11 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
 import org.gemoc.xbpmn.k3dsa.commons.NotImplementedException
 import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
 
+
+import static extension  org.eclipse.xtext.EcoreUtil2.*
+import java.util.ArrayList
+import org.obeonetwork.dsl.bpmn2.dynamic.Token
+
 @Aspect(className=Gateway)
 abstract class GatewayAspect extends FlowNodeAspect {
 	def void startEval() {
@@ -290,10 +295,34 @@ abstract class GatewayAspect extends FlowNodeAspect {
 
 	def void endEval() {
 		println("endEval Gateway "+_self.name)
+		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
+		val process = _self.getContainerOfType(Process) 
+		val context =
+			if(process.contexts.size > 0){
+				// we currently support only 1 running process
+				// reuse previous one
+				process.contexts.get(0)
+			} else { DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext }
+			
+		// TODO remove incoming tokens 
+		val prevTokens = new ArrayList<Token>() 
+		prevTokens.addAll(_self.tokens.toList)
+		prevTokens.forEach[ t |
+			t.position = null
+			t.origin = null
+			_self.tokens.remove(t)
+			context.ownedTokens.remove(t)
+		]
 		_self.outgoing.forEach[sequenceFlow |
 			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+			 token.origin = _self
+			 token.position = _self
 			 token.sourceSequenceFlow = sequenceFlow
 			 sequenceFlow.targetRef.tokens.add(token)
+			 process.contexts.add(context)
+			context.ownedTokens.add(token)
+			// increment startCount for the process
+			context.startCounter = context.startCounter +1
 		]
 	}
 }

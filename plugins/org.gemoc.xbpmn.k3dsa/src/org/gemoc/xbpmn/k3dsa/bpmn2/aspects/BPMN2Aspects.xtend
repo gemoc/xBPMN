@@ -370,6 +370,29 @@ abstract class CallableElementAspect extends RootElementAspect {
 
 }
 
+@Aspect(className=Process)
+class ProcessAspect extends CallableElementAspect {
+	/*
+	* BE CAREFUL :
+	*
+	* This class has more than one superclass
+	* please specify which parent you want with the 'super' expected calling
+	*
+	*/
+	
+	public Boolean isStarted = false
+	
+	def void startEval() {
+		println("startEval Process "+_self.name)
+		_self.isStarted = true
+	}
+
+	def void endEval() {
+		println("endEval Process "+_self.name)
+		_self.isStarted = false
+	}
+}
+
 @Aspect(className=InputOutputSpecification)
 class InputOutputSpecificationAspect extends BaseElementAspect {
 
