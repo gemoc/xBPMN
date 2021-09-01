@@ -16,12 +16,11 @@ import java.util.List;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.eclipse.xtext.EcoreUtil2;
-import org.gemoc.bpsim2.ElementParameters;
 import org.obeonetwork.dsl.bpmn2.Gateway;
 import org.obeonetwork.dsl.bpmn2.Lane;
+import org.obeonetwork.dsl.bpmn2.LaneSet;
 import org.obeonetwork.dsl.bpmn2.ParallelGateway;
 import org.obeonetwork.dsl.bpmn2.Process;
 import org.obeonetwork.dsl.bpmn2.Task;
@@ -84,6 +83,18 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 		if(eo instanceof Gateway) {
 			Gateway gateway = (Gateway)eo;
 			result.addAll(gateway.getTokens());
+		}
+		return result;
+	}
+	
+	
+	public EList<FlowElementContainerContext> getRelatedContexts(EObject eo) {
+
+		EList<FlowElementContainerContext> result = new BasicEList<FlowElementContainerContext>();
+		if (eo instanceof Lane) {
+			result.addAll(EcoreUtil2.getContainerOfType(eo, Process.class).getContexts());
+		} else if( eo instanceof LaneSet){
+			result.addAll(EcoreUtil2.getContainerOfType(eo, Process.class).getContexts());
 		}
 		return result;
 	}

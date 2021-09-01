@@ -1797,50 +1797,15 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="ContextToLaneSet" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='FlowElementContainerContext_Node']" targetFinderExpression="[self.getRelatedContexts()/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="HorizontalLaneSet_import" semanticCandidatesExpression="aql:self.laneSets" childrenPresentation="VerticalStack" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']">
-          <borderedNodeMappings name="ProcessContext_Lane" semanticCandidatesExpression="aql:self.eContainer(bpmn2::Process).contexts" domainClass="FlowElementContainerContext">
-            <borderedNodeMappings name="FlowElementContainerContext_LaneBorder_Tokens" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens->size()+'/'+self.nbPossibleTokens()" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <forbiddenSides>WEST</forbiddenSides>
-                <forbiddenSides>SOUTH</forbiddenSides>
-                <forbiddenSides>NORTH</forbiddenSides>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
-              </style>
-            </borderedNodeMappings>
-            <borderedNodeMappings name="FlowElementContainerContext_LaneBorder_starts" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+self.startCounter" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <forbiddenSides>WEST</forbiddenSides>
-                <forbiddenSides>SOUTH</forbiddenSides>
-                <forbiddenSides>NORTH</forbiddenSides>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
-              </style>
-            </borderedNodeMappings>
-            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:''" sizeComputationExpression="10" labelPosition="node" width="1" height="10">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <forbiddenSides>WEST</forbiddenSides>
-              <forbiddenSides>EAST</forbiddenSides>
-              <forbiddenSides>NORTH</forbiddenSides>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
-            </style>
-          </borderedNodeMappings>
-          <borderedNodeMappings name="ProcessContext_LaneGauge" semanticCandidatesExpression="aql:self.eContainer(bpmn2::Process).contexts" domainClass="FlowElementContainerContext">
-            <style xsi:type="style:GaugeCompositeStyleDescription" labelSize="12" showIcon="false" labelExpression="aql:''" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <forbiddenSides>WEST</forbiddenSides>
-              <forbiddenSides>EAST</forbiddenSides>
-              <forbiddenSides>NORTH</forbiddenSides>
-              <sections maxValueExpression="aql:self.nbPossibleTokens()" valueExpression="aql:self.ownedTokens->size()" label="tokens">
-                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
-                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
-              </sections>
-            </style>
-          </borderedNodeMappings>
           <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="Lane_import" semanticCandidatesExpression="aql:self.lanes" reusedNodeMappings="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ComplexGateway'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='DataInput'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='DataObject%20'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='DataOutput'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='DataStore'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EventBasedGateway'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ExclusiveGateway'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ExternalLabel'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='InclusiveGateway'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='IntermediateCatchEvent'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='IntermediateThrowEvent']" reusedContainerMappings="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']">
             <subNodeMappings xsi:type="description_1:NodeMappingImport" name="ParallelGateway_import" semanticCandidatesExpression="aql:self.flowNodeRefs->filter(bpmn2::ParallelGateway)" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='ParallelGateway']">
               <borderedNodeMappings name="ParallelGatewayToken" semanticCandidatesExpression="service:associatedTokens" domainClass="Token">
@@ -1897,6 +1862,44 @@
               </style>
             </subContainerMappings>
           </subContainerMappings>
+        </containerMappings>
+        <containerMappings name="FlowElementContainerContext_Node" semanticCandidatesExpression="aql:self.laneSets->collect(ls |ls.eContainer(bpmn2::Process).contexts)" domainClass="FlowElementContainerContext" childrenPresentation="List">
+          <borderedNodeMappings name="TokenGauge" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
+            <style xsi:type="style:GaugeCompositeStyleDescription" labelSize="12" showIcon="false" labelExpression="aql:''" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <sections maxValueExpression="aql:self.nbPossibleTokens()" valueExpression="aql:self.ownedTokens->size()" label="tokens">
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              </sections>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="NbPossibletokensNode" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens->size()+'/'+self.nbPossibleTokens()" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NbStartNode" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+self.startCounter" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.eContainer(bpmn2::Process).name+' context'">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
         </containerMappings>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="IsStarted" position="NORTH_WEST" preconditionExpression="service:isStarted" imageExpression="/org.obeonetwork.dsl.bpmn2.design/icons/xbpmn/play-16.png" mappings="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='SubProcess'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='Task'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='SubProcessDiagram']/@defaultLayer/@containerMappings[name='SubProcess']"/>
