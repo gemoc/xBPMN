@@ -13,15 +13,20 @@ package org.obeonetwork.bpmn2.design;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.eclipse.xtext.EcoreUtil2;
+import org.gemoc.bpsim2.ElementParameters;
+import org.obeonetwork.dsl.bpmn2.Gateway;
 import org.obeonetwork.dsl.bpmn2.Lane;
 import org.obeonetwork.dsl.bpmn2.ParallelGateway;
 import org.obeonetwork.dsl.bpmn2.Process;
 import org.obeonetwork.dsl.bpmn2.Task;
 import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
+import org.obeonetwork.dsl.bpmn2.dynamic.Token;
 
 import xbpmn.xdsml.api.impl.XBPMNRTDAccessor;
 
@@ -45,17 +50,17 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 			Lane lane = (Lane)eo;
 			// Lane is started if container Process is started
 			res = XBPMNRTDAccessor.getIsStarted(EcoreUtil2.getContainerOfType(lane, Process.class));
-			System.out.println("isStarted Lane: "+lane.getName()+" "+res );
+			//System.out.println("isStarted Lane: "+lane.getName()+" "+res );
 			return res;
 		} else if (eo instanceof Process) {
 			Process process =  (Process)eo;
 			res = XBPMNRTDAccessor.getIsStarted(process);
-			System.out.println("isStarted Process: "+process.getName()+" "+res );
+			//System.out.println("isStarted Process: "+process.getName()+" "+res );
 			return res;
 		} else if (eo instanceof Task) {
 			Task task =  (Task)eo;
 			res = XBPMNRTDAccessor.getIsStarted(task);
-			System.out.println("isStarted Task: "+task.getName()+" "+res );
+			//System.out.println("isStarted Task: "+task.getName()+" "+res );
 			return res;
 		} else {
 			return false;
@@ -70,6 +75,15 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 			result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).mapToInt(gw -> gw.getOutgoing().size()-1).sum();
 			//gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).forEach(gw -> result += gw.getOutgoing().size() -1);
 			//result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).count();
+		}
+		return result;
+	}
+	
+	public EList<Token> associatedTokens(EObject eo) {
+		EList<Token> result = new BasicEList<Token>();
+		if(eo instanceof Gateway) {
+			Gateway gateway = (Gateway)eo;
+			result.addAll(gateway.getTokens());
 		}
 		return result;
 	}

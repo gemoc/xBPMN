@@ -139,6 +139,12 @@ import org.obeonetwork.dsl.bpmn2.GlobalScriptTask
 import org.obeonetwork.dsl.bpmn2.GlobalBusinessRuleTask
 import org.obeonetwork.dsl.bpmn2.Definitions
 
+import org.gemoc.xbpmn.k3dsa.commons.NotImplementedException
+import org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage
+import java.util.ArrayList
+import org.obeonetwork.dsl.bpmn2.dynamic.Token
+import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext
+
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.InterfaceAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.RootElementAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect.*
@@ -276,7 +282,11 @@ import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TransactionAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalScriptTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GlobalBusinessRuleTaskAspect.*
 import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.DefinitionsAspect.*
-import org.gemoc.xbpmn.k3dsa.commons.NotImplementedException
+import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TokenAspect.*
+import static extension org.gemoc.xbpmn.k3dsa.bpmn2.aspects.FlowElementsContainerContextAspect.*
+
+import static extension  org.eclipse.xtext.EcoreUtil2.*
+
 
 @Aspect(className=Interface)
 class InterfaceAspect extends RootElementAspect {
@@ -299,6 +309,21 @@ abstract class BaseElementAspect {
 	}
 }
 
+@Aspect(className=Lane)
+class LaneAspect extends BaseElementAspect {
+	
+	public Boolean isStarted = false
+	
+	def void startEval() {
+		println("startEval Lane "+_self.name)
+		_self.isStarted = true
+	}
+
+	def void endEval() {
+		println("endEval Lane "+_self.name)
+		_self.isStarted = false
+	}
+}
 
 @Aspect(className=Definitions)
 class DefinitionsAspect extends BaseElementAspect {
@@ -480,6 +505,14 @@ abstract class FlowElementsContainerAspect extends BaseElementAspect {
 
 }
 
+@Aspect(className=FlowElementContainerContext)
+class FlowElementsContainerContextAspect  {
+	def String contextInfo() {
+		_self.ownedTokens
+		'''[startCounter=«_self.startCounter»; «FOR token : _self.ownedTokens SEPARATOR ", "»«token.tokenInfo»«ENDFOR»]'''
+	}
+}
+
 @Aspect(className=FlowElement)
 abstract class FlowElementAspect extends BaseElementAspect {
 
@@ -489,6 +522,191 @@ abstract class FlowElementAspect extends BaseElementAspect {
 abstract class FlowNodeAspect extends FlowElementAspect {
 
 }
+
+@Aspect(className=SequenceFlow)
+class SequenceFlowAspect extends FlowElementAspect {
+		
+	def void startEval() {
+		println("startEval SequenceFlow "+_self.name)	
+		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
+		val sourceRef = _self.sourceRef
+		val targetRef = _self.targetRef
+		switch sourceRef {
+			StartEvent : {
+				switch targetRef {
+		    		Activity : {
+						// StartEvent to Activity
+		    			sourceRef.tokens.get(0).moveToken(_self,_self.targetRef)
+		    		}
+		    		ParallelGateway : {
+		    			// StartEvent to ParallelGateway
+		    			sourceRef.tokens.get(0).moveToken(_self,_self.targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+			}
+		    Activity : {
+		    	switch targetRef {
+		    		Activity : {
+						// Activity to Activity
+		    			sourceRef.tokens.get(0).moveToken(_self,_self.targetRef)
+		    		}
+		    		Gateway : {
+		    			// Activity to Gateway
+		    			sourceRef.tokens.get(0).moveToken(_self,_self.targetRef)
+		    		}
+		    		EndEvent : {
+		    			// Activity to EndEvent
+						_self.removeToken(sourceRef, targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+		    } 
+		    Gateway : {
+		    	switch targetRef {
+		    		Activity : {
+		    			// Gateway to Activity
+		    			sourceRef.tokens.get(0).moveToken(_self,_self.targetRef)
+		    			//throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    		}
+		    		Gateway : {
+		    			// Gateway to Gateway
+						throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    		}
+		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    	}
+		    }
+		    default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		}
+		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
+		
+	}
+
+	def void endEval() {
+		println("endEval SequenceFlow "+_self.name)
+	}
+	
+//	def void moveToken(FlowNode sourceRef, FlowNode targetRef) {
+//		if(sourceRef.tokens.size > 0) {
+//			val token = sourceRef.tokens.get(0)
+//			println("before movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens + " / "+ token.tokenInfo())
+//			sourceRef.tokens.remove(token)
+//			token.sourceSequenceFlow =  _self
+//			token.position = targetRef
+//			targetRef.tokens.add(token)
+//			println("after movetoken "+sourceRef+sourceRef.tokens+" -> "+targetRef+targetRef.tokens + " / "+ token.tokenInfo())
+//		} else {
+//			throw new RuntimeException("error, cannot moveToken with SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
+//		}
+//	}
+	
+	def void removeToken(FlowNode sourceRef, FlowNode targetRef) {
+		if(sourceRef.tokens.size > 0) {
+			sourceRef.tokens.clear
+		} else {
+			throw new RuntimeException("error, cannot removeToken for SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
+		}
+	}
+
+}
+
+@Aspect(className=Event)
+abstract class EventAspect extends FlowNodeAspect {
+	/*
+	* BE CAREFUL :
+	*
+	* This class has more than one superclass
+	* please specify which parent you want with the 'super' expected calling
+	*
+	*/
+
+
+}
+
+@Aspect(className=CatchEvent)
+abstract class CatchEventAspect extends EventAspect {
+
+}
+@Aspect(className=ThrowEvent)
+abstract class ThrowEventAspect extends EventAspect {
+
+}
+
+@Aspect(className=IntermediateCatchEvent)
+class IntermediateCatchEventAspect extends CatchEventAspect {
+
+}
+
+@Aspect(className=StartEvent)
+class StartEventAspect extends CatchEventAspect {
+
+	def void startEval() {
+		println("startEval StartEvent "+_self.name)
+		// initiate a token
+		val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+		token.origin = _self
+		token.position = _self
+		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
+		val process = _self.getContainerOfType(Process) 
+		val context =
+			if(process.contexts.size > 0){
+				// we currently support only 1 running process
+				// reuse previous one
+				process.contexts.get(0)
+			} else { DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext }
+		process.contexts.add(context)
+		context.ownedTokens.add(token)
+		// increment startCount for the process
+		context.startCounter = context.startCounter +1
+		println(context.contextInfo)
+	}
+
+	def void endEval() {
+		println("endEval StartEvent "+_self.name)
+	}
+}
+
+
+@Aspect(className=BoundaryEvent)
+class BoundaryEventAspect extends CatchEventAspect {
+
+}
+
+
+@Aspect(className=IntermediateThrowEvent)
+class IntermediateThrowEventAspect extends ThrowEventAspect {
+
+}
+
+
+@Aspect(className=EndEvent)
+class EndEventAspect extends ThrowEventAspect {
+
+	def void startEval() {
+		println("startEval EndEvent "+_self.name)
+		_self.tokens.clear
+		// destroy containing process's context for the corresponding token
+		val process = _self.getContainerOfType(Process) 
+		process.contexts.get(0).ownedTokens.forEach[t | 
+			t.position = null
+			t.origin = null
+			t.sourceSequenceFlow = null
+		]
+		process.contexts.get(0).ownedTokens.clear
+		
+	}
+
+	def void endEval() {
+		println("endEval EndEvent "+_self.name)
+	}
+
+}
+
+@Aspect(className=ImplicitThrowEvent)
+class ImplicitThrowEventAspect extends ThrowEventAspect {
+
+}
+
 
 @Aspect(className=Activity)
 abstract class ActivityAspect extends FlowNodeAspect {
@@ -518,18 +736,19 @@ class TaskAspect extends ActivityAspect {
 	def void endEval() {
 		println("endEval Task "+_self.name)
 		_self.isStarted = false
-		
+		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
 		switch _self.outgoing.size {
 			case 0: { _self.tokens.clear }
 			case 1: { if(_self.tokens.size == 1){
 					_self.tokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
 				} else {
-					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". Missing heldTokens")
+					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". too many token on Task")
 				}
 			}
 			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
 //			todo changer le responsable du déplacemnt des token -> sequencflow uniquement !!!
 		}
+		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
 	}
 }
 
@@ -544,6 +763,79 @@ class ManualTaskAspect extends TaskAspect {
 class UserTaskAspect extends TaskAspect {
 
 }
+
+@Aspect(className=Gateway)
+abstract class GatewayAspect extends FlowNodeAspect {
+	def void startEval() {
+		println("startEval Gateway "+_self.name)
+		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
+		
+	}
+
+	def void endEval() {
+		println("endEval Gateway "+_self.name)
+		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
+		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
+		val process = _self.getContainerOfType(Process) 
+		val context =
+			if(process.contexts.size > 0){
+				// we currently support only 1 running process
+				// reuse previous one
+				process.contexts.get(0)
+			} else { 
+				throw new RuntimeException('''error, process «process.name» doesn't have a context''')
+				//DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext
+			}
+			
+		// TODO remove incoming tokens 
+		val prevTokens = new ArrayList<Token>() 
+		prevTokens.addAll(_self.tokens.toList)
+		prevTokens.forEach[ t |
+			t.position = null
+			t.origin = null
+			_self.tokens.remove(t)
+			context.ownedTokens.remove(t)
+		]
+		_self.outgoing.forEach[sequenceFlow |
+			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
+			 token.origin = _self
+			 token.position = _self
+			 token.sourceSequenceFlow = sequenceFlow
+			 sequenceFlow.sourceRef.tokens.add(token)
+			 process.contexts.add(context)
+			context.ownedTokens.add(token)
+			// increment startCount for the process
+			context.startCounter = context.startCounter +1
+		]
+		println('''     «FOR context2 : _self.getContainerOfType(Process).contexts»«context2.contextInfo»«ENDFOR»''')
+	}
+}
+
+@Aspect(className=EventBasedGateway)
+class EventBasedGatewayAspect extends GatewayAspect {
+
+}
+
+@Aspect(className=ComplexGateway)
+class ComplexGatewayAspect extends GatewayAspect {
+
+}
+
+@Aspect(className=ExclusiveGateway)
+class ExclusiveGatewayAspect extends GatewayAspect {
+
+} 
+
+@Aspect(className=InclusiveGateway)
+class InclusiveGatewayAspect extends GatewayAspect {
+
+}
+
+@Aspect(className=ParallelGateway)
+class ParallelGatewayAspect extends GatewayAspect {
+
+}
+
 
 @Aspect(className=CategoryValue)
 class CategoryValueAspect extends BaseElementAspect {
@@ -1022,6 +1314,26 @@ class GlobalScriptTaskAspect extends GlobalTaskAspect {
 @Aspect(className=GlobalBusinessRuleTask)
 class GlobalBusinessRuleTaskAspect extends GlobalTaskAspect {
 
+}
+
+@Aspect(className=Token)
+class TokenAspect {
+	
+	def void moveToken(SequenceFlow sourceSequenceFlow, FlowNode targetRef) {
+			println("before movetoken to "+targetRef+targetRef.tokens + " / "+ _self.tokenInfo())
+			//sourceRef.tokens.remove(token)
+			_self.sourceSequenceFlow =  sourceSequenceFlow
+			_self.position = targetRef
+			targetRef.tokens.add(_self)
+			println("after movetoken to "+targetRef+targetRef.tokens + " / "+ _self.tokenInfo())
+	}
+	
+	def String tokenInfo() {
+		'''TOKEN[origin=«_self.origin?.name?:'null'»; position=«_self.position?.name?:'null'»; sourceSequenceFlow=«_self.sourceSequenceFlow?.name?:'null'»]«IF _self.position !== null»
+		    	tokens on position: «_self.position.tokens»
+		    «ENDIF»'''
+		
+	}
 }
 
 

@@ -1,10 +1,70 @@
-	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
-		if (_self instanceof org.obeonetwork.dsl.bpmn2.Task){
-			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.startEval((org.obeonetwork.dsl.bpmn2.Task)_self);
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Lane){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.startEval((org.obeonetwork.dsl.bpmn2.Lane)_self);
 		} else
-		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.StartEvent){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect.endEval((org.obeonetwork.dsl.bpmn2.StartEvent)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Gateway){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect.startEval((org.obeonetwork.dsl.bpmn2.Gateway)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.StartEvent){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect.startEval((org.obeonetwork.dsl.bpmn2.StartEvent)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.StartEventAspect
 	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
 		if (_self instanceof org.obeonetwork.dsl.bpmn2.Task){
 			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.endEval((org.obeonetwork.dsl.bpmn2.Task)_self);
 		} else
 		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.SequenceFlow){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect.startEval((org.obeonetwork.dsl.bpmn2.SequenceFlow)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Gateway){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect.endEval((org.obeonetwork.dsl.bpmn2.Gateway)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.SequenceFlow){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect.endEval((org.obeonetwork.dsl.bpmn2.SequenceFlow)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Process){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.endEval((org.obeonetwork.dsl.bpmn2.Process)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Lane){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.endEval((org.obeonetwork.dsl.bpmn2.Lane)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.EndEvent){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect.endEval((org.obeonetwork.dsl.bpmn2.EndEvent)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void endEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.EndEvent){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect.startEval((org.obeonetwork.dsl.bpmn2.EndEvent)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.EndEventAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Task){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.startEval((org.obeonetwork.dsl.bpmn2.Task)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect
+	// BeginInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect
+		if (_self instanceof org.obeonetwork.dsl.bpmn2.Process){
+			org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.startEval((org.obeonetwork.dsl.bpmn2.Process)_self);
+		} else
+		// EndInjectInto org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect#void startEval() from org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect
