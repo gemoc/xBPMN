@@ -804,8 +804,8 @@ abstract class GatewayAspect extends FlowNodeAspect {
 			 sequenceFlow.sourceRef.tokens.add(token)
 			 process.contexts.add(context)
 			context.ownedTokens.add(token)
-			// increment startCount for the process
-			context.startCounter = context.startCounter +1
+			// TODO increment local startCounter for the GateWay
+			//context.startCounter = context.startCounter +1
 		]
 		println('''     «FOR context2 : _self.getContainerOfType(Process).contexts»«context2.contextInfo»«ENDFOR»''')
 	}
