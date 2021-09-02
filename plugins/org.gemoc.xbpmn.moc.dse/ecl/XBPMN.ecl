@@ -168,7 +168,7 @@ package bpmn2
 --		let unionOfAllIncomingSequenceFlow_pgw1 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).sourceRef.endFlowNode)	in
 --			Relation Precedes(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
 		inv startWhenReceivedAllIncomingSequenceFlow:
-		let unionOfAllIncomingSequenceFlow_pgw1 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
+		let unionOfAllIncomingSequenceFlow_pgw1 : Event = Expression Sup(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
 --			Relation Coincides(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
 			Relation Precedes(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
 		-- end all simultaneously
