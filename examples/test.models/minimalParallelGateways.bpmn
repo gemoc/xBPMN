@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_-tDa0AswEey2hucr8gZfKg" name="NewDefinitions">
+  <rootElements xsi:type="bpmn:Process" id="_AmEx8QsxEey2hucr8gZfKg" name="MinimalParallelGateway">
+    <flowElements xsi:type="bpmn:StartEvent" id="_Fp7GYQsxEey2hucr8gZfKg" name="start" outgoing="_9P84wAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:EndEvent" id="_IysOIAsxEey2hucr8gZfKg" name="end" incoming="_-rKSgAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_7KlHsAsyEey2hucr8gZfKg" name="PGW1" outgoing="_CRNMIAszEey2hucr8gZfKg _CxtRIAszEey2hucr8gZfKg" incoming="_9P84wAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_9P84wAsyEey2hucr8gZfKg" name="start_to_PGW1" targetRef="_7KlHsAsyEey2hucr8gZfKg" sourceRef="_Fp7GYQsxEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:ParallelGateway" id="_93W3AAsyEey2hucr8gZfKg" name="PGW2" outgoing="_-rKSgAsyEey2hucr8gZfKg" incoming="_DWQIoAszEey2hucr8gZfKg _qQaj0Au6EeynSsWM5kObNg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_-rKSgAsyEey2hucr8gZfKg" name="PGW2_to_end" targetRef="_IysOIAsxEey2hucr8gZfKg" sourceRef="_93W3AAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:Task" id="__L5oEAsyEey2hucr8gZfKg" name="T1" outgoing="_DWQIoAszEey2hucr8gZfKg" incoming="_CRNMIAszEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:Task" id="_Ab86sAszEey2hucr8gZfKg" name="T2" outgoing="_D4SesAszEey2hucr8gZfKg" incoming="_CxtRIAszEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_CRNMIAszEey2hucr8gZfKg" name="PGW1_to_T1" targetRef="__L5oEAsyEey2hucr8gZfKg" sourceRef="_7KlHsAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_CxtRIAszEey2hucr8gZfKg" name="PGW1_to_T2" targetRef="_Ab86sAszEey2hucr8gZfKg" sourceRef="_7KlHsAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_DWQIoAszEey2hucr8gZfKg" name="T1_to_PGW2" targetRef="_93W3AAsyEey2hucr8gZfKg" sourceRef="__L5oEAsyEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_D4SesAszEey2hucr8gZfKg" name="T2_to_T3" targetRef="_hy7aIAu6EeynSsWM5kObNg" sourceRef="_Ab86sAszEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:Task" id="_hy7aIAu6EeynSsWM5kObNg" name="T3" outgoing="_qQaj0Au6EeynSsWM5kObNg" incoming="_D4SesAszEey2hucr8gZfKg"/>
+    <flowElements xsi:type="bpmn:SequenceFlow" id="_qQaj0Au6EeynSsWM5kObNg" name="T3_to_PGW2" targetRef="_93W3AAsyEey2hucr8gZfKg" sourceRef="_hy7aIAu6EeynSsWM5kObNg"/>
+    <laneSets id="_vi3dsAsyEey2hucr8gZfKg">
+      <lanes id="_vi3dsQsyEey2hucr8gZfKg" flowNodeRefs="_Fp7GYQsxEey2hucr8gZfKg _IysOIAsxEey2hucr8gZfKg _7KlHsAsyEey2hucr8gZfKg _93W3AAsyEey2hucr8gZfKg __L5oEAsyEey2hucr8gZfKg _Ab86sAszEey2hucr8gZfKg _hy7aIAu6EeynSsWM5kObNg"/>
+    </laneSets>
+  </rootElements>
+</bpmn:Definitions>
