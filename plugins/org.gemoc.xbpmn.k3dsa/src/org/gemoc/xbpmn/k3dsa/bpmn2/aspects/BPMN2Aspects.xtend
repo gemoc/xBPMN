@@ -557,7 +557,7 @@ class SequenceFlowAspect extends FlowElementAspect {
 		    		}
 		    		EndEvent : {
 		    			// Activity to EndEvent
-						_self.removeToken(sourceRef, targetRef)
+					//	_self.removeToken(sourceRef, targetRef)
 		    		}
 		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		    	}
@@ -572,6 +572,10 @@ class SequenceFlowAspect extends FlowElementAspect {
 		    		Gateway : {
 		    			// Gateway to Gateway
 						throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
+		    		}
+		    		EndEvent : {
+		    			// Gateway to EndEvent
+					//	_self.removeToken(sourceRef, targetRef)
 		    		}
 		    		default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		    	}
@@ -600,13 +604,13 @@ class SequenceFlowAspect extends FlowElementAspect {
 //		}
 //	}
 	
-	def void removeToken(FlowNode sourceRef, FlowNode targetRef) {
-		if(sourceRef.tokens.size > 0) {
-			sourceRef.tokens.clear
-		} else {
-			throw new RuntimeException("error, cannot removeToken for SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
-		}
-	}
+//	def void removeToken(FlowNode sourceRef, FlowNode targetRef) {
+//		if(sourceRef.tokens.size > 0) {
+//			sourceRef.tokens.clear
+//		} else {
+//			throw new RuntimeException("error, cannot removeToken for SequenceFlow " +_self + ' from ' +sourceRef + ' to ' + targetRef + ". Missing token in sourceRef")
+//		}
+//	}
 
 }
 
@@ -769,11 +773,6 @@ abstract class GatewayAspect extends FlowNodeAspect {
 	def void startEval() {
 		println("startEval Gateway "+_self.name)
 		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
-		
-	}
-
-	def void endEval() {
-		println("endEval Gateway "+_self.name)
 		println('''     «FOR context : _self.getContainerOfType(Process).contexts»«context.contextInfo»«ENDFOR»''')
 		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
 		val process = _self.getContainerOfType(Process) 
@@ -787,7 +786,7 @@ abstract class GatewayAspect extends FlowNodeAspect {
 				//DynamicPackage.eINSTANCE.dynamicFactory.createFlowElementContainerContext
 			}
 			
-		// TODO remove incoming tokens 
+		// remove incoming tokens 
 		val prevTokens = new ArrayList<Token>() 
 		prevTokens.addAll(_self.tokens.toList)
 		prevTokens.forEach[ t |
@@ -808,6 +807,11 @@ abstract class GatewayAspect extends FlowNodeAspect {
 			//context.startCounter = context.startCounter +1
 		]
 		println('''     «FOR context2 : _self.getContainerOfType(Process).contexts»«context2.contextInfo»«ENDFOR»''')
+	}
+
+	def void endEval() {
+		println("endEval Gateway "+_self.name)
+		
 	}
 }
 
@@ -1330,7 +1334,7 @@ class TokenAspect {
 	
 	def String tokenInfo() {
 		'''TOKEN[origin=«_self.origin?.name?:'null'»; position=«_self.position?.name?:'null'»; sourceSequenceFlow=«_self.sourceSequenceFlow?.name?:'null'»]«IF _self.position !== null»
-		    	tokens on position: «_self.position.tokens»
+		    	tokens on «_self.position?.name?:'null'»: «_self.position.tokens»
 		    «ENDIF»'''
 		
 	}

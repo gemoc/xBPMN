@@ -27,13 +27,26 @@ package bpmn2
 --		def : startLane : Event = self.startEval()
 --		def : endLane : Event = self.endEval()
 		
-	context _'StartEvent'
-		def : triggerStartEvent : Event = self.startEval()
-		-- def : endStartEvent : Event = self.endEval()
+	
+	context FlowNode
+		def : startFlowNode : Event = self.startEval()
+		def : endFlowNode : Event = self.endEval()
 		
-	context EndEvent
-		def : triggerEndEvent : Event = self.startEval()
-		-- def : endEndEvent : Event = self.endEval()
+--	context _'StartEvent'
+--		def : triggerStartEvent : Event = self.startEval()
+--		-- def : endStartEvent : Event = self.endEval()
+--		inv activityFlowNodeStartInheritance:
+--			Relation Coincides(self.startFlowNode, self.triggerStartEvent)
+--		inv activityFlowNodeEndInheritance:
+--			Relation Coincides(self.endFlowNode, self.triggerStartEvent)
+--		
+--	context EndEvent
+--		def : triggerEndEvent : Event = self.startEval()
+--		-- def : endEndEvent : Event = self.endEval()
+--		inv activityFlowNodeStartInheritance:
+--			Relation Coincides(self.startFlowNode, self.triggerEndEvent)
+--		inv activityFlowNodeEndInheritance:
+--			Relation Coincides(self.endFlowNode, self.triggerEndEvent)
 		
 	context SequenceFlow
 		def : triggerSequenceFlow : Event = self.startEval()
@@ -44,13 +57,21 @@ package bpmn2
 --														case false force evalFalse;
 --														case true force evalTrue;
 	
-	context Activity	
-		def : startActivity : Event = self.startEval()
-		def : endActivity : Event = self.endEval()
-	
-	context Gateway	
-		def : startGateway : Event = self.startEval()
-		def : endGateway : Event = self.endEval()	
+--	context Activity	
+--		def : startActivity : Event = self.startEval()
+--		def : endActivity : Event = self.endEval()
+--		inv activityFlowNodeStartInheritance:
+--			Relation Coincides(self.startFlowNode, self.startActivity)
+--		inv activityFlowNodeEndInheritance:
+--			Relation Coincides(self.endFlowNode, self.endActivity)
+--			
+--	context Gateway	
+--		def : startGateway : Event = self.startEval()
+--		def : endGateway : Event = self.endEval()	
+--		inv activityFlowNodeStartInheritance:
+--			Relation Coincides(self.startFlowNode, self.startGateway)
+--		inv activityFlowNodeEndInheritance:
+--			Relation Coincides(self.endFlowNode, self.endGateway)
 		
 endpackage
 
@@ -60,7 +81,7 @@ package bpsim2
 		inv simultaneousBPSim_BPMNStartEvent:
 			(self.bpmnElementRef.oclIsKindOf(bpmn2::_'StartEvent'))
 			implies
-				Relation Coincides(self.bpmnElementRef.oclAsType(bpmn2::_'StartEvent').triggerStartEvent, self.entering)
+				Relation Coincides(self.bpmnElementRef.oclAsType(bpmn2::_'StartEvent').startFlowNode, self.entering)
 endpackage
 
 -- BPSim event constraints
@@ -76,9 +97,9 @@ package bpmn2
 --			Relation Alternates(self.startProcess, self.endProcess)
 		
 		inv noSimultaneousStarts:
-			Relation Exclusion(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
+			Relation Exclusion(self.flowElements->selectByKind(_'StartEvent').startFlowNode)
 		inv noSimultaneousStops:
-			Relation Exclusion(self.flowElements->selectByKind(EndEvent).triggerEndEvent)
+			Relation Exclusion(self.flowElements->selectByKind(EndEvent).startFlowNode)
 		
 		
 		--def : allStartEvents: Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent)
@@ -92,8 +113,8 @@ package bpmn2
 		
 		-- Process Start/End:   starts on any StartEvent, ends on any EndEvent
 		inv processStartEnd_on_StartEvent_EndEvent:
-		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').triggerStartEvent) in
-		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).triggerEndEvent)	in
+		let allStartEvents_2 : Event = Expression Union(self.flowElements->selectByKind(_'StartEvent').startFlowNode) in
+		let allEndEvents_2 : Event = Expression Union(self.flowElements->selectByKind(EndEvent).startFlowNode)	in
 			Relation ProcessStartEnd(allStartEvents_2, self.startProcess, allEndEvents_2, self.endProcess)
 
 
@@ -105,56 +126,75 @@ package bpmn2
 --			Relation Coincides(allEndEvents_2, self.endProcess)
 
 		-- TODO timer based StartEvent	
-
-		
+	context FlowNode
+		inv activityNonReentrant:
+			Relation Alternates(self.startFlowNode, self.endFlowNode)
 	context SequenceFlow
+	
 		inv waitActivityBeforeTriggeringFlow:
 			((self.sourceRef).oclIsKindOf(Activity))
 			implies
-			(Relation Precedes(self.sourceRef.oclAsType(Activity).endActivity, self.triggerSequenceFlow)) 
+			(Relation Precedes(self.sourceRef.oclAsType(Activity).endFlowNode, self.triggerSequenceFlow)) 
 			
 		inv waitStartEventBeforeTriggeringFlow:
 			((self.sourceRef).oclIsKindOf(_'StartEvent'))
 			implies 
-			(Relation Precedes(self.sourceRef.oclAsType(_'StartEvent').triggerStartEvent, self.triggerSequenceFlow)) 
+			(Relation Precedes(self.sourceRef.oclAsType(_'StartEvent').endFlowNode, self.triggerSequenceFlow)) 
 	
 	
 		inv waitGatewaytBeforeTriggeringFlow:
-			((self.sourceRef).oclIsKindOf(Gateway))
+			((self.sourceRef).oclIsKindOf(ParallelGateway))
 			implies 
-			(Relation Precedes(self.sourceRef.oclAsType(Gateway).endGateway, self.triggerSequenceFlow)) 			
-			---   !! faire la même chose avec Gateway 
-
+			(Relation Coincides(self.sourceRef.oclAsType(ParallelGateway).endFlowNode, self.triggerSequenceFlow)) 			
+			 
+		-- TODO deal with othe gateways
 
 	context Activity
 	
 		-- TODO non Reentrant for a given context
-		inv activityNonReentrant:
-			Relation Alternates(self.startActivity, self.endActivity)
+--		inv activityNonReentrant:
+--			Relation Alternates(self.startActivity, self.endActivity)
 			
 			
 		inv startOnAnyIncomingSequenceFlow:
 		let allIncomingSequenceFlow_1 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
-			Relation Coincides(allIncomingSequenceFlow_1, self.startActivity)
+			Relation Coincides(allIncomingSequenceFlow_1, self.startFlowNode)
 
-	context Gateway
-		inv gatewayNonReentrant:
-			Relation Alternates(self.startGateway, self.endGateway)
-			
+
+	context ParallelGateway
 		-- start when all incoming are received
 		-- FIXME
-		inv startOnAnyIncomingSequenceFlow:
-		let allIncomingSequenceFlow_2 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
-			Relation Coincides(allIncomingSequenceFlow_2, self.startGateway)
+--		inv startWhenReceivedAllIncomingSequenceFlow:
+--		let unionOfAllIncomingSequenceFlow_pgw1 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).sourceRef.endFlowNode)	in
+--			Relation Precedes(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
+		inv startWhenReceivedAllIncomingSequenceFlow:
+		let unionOfAllIncomingSequenceFlow_pgw1 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
+--			Relation Coincides(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
+			Relation Precedes(unionOfAllIncomingSequenceFlow_pgw1, self.startFlowNode)
 		-- end all simultaneously
 		inv triggerAllOutgoingSequenceFlow:
-		let allOutgoingSequenceFlow_1 : Event = Expression Union(self.outgoing->selectByKind(SequenceFlow).triggerSequenceFlow)	in
-			Relation Precedes(self.endGateway, allOutgoingSequenceFlow_1)
+		let unionOfAllOutgoingSequenceFlow_pgw1 : Event = Expression Union(self.outgoing->selectByKind(SequenceFlow).triggerSequenceFlow)	in
+			Relation Coincides(self.endFlowNode, unionOfAllOutgoingSequenceFlow_pgw1)
 
+
+--	context Gateway
+--		inv gatewayNonReentrant:
+--			Relation Alternates(self.startGateway, self.endGateway)
+--			
+--		-- start when all incoming are received
+--		-- FIXME
+--		inv startOnAnyIncomingSequenceFlow:
+--		let allIncomingSequenceFlow_2 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
+--			Relation Coincides(allIncomingSequenceFlow_2, self.startGateway)
+--		-- end all simultaneously
+--		inv triggerAllOutgoingSequenceFlow:
+--		let allOutgoingSequenceFlow_1 : Event = Expression Union(self.outgoing->selectByKind(SequenceFlow).triggerSequenceFlow)	in
+--			Relation Precedes(self.endGateway, allOutgoingSequenceFlow_1)
+--
 	context EndEvent
 		inv triggeredOnAnyIncomingSequenceFlow:
 		let allIncomingSequenceFlow_2 : Event = Expression Union(self.incoming->selectByKind(SequenceFlow).triggerSequenceFlow)	in
-			Relation Coincides(allIncomingSequenceFlow_2, self.triggerEndEvent)
+			Relation Coincides(allIncomingSequenceFlow_2, self.startFlowNode)
 
 --  for example only
 	
