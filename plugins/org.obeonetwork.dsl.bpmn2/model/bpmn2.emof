@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <emof:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml"
-    xmi:id="bpmn2" name="bpmn2" uri="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI">
+    xmi:id="bpmn2" name="bpmn2" uri="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF">
   <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
     <eAnnotations source="http://www.obeonetwork.com/bpmn2/addons" references="bpmn2.BaseElement.description bpmn2.Process.decomposedBy bpmn2.Process.decomposes"/>
   </xmi:Extension>

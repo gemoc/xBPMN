@@ -6,12 +6,12 @@ code generator can be extended.
 This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator=false.
 
 Contains packages:
-  bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-XMI>
+  bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-EMF>
   bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-XMI>
   di <http://www.omg.org/spec/DD/20100524/DI-XMI>
   dc <http://www.omg.org/spec/DD/20100524/DC-XMI>
 
-Package bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-XMI>
+Package bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-EMF>
 
   Class Interface -> RootElement
     Attribute name : EString<<1..1>>

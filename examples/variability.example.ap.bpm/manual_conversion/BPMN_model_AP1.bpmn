@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_OwbMEPUdEeua0aTL1HIEgQ" name="Definitions">
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" id="_OwbMEPUdEeua0aTL1HIEgQ" name="Definitions">
   <rootElements xsi:type="bpmn:Collaboration" id="_dck3ffUdEeua0aTL1HIEgQ" name="Propulsion MIP v2.2 - OneWay - anonymized"/>
   <rootElements xsi:type="bpmn:Process" id="_bGRHbPUdEeua0aTL1HIEgQ" name="Propulsion MIP v2.2 - OneWay - anonymized">
     <flowElements xsi:type="bpmn:EndEvent" id="_uAgj4PUdEeua0aTL1HIEgQ" name="End" incoming="_DaMzUPUgEeua0aTL1HIEgQ"/>

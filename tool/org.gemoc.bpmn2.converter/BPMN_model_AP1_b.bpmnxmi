@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<bpmn2:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI-XMI" exporter="PragmaDev Process" exporterVersion="1.3" targetNamespace="http://www.mega.com/bpmn20">
+<bpmn2:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI-XMI" exporter="PragmaDev Process" exporterVersion="1.3" targetNamespace="http://www.mega.com/bpmn20">
   <rootElements xsi:type="bpmn2:Collaboration" id="MegaId-1A7C21EA60C356B0COLLAB">
     <participants id="MegaId-1A7C1BB860C33502POOL" name="Propulsion MIP v2.2 - OneWay - anonymized" processRef="MegaId-1A7C1BB860C33502"/>
   </rootElements>

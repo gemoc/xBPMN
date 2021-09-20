@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_VfZJsPjnEeuv-cj8qqJa6g" name="SimpleSequenceDefinitions">
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" id="_VfZJsPjnEeuv-cj8qqJa6g" name="SimpleSequenceDefinitions">
   <rootElements xsi:type="bpmn:Process" id="_fmQsDPjnEeuv-cj8qqJa6g" name="SimpleSequenceProcess">
     <flowElements xsi:type="bpmn:StartEvent" id="_lM910PjnEeuv-cj8qqJa6g" name="start" outgoing="_slT8YPjnEeuv-cj8qqJa6g"/>
     <flowElements xsi:type="bpmn:EndEvent" id="_mswNkPjnEeuv-cj8qqJa6g" name="end" incoming="_uq03YPjnEeuv-cj8qqJa6g"/>

@@ -20,7 +20,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI"
+            uri="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF"
             class="org.obeonetwork.dsl.bpmn2.provider.Bpmn2ItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

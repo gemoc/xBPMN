@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
+<bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
   <bpsim:Scenario name="SimpleParallelGateways-scenario-01">
     <bpsim:ScenarioParameters/>
     <bpsim:ElementParameters id="start_param" bpmnElementRef="bpmn:StartEvent simpleParalleGateways.bpmn#_8pcA4QG6EeywO_ViOlgpMA">

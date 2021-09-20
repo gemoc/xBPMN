@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpsim2:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpsim2="http://www.bpsim.org/schemas/2.0">
+<bpsim2:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" xmlns:bpsim2="http://www.bpsim.org/schemas/2.0">
   <bpsim2:Scenario id="scenario_1" name="Scenario1">
     <bpsim2:ScenarioParameters replication="1">
       <bpsim2:Duration>

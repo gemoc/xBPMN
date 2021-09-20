@@ -19,7 +19,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI"
+            uri="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF"
             class="org.obeonetwork.dsl.bpmn2.Bpmn2Package"
             genModel="model/BPMN20.genmodel"/>
    </extension>

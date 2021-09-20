@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
+<bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
   <bpsim:Scenario name="simpleSequence with RTD Scenario1">
     <bpsim:ElementParameters id="startParam" bpmnElementRef="bpmn:StartEvent simpleSequence_with_rtd.bpmn#_lM910PjnEeuv-cj8qqJa6g">
       <bpsim:ControlParameters>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="_syO3kAG6EeywO_ViOlgpMA" name="SimpleParallelGatewaysDefinitions">
+<bpmn:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" id="_syO3kAG6EeywO_ViOlgpMA" name="SimpleParallelGatewaysDefinitions">
   <rootElements xsi:type="bpmn:Process" id="_24vNgwG6EeywO_ViOlgpMA" name="SimpleParallelGateways">
     <flowElements xsi:type="bpmn:StartEvent" id="_8pcA4QG6EeywO_ViOlgpMA" name="start" tokens="//@rootElements.0/@contexts.0/@ownedTokens.0" outgoing="_ueqnYAG-EeyJf8XVv6vtfQ"/>
     <flowElements xsi:type="bpmn:ParallelGateway" id="_svDq8AG-EeyJf8XVv6vtfQ" name="PGW1" tokens="//@rootElements.0/@contexts.0/@ownedTokens.1" outgoing="_5HaHsAG-EeyJf8XVv6vtfQ _5mxkQAG-EeyJf8XVv6vtfQ" incoming="_ueqnYAG-EeyJf8XVv6vtfQ"/>

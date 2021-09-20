@@ -166,7 +166,7 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 	public static Bpmn2Factory init() {
 		try {
 			Bpmn2Factory theBpmn2Factory = (Bpmn2Factory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.omg.org/spec/BPMN/20100524/MODEL-XMI");
+					.getEFactory("http://www.omg.org/spec/BPMN/20100524/MODEL-EMF");
 			if (theBpmn2Factory != null) {
 				return theBpmn2Factory;
 			}
