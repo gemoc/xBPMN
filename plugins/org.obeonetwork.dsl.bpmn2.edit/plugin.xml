@@ -45,7 +45,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.omg.org/spec/BPMN/20100524/DI-XMI"
+            uri="http://www.omg.org/spec/BPMN/20100524/DI-EMF"
             class="org.obeonetwork.dsl.bpmn2.bpmdi.provider.BpmnDiItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -57,7 +57,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.omg.org/spec/DD/20100524/DI-XMI"
+            uri="http://www.omg.org/spec/DD/20100524/DI-EMF"
             class="org.obeonetwork.dsl.dd.di.provider.DiItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -69,7 +69,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.omg.org/spec/DD/20100524/DC-XMI"
+            uri="http://www.omg.org/spec/DD/20100524/DC-EMF"
             class="org.obeonetwork.dsl.dd.dc.provider.DcItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

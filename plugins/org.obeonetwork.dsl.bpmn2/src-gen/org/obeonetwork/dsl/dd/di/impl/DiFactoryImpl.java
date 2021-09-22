@@ -39,7 +39,7 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	public static DiFactory init() {
 		try {
 			DiFactory theDiFactory = (DiFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.omg.org/spec/DD/20100524/DI-XMI");
+					.getEFactory("http://www.omg.org/spec/DD/20100524/DI-EMF");
 			if (theDiFactory != null) {
 				return theDiFactory;
 			}

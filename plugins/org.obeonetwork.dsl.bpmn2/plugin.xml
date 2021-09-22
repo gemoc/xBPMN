@@ -40,7 +40,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.omg.org/spec/BPMN/20100524/DI-XMI"
+            uri="http://www.omg.org/spec/BPMN/20100524/DI-EMF"
             class="org.obeonetwork.dsl.bpmn2.bpmdi.BpmnDiPackage"
             genModel="model/BPMN20.genmodel"/>
    </extension>
@@ -53,7 +53,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.omg.org/spec/DD/20100524/DI-XMI"
+            uri="http://www.omg.org/spec/DD/20100524/DI-EMF"
             class="org.obeonetwork.dsl.dd.di.DiPackage"
             genModel="model/BPMN20.genmodel"/>
    </extension>
@@ -66,7 +66,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.omg.org/spec/DD/20100524/DC-XMI"
+            uri="http://www.omg.org/spec/DD/20100524/DC-EMF"
             class="org.obeonetwork.dsl.dd.dc.DcPackage"
             genModel="model/BPMN20.genmodel"/>
    </extension>

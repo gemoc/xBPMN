@@ -977,7 +977,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootElements" ordered="false"
         upperBound="-1" eType="#//RootElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" ordered="false"
-        upperBound="-1" eType="ecore:EClass http://www.omg.org/spec/BPMN/20100524/DI-XMI#//BPMNDiagram"
+        upperBound="-1" eType="ecore:EClass http://www.omg.org/spec/BPMN/20100524/DI-EMF#//BPMNDiagram"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exporter" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

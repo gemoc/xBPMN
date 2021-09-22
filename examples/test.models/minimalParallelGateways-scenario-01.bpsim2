@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpsim:BPSimData xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL-EMF" xmlns:bpsim="http://www.bpsim.org/schemas/2.0">
   <bpsim:Scenario id="MinimalParallelGateways-scenario-01" name="MinimalParallelGateways-scenario-01">
-    <bpsim:ElementParameters id="start_param" bpmnElementRef="bpmn:StartEvent minimalParallelGateways.bpmn#_Fp7GYQsxEey2hucr8gZfKg">
+    <bpsim:ScenarioParameters/>
+    <bpsim:ElementParameters id="start_param" bpmnElementRef="bpmn:StartEvent minimalParallelGateways.bpmn_model#_Fp7GYQsxEey2hucr8gZfKg">
       <bpsim:ControlParameters>
         <bpsim:InterTriggerTimer>
           <bpsim:NumericParameter/>

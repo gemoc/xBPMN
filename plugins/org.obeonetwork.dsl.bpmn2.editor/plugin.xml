@@ -40,7 +40,7 @@
             id="org.obeonetwork.dsl.bpmn2.presentation.Bpmn2EditorID"
             name="%_UI_Bpmn2Editor_label"
             icon="icons/full/obj16/file_bpmn.png"
-            extensions="bpmn"
+            extensions="bpmn_model"
             class="org.obeonetwork.dsl.bpmn2.presentation.Bpmn2Editor"
             contributorClass="org.obeonetwork.dsl.bpmn2.presentation.Bpmn2ActionBarContributor">
       </editor>
@@ -68,7 +68,7 @@
             id="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicEditorID"
             name="%_UI_DynamicEditor_label"
             icon="icons/full/obj16/DynamicModelFile.gif"
-            extensions="dynamic"
+            extensions="bpmndynamic_model"
             class="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicEditor"
             contributorClass="org.obeonetwork.dsl.bpmn2.dynamic.presentation.DynamicActionBarContributor">
       </editor>
@@ -79,7 +79,7 @@
             id="org.obeonetwork.dsl.bpmn2.bpmdi.presentation.BpmnDiEditorID"
             name="%_UI_BpmnDiEditor_label"
             icon="icons/full/obj16/BpmnDiModelFile.gif"
-            extensions="bpmndi"
+            extensions="bpmndi_model"
             class="org.obeonetwork.dsl.bpmn2.bpmdi.presentation.BpmnDiEditor"
             contributorClass="org.obeonetwork.dsl.bpmn2.bpmdi.presentation.BpmnDiActionBarContributor">
       </editor>
@@ -90,7 +90,7 @@
             id="org.obeonetwork.dsl.dd.dc.presentation.DcEditorID"
             name="%_UI_DcEditor_label"
             icon="icons/full/obj16/DcModelFile.gif"
-            extensions="dc"
+            extensions="dc_model"
             class="org.obeonetwork.dsl.dd.dc.presentation.DcEditor"
             contributorClass="org.obeonetwork.dsl.dd.dc.presentation.DcActionBarContributor">
       </editor>
