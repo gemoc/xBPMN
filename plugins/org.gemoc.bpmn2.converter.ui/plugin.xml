@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.gemoc.bpmn.converter.commands.category"
+            name="GEMOC BPMN">
+      </category>
+      <command
+            categoryId="org.gemoc.bpmn.converter.commands.category"
+            id="org.gemoc.bpmn.converter.commands.convertCommand"
+            name="Convert bpmn to bpmn_model">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.gemoc.bpmn.converter.handlers.BpmnXml2BpmnXmiHandler"
+            commandId="org.gemoc.bpmn.converter.commands.convertCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.gemoc.bpmn.converter.commands.convertCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="org.gemoc.bpmn.converter.menus.sampleMenu"
+               label="Sample Menu"
+               mnemonic="M">
+            <command
+                  commandId="org.gemoc.bpmn.converter.commands.convertCommand"
+                  id="org.gemoc.bpmn.converter.menus.convertCommand"
+                  mnemonic="c">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="org.gemoc.bpmn.converter.toolbars.sampleToolbar">
+            <command
+                  commandId="org.gemoc.bpmn.converter.commands.convertCommand"
+                  icon="icons/sample.png"
+                  id="org.gemoc.bpmn.converter.toolbars.convertCommand"
+                  tooltip="Convert bpmn to bpmn_model">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <menu
+               id="GEMOC.xBPMN.menu"
+               label="GEMOC xBPMN">
+            <command
+                  commandId="org.gemoc.bpmn.converter.commands.convertCommand"
+                  label="convert bpmn to bpmn_model"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
+                     <test
+                           property="org.eclipse.core.resources.name"
+                           value="*.bpmn">
+                     </test>
+                  </iterate>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

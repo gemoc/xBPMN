@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: BPMN2 Converter
-Bundle-SymbolicName: org.gemoc.bpmn.converter;singleton:=true
+Bundle-SymbolicName: org.gemoc.bpmn.converter.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.gemoc.bpmn2.converter.Activator
 Bundle-Vendor: GEMOC
