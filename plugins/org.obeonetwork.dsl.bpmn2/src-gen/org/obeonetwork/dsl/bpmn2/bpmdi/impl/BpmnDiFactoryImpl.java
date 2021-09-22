@@ -48,7 +48,7 @@ public class BpmnDiFactoryImpl extends EFactoryImpl implements BpmnDiFactory {
 	public static BpmnDiFactory init() {
 		try {
 			BpmnDiFactory theBpmnDiFactory = (BpmnDiFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.omg.org/spec/BPMN/20100524/DI-XMI");
+					.getEFactory("http://www.omg.org/spec/BPMN/20100524/DI-EMF");
 			if (theBpmnDiFactory != null) {
 				return theBpmnDiFactory;
 			}

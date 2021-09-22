@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="BPMN20" version="12.0.0.2017041100">
-  <ownedViewpoints name="Process" label="BPMN 2.0 - Process" modelFileExtension="bpmn bpmn2 bpsim bpsim2">
+  <ownedViewpoints name="Process" label="BPMN 2.0 - Process" modelFileExtension="bpmn_model bpmn2_model bpsim bpsim2">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ProcessDiagram" label="Process Diagram" titleExpression="aql:self.name" pasteDescriptions="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Paste']" domainClass="bpmn2.Process" enablePopupBars="true">
       <metamodel href="../../org.obeonetwork.dsl.bpmn2/model/BPMN20.ecore#/"/>
       <metamodel href="../../xBPMN/plugins/org.gemoc.bpsim2.model/model/bpsim2.ecore#/"/>
@@ -1864,21 +1864,8 @@
           </subContainerMappings>
         </containerMappings>
         <containerMappings name="FlowElementContainerContext_Node" semanticCandidatesExpression="aql:self.laneSets->collect(ls |ls.eContainer(bpmn2::Process).contexts)" domainClass="FlowElementContainerContext" childrenPresentation="List">
-          <borderedNodeMappings name="TokenGauge" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-            <style xsi:type="style:GaugeCompositeStyleDescription" labelSize="12" showIcon="false" labelExpression="aql:''" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <forbiddenSides>WEST</forbiddenSides>
-              <forbiddenSides>SOUTH</forbiddenSides>
-              <forbiddenSides>NORTH</forbiddenSides>
-              <sections maxValueExpression="aql:self.nbPossibleTokens()" valueExpression="aql:self.ownedTokens->size()" label="tokens">
-                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
-                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
-              </sections>
-            </style>
-          </borderedNodeMappings>
           <subNodeMappings name="NbPossibletokensNode" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens->size()+'/'+self.nbPossibleTokens()" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens->size()" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>

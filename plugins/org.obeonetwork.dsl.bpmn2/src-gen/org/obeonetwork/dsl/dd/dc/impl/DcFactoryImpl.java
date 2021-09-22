@@ -42,7 +42,7 @@ public class DcFactoryImpl extends EFactoryImpl implements DcFactory {
 	public static DcFactory init() {
 		try {
 			DcFactory theDcFactory = (DcFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.omg.org/spec/DD/20100524/DC-XMI");
+					.getEFactory("http://www.omg.org/spec/DD/20100524/DC-EMF");
 			if (theDcFactory != null) {
 				return theDcFactory;
 			}

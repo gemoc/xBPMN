@@ -7,9 +7,9 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Contains packages:
   bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-EMF>
-  bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-XMI>
-  di <http://www.omg.org/spec/DD/20100524/DI-XMI>
-  dc <http://www.omg.org/spec/DD/20100524/DC-XMI>
+  bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-EMF>
+  di <http://www.omg.org/spec/DD/20100524/DI-EMF>
+  dc <http://www.omg.org/spec/DD/20100524/DC-EMF>
 
 Package bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-EMF>
 
@@ -649,7 +649,7 @@ Package bpmn2 <http://www.omg.org/spec/BPMN/20100524/MODEL-EMF>
     Literal Parallel = 0
     Literal Sequential = 1
 
-Package bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-XMI>
+Package bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-EMF>
 
   Class BPMNPlane -> Plane
     Reference bpmnElement : BaseElement
@@ -693,7 +693,7 @@ Package bpmdi <http://www.omg.org/spec/BPMN/20100524/DI-XMI>
     Literal initiating = 0
     Literal non_initiating = 1
 
-Package di <http://www.omg.org/spec/DD/20100524/DI-XMI>
+Package di <http://www.omg.org/spec/DD/20100524/DI-EMF>
 
   Class DiagramElement
     Reference /owningDiagram : Diagram
@@ -734,7 +734,7 @@ Package di <http://www.omg.org/spec/DD/20100524/DI-XMI>
     Reference planeElement : DiagramElement<<0..*>>
     Operation plane_element_type(EDiagnosticChain, EMap) : EBoolean
 
-Package dc <http://www.omg.org/spec/DD/20100524/DC-XMI>
+Package dc <http://www.omg.org/spec/DD/20100524/DC-EMF>
 
   Class Font
     Attribute name : EString
