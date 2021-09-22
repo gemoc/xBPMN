@@ -32,31 +32,6 @@
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
-         <menu
-               id="org.gemoc.bpmn.converter.menus.sampleMenu"
-               label="Sample Menu"
-               mnemonic="M">
-            <command
-                  commandId="org.gemoc.bpmn.converter.commands.convertCommand"
-                  id="org.gemoc.bpmn.converter.menus.convertCommand"
-                  mnemonic="c">
-            </command>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="org.gemoc.bpmn.converter.toolbars.sampleToolbar">
-            <command
-                  commandId="org.gemoc.bpmn.converter.commands.convertCommand"
-                  icon="icons/sample.png"
-                  id="org.gemoc.bpmn.converter.toolbars.convertCommand"
-                  tooltip="Convert bpmn to bpmn_model">
-            </command>
-         </toolbar>
-      </menuContribution>
-      <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.ui.popup.any">
          <menu
