@@ -10,12 +10,12 @@ ECLimport  "platform:/resource/org.gemoc.xbpmn.moc.lib/moclib/ProcessStartEnd.mo
  
 -- event declaration
 package bpsim2
-
+  
 	context ElementParameters 
 		def : entering : Event = self.startEval()
 --		def : leaving : Event = self.endEval()
 		 
-endpackage 
+endpackage
  
 package bpmn2 
 

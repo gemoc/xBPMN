@@ -1,9 +1,9 @@
 import org.eclipse.gemoc.moccml_mapping.EclQVToHelper;
 modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 	modeltype inMM1 uses 'http://www.bpsim.org/schemas/2.0';
-	modeltype inMM2 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI-2';
+	modeltype inMM2 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-EMF';
 	modeltype inMM3 uses 'http://www.bpsim.org/schemas/2.0';
-	modeltype inMM4 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-XMI-2';
+	modeltype inMM4 uses 'http://www.omg.org/spec/BPMN/20100524/MODEL-EMF';
 
 modeltype QVT 		uses 'http://www.eclipse.org/QVT/1.0.0/Operational';
 modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
