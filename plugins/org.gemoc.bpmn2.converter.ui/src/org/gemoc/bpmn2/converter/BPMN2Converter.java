@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.bpmn2.Bpmn2Package;
+import org.eclipse.bpmn2.Definitions;
 import org.eclipse.bpmn2.DocumentRoot;
 import org.eclipse.bpmn2.SequenceFlow;
 import org.eclipse.bpmn2.impl.Bpmn2FactoryImpl;
@@ -103,8 +104,15 @@ public class BPMN2Converter {
 			outputResourceSet.getResources().add(outputModelRes);
 			
 			
-			///this.moveResourceContent(inputModelRes, outputModelRes);
+			
 			this.cloneResource(inputModelRes, outputModelRes);
+			// remove teh diagram
+			for(EObject eo : outputModelRes.getContents()) {
+				if(eo instanceof Definitions) {
+					Definitions d = (Definitions)eo;
+					d.getDiagrams().clear();
+				}
+			}
 			
 			outputModelRes.save(null);
 			
@@ -116,7 +124,7 @@ public class BPMN2Converter {
 	}
 	
 	public static void main(String[] args) {
-		new BPMN2Converter().bpmnXsdTobpmnXmi("BPMN_model_AP1.bpmn", "BPMN_model_AP1.bpmnxmi");
+		new BPMN2Converter().bpmnXsdTobpmnXmi("BPMN_model_AP1.bpmn", "BPMN_model_AP1.bpmn_model");
 		
 	}
 
