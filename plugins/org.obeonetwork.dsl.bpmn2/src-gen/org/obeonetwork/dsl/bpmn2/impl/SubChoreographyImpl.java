@@ -27,7 +27,6 @@ import org.obeonetwork.dsl.bpmn2.FlowElement;
 import org.obeonetwork.dsl.bpmn2.FlowElementsContainer;
 import org.obeonetwork.dsl.bpmn2.LaneSet;
 import org.obeonetwork.dsl.bpmn2.SubChoreography;
-import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +38,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubChoreographyImpl#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubChoreographyImpl#getLaneSets <em>Lane Sets</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubChoreographyImpl#getContexts <em>Contexts</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.SubChoreographyImpl#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
  *
@@ -96,18 +94,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<FlowElementContainerContext> getContexts() {
-		return (EList<FlowElementContainerContext>) eDynamicGet(Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS,
-				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public EList<Artifact> getArtifacts() {
 		return (EList<Artifact>) eDynamicGet(Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS,
 				Bpmn2Package.Literals.SUB_CHOREOGRAPHY__ARTIFACTS, true, true);
@@ -125,8 +111,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS:
 			return ((InternalEList<?>) getLaneSets()).basicRemove(otherEnd, msgs);
-		case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS:
 			return ((InternalEList<?>) getArtifacts()).basicRemove(otherEnd, msgs);
 		}
@@ -145,8 +129,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 			return getFlowElements();
 		case Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS:
 			return getLaneSets();
-		case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-			return getContexts();
 		case Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS:
 			return getArtifacts();
 		}
@@ -170,10 +152,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 			getLaneSets().clear();
 			getLaneSets().addAll((Collection<? extends LaneSet>) newValue);
 			return;
-		case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-			getContexts().clear();
-			getContexts().addAll((Collection<? extends FlowElementContainerContext>) newValue);
-			return;
 		case Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS:
 			getArtifacts().clear();
 			getArtifacts().addAll((Collection<? extends Artifact>) newValue);
@@ -196,9 +174,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 		case Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS:
 			getLaneSets().clear();
 			return;
-		case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-			getContexts().clear();
-			return;
 		case Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS:
 			getArtifacts().clear();
 			return;
@@ -218,8 +193,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 			return !getFlowElements().isEmpty();
 		case Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS:
 			return !getLaneSets().isEmpty();
-		case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-			return !getContexts().isEmpty();
 		case Bpmn2Package.SUB_CHOREOGRAPHY__ARTIFACTS:
 			return !getArtifacts().isEmpty();
 		}
@@ -239,8 +212,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS;
 			case Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS:
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS;
-			case Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS:
-				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS;
 			default:
 				return -1;
 			}
@@ -261,8 +232,6 @@ public class SubChoreographyImpl extends ChoreographyActivityImpl implements Sub
 				return Bpmn2Package.SUB_CHOREOGRAPHY__FLOW_ELEMENTS;
 			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 				return Bpmn2Package.SUB_CHOREOGRAPHY__LANE_SETS;
-			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
-				return Bpmn2Package.SUB_CHOREOGRAPHY__CONTEXTS;
 			default:
 				return -1;
 			}

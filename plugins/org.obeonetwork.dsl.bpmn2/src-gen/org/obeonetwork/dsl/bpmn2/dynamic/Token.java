@@ -28,7 +28,6 @@ import org.obeonetwork.dsl.bpmn2.SequenceFlow;
  * </p>
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getSourceSequenceFlow <em>Source Sequence Flow</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext <em>Context</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getOrigin <em>Origin</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getPosition <em>Position</em>}</li>
  * </ul>
@@ -47,7 +46,7 @@ public interface Token extends CDOObject {
 	 * @return the value of the '<em>Source Sequence Flow</em>' reference.
 	 * @see #setSourceSequenceFlow(SequenceFlow)
 	 * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getToken_SourceSequenceFlow()
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	SequenceFlow getSourceSequenceFlow();
@@ -63,37 +62,13 @@ public interface Token extends CDOObject {
 	void setSourceSequenceFlow(SequenceFlow value);
 
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens <em>Owned Tokens</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' container reference.
-	 * @see #setContext(FlowElementContainerContext)
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getToken_Context()
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens
-	 * @model opposite="ownedTokens" transient="false"
-	 * @generated
-	 */
-	FlowElementContainerContext getContext();
-
-	/**
-	 * Sets the value of the '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext <em>Context</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context</em>' container reference.
-	 * @see #getContext()
-	 * @generated
-	 */
-	void setContext(FlowElementContainerContext value);
-
-	/**
 	 * Returns the value of the '<em><b>Origin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Origin</em>' reference.
 	 * @see #setOrigin(FlowElement)
 	 * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getToken_Origin()
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	FlowElement getOrigin();
@@ -110,14 +85,12 @@ public interface Token extends CDOObject {
 
 	/**
 	 * Returns the value of the '<em><b>Position</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.obeonetwork.dsl.bpmn2.FlowElement#getTokens <em>Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Position</em>' reference.
 	 * @see #setPosition(FlowElement)
 	 * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getToken_Position()
-	 * @see org.obeonetwork.dsl.bpmn2.FlowElement#getTokens
-	 * @model opposite="tokens"
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	FlowElement getPosition();

@@ -82,7 +82,6 @@ public class FlowElementsContainerItemProvider extends BaseElementItemProvider i
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS);
 			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS);
-			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS);
 		}
 		return childrenFeatures;
 	}
@@ -137,7 +136,6 @@ public class FlowElementsContainerItemProvider extends BaseElementItemProvider i
 		switch (notification.getFeatureID(FlowElementsContainer.class)) {
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS:
 		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
-		case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -247,9 +245,6 @@ public class FlowElementsContainerItemProvider extends BaseElementItemProvider i
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS,
 				Bpmn2Factory.eINSTANCE.createLaneSet()));
-
-		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS,
-				DynamicFactory.eINSTANCE.createFlowElementContainerContext()));
 	}
 
 }

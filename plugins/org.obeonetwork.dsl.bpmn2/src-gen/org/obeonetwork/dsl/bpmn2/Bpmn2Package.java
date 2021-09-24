@@ -2785,22 +2785,13 @@ public interface Bpmn2Package extends EPackage {
 	int PROCESS__LANE_SETS = CALLABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS__CONTEXTS = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Process Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__PROCESS_TYPE = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
+	int PROCESS__PROCESS_TYPE = CALLABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Closed</b></em>' attribute.
@@ -2809,7 +2800,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__IS_CLOSED = CALLABLE_ELEMENT_FEATURE_COUNT + 4;
+	int PROCESS__IS_CLOSED = CALLABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Auditing</b></em>' containment reference.
@@ -2818,7 +2809,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__AUDITING = CALLABLE_ELEMENT_FEATURE_COUNT + 5;
+	int PROCESS__AUDITING = CALLABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Monitoring</b></em>' containment reference.
@@ -2827,7 +2818,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__MONITORING = CALLABLE_ELEMENT_FEATURE_COUNT + 6;
+	int PROCESS__MONITORING = CALLABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -2836,7 +2827,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__PROPERTIES = CALLABLE_ELEMENT_FEATURE_COUNT + 7;
+	int PROCESS__PROPERTIES = CALLABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Supports</b></em>' reference list.
@@ -2845,7 +2836,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__SUPPORTS = CALLABLE_ELEMENT_FEATURE_COUNT + 8;
+	int PROCESS__SUPPORTS = CALLABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Definitional Collaboration Ref</b></em>' reference.
@@ -2854,7 +2845,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 9;
+	int PROCESS__DEFINITIONAL_COLLABORATION_REF = CALLABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Executable</b></em>' attribute.
@@ -2863,7 +2854,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 10;
+	int PROCESS__IS_EXECUTABLE = CALLABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -2872,7 +2863,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__RESOURCES = CALLABLE_ELEMENT_FEATURE_COUNT + 11;
+	int PROCESS__RESOURCES = CALLABLE_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
@@ -2881,7 +2872,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__ARTIFACTS = CALLABLE_ELEMENT_FEATURE_COUNT + 12;
+	int PROCESS__ARTIFACTS = CALLABLE_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Correlation Subscriptions</b></em>' containment reference list.
@@ -2890,7 +2881,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__CORRELATION_SUBSCRIPTIONS = CALLABLE_ELEMENT_FEATURE_COUNT + 13;
+	int PROCESS__CORRELATION_SUBSCRIPTIONS = CALLABLE_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Decomposed By</b></em>' containment reference list.
@@ -2899,7 +2890,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__DECOMPOSED_BY = CALLABLE_ELEMENT_FEATURE_COUNT + 14;
+	int PROCESS__DECOMPOSED_BY = CALLABLE_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Decomposes</b></em>' container reference.
@@ -2908,7 +2899,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__DECOMPOSES = CALLABLE_ELEMENT_FEATURE_COUNT + 15;
+	int PROCESS__DECOMPOSES = CALLABLE_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Process</em>' class.
@@ -2917,7 +2908,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 16;
+	int PROCESS_FEATURE_COUNT = CALLABLE_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementsContainerImpl <em>Flow Elements Container</em>}' class.
@@ -2993,22 +2984,13 @@ public interface Bpmn2Package extends EPackage {
 	int FLOW_ELEMENTS_CONTAINER__LANE_SETS = BASE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_ELEMENTS_CONTAINER__CONTEXTS = BASE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Flow Elements Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 3;
+	int FLOW_ELEMENTS_CONTAINER_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl <em>Flow Element</em>}' class.
@@ -3102,22 +3084,13 @@ public interface Bpmn2Package extends EPackage {
 	int FLOW_ELEMENT__CATEGORY_VALUE_REF = BASE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_ELEMENT__TOKENS = BASE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Flow Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 5;
+	int FLOW_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.CategoryValueImpl <em>Category Value</em>}' class.
@@ -3484,15 +3457,6 @@ public interface Bpmn2Package extends EPackage {
 	int FLOW_NODE__CATEGORY_VALUE_REF = FLOW_ELEMENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_NODE__TOKENS = FLOW_ELEMENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3618,15 +3582,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE_FLOW__CATEGORY_VALUE_REF = FLOW_ELEMENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_FLOW__TOKENS = FLOW_ELEMENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Is Immediate</b></em>' attribute.
@@ -4118,22 +4073,13 @@ public interface Bpmn2Package extends EPackage {
 	int CHOREOGRAPHY__LANE_SETS = COLLABORATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHOREOGRAPHY__CONTEXTS = COLLABORATION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Choreography</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHOREOGRAPHY_FEATURE_COUNT = COLLABORATION_FEATURE_COUNT + 3;
+	int CHOREOGRAPHY_FEATURE_COUNT = COLLABORATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.ArtifactImpl <em>Artifact</em>}' class.
@@ -5675,15 +5621,6 @@ public interface Bpmn2Package extends EPackage {
 	int ACTIVITY__CATEGORY_VALUE_REF = FLOW_NODE__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__TOKENS = FLOW_NODE__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5928,15 +5865,6 @@ public interface Bpmn2Package extends EPackage {
 	int TASK__CATEGORY_VALUE_REF = ACTIVITY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__TOKENS = ACTIVITY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6179,15 +6107,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int MANUAL_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANUAL_TASK__TOKENS = TASK__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -6498,15 +6417,6 @@ public interface Bpmn2Package extends EPackage {
 	int EVENT__CATEGORY_VALUE_REF = FLOW_NODE__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT__TOKENS = FLOW_NODE__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6659,15 +6569,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CATCH_EVENT__CATEGORY_VALUE_REF = EVENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATCH_EVENT__TOKENS = EVENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -6876,15 +6777,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int BOUNDARY_EVENT__CATEGORY_VALUE_REF = CATCH_EVENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOUNDARY_EVENT__TOKENS = CATCH_EVENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -7559,15 +7451,6 @@ public interface Bpmn2Package extends EPackage {
 	int USER_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_TASK__TOKENS = TASK__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8221,15 +8104,6 @@ public interface Bpmn2Package extends EPackage {
 	int GATEWAY__CATEGORY_VALUE_REF = FLOW_NODE__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY__TOKENS = FLOW_NODE__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8364,15 +8238,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int EVENT_BASED_GATEWAY__CATEGORY_VALUE_REF = GATEWAY__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_BASED_GATEWAY__TOKENS = GATEWAY__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -8529,15 +8394,6 @@ public interface Bpmn2Package extends EPackage {
 	int COMPLEX_GATEWAY__CATEGORY_VALUE_REF = GATEWAY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_GATEWAY__TOKENS = GATEWAY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8692,15 +8548,6 @@ public interface Bpmn2Package extends EPackage {
 	int EXCLUSIVE_GATEWAY__CATEGORY_VALUE_REF = GATEWAY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCLUSIVE_GATEWAY__TOKENS = GATEWAY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8846,15 +8693,6 @@ public interface Bpmn2Package extends EPackage {
 	int INCLUSIVE_GATEWAY__CATEGORY_VALUE_REF = GATEWAY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUSIVE_GATEWAY__TOKENS = GATEWAY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8998,15 +8836,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int PARALLEL_GATEWAY__CATEGORY_VALUE_REF = GATEWAY__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARALLEL_GATEWAY__TOKENS = GATEWAY__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -9291,15 +9120,6 @@ public interface Bpmn2Package extends EPackage {
 	int INTERMEDIATE_CATCH_EVENT__CATEGORY_VALUE_REF = CATCH_EVENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERMEDIATE_CATCH_EVENT__TOKENS = CATCH_EVENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9508,15 +9328,6 @@ public interface Bpmn2Package extends EPackage {
 	int THROW_EVENT__CATEGORY_VALUE_REF = EVENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THROW_EVENT__TOKENS = EVENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9714,15 +9525,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int INTERMEDIATE_THROW_EVENT__CATEGORY_VALUE_REF = THROW_EVENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERMEDIATE_THROW_EVENT__TOKENS = THROW_EVENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -9924,15 +9726,6 @@ public interface Bpmn2Package extends EPackage {
 	int END_EVENT__CATEGORY_VALUE_REF = THROW_EVENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_EVENT__TOKENS = THROW_EVENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10130,15 +9923,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int START_EVENT__CATEGORY_VALUE_REF = CATCH_EVENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int START_EVENT__TOKENS = CATCH_EVENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -11261,15 +11045,6 @@ public interface Bpmn2Package extends EPackage {
 	int IMPLICIT_THROW_EVENT__CATEGORY_VALUE_REF = THROW_EVENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMPLICIT_THROW_EVENT__TOKENS = THROW_EVENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11467,15 +11242,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int DATA_OBJECT__CATEGORY_VALUE_REF = FLOW_ELEMENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT__TOKENS = FLOW_ELEMENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Item Subject Ref</b></em>' reference.
@@ -11714,15 +11480,6 @@ public interface Bpmn2Package extends EPackage {
 	int DATA_STORE_REFERENCE__CATEGORY_VALUE_REF = FLOW_ELEMENT__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_STORE_REFERENCE__TOKENS = FLOW_ELEMENT__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Item Subject Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11848,15 +11605,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int DATA_OBJECT_REFERENCE__CATEGORY_VALUE_REF = FLOW_ELEMENT__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OBJECT_REFERENCE__TOKENS = FLOW_ELEMENT__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Item Subject Ref</b></em>' reference.
@@ -12703,15 +12451,6 @@ public interface Bpmn2Package extends EPackage {
 	int CHOREOGRAPHY_ACTIVITY__CATEGORY_VALUE_REF = FLOW_NODE__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHOREOGRAPHY_ACTIVITY__TOKENS = FLOW_NODE__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12873,15 +12612,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CALL_CHOREOGRAPHY__CATEGORY_VALUE_REF = CHOREOGRAPHY_ACTIVITY__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL_CHOREOGRAPHY__TOKENS = CHOREOGRAPHY_ACTIVITY__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -13065,15 +12795,6 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_CHOREOGRAPHY__CATEGORY_VALUE_REF = CHOREOGRAPHY_ACTIVITY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_CHOREOGRAPHY__TOKENS = CHOREOGRAPHY_ACTIVITY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13155,22 +12876,13 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_CHOREOGRAPHY__LANE_SETS = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_CHOREOGRAPHY__CONTEXTS = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUB_CHOREOGRAPHY__ARTIFACTS = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 3;
+	int SUB_CHOREOGRAPHY__ARTIFACTS = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Sub Choreography</em>' class.
@@ -13179,7 +12891,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUB_CHOREOGRAPHY_FEATURE_COUNT = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 4;
+	int SUB_CHOREOGRAPHY_FEATURE_COUNT = CHOREOGRAPHY_ACTIVITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.ChoreographyTaskImpl <em>Choreography Task</em>}' class.
@@ -13271,15 +12983,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int CHOREOGRAPHY_TASK__CATEGORY_VALUE_REF = CHOREOGRAPHY_ACTIVITY__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHOREOGRAPHY_TASK__TOKENS = CHOREOGRAPHY_ACTIVITY__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -13542,15 +13245,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int GLOBAL_CHOREOGRAPHY_TASK__LANE_SETS = CHOREOGRAPHY__LANE_SETS;
-
-	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_CHOREOGRAPHY_TASK__CONTEXTS = CHOREOGRAPHY__CONTEXTS;
 
 	/**
 	 * The feature id for the '<em><b>Initiating Participant Ref</b></em>' reference.
@@ -13990,15 +13684,6 @@ public interface Bpmn2Package extends EPackage {
 	int SERVICE_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_TASK__TOKENS = TASK__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14261,15 +13946,6 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_PROCESS__CATEGORY_VALUE_REF = ACTIVITY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_PROCESS__TOKENS = ACTIVITY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14432,22 +14108,13 @@ public interface Bpmn2Package extends EPackage {
 	int SUB_PROCESS__LANE_SETS = ACTIVITY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_PROCESS__CONTEXTS = ACTIVITY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Triggered By Event</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUB_PROCESS__TRIGGERED_BY_EVENT = ACTIVITY_FEATURE_COUNT + 3;
+	int SUB_PROCESS__TRIGGERED_BY_EVENT = ACTIVITY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
@@ -14456,7 +14123,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUB_PROCESS__ARTIFACTS = ACTIVITY_FEATURE_COUNT + 4;
+	int SUB_PROCESS__ARTIFACTS = ACTIVITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Sub Process</em>' class.
@@ -14465,7 +14132,7 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUB_PROCESS_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 5;
+	int SUB_PROCESS_FEATURE_COUNT = ACTIVITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.impl.MultiInstanceLoopCharacteristicsImpl <em>Multi Instance Loop Characteristics</em>}' class.
@@ -14895,15 +14562,6 @@ public interface Bpmn2Package extends EPackage {
 	int CALL_ACTIVITY__CATEGORY_VALUE_REF = ACTIVITY__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL_ACTIVITY__TOKENS = ACTIVITY__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15155,15 +14813,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int SEND_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEND_TASK__TOKENS = TASK__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -15435,15 +15084,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int RECEIVE_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECEIVE_TASK__TOKENS = TASK__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -15726,15 +15366,6 @@ public interface Bpmn2Package extends EPackage {
 	int SCRIPT_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT_TASK__TOKENS = TASK__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15997,15 +15628,6 @@ public interface Bpmn2Package extends EPackage {
 	int BUSINESS_RULE_TASK__CATEGORY_VALUE_REF = TASK__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_RULE_TASK__TOKENS = TASK__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16259,15 +15881,6 @@ public interface Bpmn2Package extends EPackage {
 	int AD_HOC_SUB_PROCESS__CATEGORY_VALUE_REF = SUB_PROCESS__CATEGORY_VALUE_REF;
 
 	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AD_HOC_SUB_PROCESS__TOKENS = SUB_PROCESS__TOKENS;
-
-	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16430,15 +16043,6 @@ public interface Bpmn2Package extends EPackage {
 	int AD_HOC_SUB_PROCESS__LANE_SETS = SUB_PROCESS__LANE_SETS;
 
 	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AD_HOC_SUB_PROCESS__CONTEXTS = SUB_PROCESS__CONTEXTS;
-
-	/**
 	 * The feature id for the '<em><b>Triggered By Event</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16582,15 +16186,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int TRANSACTION__CATEGORY_VALUE_REF = SUB_PROCESS__CATEGORY_VALUE_REF;
-
-	/**
-	 * The feature id for the '<em><b>Tokens</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSACTION__TOKENS = SUB_PROCESS__TOKENS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -16753,15 +16348,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @ordered
 	 */
 	int TRANSACTION__LANE_SETS = SUB_PROCESS__LANE_SETS;
-
-	/**
-	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSACTION__CONTEXTS = SUB_PROCESS__CONTEXTS;
 
 	/**
 	 * The feature id for the '<em><b>Triggered By Event</b></em>' attribute.
@@ -18802,17 +18388,6 @@ public interface Bpmn2Package extends EPackage {
 	EReference getFlowElementsContainer_LaneSets();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.obeonetwork.dsl.bpmn2.FlowElementsContainer#getContexts <em>Contexts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contexts</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.FlowElementsContainer#getContexts()
-	 * @see #getFlowElementsContainer()
-	 * @generated
-	 */
-	EReference getFlowElementsContainer_Contexts();
-
-	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.FlowElement <em>Flow Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18865,17 +18440,6 @@ public interface Bpmn2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getFlowElement_CategoryValueRef();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.obeonetwork.dsl.bpmn2.FlowElement#getTokens <em>Tokens</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tokens</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.FlowElement#getTokens()
-	 * @see #getFlowElement()
-	 * @generated
-	 */
-	EReference getFlowElement_Tokens();
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.CategoryValue <em>Category Value</em>}'.
@@ -23615,14 +23179,6 @@ public interface Bpmn2Package extends EPackage {
 		EReference FLOW_ELEMENTS_CONTAINER__LANE_SETS = eINSTANCE.getFlowElementsContainer_LaneSets();
 
 		/**
-		 * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FLOW_ELEMENTS_CONTAINER__CONTEXTS = eINSTANCE.getFlowElementsContainer_Contexts();
-
-		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl <em>Flow Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23663,14 +23219,6 @@ public interface Bpmn2Package extends EPackage {
 		 * @generated
 		 */
 		EReference FLOW_ELEMENT__CATEGORY_VALUE_REF = eINSTANCE.getFlowElement_CategoryValueRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Tokens</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FLOW_ELEMENT__TOKENS = eINSTANCE.getFlowElement_Tokens();
 
 		/**
 		 * The meta object literal for the '{@link org.obeonetwork.dsl.bpmn2.impl.CategoryValueImpl <em>Category Value</em>}' class.

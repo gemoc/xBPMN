@@ -69,7 +69,6 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 			super.getPropertyDescriptors(object);
 
 			addSourceSequenceFlowPropertyDescriptor(object);
-			addContextPropertyDescriptor(object);
 			addOriginPropertyDescriptor(object);
 			addPositionPropertyDescriptor(object);
 		}
@@ -89,20 +88,6 @@ public class TokenItemProvider extends ItemProviderAdapter implements IEditingDo
 						getString("_UI_PropertyDescriptor_description", "_UI_Token_sourceSequenceFlow_feature",
 								"_UI_Token_type"),
 						DynamicPackage.Literals.TOKEN__SOURCE_SEQUENCE_FLOW, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Token_context_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Token_context_feature", "_UI_Token_type"),
-						DynamicPackage.Literals.TOKEN__CONTEXT, true, false, true, null, null, null));
 	}
 
 	/**

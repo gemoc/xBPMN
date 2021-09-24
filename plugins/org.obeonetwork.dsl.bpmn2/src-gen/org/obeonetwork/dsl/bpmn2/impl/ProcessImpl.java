@@ -33,7 +33,6 @@ import org.obeonetwork.dsl.bpmn2.Monitoring;
 import org.obeonetwork.dsl.bpmn2.ProcessType;
 import org.obeonetwork.dsl.bpmn2.Property;
 import org.obeonetwork.dsl.bpmn2.ResourceRole;
-import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +44,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#getLaneSets <em>Lane Sets</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#getContexts <em>Contexts</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#getProcessType <em>Process Type</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#isIsClosed <em>Is Closed</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ProcessImpl#getAuditing <em>Auditing</em>}</li>
@@ -133,18 +131,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 	public EList<LaneSet> getLaneSets() {
 		return (EList<LaneSet>) eDynamicGet(Bpmn2Package.PROCESS__LANE_SETS,
 				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<FlowElementContainerContext> getContexts() {
-		return (EList<FlowElementContainerContext>) eDynamicGet(Bpmn2Package.PROCESS__CONTEXTS,
-				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS, true, true);
 	}
 
 	/**
@@ -439,8 +425,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.PROCESS__LANE_SETS:
 			return ((InternalEList<?>) getLaneSets()).basicRemove(otherEnd, msgs);
-		case Bpmn2Package.PROCESS__CONTEXTS:
-			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.PROCESS__AUDITING:
 			return basicSetAuditing(null, msgs);
 		case Bpmn2Package.PROCESS__MONITORING:
@@ -488,8 +472,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 			return getFlowElements();
 		case Bpmn2Package.PROCESS__LANE_SETS:
 			return getLaneSets();
-		case Bpmn2Package.PROCESS__CONTEXTS:
-			return getContexts();
 		case Bpmn2Package.PROCESS__PROCESS_TYPE:
 			return getProcessType();
 		case Bpmn2Package.PROCESS__IS_CLOSED:
@@ -538,10 +520,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 		case Bpmn2Package.PROCESS__LANE_SETS:
 			getLaneSets().clear();
 			getLaneSets().addAll((Collection<? extends LaneSet>) newValue);
-			return;
-		case Bpmn2Package.PROCESS__CONTEXTS:
-			getContexts().clear();
-			getContexts().addAll((Collection<? extends FlowElementContainerContext>) newValue);
 			return;
 		case Bpmn2Package.PROCESS__PROCESS_TYPE:
 			setProcessType((ProcessType) newValue);
@@ -606,9 +584,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 		case Bpmn2Package.PROCESS__LANE_SETS:
 			getLaneSets().clear();
 			return;
-		case Bpmn2Package.PROCESS__CONTEXTS:
-			getContexts().clear();
-			return;
 		case Bpmn2Package.PROCESS__PROCESS_TYPE:
 			setProcessType(PROCESS_TYPE_EDEFAULT);
 			return;
@@ -664,8 +639,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 			return !getFlowElements().isEmpty();
 		case Bpmn2Package.PROCESS__LANE_SETS:
 			return !getLaneSets().isEmpty();
-		case Bpmn2Package.PROCESS__CONTEXTS:
-			return !getContexts().isEmpty();
 		case Bpmn2Package.PROCESS__PROCESS_TYPE:
 			return getProcessType() != PROCESS_TYPE_EDEFAULT;
 		case Bpmn2Package.PROCESS__IS_CLOSED:
@@ -709,8 +682,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS;
 			case Bpmn2Package.PROCESS__LANE_SETS:
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS;
-			case Bpmn2Package.PROCESS__CONTEXTS:
-				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS;
 			default:
 				return -1;
 			}
@@ -731,8 +702,6 @@ public class ProcessImpl extends CallableElementImpl implements org.obeonetwork.
 				return Bpmn2Package.PROCESS__FLOW_ELEMENTS;
 			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 				return Bpmn2Package.PROCESS__LANE_SETS;
-			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
-				return Bpmn2Package.PROCESS__CONTEXTS;
 			default:
 				return -1;
 			}

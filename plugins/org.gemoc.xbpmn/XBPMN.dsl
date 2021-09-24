@@ -12,7 +12,9 @@ k3 = org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect, \
 	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ControlParametersAspect, \
 	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ParameterAspect, \
 	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersAspect, \
-	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect
+	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect, \
+	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.FlowElementsContainerAspect, \
+	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
 	
 #k3 = org.gemoc.xbpmn.k3dsa.SystemFunctionAspect,\
 #	 org.gemoc.xbpmn.k3dsa.AbstractEndAspect,\

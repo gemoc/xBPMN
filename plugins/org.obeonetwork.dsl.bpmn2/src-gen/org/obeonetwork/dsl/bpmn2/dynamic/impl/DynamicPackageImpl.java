@@ -56,13 +56,6 @@ public class DynamicPackageImpl extends EPackageImpl implements DynamicPackage {
 	private EClass tokenEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass flowElementContainerContextEClass = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -181,7 +174,7 @@ public class DynamicPackageImpl extends EPackageImpl implements DynamicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getToken_Context() {
+	public EReference getToken_Origin() {
 		return (EReference) getToken().getEStructuralFeatures().get(1);
 	}
 
@@ -191,52 +184,8 @@ public class DynamicPackageImpl extends EPackageImpl implements DynamicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getToken_Origin() {
-		return (EReference) getToken().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getToken_Position() {
-		return (EReference) getToken().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFlowElementContainerContext() {
-		if (flowElementContainerContextEClass == null) {
-			flowElementContainerContextEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(DynamicPackage.eNS_URI)
-					.getEClassifiers().get(1);
-		}
-		return flowElementContainerContextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFlowElementContainerContext_OwnedTokens() {
-		return (EReference) getFlowElementContainerContext().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFlowElementContainerContext_StartCounter() {
-		return (EAttribute) getFlowElementContainerContext().getEStructuralFeatures().get(1);
+		return (EReference) getToken().getEStructuralFeatures().get(2);
 	}
 
 	/**

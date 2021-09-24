@@ -26,7 +26,6 @@ import org.obeonetwork.dsl.bpmn2.Choreography;
 import org.obeonetwork.dsl.bpmn2.FlowElement;
 import org.obeonetwork.dsl.bpmn2.FlowElementsContainer;
 import org.obeonetwork.dsl.bpmn2.LaneSet;
-import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +37,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
  * <ul>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ChoreographyImpl#getFlowElements <em>Flow Elements</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ChoreographyImpl#getLaneSets <em>Lane Sets</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.ChoreographyImpl#getContexts <em>Contexts</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,18 +90,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<FlowElementContainerContext> getContexts() {
-		return (EList<FlowElementContainerContext>) eDynamicGet(Bpmn2Package.CHOREOGRAPHY__CONTEXTS,
-				Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -111,8 +97,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 			return ((InternalEList<?>) getFlowElements()).basicRemove(otherEnd, msgs);
 		case Bpmn2Package.CHOREOGRAPHY__LANE_SETS:
 			return ((InternalEList<?>) getLaneSets()).basicRemove(otherEnd, msgs);
-		case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-			return ((InternalEList<?>) getContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,8 +113,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 			return getFlowElements();
 		case Bpmn2Package.CHOREOGRAPHY__LANE_SETS:
 			return getLaneSets();
-		case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-			return getContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,10 +134,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 			getLaneSets().clear();
 			getLaneSets().addAll((Collection<? extends LaneSet>) newValue);
 			return;
-		case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-			getContexts().clear();
-			getContexts().addAll((Collection<? extends FlowElementContainerContext>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,9 +152,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 		case Bpmn2Package.CHOREOGRAPHY__LANE_SETS:
 			getLaneSets().clear();
 			return;
-		case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-			getContexts().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,8 +168,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 			return !getFlowElements().isEmpty();
 		case Bpmn2Package.CHOREOGRAPHY__LANE_SETS:
 			return !getLaneSets().isEmpty();
-		case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-			return !getContexts().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,8 +185,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS;
 			case Bpmn2Package.CHOREOGRAPHY__LANE_SETS:
 				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS;
-			case Bpmn2Package.CHOREOGRAPHY__CONTEXTS:
-				return Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS;
 			default:
 				return -1;
 			}
@@ -234,8 +205,6 @@ public class ChoreographyImpl extends CollaborationImpl implements Choreography 
 				return Bpmn2Package.CHOREOGRAPHY__FLOW_ELEMENTS;
 			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__LANE_SETS:
 				return Bpmn2Package.CHOREOGRAPHY__LANE_SETS;
-			case Bpmn2Package.FLOW_ELEMENTS_CONTAINER__CONTEXTS:
-				return Bpmn2Package.CHOREOGRAPHY__CONTEXTS;
 			default:
 				return -1;
 			}

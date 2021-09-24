@@ -161,7 +161,6 @@ public class ProcessItemProvider extends CallableElementItemProvider implements 
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__FLOW_ELEMENTS);
 			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS);
-			childrenFeatures.add(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS);
 			childrenFeatures.add(Bpmn2Package.Literals.PROCESS__AUDITING);
 			childrenFeatures.add(Bpmn2Package.Literals.PROCESS__MONITORING);
 			childrenFeatures.add(Bpmn2Package.Literals.PROCESS__PROPERTIES);
@@ -238,7 +237,6 @@ public class ProcessItemProvider extends CallableElementItemProvider implements 
 			return;
 		case Bpmn2Package.PROCESS__FLOW_ELEMENTS:
 		case Bpmn2Package.PROCESS__LANE_SETS:
-		case Bpmn2Package.PROCESS__CONTEXTS:
 		case Bpmn2Package.PROCESS__AUDITING:
 		case Bpmn2Package.PROCESS__MONITORING:
 		case Bpmn2Package.PROCESS__PROPERTIES:
@@ -355,9 +353,6 @@ public class ProcessItemProvider extends CallableElementItemProvider implements 
 
 		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__LANE_SETS,
 				Bpmn2Factory.eINSTANCE.createLaneSet()));
-
-		newChildDescriptors.add(createChildParameter(Bpmn2Package.Literals.FLOW_ELEMENTS_CONTAINER__CONTEXTS,
-				DynamicFactory.eINSTANCE.createFlowElementContainerContext()));
 
 		newChildDescriptors.add(
 				createChildParameter(Bpmn2Package.Literals.PROCESS__AUDITING, Bpmn2Factory.eINSTANCE.createAuditing()));

@@ -1781,7 +1781,7 @@
       </defaultLayer>
       <additionalLayers name="Debug"/>
       <additionalLayers name="Animation" activeByDefault="true">
-        <edgeMappings name="TokenToSourceFlow" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='Task_import']/@borderedNodeMappings[name='TaskToken'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']/@borderedNodeMappings[name='ParallelGatewayToken']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']" targetFinderExpression="aql:self.sourceSequenceFlow">
+        <edgeMappings name="TokenToSourceFlow" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subContainerMappings[name='Task_import']/@borderedNodeMappings[name='TaskToken'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']/@subContainerMappings[name='Lane_import']/@subNodeMappings[name='ParallelGateway_import']/@borderedNodeMappings[name='ParallelGatewayToken']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@edgeMappings[name='SequenceFlow']" targetFinderExpression="service:sourceSequenceFlow">
           <style lineStyle="dash" targetArrow="NoDecoration">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -1797,7 +1797,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ContextToLaneSet" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='FlowElementContainerContext_Node']" targetFinderExpression="[self.getRelatedContexts()/]">
+        <edgeMappings name="ContextToLaneSet" sourceMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet'] //@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='HorizontalLaneSet_import']" targetMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ProcessContext_Node']" targetFinderExpression="[self.getRelatedProcess()/]">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -1817,7 +1817,7 @@
               </borderedNodeMappings>
             </subNodeMappings>
             <subNodeMappings xsi:type="description_1:NodeMappingImport" name="StartEvent_import" semanticCandidatesExpression="aql:self.flowNodeRefs->filter(bpmn2::StartEvent)" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='StartEvent']">
-              <borderedNodeMappings name="StartEventToken" semanticCandidatesExpression="aql:self.tokens" domainClass="Token">
+              <borderedNodeMappings name="StartEventToken" semanticCandidatesExpression="aql:self.associatedTokens()" domainClass="Token">
                 <style xsi:type="style:BundledImageDescription" labelSize="12" labelExpression="aql:'token'" sizeComputationExpression="1" labelPosition="node" shape="dot">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1826,7 +1826,7 @@
               </borderedNodeMappings>
             </subNodeMappings>
             <subNodeMappings xsi:type="description_1:NodeMappingImport" name="EndEvent_import" semanticCandidatesExpression="aql:self.flowNodeRefs->filter(bpmn2::EndEvent)" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subNodeMappings[name='EndEvent']">
-              <borderedNodeMappings name="StartEventToken" semanticCandidatesExpression="aql:self.heldTokens" domainClass="Token">
+              <borderedNodeMappings name="StartEventToken" semanticCandidatesExpression="aql:self.associatedTokens()" domainClass="Token">
                 <style xsi:type="style:BundledImageDescription" labelSize="12" labelExpression="aql:'token'" sizeComputationExpression="1" labelPosition="node" shape="dot">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1838,7 +1838,7 @@
               <borderedNodeMappings semanticCandidatesExpression="feature:eAllContents"/>
             </subNodeMappings>
             <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="Task_import" semanticCandidatesExpression="aql:self.flowNodeRefs->filter(bpmn2::Task)" reusedBorderedNodeMappings="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='Task']/@borderedNodeMappings[name='TaskBorder']" importedMapping="//@ownedViewpoints[name='Process']/@ownedRepresentations[name='ProcessDiagram']/@defaultLayer/@containerMappings[name='HorizontalLaneSet']/@subContainerMappings[name='Lane']/@subContainerMappings[name='Task']">
-              <borderedNodeMappings name="TaskToken" semanticCandidatesExpression="aql:self.tokens" domainClass="Token">
+              <borderedNodeMappings name="TaskToken" semanticCandidatesExpression="service:associatedTokens" domainClass="Token">
                 <style xsi:type="style:BundledImageDescription" labelSize="12" labelExpression="aql:'token'" sizeComputationExpression="1" labelPosition="node" shape="dot">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1863,16 +1863,16 @@
             </subContainerMappings>
           </subContainerMappings>
         </containerMappings>
-        <containerMappings name="FlowElementContainerContext_Node" semanticCandidatesExpression="aql:self.laneSets->collect(ls |ls.eContainer(bpmn2::Process).contexts)" domainClass="FlowElementContainerContext" childrenPresentation="List">
-          <subNodeMappings name="NbPossibletokensNode" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens->size()" labelPosition="node" resizeKind="NSEW">
+        <containerMappings name="ProcessContext_Node" semanticCandidatesExpression="aql:self.laneSets->collect(ls |ls.eContainer(bpmn2::Process))" domainClass="Process" childrenPresentation="List">
+          <subNodeMappings name="NbPossibletokensNode" semanticCandidatesExpression="aql:self" domainClass="Process">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbTokens='+self.ownedTokens()->size()" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="NbStartNode" semanticCandidatesExpression="aql:self" domainClass="FlowElementContainerContext">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+self.startCounter" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
+          <subNodeMappings name="NbStartNode" semanticCandidatesExpression="aql:self" domainClass="Process">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'nbStarts='+self.startCounter()" sizeComputationExpression="10" labelPosition="node" width="15" height="3">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -1881,7 +1881,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.eContainer(bpmn2::Process).name+' context'">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.name+' context'">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

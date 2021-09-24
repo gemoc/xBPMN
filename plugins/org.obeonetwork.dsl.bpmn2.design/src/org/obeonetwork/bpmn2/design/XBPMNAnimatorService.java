@@ -18,13 +18,23 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.eclipse.xtext.EcoreUtil2;
+import org.obeonetwork.dsl.bpmn2.BaseElement;
+import org.obeonetwork.dsl.bpmn2.FlowElement;
+import org.obeonetwork.dsl.bpmn2.FlowElementsContainer;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.FlowElementAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.FlowElementsContainerAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect;
+import org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TokenAspect;
 import org.obeonetwork.dsl.bpmn2.Gateway;
 import org.obeonetwork.dsl.bpmn2.Lane;
 import org.obeonetwork.dsl.bpmn2.LaneSet;
 import org.obeonetwork.dsl.bpmn2.ParallelGateway;
 import org.obeonetwork.dsl.bpmn2.Process;
+import org.obeonetwork.dsl.bpmn2.SequenceFlow;
 import org.obeonetwork.dsl.bpmn2.Task;
-import org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext;
 import org.obeonetwork.dsl.bpmn2.dynamic.Token;
 
 import xbpmn.xdsml.api.impl.XBPMNRTDAccessor;
@@ -68,9 +78,9 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 	
 	public Integer nbPossibleTokens(EObject eo) {
 		int result = 1;
-		if(eo instanceof FlowElementContainerContext) {
-			FlowElementContainerContext fecc = (FlowElementContainerContext)eo;
-			List<ParallelGateway> gateways = EcoreUtil2.eAllOfType(fecc.eContainer(), ParallelGateway.class);
+		if(eo instanceof Process) {
+			Process p = (Process)eo;
+			List<ParallelGateway> gateways = EcoreUtil2.eAllOfType(p, ParallelGateway.class);
 			result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).mapToInt(gw -> gw.getOutgoing().size()-1).sum();
 			//gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).forEach(gw -> result += gw.getOutgoing().size() -1);
 			//result += gateways.stream().filter(gw -> gw.getOutgoing().size() > 1).count();
@@ -78,25 +88,58 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 		return result;
 	}
 	
+	public EList<Token> ownedTokens(EObject eo) {
+		EList<Token> result = new BasicEList<Token>();
+		if(eo instanceof Process) {
+			Process p = (Process)eo;
+			result.addAll(ProcessAspect.ownedTokens(p));
+		}
+		return result;
+	}
+	
+	public Integer startCounter(EObject eo) {
+//		if(eo instanceof BaseElement) {
+//			BaseElement p = (BaseElement)eo;
+//			return BaseElementAspect.startCounter(p);
+//		}
+		if(eo instanceof Gateway) {
+			Gateway p = (Gateway)eo;
+			return GatewayAspect.startCounter(p);
+		}
+		if(eo instanceof Task) {
+			Task p = (Task)eo;
+			return TaskAspect.startCounter(p);
+		}
+		if(eo instanceof Process) {
+			Process p = (Process)eo;
+			return ProcessAspect.startCounter(p);
+		}
+		return null;
+	}
+	
 	public EList<Token> associatedTokens(EObject eo) {
 		EList<Token> result = new BasicEList<Token>();
-		if(eo instanceof Gateway) {
-			Gateway gateway = (Gateway)eo;
-			result.addAll(gateway.getTokens());
+		if(eo instanceof FlowElement) {
+			FlowElement gateway = (FlowElement)eo;
+			result.addAll(FlowElementAspect.tokens(gateway));
+		}
+		return result;
+	}
+	
+	public EList<SequenceFlow> sourceSequenceFlow(EObject eo) {
+		EList<SequenceFlow> result = new BasicEList<SequenceFlow>();
+		if(eo instanceof Token) {
+			Token t = (Token)eo;
+			
+			result.add(t.getSourceSequenceFlow());
 		}
 		return result;
 	}
 	
 	
-	public EList<FlowElementContainerContext> getRelatedContexts(EObject eo) {
-
-		EList<FlowElementContainerContext> result = new BasicEList<FlowElementContainerContext>();
-		if (eo instanceof Lane) {
-			result.addAll(EcoreUtil2.getContainerOfType(eo, Process.class).getContexts());
-		} else if( eo instanceof LaneSet){
-			result.addAll(EcoreUtil2.getContainerOfType(eo, Process.class).getContexts());
-		}
-		return result;
+	// public EList<FlowElementContainerContext> getRelatedContexts(EObject eo) {
+	public Process getRelatedProcess(EObject eo) {
+		return EcoreUtil2.getContainerOfType(eo, Process.class);
 	}
 	
 }

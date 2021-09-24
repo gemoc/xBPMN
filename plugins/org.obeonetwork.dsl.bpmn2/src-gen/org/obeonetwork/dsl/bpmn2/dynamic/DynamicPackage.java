@@ -87,22 +87,13 @@ public interface DynamicPackage extends EPackage {
 	int TOKEN__SOURCE_SEQUENCE_FLOW = 0;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN__CONTEXT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN__ORIGIN = 2;
+	int TOKEN__ORIGIN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' reference.
@@ -111,7 +102,7 @@ public interface DynamicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN__POSITION = 3;
+	int TOKEN__POSITION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Token</em>' class.
@@ -120,44 +111,7 @@ public interface DynamicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN_FEATURE_COUNT = 4;
-
-	/**
-	 * The meta object id for the '{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl <em>Flow Element Container Context</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl#getFlowElementContainerContext()
-	 * @generated
-	 */
-	int FLOW_ELEMENT_CONTAINER_CONTEXT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Owned Tokens</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Start Counter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER = 1;
-
-	/**
-	 * The number of structural features of the '<em>Flow Element Container Context</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW_ELEMENT_CONTAINER_CONTEXT_FEATURE_COUNT = 2;
+	int TOKEN_FEATURE_COUNT = 3;
 
 	/**
 	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token <em>Token</em>}'.
@@ -181,17 +135,6 @@ public interface DynamicPackage extends EPackage {
 	EReference getToken_SourceSequenceFlow();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext <em>Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Context</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.Token#getContext()
-	 * @see #getToken()
-	 * @generated
-	 */
-	EReference getToken_Context();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.obeonetwork.dsl.bpmn2.dynamic.Token#getOrigin <em>Origin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,38 +155,6 @@ public interface DynamicPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getToken_Position();
-
-	/**
-	 * Returns the meta object for class '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext <em>Flow Element Container Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Flow Element Container Context</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext
-	 * @generated
-	 */
-	EClass getFlowElementContainerContext();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens <em>Owned Tokens</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Tokens</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getOwnedTokens()
-	 * @see #getFlowElementContainerContext()
-	 * @generated
-	 */
-	EReference getFlowElementContainerContext_OwnedTokens();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter <em>Start Counter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start Counter</em>'.
-	 * @see org.obeonetwork.dsl.bpmn2.dynamic.FlowElementContainerContext#getStartCounter()
-	 * @see #getFlowElementContainerContext()
-	 * @generated
-	 */
-	EAttribute getFlowElementContainerContext_StartCounter();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -284,13 +195,6 @@ public interface DynamicPackage extends EPackage {
 		 */
 		EReference TOKEN__SOURCE_SEQUENCE_FLOW = eINSTANCE.getToken_SourceSequenceFlow();
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TOKEN__CONTEXT = eINSTANCE.getToken_Context();
-		/**
 		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -304,31 +208,6 @@ public interface DynamicPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TOKEN__POSITION = eINSTANCE.getToken_Position();
-		/**
-		 * The meta object literal for the '{@link org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl <em>Flow Element Container Context</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.FlowElementContainerContextImpl
-		 * @see org.obeonetwork.dsl.bpmn2.dynamic.impl.DynamicPackageImpl#getFlowElementContainerContext()
-		 * @generated
-		 */
-		EClass FLOW_ELEMENT_CONTAINER_CONTEXT = eINSTANCE.getFlowElementContainerContext();
-		/**
-		 * The meta object literal for the '<em><b>Owned Tokens</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FLOW_ELEMENT_CONTAINER_CONTEXT__OWNED_TOKENS = eINSTANCE
-				.getFlowElementContainerContext_OwnedTokens();
-		/**
-		 * The meta object literal for the '<em><b>Start Counter</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLOW_ELEMENT_CONTAINER_CONTEXT__START_COUNTER = eINSTANCE
-				.getFlowElementContainerContext_StartCounter();
 
 	}
 

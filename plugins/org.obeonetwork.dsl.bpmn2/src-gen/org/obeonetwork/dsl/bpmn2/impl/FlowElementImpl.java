@@ -40,7 +40,6 @@ import org.obeonetwork.dsl.bpmn2.dynamic.Token;
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl#getAuditing <em>Auditing</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl#getMonitoring <em>Monitoring</em>}</li>
  *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl#getCategoryValueRef <em>Category Value Ref</em>}</li>
- *   <li>{@link org.obeonetwork.dsl.bpmn2.impl.FlowElementImpl#getTokens <em>Tokens</em>}</li>
  * </ul>
  *
  * @generated
@@ -178,24 +177,10 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Token> getTokens() {
-		return (EList<Token>) eDynamicGet(Bpmn2Package.FLOW_ELEMENT__TOKENS, Bpmn2Package.Literals.FLOW_ELEMENT__TOKENS,
-				true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCategoryValueRef()).basicAdd(otherEnd, msgs);
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTokens()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -214,8 +199,6 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 			return basicSetMonitoring(null, msgs);
 		case Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF:
 			return ((InternalEList<?>) getCategoryValueRef()).basicRemove(otherEnd, msgs);
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			return ((InternalEList<?>) getTokens()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -236,8 +219,6 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 			return getMonitoring();
 		case Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF:
 			return getCategoryValueRef();
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			return getTokens();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,10 +245,6 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 			getCategoryValueRef().clear();
 			getCategoryValueRef().addAll((Collection<? extends CategoryValue>) newValue);
 			return;
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			getTokens().clear();
-			getTokens().addAll((Collection<? extends Token>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -292,9 +269,6 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 		case Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF:
 			getCategoryValueRef().clear();
 			return;
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			getTokens().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -315,8 +289,6 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 			return getMonitoring() != null;
 		case Bpmn2Package.FLOW_ELEMENT__CATEGORY_VALUE_REF:
 			return !getCategoryValueRef().isEmpty();
-		case Bpmn2Package.FLOW_ELEMENT__TOKENS:
-			return !getTokens().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

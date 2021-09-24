@@ -284,10 +284,6 @@
         upperBound="-1" eType="#//FlowElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="laneSets" ordered="false"
         upperBound="-1" eType="#//LaneSet" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
-        eType="#//dynamic/FlowElementContainerContext" containment="true">
-      <eAnnotations source="aspect"/>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -298,10 +294,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="categoryValueRef" ordered="false"
         upperBound="-1" eType="#//CategoryValue" transient="true" resolveProxies="false"
         eOpposite="#//CategoryValue/categorizedFlowElements"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tokens" upperBound="-1"
-        eType="#//dynamic/Token" eOpposite="#//dynamic/Token/position">
-      <eAnnotations source="aspect"/>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CategoryValue" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -986,18 +978,15 @@
   <eSubpackages name="dynamic" nsURI="http://gemoc.org/xbpmn/dynamic" nsPrefix="dynamic">
     <eClassifiers xsi:type="ecore:EClass" name="Token">
       <eAnnotations source="aspect"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSequenceFlow" eType="#//SequenceFlow"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//dynamic/FlowElementContainerContext"
-          eOpposite="#//dynamic/FlowElementContainerContext/ownedTokens"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="origin" eType="#//FlowElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//FlowElement"
-          eOpposite="#//FlowElement/tokens"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="FlowElementContainerContext">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTokens" upperBound="-1"
-          eType="#//dynamic/Token" containment="true" eOpposite="#//dynamic/Token/context"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="startCounter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSequenceFlow" eType="#//SequenceFlow">
+        <eAnnotations source="aspect"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="origin" eType="#//FlowElement">
+        <eAnnotations source="aspect"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//FlowElement">
+        <eAnnotations source="aspect"/>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

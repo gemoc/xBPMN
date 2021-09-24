@@ -15,6 +15,30 @@ public class XBPMNRTDAccessor {
 	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted", newValue);
 	}
+	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter");
+	}
+	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Integer newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter", newValue);
+	}
+	public static java.util.List getOwnedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		return (java.util.List)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+	}
+	public static boolean setOwnedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", newValue);
+	}
+	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Gateway eObject) {
+		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect", "startCounter");
+	}
+	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Gateway eObject, java.lang.Integer newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect", "startCounter", newValue);
+	}
+	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Task eObject) {
+		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "startCounter");
+	}
+	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Task eObject, java.lang.Integer newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "startCounter", newValue);
+	}
 	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Task eObject) {
 		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "isStarted");
 	}
@@ -76,15 +100,16 @@ public class XBPMNRTDAccessor {
 		if (aspect == null) {
 			return false;
 		}
+		final Class<?> targetClass = ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className();
 			 try {
-				 aspect.getMethod(propertyName, ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className(), newValue.getClass()).invoke(eObject, eObject, newValue);
+				 aspect.getMethod(propertyName, targetClass, newValue.getClass()).invoke(eObject, eObject, newValue);
 				return true;
 				} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 					Method m = null;
-					for(Class<?> c : ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).getClass().getInterfaces()) {
+					for(Class<?> c : newValue.getClass().getInterfaces()) {
 						
 						try {
-							aspect.getMethod(propertyName, c, newValue.getClass()).invoke(eObject, eObject, newValue);
+							aspect.getMethod(propertyName, targetClass, c).invoke(eObject, eObject, newValue);
 							return true;
 						} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
 						}

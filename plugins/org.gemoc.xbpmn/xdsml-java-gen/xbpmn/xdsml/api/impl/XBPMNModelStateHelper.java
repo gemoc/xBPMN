@@ -3,9 +3,15 @@
 package xbpmn.xdsml.api.impl;
 import java.io.Serializable;
 import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Map;import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.ElementState;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.K3ModelState;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.K3ModelStateFactory;
@@ -39,51 +45,79 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 				return false;
 			}
 			return true;
-		}	}
-		K3ModelStateFactory theFactory = K3ModelStateFactory.eINSTANCE; 
+		}
+
+	}
+	K3ModelStateFactory theFactory = K3ModelStateFactory.eINSTANCE; 
 	public K3ModelState getK3ModelState(EObject model) {
 		K3ModelState res = theFactory.createK3ModelState();
 
-		TreeIterator<EObject> allContentIt = model.eAllContents();
-		while (allContentIt.hasNext()) {
-			EObject elem = allContentIt.next();
+				// consider indirectly referenced models (ugly and probably not efficient)
+		ArrayList<EObject> allElements = new ArrayList<EObject>();
+		model.eAllContents().forEachRemaining(x -> allElements.add(x));
+		Map<EObject, Collection<Setting>> f = EcoreUtil.CrossReferencer.find(allElements);
+		HashSet<Resource> consideredResources = new HashSet<Resource>();
+		consideredResources.add(model.eResource());
+		f.keySet().forEach(eo -> consideredResources.add(eo.eResource()));
+		
+		for(Resource resource : consideredResources) {
+			TreeIterator<EObject> allContentIt = resource.getAllContents();
+			while (allContentIt.hasNext()) {
+				EObject elem = allContentIt.next();
 
-			Class<?> clazz =null;
-			clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.class);
-			if (clazz.isInstance(elem)) {
-				ElementState elemState = theFactory.createElementState();
-				elemState.setModelElement(elem);
-				res.getOwnedElementstates().add(elemState);
-				AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Task)elem));
-				elemState.getSavedRTDs().add(n2v0);
-			}
-			clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.class);
-			if (clazz.isInstance(elem)) {
-				ElementState elemState = theFactory.createElementState();
-				elemState.setModelElement(elem);
-				res.getOwnedElementstates().add(elemState);
-				AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Process)elem));
-				elemState.getSavedRTDs().add(n2v0);
-			}
-			clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.class);
-			if (clazz.isInstance(elem)) {
-				ElementState elemState = theFactory.createElementState();
-				elemState.setModelElement(elem);
-				res.getOwnedElementstates().add(elemState);
-				AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Lane)elem));
-				elemState.getSavedRTDs().add(n2v0);
+				Class<?> clazz =null;
+				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect.class);
+				if (clazz.isInstance(elem)) {
+					ElementState elemState = theFactory.createElementState();
+					elemState.setModelElement(elem);
+					res.getOwnedElementstates().add(elemState);
+					AttributeNameToValue n2v0 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Gateway)elem));
+					elemState.getSavedRTDs().add(n2v0);
+				}
+				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.class);
+				if (clazz.isInstance(elem)) {
+					ElementState elemState = theFactory.createElementState();
+					elemState.setModelElement(elem);
+					res.getOwnedElementstates().add(elemState);
+					AttributeNameToValue n2v0 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Task)elem));
+					elemState.getSavedRTDs().add(n2v0);
+					AttributeNameToValue n2v1 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Task)elem));
+					elemState.getSavedRTDs().add(n2v1);
+				}
+				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.class);
+				if (clazz.isInstance(elem)) {
+					ElementState elemState = theFactory.createElementState();
+					elemState.setModelElement(elem);
+					res.getOwnedElementstates().add(elemState);
+					AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Process)elem));
+					elemState.getSavedRTDs().add(n2v0);
+					AttributeNameToValue n2v1 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Process)elem));
+					elemState.getSavedRTDs().add(n2v1);
+					AttributeNameToValue n2v2 = new AttributeNameToValue("ownedTokens", XBPMNRTDAccessor.getOwnedTokens((org.obeonetwork.dsl.bpmn2.Process)elem));
+					elemState.getSavedRTDs().add(n2v2);
+				}
+				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.class);
+				if (clazz.isInstance(elem)) {
+					ElementState elemState = theFactory.createElementState();
+					elemState.setModelElement(elem);
+					res.getOwnedElementstates().add(elemState);
+					AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Lane)elem));
+					elemState.getSavedRTDs().add(n2v0);
+				}
 			}
 		}
 		return res;
-		}
+	}
+
 
 	public void restoreModelState(K3ModelState state) {
 		for(ElementState elemState : state.getOwnedElementstates()) {
 			for(Object o : elemState.getSavedRTDs()) {
 				AttributeNameToValue n2v = (AttributeNameToValue)o;
+				String n2vOpName = n2v.name.substring(0,1).toUpperCase() + n2v.name.substring(1);
 				try {
 					if (n2v.value != null) {
-						Method m = XBPMNRTDAccessor.class.getMethod("set"+n2v.name, EObject.class, n2v.value.getClass());
+						Method m = XBPMNRTDAccessor.class.getMethod("set"+n2vOpName, elemState.getModelElement().getClass().getInterfaces()[0], n2v.value.getClass());
 						m.invoke(null, elemState.getModelElement(), n2v.value);
 					}
 				} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
@@ -91,12 +125,12 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 					for(Class<?> c : n2v.value.getClass().getInterfaces()) {
 						
 						try {
-							m = XBPMNRTDAccessor.class.getMethod("set"+n2v.name, EObject.class, n2v.value.getClass().getInterfaces()[0]);
+							m = XBPMNRTDAccessor.class.getMethod("set"+n2vOpName, elemState.getModelElement().getClass().getInterfaces()[0], c);
 							m.invoke(null, elemState.getModelElement(), n2v.value);
 						} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
 						}
 						if (m == null) {
-							throw new RuntimeException("not method found for "+n2v.value.getClass().getName()+"::set"+n2v.name);
+							throw new RuntimeException("not method found for "+n2v.value.getClass().getName()+"::set"+n2vOpName);
 						}
 					}
 				}

@@ -70,8 +70,6 @@ public class DynamicFactoryImpl extends EFactoryImpl implements DynamicFactory {
 		switch (eClass.getClassifierID()) {
 		case DynamicPackage.TOKEN:
 			return (EObject) createToken();
-		case DynamicPackage.FLOW_ELEMENT_CONTAINER_CONTEXT:
-			return (EObject) createFlowElementContainerContext();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -85,16 +83,6 @@ public class DynamicFactoryImpl extends EFactoryImpl implements DynamicFactory {
 	public Token createToken() {
 		TokenImpl token = new TokenImpl();
 		return token;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FlowElementContainerContext createFlowElementContainerContext() {
-		FlowElementContainerContextImpl flowElementContainerContext = new FlowElementContainerContextImpl();
-		return flowElementContainerContext;
 	}
 
 	/**
