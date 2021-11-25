@@ -58,19 +58,19 @@ public class XBPMNAnimatorService extends AbstractGemocAnimatorServices {
 		if (eo instanceof Lane) {
 			Lane lane = (Lane)eo;
 			// Lane is started if container Process is started
-			res = XBPMNRTDAccessor.getIsStarted(EcoreUtil2.getContainerOfType(lane, Process.class));
+			res = XBPMNRTDAccessor.getisStarted(EcoreUtil2.getContainerOfType(lane, Process.class));
 			//System.out.println("isStarted Lane: "+lane.getName()+" "+res );
 			return res;
 		} else if (eo instanceof Process) {
 			Process process =  (Process)eo;
-			res = XBPMNRTDAccessor.getIsStarted(process);
+			res = XBPMNRTDAccessor.getisStarted(process);
 			//System.out.println("isStarted Process: "+process.getName()+" "+res );
 			return res;
-		} else if (eo instanceof Task) {
-			Task task =  (Task)eo;
-			res = XBPMNRTDAccessor.getIsStarted(task);
-			//System.out.println("isStarted Task: "+task.getName()+" "+res );
-			return res;
+//		} else if (eo instanceof Task) {
+//			Task task =  (Task)eo;
+//			res = XBPMNRTDAccessor.getisStarted(task);
+//			//System.out.println("isStarted Task: "+task.getName()+" "+res );
+//			return res;
 		} else {
 			return false;
 		}
