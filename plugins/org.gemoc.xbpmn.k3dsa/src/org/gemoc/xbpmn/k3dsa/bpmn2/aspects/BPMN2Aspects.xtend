@@ -752,7 +752,6 @@ class TaskAspect extends ActivityAspect {
 	
 	def void startEval() {
 		println("startEval Task "+_self.name)
-		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
 		_self.isStarted = true
 		
 	 	// increment local startCounter for the Task
@@ -762,23 +761,19 @@ class TaskAspect extends ActivityAspect {
 	def void endEval() {
 		println("endEval Task "+_self.name)
 		_self.isStarted = false
-		println('''     «_self.getContainerOfType(Process).contextInfo»''')
+		// println('''     «_self.getContainerOfType(Process).contextInfo»''')
 		switch _self.outgoing.size {
 			case 0: { _self.tokens.clear 
-				// TODO
 			}
 			case 1: { if(_self.tokens.size == 1){
-				
-					//_self.tokens.get(0).moveToken(_self.outgoing.get(0),_self)
 					_self.tokens.get(0).sourceSequenceFlow = _self.outgoing.get(0)
 				} else {
 					throw new RuntimeException("error, cannot moveToken to outgoing SequenceFlow for " +_self + " " + _self.name+ ". too many token on Task")
 				}
 			}
 			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
-//			todo changer le responsable du déplacemnt des token -> sequencflow uniquement !!!
 		}
-		println('''     «_self.getContainerOfType(Process).contextInfo»''')
+		// println('''     «_self.getContainerOfType(Process).contextInfo»''')
 	}
 }
 
@@ -799,7 +794,6 @@ abstract class GatewayAspect extends FlowNodeAspect {
 	public Integer startCounter = 0
 	def void startEval() {
 		println("startEval Gateway "+_self.name)
-		// TODO deal with StartEvent having an origin (ie. !_self.origin.empty)
 		println('''     «_self.getContainerOfType(Process).contextInfo»''')
 		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
 		val process = _self.getContainerOfType(Process) 
@@ -814,6 +808,7 @@ abstract class GatewayAspect extends FlowNodeAspect {
 			process.ownedTokens.remove(t)
 			process.eResource.contents.remove(t)
 		]
+		// recreate tokens for all outgoing
 		_self.outgoing.forEach[sequenceFlow |
 			 val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
 			 token.origin = _self
@@ -822,11 +817,9 @@ abstract class GatewayAspect extends FlowNodeAspect {
 			 sequenceFlow.sourceRef.tokens.add(token)
 			 process.ownedTokens.add(token)
 			 process.eResource.contents.add(token)
-			 // increment local startCounter for the GateWay
-			 _self.startCounter = _self.startCounter +1
 		]
-		
-		
+		// increment local startCounter for the GateWay
+		_self.startCounter = _self.startCounter +1
 		// make sure to update RTD
 		process.ownedTokens = new ArrayList<Token>(process.ownedTokens)
 		

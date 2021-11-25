@@ -3,7 +3,6 @@
 package xbpmn.xdsml.api.impl;
 import java.io.Serializable;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;import java.lang.reflect.InvocationTargetException;
@@ -15,7 +14,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.ElementState;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.K3ModelState;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.rtd.modelstate.k3ModelState.K3ModelStateFactory;
-import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.dsa.helper.IK3ModelStateHelper;import org.eclipse.gemoc.executionframework.engine.commons.K3DslHelper;
+import org.eclipse.gemoc.execution.concurrent.ccsljavaengine.extensions.k3.dsa.helper.IK3ModelStateHelper;import org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.utils.Copier;import org.eclipse.gemoc.executionframework.engine.commons.K3DslHelper;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class XBPMNModelStateHelper implements IK3ModelStateHelper{
@@ -45,14 +47,21 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 				return false;
 			}
 			return true;
-		}
+		}	}
+		K3ModelStateFactory theFactory = K3ModelStateFactory.eINSTANCE; 
 
+	public K3ModelState getK3StateSpaceModelState(EObject model) {
+		return getK3ModelState(model, false);
 	}
-	K3ModelStateFactory theFactory = K3ModelStateFactory.eINSTANCE; 
+	
 	public K3ModelState getK3ModelState(EObject model) {
+		return getK3ModelState(model, true);
+	}
+		
+	public K3ModelState getK3ModelState(EObject model, boolean allRTDs) {
 		K3ModelState res = theFactory.createK3ModelState();
 
-				// consider indirectly referenced models (ugly and probably not efficient)
+		// consider indirectly referenced models (ugly and probably not efficient)
 		ArrayList<EObject> allElements = new ArrayList<EObject>();
 		model.eAllContents().forEachRemaining(x -> allElements.add(x));
 		Map<EObject, Collection<Setting>> f = EcoreUtil.CrossReferencer.find(allElements);
@@ -66,43 +75,24 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 				EObject elem = allContentIt.next();
 
 				Class<?> clazz =null;
-				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect.class);
-				if (clazz.isInstance(elem)) {
-					ElementState elemState = theFactory.createElementState();
-					elemState.setModelElement(elem);
-					res.getOwnedElementstates().add(elemState);
-					AttributeNameToValue n2v0 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Gateway)elem));
-					elemState.getSavedRTDs().add(n2v0);
-				}
-				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect.class);
-				if (clazz.isInstance(elem)) {
-					ElementState elemState = theFactory.createElementState();
-					elemState.setModelElement(elem);
-					res.getOwnedElementstates().add(elemState);
-					AttributeNameToValue n2v0 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Task)elem));
-					elemState.getSavedRTDs().add(n2v0);
-					AttributeNameToValue n2v1 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Task)elem));
-					elemState.getSavedRTDs().add(n2v1);
-				}
 				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect.class);
 				if (clazz.isInstance(elem)) {
 					ElementState elemState = theFactory.createElementState();
 					elemState.setModelElement(elem);
 					res.getOwnedElementstates().add(elemState);
-					AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Process)elem));
+					Object propertyValue = null;
+					// Annotation CONTAINER
+					propertyValue = XBPMNRTDAccessor.saveProperty_isStarted((org.obeonetwork.dsl.bpmn2.Process)elem);
+					AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", propertyValue);
 					elemState.getSavedRTDs().add(n2v0);
-					AttributeNameToValue n2v1 = new AttributeNameToValue("startCounter", XBPMNRTDAccessor.getStartCounter((org.obeonetwork.dsl.bpmn2.Process)elem));
+					// Annotation CONTAINER
+					propertyValue = XBPMNRTDAccessor.saveProperty_startCounter((org.obeonetwork.dsl.bpmn2.Process)elem);
+					AttributeNameToValue n2v1 = new AttributeNameToValue("startCounter", propertyValue);
 					elemState.getSavedRTDs().add(n2v1);
-					AttributeNameToValue n2v2 = new AttributeNameToValue("ownedTokens", XBPMNRTDAccessor.getOwnedTokens((org.obeonetwork.dsl.bpmn2.Process)elem));
+					// Annotation CONTAINER
+					propertyValue = XBPMNRTDAccessor.saveProperty_ownedTokens((org.obeonetwork.dsl.bpmn2.Process)elem);
+					AttributeNameToValue n2v2 = new AttributeNameToValue("ownedTokens", propertyValue);
 					elemState.getSavedRTDs().add(n2v2);
-				}
-				clazz = K3DslHelper.getTarget(org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect.class);
-				if (clazz.isInstance(elem)) {
-					ElementState elemState = theFactory.createElementState();
-					elemState.setModelElement(elem);
-					res.getOwnedElementstates().add(elemState);
-					AttributeNameToValue n2v0 = new AttributeNameToValue("isStarted", XBPMNRTDAccessor.getIsStarted((org.obeonetwork.dsl.bpmn2.Lane)elem));
-					elemState.getSavedRTDs().add(n2v0);
 				}
 			}
 		}
@@ -114,28 +104,54 @@ public class XBPMNModelStateHelper implements IK3ModelStateHelper{
 		for(ElementState elemState : state.getOwnedElementstates()) {
 			for(Object o : elemState.getSavedRTDs()) {
 				AttributeNameToValue n2v = (AttributeNameToValue)o;
-				String n2vOpName = n2v.name.substring(0,1).toUpperCase() + n2v.name.substring(1);
+				Method setter = null;
+				setter = getRestorePropertySetter(elemState.getModelElement().getClass(), n2v);
 				try {
-					if (n2v.value != null) {
-						Method m = XBPMNRTDAccessor.class.getMethod("set"+n2vOpName, elemState.getModelElement().getClass().getInterfaces()[0], n2v.value.getClass());
-						m.invoke(null, elemState.getModelElement(), n2v.value);
-					}
-				} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					Method m = null;
-					for(Class<?> c : n2v.value.getClass().getInterfaces()) {
-						
-						try {
-							m = XBPMNRTDAccessor.class.getMethod("set"+n2vOpName, elemState.getModelElement().getClass().getInterfaces()[0], c);
-							m.invoke(null, elemState.getModelElement(), n2v.value);
-						} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
-						}
-						if (m == null) {
-							throw new RuntimeException("not method found for "+n2v.value.getClass().getName()+"::set"+n2vOpName);
-						}
-					}
+					setter.invoke(null, elemState.getModelElement(), n2v.value);
+				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					e.printStackTrace();
 				}
+				
 			}
 		}
 	}
 
+
+	private Method getRestorePropertySetter(Class<?> targetClass, AttributeNameToValue n2v) {
+		Method setter = null;
+		try {
+			for(Method m2 : XBPMNRTDAccessor.class.getMethods()) {
+				if(m2.getName().equals("restoreProperty_"+n2v.name) && m2.getParameterTypes().length == 2) {
+					if(m2.getParameterTypes()[0].isAssignableFrom(targetClass) &&
+							(n2v.value == null || m2.getParameterTypes()[1].isAssignableFrom(n2v.value.getClass()))	) {
+						setter = m2;
+						break;
+					}
+				}
+			}
+			if (setter == null) {
+				throw new RuntimeException("no method found for restoreProperty_"+n2v.name+"("+targetClass+", "+n2v.value.getClass().getName()+")");
+			}
+			return setter;
+		} catch (SecurityException | IllegalArgumentException e) {
+			throw new RuntimeException("no method found for set"+n2v.name+"("+targetClass+", "+n2v.value.getClass().getName()+")");
+		}
+	}
+	
+	public static List<Class> getSuperClasses(Class c) {
+		List<Class> r = new ArrayList<>();
+		List<Class> q = new ArrayList<>();
+		q.add(c);
+		while (!q.isEmpty()) {
+			c = q.remove(0);
+			r.add(c);
+			if (c.getSuperclass() != null) {
+				q.add(c.getSuperclass());
+			}
+			for (Class i : c.getInterfaces()) {
+				q.add(i);
+			}
+		}
+		return r;
+	}
 };

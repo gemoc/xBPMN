@@ -5,51 +5,61 @@ import org.eclipse.emf.ecore.EObject;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.lang.reflect.Method;
+import org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.utils.Copier;
 import org.eclipse.gemoc.executionframework.engine.commons.K3DslHelper;
 
 
 public class XBPMNRTDAccessor {
-	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject) {
-		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted");
-	}
-	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
+  public static java.lang.Boolean getisStarted(org.obeonetwork.dsl.bpmn2.Process eObject) {
+     java.lang.Boolean theProperty = (java.lang.Boolean)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted");
+		return theProperty;
+}
+  public static java.lang.Boolean saveProperty_isStarted(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		java.lang.Boolean propertyValue = (java.lang.Boolean)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted");
+		propertyValue = propertyValue == null ? null : (java.lang.Boolean)Copier.clone(propertyValue);
+		return propertyValue;
+}
+	public static boolean setisStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted", newValue);
 	}
-	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Process eObject) {
-		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter");
+	public static boolean restoreProperty_isStarted(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Boolean newValue) {
+		java.lang.Boolean propertyValue = newValue;
+		propertyValue = propertyValue == null ? null : (java.lang.Boolean)Copier.clone(propertyValue);
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "isStarted", propertyValue);
 	}
-	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Integer newValue) {
+  public static java.lang.Integer getstartCounter(org.obeonetwork.dsl.bpmn2.Process eObject) {
+     java.lang.Integer theProperty = (java.lang.Integer)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter");
+		return theProperty;
+}
+  public static java.lang.Integer saveProperty_startCounter(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		java.lang.Integer propertyValue = (java.lang.Integer)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter");
+		propertyValue = propertyValue == null ? null : (java.lang.Integer)Copier.clone(propertyValue);
+		return propertyValue;
+}
+	public static boolean setstartCounter(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Integer newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter", newValue);
 	}
-	public static java.util.List getOwnedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
-		return (java.util.List)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+	public static boolean restoreProperty_startCounter(org.obeonetwork.dsl.bpmn2.Process eObject, java.lang.Integer newValue) {
+		java.lang.Integer propertyValue = newValue;
+		propertyValue = propertyValue == null ? null : (java.lang.Integer)Copier.clone(propertyValue);
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter", propertyValue);
 	}
-	public static boolean setOwnedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
+  public static java.util.List getownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
+     java.util.List theProperty = (java.util.List)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+		return theProperty;
+}
+  public static java.util.List saveProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		java.util.List propertyValue = (java.util.List)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+		propertyValue = propertyValue == null ? null : (java.util.List)Copier.clone(propertyValue);
+		return propertyValue;
+}
+	public static boolean setownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", newValue);
 	}
-	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Gateway eObject) {
-		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect", "startCounter");
-	}
-	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Gateway eObject, java.lang.Integer newValue) {
-		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.GatewayAspect", "startCounter", newValue);
-	}
-	public static java.lang.Integer getStartCounter(org.obeonetwork.dsl.bpmn2.Task eObject) {
-		return (java.lang.Integer)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "startCounter");
-	}
-	public static boolean setStartCounter(org.obeonetwork.dsl.bpmn2.Task eObject, java.lang.Integer newValue) {
-		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "startCounter", newValue);
-	}
-	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Task eObject) {
-		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "isStarted");
-	}
-	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Task eObject, java.lang.Boolean newValue) {
-		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.TaskAspect", "isStarted", newValue);
-	}
-	public static java.lang.Boolean getIsStarted(org.obeonetwork.dsl.bpmn2.Lane eObject) {
-		return (java.lang.Boolean)  getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect", "isStarted");
-	}
-	public static boolean setIsStarted(org.obeonetwork.dsl.bpmn2.Lane eObject, java.lang.Boolean newValue) {
-		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.LaneAspect", "isStarted", newValue);
+	public static boolean restoreProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
+		java.util.List propertyValue = newValue;
+		propertyValue = propertyValue == null ? null : (java.util.List)Copier.clone(propertyValue);
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", propertyValue);
 	}
 
 	public static Object getAspectProperty(EObject eObject, String languageName, String aspectName, String propertyName) {
@@ -70,11 +80,7 @@ public class XBPMNRTDAccessor {
 		Object res = null;
 		 try {
 			res = aspect.getDeclaredMethod(propertyName, ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className()).invoke(eObject, eObject);
-			if (res != null) {
-				return res;
-			}else {
-				return null;
-			}
+			return res;
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {
 			e.printStackTrace();
@@ -84,7 +90,7 @@ public class XBPMNRTDAccessor {
 	}
 	
 	
-	public static boolean setAspectProperty(EObject eObject, String languageName, String aspectName, String propertyName, Object newValue) {
+public static boolean setAspectProperty(EObject eObject, String languageName, String aspectName, String propertyName, Object newValue) {
 		List<Class<?>> aspects = K3DslHelper.getAspectsOn(languageName, eObject.getClass());
 		Class<?> aspect = null;
 		for (Class<?> a : aspects) {
@@ -100,24 +106,52 @@ public class XBPMNRTDAccessor {
 		if (aspect == null) {
 			return false;
 		}
-		final Class<?> targetClass = ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className();
-			 try {
-				 aspect.getMethod(propertyName, targetClass, newValue.getClass()).invoke(eObject, eObject, newValue);
-				return true;
-				} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-					Method m = null;
-					for(Class<?> c : newValue.getClass().getInterfaces()) {
-						
-						try {
-							aspect.getMethod(propertyName, targetClass, c).invoke(eObject, eObject, newValue);
-							return true;
-						} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
-						}
-						if (m == null) {
-							throw new RuntimeException("not method found for "+((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className()+"::set"+propertyName);
-						}
+		 Method m = getSetter(propertyName,newValue,aspect);
+		 try {
+			m.invoke(eObject, eObject, newValue);
+			return true;
+		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+		}			
+		return false;
+}
+	
+	private static Method getSetter(String propertyName, Object value, Class<?> aspect) {
+		Method setter = null;
+		try {
+			if(value != null) {
+				setter = aspect.getMethod(propertyName, ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).className(), value.getClass());
+			}else {
+				for (Method m : aspect.getMethods()) {
+					if (m.getName().compareTo(propertyName) ==0 && m.getParameterCount() == 2) {
+						setter= m;
+						return setter;
 					}
 				}
-			return false;
-	}
-};
+				throw new NoSuchMethodException();
+			}
+			return setter;
+		} catch (NoSuchMethodException | SecurityException | IllegalArgumentException e) {
+			
+				for(Class<?> c : ((fr.inria.diverse.k3.al.annotationprocessor.Aspect)aspect.getAnnotations()[0]).getClass().getInterfaces()) {
+					try {
+						if(value != null) {
+							setter = aspect.getMethod(propertyName, c, value.getClass());
+							return setter;
+						}
+					} catch (NoSuchMethodException | SecurityException | IllegalArgumentException e1) {
+					}
+					for (Method m : aspect.getMethods()) {
+						if (m.getName().compareTo(propertyName) ==0 && m.getParameterCount() == 2) {
+							setter= m;
+							return setter;
+						}
+					}
+					
+				}
+				if (setter == null) {
+					throw new RuntimeException("no method found for "+value.getClass().getName()+"::set"+propertyName);
+				}
+			}
+		return setter;
+	}};
