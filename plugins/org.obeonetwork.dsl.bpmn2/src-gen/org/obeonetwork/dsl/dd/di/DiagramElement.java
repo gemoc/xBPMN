@@ -14,7 +14,6 @@
  */
 package org.obeonetwork.dsl.dd.di;
 
-import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -36,10 +35,9 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.obeonetwork.dsl.dd.di.DiPackage#getDiagramElement()
  * @model abstract="true"
- * @extends CDOObject
  * @generated
  */
-public interface DiagramElement extends CDOObject {
+public interface DiagramElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Owning Diagram</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.obeonetwork.dsl.dd.di.Diagram#getRootElement <em>Root Element</em>}'.

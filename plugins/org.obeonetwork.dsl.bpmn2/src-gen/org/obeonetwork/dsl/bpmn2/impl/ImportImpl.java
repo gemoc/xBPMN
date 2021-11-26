@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.bpmn2.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Import;
 
@@ -34,7 +34,7 @@ import org.obeonetwork.dsl.bpmn2.Import;
  *
  * @generated
  */
-public class ImportImpl extends BPMN2ObjectImpl implements Import {
+public class ImportImpl extends MinimalEObjectImpl.Container implements Import {
 	/**
 	 * The default value of the '{@link #getImportType() <em>Import Type</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

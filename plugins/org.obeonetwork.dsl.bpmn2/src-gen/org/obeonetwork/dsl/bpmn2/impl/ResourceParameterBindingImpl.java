@@ -17,7 +17,7 @@ package org.obeonetwork.dsl.bpmn2.impl;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Expression;
 import org.obeonetwork.dsl.bpmn2.ResourceParameter;
@@ -37,7 +37,7 @@ import org.obeonetwork.dsl.bpmn2.ResourceParameterBinding;
  *
  * @generated
  */
-public class ResourceParameterBindingImpl extends BPMN2ObjectImpl implements ResourceParameterBinding {
+public class ResourceParameterBindingImpl extends MinimalEObjectImpl.Container implements ResourceParameterBinding {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

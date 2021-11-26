@@ -17,7 +17,7 @@ package org.obeonetwork.dsl.bpmn2.impl;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Extension;
 import org.obeonetwork.dsl.bpmn2.ExtensionDefinition;
@@ -36,7 +36,7 @@ import org.obeonetwork.dsl.bpmn2.ExtensionDefinition;
  *
  * @generated
  */
-public class ExtensionImpl extends BPMN2ObjectImpl implements Extension {
+public class ExtensionImpl extends MinimalEObjectImpl.Container implements Extension {
 	/**
 	 * The default value of the '{@link #isMustUnderstand() <em>Must Understand</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--

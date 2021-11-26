@@ -17,7 +17,7 @@ package org.obeonetwork.dsl.bpmn2.impl;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.ExtensionAttributeDefinition;
 import org.obeonetwork.dsl.bpmn2.ExtensionDefinition;
@@ -38,7 +38,8 @@ import org.obeonetwork.dsl.bpmn2.ExtensionDefinition;
  *
  * @generated
  */
-public class ExtensionAttributeDefinitionImpl extends BPMN2ObjectImpl implements ExtensionAttributeDefinition {
+public class ExtensionAttributeDefinitionImpl extends MinimalEObjectImpl.Container
+		implements ExtensionAttributeDefinition {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

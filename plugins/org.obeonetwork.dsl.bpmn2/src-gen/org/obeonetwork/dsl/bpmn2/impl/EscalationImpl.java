@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.bpmn2.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.Escalation;
 import org.obeonetwork.dsl.bpmn2.ItemDefinition;
@@ -35,7 +35,7 @@ import org.obeonetwork.dsl.bpmn2.ItemDefinition;
  *
  * @generated
  */
-public class EscalationImpl extends BPMN2ObjectImpl implements Escalation {
+public class EscalationImpl extends MinimalEObjectImpl.Container implements Escalation {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -14,7 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,10 +32,9 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getExtension()
  * @model
- * @extends CDOObject
  * @generated
  */
-public interface Extension extends CDOObject {
+public interface Extension extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Must Understand</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

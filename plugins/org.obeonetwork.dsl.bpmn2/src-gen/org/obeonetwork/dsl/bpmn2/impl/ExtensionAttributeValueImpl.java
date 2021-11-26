@@ -18,7 +18,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.ExtensionAttributeDefinition;
 import org.obeonetwork.dsl.bpmn2.ExtensionAttributeValue;
@@ -38,7 +38,7 @@ import org.obeonetwork.dsl.bpmn2.ExtensionAttributeValue;
  *
  * @generated
  */
-public class ExtensionAttributeValueImpl extends BPMN2ObjectImpl implements ExtensionAttributeValue {
+public class ExtensionAttributeValueImpl extends MinimalEObjectImpl.Container implements ExtensionAttributeValue {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

@@ -14,7 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2.dynamic;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.ecore.EObject;
 import org.obeonetwork.dsl.bpmn2.FlowElement;
 import org.obeonetwork.dsl.bpmn2.SequenceFlow;
 
@@ -34,10 +34,9 @@ import org.obeonetwork.dsl.bpmn2.SequenceFlow;
  *
  * @see org.obeonetwork.dsl.bpmn2.dynamic.DynamicPackage#getToken()
  * @model annotation="aspect"
- * @extends CDOObject
  * @generated
  */
-public interface Token extends CDOObject {
+public interface Token extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Source Sequence Flow</b></em>' reference.

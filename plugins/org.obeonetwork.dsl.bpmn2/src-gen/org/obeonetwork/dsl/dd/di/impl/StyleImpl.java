@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.dd.di.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.dd.di.DiPackage;
 import org.obeonetwork.dsl.dd.di.Style;
 
@@ -26,7 +26,7 @@ import org.obeonetwork.dsl.dd.di.Style;
  *
  * @generated
  */
-public abstract class StyleImpl extends BPMN2ObjectImpl implements Style {
+public abstract class StyleImpl extends MinimalEObjectImpl.Container implements Style {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,9 +1,7 @@
 package org.gemoc.xbpmn.k3dsa;
 
-import org.eclipse.gemoc.commons.eclipse.logging.backends.DefaultLoggingBackend;
 import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystem;
 import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystemManager;
-import org.eclipse.gemoc.executionframework.engine.core.GemocRunningEnginesRegistry;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 

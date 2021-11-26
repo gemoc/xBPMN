@@ -69,7 +69,7 @@ public class DynamicFactoryImpl extends EFactoryImpl implements DynamicFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case DynamicPackage.TOKEN:
-			return (EObject) createToken();
+			return createToken();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

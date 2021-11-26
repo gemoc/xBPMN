@@ -71,11 +71,11 @@ public class DcFactoryImpl extends EFactoryImpl implements DcFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case DcPackage.FONT:
-			return (EObject) createFont();
+			return createFont();
 		case DcPackage.POINT:
-			return (EObject) createPoint();
+			return createPoint();
 		case DcPackage.BOUNDS:
-			return (EObject) createBounds();
+			return createBounds();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

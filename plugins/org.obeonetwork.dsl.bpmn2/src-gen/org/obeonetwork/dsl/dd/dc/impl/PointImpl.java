@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.dd.dc.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 import org.obeonetwork.dsl.dd.dc.Point;
 
@@ -33,7 +33,7 @@ import org.obeonetwork.dsl.dd.dc.Point;
  *
  * @generated
  */
-public class PointImpl extends BPMN2ObjectImpl implements Point {
+public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->

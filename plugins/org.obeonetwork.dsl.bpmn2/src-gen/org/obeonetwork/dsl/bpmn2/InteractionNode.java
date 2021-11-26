@@ -14,8 +14,8 @@
  */
 package org.obeonetwork.dsl.bpmn2;
 
-import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,10 +32,9 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getInteractionNode()
  * @model abstract="true"
- * @extends CDOObject
  * @generated
  */
-public interface InteractionNode extends CDOObject {
+public interface InteractionNode extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Incoming Conversation Links</b></em>' reference list.
 	 * The list contents are of type {@link org.obeonetwork.dsl.bpmn2.ConversationLink}.

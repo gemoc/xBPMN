@@ -14,7 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,10 +34,9 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getExtensionAttributeDefinition()
  * @model
- * @extends CDOObject
  * @generated
  */
-public interface ExtensionAttributeDefinition extends CDOObject {
+public interface ExtensionAttributeDefinition extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

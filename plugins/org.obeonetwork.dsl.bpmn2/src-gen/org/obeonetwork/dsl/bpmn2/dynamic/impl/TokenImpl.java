@@ -18,7 +18,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.FlowElement;
@@ -41,7 +41,7 @@ import org.obeonetwork.dsl.bpmn2.dynamic.Token;
  *
  * @generated
  */
-public class TokenImpl extends BPMN2ObjectImpl implements Token {
+public class TokenImpl extends MinimalEObjectImpl.Container implements Token {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

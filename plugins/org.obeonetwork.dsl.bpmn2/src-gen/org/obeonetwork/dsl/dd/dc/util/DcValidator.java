@@ -125,23 +125,23 @@ public class DcValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateFont(Font font, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment((EObject) font, diagnostics, context))
+		if (!validate_NoCircularContainment(font, diagnostics, context))
 			return false;
-		boolean result = validate_EveryMultiplicityConforms((EObject) font, diagnostics, context);
+		boolean result = validate_EveryMultiplicityConforms(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryDataValueConforms((EObject) font, diagnostics, context);
+			result &= validate_EveryDataValueConforms(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryReferenceIsContained((EObject) font, diagnostics, context);
+			result &= validate_EveryReferenceIsContained(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryBidirectionalReferenceIsPaired((EObject) font, diagnostics, context);
+			result &= validate_EveryBidirectionalReferenceIsPaired(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryProxyResolves((EObject) font, diagnostics, context);
+			result &= validate_EveryProxyResolves(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_UniqueID((EObject) font, diagnostics, context);
+			result &= validate_UniqueID(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryKeyUnique((EObject) font, diagnostics, context);
+			result &= validate_EveryKeyUnique(font, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validate_EveryMapEntryUnique((EObject) font, diagnostics, context);
+			result &= validate_EveryMapEntryUnique(font, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateFont_non_negative_size(font, diagnostics, context);
 		return result;
@@ -163,7 +163,7 @@ public class DcValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePoint(Point point, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint((EObject) point, diagnostics, context);
+		return validate_EveryDefaultConstraint(point, diagnostics, context);
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class DcValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBounds(Bounds bounds, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint((EObject) bounds, diagnostics, context);
+		return validate_EveryDefaultConstraint(bounds, diagnostics, context);
 	}
 
 	/**

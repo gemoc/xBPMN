@@ -14,7 +14,7 @@
  */
 package org.obeonetwork.dsl.bpmn2;
 
-import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,10 +33,9 @@ import org.eclipse.emf.cdo.CDOObject;
  *
  * @see org.obeonetwork.dsl.bpmn2.Bpmn2Package#getImport()
  * @model
- * @extends CDOObject
  * @generated
  */
-public interface Import extends CDOObject {
+public interface Import extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Import Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

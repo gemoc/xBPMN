@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.bpmn2.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.InputOutputBinding;
 import org.obeonetwork.dsl.bpmn2.InputSet;
@@ -37,7 +37,7 @@ import org.obeonetwork.dsl.bpmn2.OutputSet;
  *
  * @generated
  */
-public class InputOutputBindingImpl extends BPMN2ObjectImpl implements InputOutputBinding {
+public class InputOutputBindingImpl extends MinimalEObjectImpl.Container implements InputOutputBinding {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

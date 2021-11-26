@@ -194,245 +194,245 @@ public class Bpmn2FactoryImpl extends EFactoryImpl implements Bpmn2Factory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case Bpmn2Package.INTERFACE:
-			return (EObject) createInterface();
+			return createInterface();
 		case Bpmn2Package.EXTENSION_DEFINITION:
-			return (EObject) createExtensionDefinition();
+			return createExtensionDefinition();
 		case Bpmn2Package.EXTENSION_ATTRIBUTE_DEFINITION:
-			return (EObject) createExtensionAttributeDefinition();
+			return createExtensionAttributeDefinition();
 		case Bpmn2Package.EXTENSION_ATTRIBUTE_VALUE:
-			return (EObject) createExtensionAttributeValue();
+			return createExtensionAttributeValue();
 		case Bpmn2Package.DOCUMENTATION:
-			return (EObject) createDocumentation();
+			return createDocumentation();
 		case Bpmn2Package.OPERATION:
-			return (EObject) createOperation();
+			return createOperation();
 		case Bpmn2Package.MESSAGE:
-			return (EObject) createMessage();
+			return createMessage();
 		case Bpmn2Package.ITEM_DEFINITION:
-			return (EObject) createItemDefinition();
+			return createItemDefinition();
 		case Bpmn2Package.IMPORT:
-			return (EObject) createImport();
+			return createImport();
 		case Bpmn2Package.ERROR:
-			return (EObject) createError();
+			return createError();
 		case Bpmn2Package.END_POINT:
-			return (EObject) createEndPoint();
+			return createEndPoint();
 		case Bpmn2Package.AUDITING:
-			return (EObject) createAuditing();
+			return createAuditing();
 		case Bpmn2Package.GLOBAL_TASK:
-			return (EObject) createGlobalTask();
+			return createGlobalTask();
 		case Bpmn2Package.INPUT_OUTPUT_SPECIFICATION:
-			return (EObject) createInputOutputSpecification();
+			return createInputOutputSpecification();
 		case Bpmn2Package.INPUT_SET:
-			return (EObject) createInputSet();
+			return createInputSet();
 		case Bpmn2Package.DATA_INPUT:
-			return (EObject) createDataInput();
+			return createDataInput();
 		case Bpmn2Package.ITEM_AWARE_ELEMENT:
-			return (EObject) createItemAwareElement();
+			return createItemAwareElement();
 		case Bpmn2Package.DATA_STATE:
-			return (EObject) createDataState();
+			return createDataState();
 		case Bpmn2Package.OUTPUT_SET:
-			return (EObject) createOutputSet();
+			return createOutputSet();
 		case Bpmn2Package.DATA_OUTPUT:
-			return (EObject) createDataOutput();
+			return createDataOutput();
 		case Bpmn2Package.INPUT_OUTPUT_BINDING:
-			return (EObject) createInputOutputBinding();
+			return createInputOutputBinding();
 		case Bpmn2Package.RESOURCE_ROLE:
-			return (EObject) createResourceRole();
+			return createResourceRole();
 		case Bpmn2Package.RESOURCE:
-			return (EObject) createResource();
+			return createResource();
 		case Bpmn2Package.RESOURCE_PARAMETER:
-			return (EObject) createResourceParameter();
+			return createResourceParameter();
 		case Bpmn2Package.RESOURCE_PARAMETER_BINDING:
-			return (EObject) createResourceParameterBinding();
+			return createResourceParameterBinding();
 		case Bpmn2Package.EXPRESSION:
-			return (EObject) createExpression();
+			return createExpression();
 		case Bpmn2Package.RESOURCE_ASSIGNMENT_EXPRESSION:
-			return (EObject) createResourceAssignmentExpression();
+			return createResourceAssignmentExpression();
 		case Bpmn2Package.MONITORING:
-			return (EObject) createMonitoring();
+			return createMonitoring();
 		case Bpmn2Package.PERFORMER:
-			return (EObject) createPerformer();
+			return createPerformer();
 		case Bpmn2Package.PROCESS:
-			return (EObject) createProcess();
+			return createProcess();
 		case Bpmn2Package.CATEGORY_VALUE:
-			return (EObject) createCategoryValue();
+			return createCategoryValue();
 		case Bpmn2Package.LANE_SET:
-			return (EObject) createLaneSet();
+			return createLaneSet();
 		case Bpmn2Package.LANE:
-			return (EObject) createLane();
+			return createLane();
 		case Bpmn2Package.SEQUENCE_FLOW:
-			return (EObject) createSequenceFlow();
+			return createSequenceFlow();
 		case Bpmn2Package.PROPERTY:
-			return (EObject) createProperty();
+			return createProperty();
 		case Bpmn2Package.COLLABORATION:
-			return (EObject) createCollaboration();
+			return createCollaboration();
 		case Bpmn2Package.CHOREOGRAPHY:
-			return (EObject) createChoreography();
+			return createChoreography();
 		case Bpmn2Package.PARTICIPANT_ASSOCIATION:
-			return (EObject) createParticipantAssociation();
+			return createParticipantAssociation();
 		case Bpmn2Package.PARTICIPANT:
-			return (EObject) createParticipant();
+			return createParticipant();
 		case Bpmn2Package.CONVERSATION_LINK:
-			return (EObject) createConversationLink();
+			return createConversationLink();
 		case Bpmn2Package.PARTICIPANT_MULTIPLICITY:
-			return (EObject) createParticipantMultiplicity();
+			return createParticipantMultiplicity();
 		case Bpmn2Package.MESSAGE_FLOW_ASSOCIATION:
-			return (EObject) createMessageFlowAssociation();
+			return createMessageFlowAssociation();
 		case Bpmn2Package.MESSAGE_FLOW:
-			return (EObject) createMessageFlow();
+			return createMessageFlow();
 		case Bpmn2Package.CONVERSATION_ASSOCIATION:
-			return (EObject) createConversationAssociation();
+			return createConversationAssociation();
 		case Bpmn2Package.CORRELATION_KEY:
-			return (EObject) createCorrelationKey();
+			return createCorrelationKey();
 		case Bpmn2Package.CORRELATION_PROPERTY:
-			return (EObject) createCorrelationProperty();
+			return createCorrelationProperty();
 		case Bpmn2Package.CORRELATION_PROPERTY_RETRIEVAL_EXPRESSION:
-			return (EObject) createCorrelationPropertyRetrievalExpression();
+			return createCorrelationPropertyRetrievalExpression();
 		case Bpmn2Package.FORMAL_EXPRESSION:
-			return (EObject) createFormalExpression();
+			return createFormalExpression();
 		case Bpmn2Package.CORRELATION_SUBSCRIPTION:
-			return (EObject) createCorrelationSubscription();
+			return createCorrelationSubscription();
 		case Bpmn2Package.CORRELATION_PROPERTY_BINDING:
-			return (EObject) createCorrelationPropertyBinding();
+			return createCorrelationPropertyBinding();
 		case Bpmn2Package.GLOBAL_MANUAL_TASK:
-			return (EObject) createGlobalManualTask();
+			return createGlobalManualTask();
 		case Bpmn2Package.MANUAL_TASK:
-			return (EObject) createManualTask();
+			return createManualTask();
 		case Bpmn2Package.TASK:
-			return (EObject) createTask();
+			return createTask();
 		case Bpmn2Package.BOUNDARY_EVENT:
-			return (EObject) createBoundaryEvent();
+			return createBoundaryEvent();
 		case Bpmn2Package.DATA_OUTPUT_ASSOCIATION:
-			return (EObject) createDataOutputAssociation();
+			return createDataOutputAssociation();
 		case Bpmn2Package.DATA_ASSOCIATION:
-			return (EObject) createDataAssociation();
+			return createDataAssociation();
 		case Bpmn2Package.ASSIGNMENT:
-			return (EObject) createAssignment();
+			return createAssignment();
 		case Bpmn2Package.DATA_INPUT_ASSOCIATION:
-			return (EObject) createDataInputAssociation();
+			return createDataInputAssociation();
 		case Bpmn2Package.USER_TASK:
-			return (EObject) createUserTask();
+			return createUserTask();
 		case Bpmn2Package.RENDERING:
-			return (EObject) createRendering();
+			return createRendering();
 		case Bpmn2Package.HUMAN_PERFORMER:
-			return (EObject) createHumanPerformer();
+			return createHumanPerformer();
 		case Bpmn2Package.POTENTIAL_OWNER:
-			return (EObject) createPotentialOwner();
+			return createPotentialOwner();
 		case Bpmn2Package.GLOBAL_USER_TASK:
-			return (EObject) createGlobalUserTask();
+			return createGlobalUserTask();
 		case Bpmn2Package.EVENT_BASED_GATEWAY:
-			return (EObject) createEventBasedGateway();
+			return createEventBasedGateway();
 		case Bpmn2Package.COMPLEX_GATEWAY:
-			return (EObject) createComplexGateway();
+			return createComplexGateway();
 		case Bpmn2Package.EXCLUSIVE_GATEWAY:
-			return (EObject) createExclusiveGateway();
+			return createExclusiveGateway();
 		case Bpmn2Package.INCLUSIVE_GATEWAY:
-			return (EObject) createInclusiveGateway();
+			return createInclusiveGateway();
 		case Bpmn2Package.PARALLEL_GATEWAY:
-			return (EObject) createParallelGateway();
+			return createParallelGateway();
 		case Bpmn2Package.RELATIONSHIP:
-			return (EObject) createRelationship();
+			return createRelationship();
 		case Bpmn2Package.EXTENSION:
-			return (EObject) createExtension();
+			return createExtension();
 		case Bpmn2Package.INTERMEDIATE_CATCH_EVENT:
-			return (EObject) createIntermediateCatchEvent();
+			return createIntermediateCatchEvent();
 		case Bpmn2Package.INTERMEDIATE_THROW_EVENT:
-			return (EObject) createIntermediateThrowEvent();
+			return createIntermediateThrowEvent();
 		case Bpmn2Package.END_EVENT:
-			return (EObject) createEndEvent();
+			return createEndEvent();
 		case Bpmn2Package.START_EVENT:
-			return (EObject) createStartEvent();
+			return createStartEvent();
 		case Bpmn2Package.CANCEL_EVENT_DEFINITION:
-			return (EObject) createCancelEventDefinition();
+			return createCancelEventDefinition();
 		case Bpmn2Package.ERROR_EVENT_DEFINITION:
-			return (EObject) createErrorEventDefinition();
+			return createErrorEventDefinition();
 		case Bpmn2Package.TERMINATE_EVENT_DEFINITION:
-			return (EObject) createTerminateEventDefinition();
+			return createTerminateEventDefinition();
 		case Bpmn2Package.ESCALATION_EVENT_DEFINITION:
-			return (EObject) createEscalationEventDefinition();
+			return createEscalationEventDefinition();
 		case Bpmn2Package.ESCALATION:
-			return (EObject) createEscalation();
+			return createEscalation();
 		case Bpmn2Package.COMPENSATE_EVENT_DEFINITION:
-			return (EObject) createCompensateEventDefinition();
+			return createCompensateEventDefinition();
 		case Bpmn2Package.TIMER_EVENT_DEFINITION:
-			return (EObject) createTimerEventDefinition();
+			return createTimerEventDefinition();
 		case Bpmn2Package.LINK_EVENT_DEFINITION:
-			return (EObject) createLinkEventDefinition();
+			return createLinkEventDefinition();
 		case Bpmn2Package.MESSAGE_EVENT_DEFINITION:
-			return (EObject) createMessageEventDefinition();
+			return createMessageEventDefinition();
 		case Bpmn2Package.CONDITIONAL_EVENT_DEFINITION:
-			return (EObject) createConditionalEventDefinition();
+			return createConditionalEventDefinition();
 		case Bpmn2Package.SIGNAL_EVENT_DEFINITION:
-			return (EObject) createSignalEventDefinition();
+			return createSignalEventDefinition();
 		case Bpmn2Package.SIGNAL:
-			return (EObject) createSignal();
+			return createSignal();
 		case Bpmn2Package.IMPLICIT_THROW_EVENT:
-			return (EObject) createImplicitThrowEvent();
+			return createImplicitThrowEvent();
 		case Bpmn2Package.DATA_OBJECT:
-			return (EObject) createDataObject();
+			return createDataObject();
 		case Bpmn2Package.DATA_STORE:
-			return (EObject) createDataStore();
+			return createDataStore();
 		case Bpmn2Package.DATA_STORE_REFERENCE:
-			return (EObject) createDataStoreReference();
+			return createDataStoreReference();
 		case Bpmn2Package.DATA_OBJECT_REFERENCE:
-			return (EObject) createDataObjectReference();
+			return createDataObjectReference();
 		case Bpmn2Package.CALL_CONVERSATION:
-			return (EObject) createCallConversation();
+			return createCallConversation();
 		case Bpmn2Package.CONVERSATION:
-			return (EObject) createConversation();
+			return createConversation();
 		case Bpmn2Package.SUB_CONVERSATION:
-			return (EObject) createSubConversation();
+			return createSubConversation();
 		case Bpmn2Package.GLOBAL_CONVERSATION:
-			return (EObject) createGlobalConversation();
+			return createGlobalConversation();
 		case Bpmn2Package.PARTNER_ENTITY:
-			return (EObject) createPartnerEntity();
+			return createPartnerEntity();
 		case Bpmn2Package.PARTNER_ROLE:
-			return (EObject) createPartnerRole();
+			return createPartnerRole();
 		case Bpmn2Package.CALL_CHOREOGRAPHY:
-			return (EObject) createCallChoreography();
+			return createCallChoreography();
 		case Bpmn2Package.SUB_CHOREOGRAPHY:
-			return (EObject) createSubChoreography();
+			return createSubChoreography();
 		case Bpmn2Package.CHOREOGRAPHY_TASK:
-			return (EObject) createChoreographyTask();
+			return createChoreographyTask();
 		case Bpmn2Package.GLOBAL_CHOREOGRAPHY_TASK:
-			return (EObject) createGlobalChoreographyTask();
+			return createGlobalChoreographyTask();
 		case Bpmn2Package.TEXT_ANNOTATION:
-			return (EObject) createTextAnnotation();
+			return createTextAnnotation();
 		case Bpmn2Package.GROUP:
-			return (EObject) createGroup();
+			return createGroup();
 		case Bpmn2Package.ASSOCIATION:
-			return (EObject) createAssociation();
+			return createAssociation();
 		case Bpmn2Package.CATEGORY:
-			return (EObject) createCategory();
+			return createCategory();
 		case Bpmn2Package.SERVICE_TASK:
-			return (EObject) createServiceTask();
+			return createServiceTask();
 		case Bpmn2Package.SUB_PROCESS:
-			return (EObject) createSubProcess();
+			return createSubProcess();
 		case Bpmn2Package.MULTI_INSTANCE_LOOP_CHARACTERISTICS:
-			return (EObject) createMultiInstanceLoopCharacteristics();
+			return createMultiInstanceLoopCharacteristics();
 		case Bpmn2Package.COMPLEX_BEHAVIOR_DEFINITION:
-			return (EObject) createComplexBehaviorDefinition();
+			return createComplexBehaviorDefinition();
 		case Bpmn2Package.STANDARD_LOOP_CHARACTERISTICS:
-			return (EObject) createStandardLoopCharacteristics();
+			return createStandardLoopCharacteristics();
 		case Bpmn2Package.CALL_ACTIVITY:
-			return (EObject) createCallActivity();
+			return createCallActivity();
 		case Bpmn2Package.SEND_TASK:
-			return (EObject) createSendTask();
+			return createSendTask();
 		case Bpmn2Package.RECEIVE_TASK:
-			return (EObject) createReceiveTask();
+			return createReceiveTask();
 		case Bpmn2Package.SCRIPT_TASK:
-			return (EObject) createScriptTask();
+			return createScriptTask();
 		case Bpmn2Package.BUSINESS_RULE_TASK:
-			return (EObject) createBusinessRuleTask();
+			return createBusinessRuleTask();
 		case Bpmn2Package.AD_HOC_SUB_PROCESS:
-			return (EObject) createAdHocSubProcess();
+			return createAdHocSubProcess();
 		case Bpmn2Package.TRANSACTION:
-			return (EObject) createTransaction();
+			return createTransaction();
 		case Bpmn2Package.GLOBAL_SCRIPT_TASK:
-			return (EObject) createGlobalScriptTask();
+			return createGlobalScriptTask();
 		case Bpmn2Package.GLOBAL_BUSINESS_RULE_TASK:
-			return (EObject) createGlobalBusinessRuleTask();
+			return createGlobalBusinessRuleTask();
 		case Bpmn2Package.DEFINITIONS:
-			return (EObject) createDefinitions();
+			return createDefinitions();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

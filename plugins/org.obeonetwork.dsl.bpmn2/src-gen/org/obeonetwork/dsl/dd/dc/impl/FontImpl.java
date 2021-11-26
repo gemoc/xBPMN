@@ -20,9 +20,9 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 import org.obeonetwork.dsl.dd.dc.Font;
 import org.obeonetwork.dsl.dd.dc.util.DcValidator;
@@ -45,7 +45,7 @@ import org.obeonetwork.dsl.dd.dc.util.DcValidator;
  *
  * @generated
  */
-public class FontImpl extends BPMN2ObjectImpl implements Font {
+public class FontImpl extends MinimalEObjectImpl.Container implements Font {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

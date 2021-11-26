@@ -16,12 +16,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.obeonetwork.dsl.bpmn2.BoundaryEvent;
@@ -178,7 +178,7 @@ public class ProcessService {
 		FlowElementsContainer result = null;
 		if (eo instanceof FlowElementsContainer) {
 			result = (FlowElementsContainer) eo;
-		} else if (eo.eContainer() != null && !(eo.eContainer() instanceof CDOResource)) {
+		} else if (eo.eContainer() != null && !(eo.eContainer() instanceof Resource)) {
 			result = getFlowElementsContainer(eo.eContainer());
 		}
 		return result;

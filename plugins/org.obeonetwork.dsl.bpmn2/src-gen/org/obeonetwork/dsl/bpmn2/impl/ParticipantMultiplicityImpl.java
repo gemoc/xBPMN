@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.bpmn2.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.bpmn2.Bpmn2Package;
 import org.obeonetwork.dsl.bpmn2.ParticipantMultiplicity;
 
@@ -33,7 +33,7 @@ import org.obeonetwork.dsl.bpmn2.ParticipantMultiplicity;
  *
  * @generated
  */
-public class ParticipantMultiplicityImpl extends BPMN2ObjectImpl implements ParticipantMultiplicity {
+public class ParticipantMultiplicityImpl extends MinimalEObjectImpl.Container implements ParticipantMultiplicity {
 	/**
 	 * The default value of the '{@link #getMinimum() <em>Minimum</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

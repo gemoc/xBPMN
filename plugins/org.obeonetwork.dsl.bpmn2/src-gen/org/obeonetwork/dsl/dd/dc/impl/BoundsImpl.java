@@ -15,7 +15,7 @@
 package org.obeonetwork.dsl.dd.dc.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.obeonetwork.dsl.bpmn2.BPMN2ObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.obeonetwork.dsl.dd.dc.Bounds;
 import org.obeonetwork.dsl.dd.dc.DcPackage;
 
@@ -35,7 +35,7 @@ import org.obeonetwork.dsl.dd.dc.DcPackage;
  *
  * @generated
  */
-public class BoundsImpl extends BPMN2ObjectImpl implements Bounds {
+public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds {
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
