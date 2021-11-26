@@ -44,21 +44,21 @@ public class XBPMNRTDAccessor {
 		propertyValue = propertyValue == null ? null : (java.lang.Integer)Copier.clone(propertyValue);
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "startCounter", propertyValue);
 	}
-  public static java.util.List getownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
-     java.util.List theProperty = (java.util.List)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+  public static org.eclipse.emf.common.util.EList getownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
+     org.eclipse.emf.common.util.EList theProperty = (org.eclipse.emf.common.util.EList)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
 		return theProperty;
 }
-  public static java.util.List saveProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
-		java.util.List propertyValue = (java.util.List)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
-		propertyValue = propertyValue == null ? null : (java.util.List)Copier.clone(propertyValue);
+  public static org.eclipse.emf.common.util.EList saveProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
+		org.eclipse.emf.common.util.EList propertyValue = (org.eclipse.emf.common.util.EList)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+		propertyValue = propertyValue == null ? null : (org.eclipse.emf.common.util.EList)Copier.clone(propertyValue);
 		return propertyValue;
 }
-	public static boolean setownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
+	public static boolean setownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, org.eclipse.emf.common.util.EList newValue) {
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", newValue);
 	}
-	public static boolean restoreProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, java.util.List newValue) {
-		java.util.List propertyValue = newValue;
-		propertyValue = propertyValue == null ? null : (java.util.List)Copier.clone(propertyValue);
+	public static boolean restoreProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, org.eclipse.emf.common.util.EList newValue) {
+		org.eclipse.emf.common.util.EList propertyValue = newValue;
+		propertyValue = propertyValue == null ? null : (org.eclipse.emf.common.util.EList)Copier.clone(propertyValue);
 		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", propertyValue);
 	}
 
