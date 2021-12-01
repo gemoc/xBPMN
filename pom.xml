@@ -30,7 +30,8 @@
 		<xtend-version>2.24.0</xtend-version>
 		<eclipse-version>2020-12</eclipse-version>
 		<sirius-p2-url>http://download.eclipse.org/sirius/updates/releases/6.4.1/2020-09</sirius-p2-url>
-		<gemoc-p2-url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-p2-url>
+		<!-- <gemoc-p2-url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-p2-url> -->
+		<gemoc-p2-url>https://ci.eclipse.org/gemoc/job/gemoc-studio-integration/job/dirty_save_restore/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.updatesite/target/repository/</gemoc-p2-url>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho.scmUrl>scm:git:https://github.com/gemoc/xbpmn.git</tycho.scmUrl>
