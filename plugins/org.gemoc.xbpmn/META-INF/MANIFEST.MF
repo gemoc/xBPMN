@@ -27,7 +27,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
  org.gemoc.xbpmn.moc.dse,
  org.gemoc.xbpmn.k3dsa,
  org.obeonetwork.dsl.bpmn2;bundle-version="4.1.1",
- org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.utils;bundle-version="2.3.0"
+ org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.utils;bundle-version="2.3.0",
+ org.eclipse.gemoc.commons.eclipse.pde;bundle-version="3.3.0",
+ com.google.gson
 Bundle-ActivationPolicy: lazy
 Export-Package: xbpmn.xdsml.api.impl
 Automatic-Module-Name: org.gemoc.xbpmn

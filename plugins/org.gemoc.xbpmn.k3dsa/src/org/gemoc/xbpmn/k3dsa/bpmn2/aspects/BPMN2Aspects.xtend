@@ -555,7 +555,7 @@ class SequenceFlowAspect extends FlowElementAspect {
 		
 	def void startEval() {
 		_self.info("Starting  SequenceFlow "+_self.name)	
-		_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
 		val sourceRef = _self.sourceRef
 		val targetRef = _self.targetRef
 		if(sourceRef.tokens.size == 0){
@@ -613,13 +613,13 @@ class SequenceFlowAspect extends FlowElementAspect {
 		    }
 		    default : throw new NotImplementedException('startEval not implemented for SequenceFlow ' +_self + ' from ' +sourceRef + ' to ' + targetRef)
 		}
-		_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
 		
 	}
 
 	def void endEval() {
 		_self.info("Ending  SequenceFlow "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 	}
 	
 //	def void moveToken(FlowNode sourceRef, FlowNode targetRef) {
@@ -678,7 +678,7 @@ class StartEventAspect extends CatchEventAspect {
 
 	def void startEval() {
 		_self.info("Starting  StartEvent "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 		// initiate a token
 		val token = DynamicPackage.eINSTANCE.dynamicFactory.createToken
 		token.origin = _self
@@ -700,7 +700,7 @@ class StartEventAspect extends CatchEventAspect {
 
 	def void endEval() {
 		_self.info("Ending    StartEvent "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 	}
 }
 
@@ -722,7 +722,7 @@ class EndEventAspect extends ThrowEventAspect {
 
 	def void startEval() {
 		_self.info("Starting  EndEvent "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 		
 		// destroy containing process's context for the corresponding token
 		val process = _self.getContainerOfType(Process) 
@@ -740,7 +740,7 @@ class EndEventAspect extends ThrowEventAspect {
 
 	def void endEval() {
 		_self.info("Ending    EndEvent "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 	}
 
 }
@@ -772,8 +772,8 @@ class TaskAspect extends ActivityAspect {
 	
 	def void startEval() {
 		_self.info("Starting  Task "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
-		_self.devDebug('''     «_self.taskInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.taskInfo»''')
 		_self.isStarted = true
 		
 	 	// increment local startCounter for the Task
@@ -783,8 +783,8 @@ class TaskAspect extends ActivityAspect {
 	def void endEval() {
 		_self.info("Ending    Task "+_self.name)
 		_self.isStarted = false
-		_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
-		_self.devDebug('''     «_self.taskInfo»''')
+		//_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.taskInfo»''')
 		switch _self.outgoing.size {
 			case 0: {
 				val process = _self.getContainerOfType(Process)
@@ -804,7 +804,7 @@ class TaskAspect extends ActivityAspect {
 			}
 			default: {throw new NotImplementedException('endEval not implemented for Task ' +_self + ' with more than one outgoing')}
 		}
-		_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
 	}
 	
 	def String taskInfo() {
@@ -829,7 +829,7 @@ abstract class GatewayAspect extends FlowNodeAspect {
 	public Integer startCounter = 0
 	def void startEval() {
 		_self.info("Starting  Gateway "+_self.name)
-		_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     >«_self.getContainerOfType(Process).contextInfo»''')
 		// get or create context in containing Process (which is started simultaneously thanks to an ECL rule)
 		val process = _self.getContainerOfType(Process) 
 			
@@ -856,12 +856,12 @@ abstract class GatewayAspect extends FlowNodeAspect {
 		// make sure to update RTD
 		//process.ownedTokens = new ArrayList<Token>(process.ownedTokens)
 		
-		_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     <«_self.getContainerOfType(Process).contextInfo»''')
 	}
 
 	def void endEval() {
 		_self.info("Ending    Gateway "+_self.name)
-		_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
+		//_self.devDebug('''     «_self.getContainerOfType(Process).contextInfo»''')
 		
 	}
 }
@@ -1395,13 +1395,13 @@ class TokenAspect {
 	}
 	
 	def String tokenInfo() {
-		'''TOKEN[id=«_self.hashCode()»; origin=«_self.origin?.name?:'null'»; position=«_self.position?.name?:'null'»; sourceSequenceFlow=«_self.sourceSequenceFlow?.name?:'null'»]'''
+		'''TOKEN[id=«String.format("%x", System.identityHashCode(_self))»; origin=«_self.origin?.name?:'null'»; position=«_self.position?.name?:'null'»; sourceSequenceFlow=«_self.sourceSequenceFlow?.name?:'null'»]'''
 //		'''TOKEN[origin=«_self.origin?.name?:'null'»; position=«_self.position?.name?:'null'»; sourceSequenceFlow=«_self.sourceSequenceFlow?.name?:'null'»]«IF _self.position !== null»
 //		    	tokens on «_self.position?.name?:'null'»: «_self.position.tokens»«ENDIF»'''
 		
 	}
 	def String tokenShortInfo() {
-		'''TOKEN[id=«_self.hashCode()»]'''
+		'''TOKEN[id=«String.format("%x", System.identityHashCode(_self))»]'''
 	}
 }
 

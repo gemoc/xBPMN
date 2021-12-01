@@ -15,6 +15,6 @@ k3 = org.gemoc.xbpmn.k3dsa.bpmn2.aspects.BaseElementAspect, \
 	org.gemoc.xbpmn.k3dsa.bpsim2.aspects.ElementParametersTypeAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.FlowElementsContainerAspect, \
 	org.gemoc.xbpmn.k3dsa.bpmn2.aspects.SequenceFlowAspect
-	
+ 
 ecl = /org.gemoc.xbpmn.moc.dse/ecl/XBPMN.ecl
 metaprog=org.eclipse.gemoc.metaprog.moccml
