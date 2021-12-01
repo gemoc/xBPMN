@@ -292,5 +292,13 @@ public abstract class FlowElementImpl extends BaseElementImpl implements FlowEle
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	public String toString() {
+		return String.format("%s@%x(name=%s)", 
+				this.getClass().getSimpleName(),
+				System.identityHashCode(this),
+				this.getName() != null ? this.getName() : ""
+				);
+	}
 
 } //FlowElementImpl

@@ -249,4 +249,12 @@ public class TokenImpl extends MinimalEObjectImpl.Container implements Token {
 		return super.eIsSet(featureID);
 	}
 
+	public String toString() {
+		return String.format("TokenImpl@%x(origin=%s, position=%s, sourceFlow=%s)", 
+				System.identityHashCode(this),
+				this.getOrigin() != null ? this.getOrigin() : "",
+				this.getPosition() != null ? this.getPosition() : "",
+				this.getSourceSequenceFlow() != null ? this.getSourceSequenceFlow() : ""
+				);
+	}
 } //TokenImpl

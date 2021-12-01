@@ -259,4 +259,11 @@ public abstract class CallableElementImpl extends RootElementImpl implements Cal
 		return super.eIsSet(featureID);
 	}
 
+	public String toString() {
+		return String.format("%s@%x(name=%s)", 
+				this.getClass().getSimpleName(),
+				System.identityHashCode(this),
+				this.getName() != null ? this.getName() : ""
+				);
+	}
 } //CallableElementImpl
