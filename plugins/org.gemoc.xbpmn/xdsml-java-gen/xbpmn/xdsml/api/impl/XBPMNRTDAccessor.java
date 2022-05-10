@@ -1,12 +1,8 @@
 /* GENERATED FILE, do not modify manually                                                    *
  * If you need to modify it, copy it first */
 package xbpmn.xdsml.api.impl;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 import java.util.List;
 import java.lang.reflect.Method;
 import org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.utils.Copier;
@@ -53,16 +49,17 @@ public class XBPMNRTDAccessor {
 		return theProperty;
 }
   public static org.eclipse.emf.common.util.EList saveProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject) {
-	    EList res = new BasicEList();
-	    res.addAll(EcoreUtil.copyAll((org.eclipse.emf.common.util.EList)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens")));
-	    return res;
-  }
+		org.eclipse.emf.common.util.EList propertyValue = (org.eclipse.emf.common.util.EList)getAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens");
+		propertyValue = propertyValue == null ? null : (org.eclipse.emf.common.util.EList)Copier.clone(propertyValue);
+		return propertyValue;
+}
+	public static boolean setownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, org.eclipse.emf.common.util.EList newValue) {
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", newValue);
+	}
 	public static boolean restoreProperty_ownedTokens(org.obeonetwork.dsl.bpmn2.Process eObject, org.eclipse.emf.common.util.EList newValue) {
-		getownedTokens(eObject).clear();
-		Collection c = EcoreUtil.copyAll(newValue);
-		getownedTokens(eObject).addAll(c);
-		eObject.eResource().getContents().addAll(c);
-		return true;
+		org.eclipse.emf.common.util.EList propertyValue = newValue;
+		propertyValue = propertyValue == null ? null : (org.eclipse.emf.common.util.EList)Copier.clone(propertyValue);
+		return setAspectProperty(eObject, "org.gemoc.xbpmn.XBPMN", "org.gemoc.xbpmn.k3dsa.bpmn2.aspects.ProcessAspect", "ownedTokens", propertyValue);
 	}
 
 	public static Object getAspectProperty(EObject eObject, String languageName, String aspectName, String propertyName) {
